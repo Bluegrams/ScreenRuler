@@ -9,7 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Changelog.md = Changelog.md
 		LICENSE.txt = LICENSE.txt
-		Readme.txt = Readme.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{E2560076-F4E6-44D0-843A-2F251607367E}"
+	ProjectSection(SolutionItems) = preProject
+		img\screenruler_styles_small.png = img\screenruler_styles_small.png
 	EndProjectSection
 EndProject
 Global
@@ -25,6 +30,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2560076-F4E6-44D0-843A-2F251607367E} = {6A4246E2-D82B-4BAC-BDD1-F3B198ABC8A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D95859A-FF01-44A8-A580-18614EAEC245}
