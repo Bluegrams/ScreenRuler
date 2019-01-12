@@ -16,7 +16,7 @@ using Bluegrams.Application.Attributes;
 [assembly: AssemblyCulture("")]
 
 [assembly: ProductWebsite("https://screenruler.sourceforge.io")]
-[assembly: ProductLicense("LICENSE.txt", "BSD-3-Clause")]
+[assembly: ProductLicense("https://github.com/Bluegrams/ScreenRuler/blob/master/LICENSE.txt", "BSD-3-Clause")]
 [assembly: SupportedCultures("en", "de")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -37,5 +37,5 @@ using Bluegrams.Application.Attributes;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.2.0.18283")]
-[assembly: AssemblyFileVersion("0.2.0.18283")]
+[assembly: AssemblyVersion("0.2.0.19013")]
+[assembly: AssemblyFileVersion("0.2.0.19013")]

@@ -8,7 +8,7 @@
 
 [![](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/screenruler/files/)
 
-Screen Ruler is a lightweight, but configurable ruler tool for Windows Desktop. It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches. The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added. Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings.
+Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches. The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added. Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings.
 
 <p align="center">
 <img src="img/screenruler_styles_small.png" height="350px">
@@ -70,9 +70,9 @@ Places to get help:
 * Ask on [Sourceforge](https://sourceforge.net/p/screenruler/discussion/) (General help, ideas etc.)
 * Open an issue on [GitHub](https://github.com/bluegrams/screenruler/issues) (Bugs, feature requests etc.)
 
-## Contributing
+## Contribute
 
-You are welcome to contribute by opening a [pull request on GitHub](https://github.com/bluegrams/screenruler/pulls).
+You are very welcome to contribute fixes and new features by opening a [pull request on GitHub](https://github.com/bluegrams/screenruler/pulls).
 
 ## License
 

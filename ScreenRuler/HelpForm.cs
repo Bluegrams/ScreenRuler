@@ -9,7 +9,7 @@ namespace ScreenRuler
     public partial class HelpForm : Form
     {
         private string lang;
-        private string HelpFileLocation { get { return String.Format(@"Help\Help.{0}.html", lang); } }
+        private string HelpFileLocation { get { return Path.Combine(Application.StartupPath, $@"Help\Help.{lang}.html"); } }
 
         public HelpForm()
         {
