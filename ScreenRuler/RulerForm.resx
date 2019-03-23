@@ -234,7 +234,7 @@
     <value>210, 22</value>
   </data>
   <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>Multi Custom Marking</value>
+    <value>Limit To One Marker</value>
   </data>
   <data name="conClearCustomMarker.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
