@@ -79,6 +79,15 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Percent.
+        /// </summary>
+        internal static string Percent {
+            get {
+                return ResourceManager.GetString("Percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pixels.
         /// </summary>
         internal static string Pixels {

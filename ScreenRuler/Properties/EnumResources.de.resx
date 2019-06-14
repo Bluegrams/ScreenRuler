@@ -129,4 +129,7 @@
   <data name="Points" xml:space="preserve">
     <value>Punkte</value>
   </data>
+  <data name="Percent" xml:space="preserve">
+    <value>Prozent</value>
+  </data>
 </root>

@@ -174,4 +174,7 @@
   <data name="conMultiMarking.Text" xml:space="preserve">
     <value>Auf einen Marker limitieren</value>
   </data>
+  <data name="conOffsetLength.Text" xml:space="preserve">
+    <value>Versatz und Länge anzeigen</value>
+  </data>
 </root>

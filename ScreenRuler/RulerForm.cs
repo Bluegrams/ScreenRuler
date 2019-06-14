@@ -48,6 +48,13 @@ namespace ScreenRuler
             this.MouseWheel += RulerForm_MouseWheel;
         }
 
+        private UnitConverter getUnitConverter()
+        {
+            var screenRect = Screen.FromControl(this).Bounds;
+            var screenSize = Settings.Vertical ? screenRect.Height : screenRect.Width;
+            return new UnitConverter(Settings.MeasuringUnit, screenSize, Settings.MonitorDpi);
+        }
+
         private void RulerForm_Load(object sender, EventArgs e)
         {
             // Set some items of the context menu
@@ -250,7 +257,7 @@ namespace ScreenRuler
             if (line != default(int))
             {
                 CustomLineForm lineForm = new CustomLineForm(line,
-                    new UnitConverter(Settings.MeasuringUnit, Settings.MonitorDpi), Settings.Theme);
+                    getUnitConverter(), Settings.Theme);
                 if (lineForm.ShowDialog(this) == DialogResult.OK)
                 {
                     CustomLines.Remove(line);
@@ -277,8 +284,9 @@ namespace ScreenRuler
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.Clear(Settings.Theme.Background);
-            RulerPainter.Paint(e.Graphics, this.Size, Settings);
-            RulerPainter.PaintMarkers(e.Graphics, this.Size, Settings, mouseLine, CustomLines);
+            var painter = new RulerPainter(this, Settings);
+            painter.Paint(e.Graphics);
+            painter.PaintMarkers(e.Graphics, mouseLine, CustomLines);
             base.OnPaint(e);
         }
         #endregion
@@ -292,6 +300,7 @@ namespace ScreenRuler
             conMarkThirds.Checked = Settings.ShowThirdLines;
             conTopmost.Checked = this.TopMost;
             conMarkMouse.Checked = Settings.ShowMouseLine;
+            conOffsetLength.Checked = Settings.ShowOffsetLengthLabels;
             conMultiMarking.Checked = !Settings.MultiMarking;
             comUnits.SelectedIndex = (int)Settings.MeasuringUnit;
         }
@@ -323,6 +332,12 @@ namespace ScreenRuler
         private void conMarkThirds_Click(object sender, EventArgs e)
         {
             Settings.ShowThirdLines = !Settings.ShowThirdLines;
+            this.Invalidate();
+        }
+
+        private void conOffsetLength_Click(object sender, EventArgs e)
+        {
+            Settings.ShowOffsetLengthLabels = !Settings.ShowOffsetLengthLabels;
             this.Invalidate();
         }
 
@@ -378,6 +393,7 @@ namespace ScreenRuler
         private void conLength_Click(object sender, EventArgs e)
         {
             SetSizeForm sizeForm = new SetSizeForm(RulerLength, Settings);
+            sizeForm.TopMost = this.TopMost;
             if (sizeForm.ShowDialog(this) == DialogResult.OK)
             {
                 this.RulerLength = sizeForm.RulerLength;

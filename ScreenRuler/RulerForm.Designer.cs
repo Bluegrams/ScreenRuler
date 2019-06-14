@@ -53,6 +53,7 @@
             this.conAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             this.conMarkCenter,
             this.conMarkThirds,
             this.conMarkMouse,
+            this.conOffsetLength,
             this.conMultiMarking,
             this.conClearCustomMarker,
             this.toolStripSeparator3,
@@ -223,6 +225,12 @@
             resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Click += new System.EventHandler(this.conExit_Click);
             // 
+            // conOffsetLength
+            // 
+            this.conOffsetLength.Name = "conOffsetLength";
+            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
+            this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
+            // 
             // RulerForm
             // 
             resources.ApplyResources(this, "$this");
@@ -269,6 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox comUnits;
         private System.Windows.Forms.ToolStripMenuItem conMinimize;
+        private System.Windows.Forms.ToolStripMenuItem conOffsetLength;
     }
 }
 

@@ -155,30 +155,6 @@
   <data name="conVertical.Text" xml:space="preserve">
     <value>Vertical</value>
   </data>
-  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conHigh.Text" xml:space="preserve">
-    <value>High (100%)</value>
-  </data>
-  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conDefault.Text" xml:space="preserve">
-    <value>Default (80%)</value>
-  </data>
-  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conLow.Text" xml:space="preserve">
-    <value>Low (60%)</value>
-  </data>
-  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Very Low (40%)</value>
-  </data>
   <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
@@ -229,6 +205,12 @@
   </data>
   <data name="conMarkMouse.Text" xml:space="preserve">
     <value>Mark Mouse Position</value>
+  </data>
+  <data name="conOffsetLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="conOffsetLength.Text" xml:space="preserve">
+    <value>Show Offset and Length</value>
   </data>
   <data name="conMultiMarking.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
@@ -292,13 +274,37 @@
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 357</value>
+    <value>211, 401</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conHigh.Text" xml:space="preserve">
+    <value>High (100%)</value>
+  </data>
+  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conDefault.Text" xml:space="preserve">
+    <value>Default (80%)</value>
+  </data>
+  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conLow.Text" xml:space="preserve">
+    <value>Low (60%)</value>
+  </data>
+  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conVeryLow.Text" xml:space="preserve">
+    <value>Very Low (40%)</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1161,6 +1167,12 @@
     <value>conExit</value>
   </data>
   <data name="&gt;&gt;conExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conOffsetLength.Name" xml:space="preserve">
+    <value>conOffsetLength</value>
+  </data>
+  <data name="&gt;&gt;conOffsetLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

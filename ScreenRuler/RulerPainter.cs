@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 using ScreenRuler.Units;
 
 namespace ScreenRuler
@@ -10,7 +11,6 @@ namespace ScreenRuler
     /// </summary>
     class RulerPainter
     {
-
         /// <summary>
         /// Defines the position where ticks should be drawn dependent on the chosen unit.
         /// (To deal with integers, all values are multiplied by 10 (e.g. 50 means 5px)).
@@ -20,17 +20,32 @@ namespace ScreenRuler
             {MeasuringUnit.Pixels, new int[] {50, 100, 500} },
             {MeasuringUnit.Inches, new int[] {1, 5, 10} },
             {MeasuringUnit.Centimeters, new int[] {1, 5, 10} },
-            {MeasuringUnit.Points, new int[] {50, 100, 500} }
+            {MeasuringUnit.Points, new int[] {50, 100, 500} },
+            {MeasuringUnit.Percent, new int[] {5, 10, 50 } }
         };
+
+        private Size size;
+        private Point position;
+        private Settings settings;
+        private UnitConverter converter;
+
+        public RulerPainter(Form form, Settings settings)
+        {
+            this.size = form.Size;
+            this.position = form.Location;
+            this.settings = settings;
+            var screenRect = Screen.FromControl(form).Bounds;
+            var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
+            this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, settings.MonitorDpi);
+        }
 
         /// <summary>
         /// Paints the ruler scale onto the given Graphics object.
         /// </summary>
-        public static void Paint(Graphics g, Size size, Settings settings)
+        public void Paint(Graphics g)
         {
             int max = settings.Vertical ? size.Height : size.Width;
             int height = settings.Vertical ? size.Width : size.Height;
-            var converter = new UnitConverter(settings.MeasuringUnit, settings.MonitorDpi);
             // ----- Draw the ruler scale -----
             int[] ticks = Ticks[settings.MeasuringUnit];
             // valUnit: the current position in the chosen unit.
@@ -63,21 +78,31 @@ namespace ScreenRuler
                 i += ticks[0];
             }
             // ----- Draw additional labels -----
-            string label = String.Format("{0}{1}", 
-                Math.Round(converter.ConvertFromPixel(max), 2), converter.UnitString);
-            var sc = g.DpiY / 96.0f; // adjust some text according to dpi scaling.
-            using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
-            using (Font font = new Font("Arial", 9))
+            if (settings.ShowOffsetLengthLabels)
             {
-                // Draw total length bound to right border.
-                StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
-                if (!settings.Vertical)
+                string lblLength = String.Format("{0}{1}",
+                    Math.Round(converter.ConvertFromPixel(max), 2), converter.UnitString);
+                int offset = settings.Vertical ? position.Y : position.X;
+                string lblOffset = String.Format("{0}{1}",
+                    Math.Round(converter.ConvertFromPixel(offset), 2), converter.UnitString);
+                var sc = g.DpiY / 96.0f; // adjust some text according to dpi scaling.
+                using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
+                using (Font font = new Font("Arial", 9))
                 {
-                    g.DrawString(label, font, brush, max, size.Height / 2, format);
-                }
-                else
-                {
-                    g.DrawString(label, font, brush, size.Width * (7.0f / 8.0f), max - 13 * sc, format);
+                    // Draw total length bound to right border (& optionally start offset).
+                    StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
+                    if (!settings.Vertical)
+                    {
+                        float y = size.Height / 2.0f;
+                        g.DrawString(lblLength, font, brush, max, y, format);
+                        g.DrawString(lblOffset, font, brush, 0, y);
+                    }
+                    else
+                    {
+                        float x = size.Width * (7.0f / 8.0f);
+                        g.DrawString(lblLength, font, brush, x, max - 13 * sc, format);
+                        g.DrawString(lblOffset, font, brush, x, 0, format);
+                    }
                 }
             }
         }
@@ -85,9 +110,8 @@ namespace ScreenRuler
         /// <summary>
         /// Draws the markers onto the given Graphics object.
         /// </summary>
-        public static void PaintMarkers(Graphics g, Size size, Settings settings, float mouseLine, LinkedList<int> customLines)
+        public void PaintMarkers(Graphics g, float mouseLine, LinkedList<int> customLines)
         {
-            var converter = new UnitConverter(settings.MeasuringUnit, settings.MonitorDpi);
             int rulerLength = settings.Vertical ? size.Height : size.Width;
             // Draw line showing the ruler's center
             if (settings.ShowCenterLine)

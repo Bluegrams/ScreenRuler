@@ -14,6 +14,8 @@ namespace ScreenRuler.Units
         [LocalizedDescription("Inches", typeof(EnumResources))]
         Inches = 2,
         [LocalizedDescription("Points", typeof(EnumResources))]
-        Points = 3
+        Points = 3,
+        [LocalizedDescription("Percent", typeof(EnumResources))]
+        Percent = 4
     }
 }

@@ -19,7 +19,7 @@ namespace ScreenRuler
             InitializeComponent();
             RulerLength = rulerLength;
             this.settings = settings;
-            this.converter = new UnitConverter(settings.MeasuringUnit, settings.MonitorDpi);
+            setConverter(settings.MeasuringUnit);
         }
 
         private void SetSizeForm_Load(object sender, EventArgs e)
@@ -32,10 +32,17 @@ namespace ScreenRuler
             updateText();
         }
 
+        private void setConverter(MeasuringUnit unit)
+        {
+            var screenRect = Screen.FromControl(this).Bounds;
+            var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
+            converter = new UnitConverter(unit, screenSize, settings.MonitorDpi);
+        }
+
         private void comUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
             var unit = (MeasuringUnit)comUnits.SelectedIndex;
-            converter = new UnitConverter(unit, settings.MonitorDpi);
+            setConverter(unit);
             updateText();
         }
 
