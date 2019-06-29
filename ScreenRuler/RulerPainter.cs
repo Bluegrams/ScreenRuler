@@ -85,7 +85,6 @@ namespace ScreenRuler
                 int offset = settings.Vertical ? position.Y : position.X;
                 string lblOffset = String.Format("{0}{1}",
                     Math.Round(converter.ConvertFromPixel(offset), 2), converter.UnitString);
-                var sc = g.DpiY / 96.0f; // adjust some text according to dpi scaling.
                 using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
                 using (Font font = new Font("Arial", 9))
                 {
@@ -100,7 +99,7 @@ namespace ScreenRuler
                     else
                     {
                         float x = size.Width * (7.0f / 8.0f);
-                        g.DrawString(lblLength, font, brush, x, max - 13 * sc, format);
+                        g.DrawString(lblLength, font, brush, x, max - 13, format);
                         g.DrawString(lblOffset, font, brush, x, 0, format);
                     }
                 }
@@ -145,7 +144,6 @@ namespace ScreenRuler
         {
             StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
             var text = converter.ConvertFromPixel(pos).ToString(".##");
-            var sc = g.DpiY / 96.0f; // adjust some text according to dpi scaling.
             using (Brush brush = new SolidBrush(col))
             using (Pen pen = new Pen(brush, 2))
             using (Font font = new Font("Arial", 9))
@@ -158,7 +156,7 @@ namespace ScreenRuler
                 else
                 {
                     g.DrawLine(pen, 0, pos, size.Width, pos);
-                    g.DrawString(text, font, brush, size.Width * (7.0f/8.0f), pos - 13 * sc, format);
+                    g.DrawString(text, font, brush, size.Width * (7.0f/8.0f), pos - 13, format);
                 }
             }
         }
