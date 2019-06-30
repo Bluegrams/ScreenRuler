@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RulerForm));
             this.contxtMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.conMeasure = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.conTopmost = new System.Windows.Forms.ToolStripMenuItem();
             this.conMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this.conVertical = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +47,7 @@
             this.conMarkCenter = new System.Windows.Forms.ToolStripMenuItem();
             this.conMarkThirds = new System.Windows.Forms.ToolStripMenuItem();
             this.conMarkMouse = new System.Windows.Forms.ToolStripMenuItem();
+            this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
             this.conMultiMarking = new System.Windows.Forms.ToolStripMenuItem();
             this.conClearCustomMarker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -53,13 +56,14 @@
             this.conAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // contxtMenu
             // 
             this.contxtMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conMeasure,
+            this.toolStripSeparator4,
             this.conTopmost,
             this.conMinimize,
             this.conVertical,
@@ -82,6 +86,17 @@
             this.contxtMenu.Name = "contxtMenu";
             resources.ApplyResources(this.contxtMenu, "contxtMenu");
             this.contxtMenu.Opening += new System.ComponentModel.CancelEventHandler(this.contxtMenu_Opening);
+            // 
+            // conMeasure
+            // 
+            this.conMeasure.Name = "conMeasure";
+            resources.ApplyResources(this.conMeasure, "conMeasure");
+            this.conMeasure.Click += new System.EventHandler(this.conMeasure_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // conTopmost
             // 
@@ -179,6 +194,12 @@
             resources.ApplyResources(this.conMarkMouse, "conMarkMouse");
             this.conMarkMouse.Click += new System.EventHandler(this.conMarkMouse_Click);
             // 
+            // conOffsetLength
+            // 
+            this.conOffsetLength.Name = "conOffsetLength";
+            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
+            this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
+            // 
             // conMultiMarking
             // 
             this.conMultiMarking.Name = "conMultiMarking";
@@ -224,12 +245,6 @@
             this.conExit.Name = "conExit";
             resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Click += new System.EventHandler(this.conExit_Click);
-            // 
-            // conOffsetLength
-            // 
-            this.conOffsetLength.Name = "conOffsetLength";
-            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
-            this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
             // 
             // RulerForm
             // 
@@ -278,6 +293,8 @@
         private System.Windows.Forms.ToolStripComboBox comUnits;
         private System.Windows.Forms.ToolStripMenuItem conMinimize;
         private System.Windows.Forms.ToolStripMenuItem conOffsetLength;
+        private System.Windows.Forms.ToolStripMenuItem conMeasure;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

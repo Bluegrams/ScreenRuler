@@ -135,6 +135,9 @@ namespace ScreenRuler
                 case Keys.Escape:
                     conExit.PerformClick();
                     break;
+                case Keys.Z:
+                    conMeasure.PerformClick();
+                    break;
                 case Keys.S:
                     conTopmost.PerformClick();
                     break;
@@ -247,6 +250,8 @@ namespace ScreenRuler
         {
             // Resize according to mouse scroll direction.
             var amount = Math.Sign(e.Delta);
+            if (ModifierKeys.HasFlag(Keys.Control))
+                amount *= 10;
             RulerLength += amount;
         }
 
@@ -305,6 +310,37 @@ namespace ScreenRuler
             comUnits.SelectedIndex = (int)Settings.MeasuringUnit;
         }
 
+        private void conMeasure_Click(object sender, EventArgs e)
+        {
+            var overlay = new OverlayForm();
+            overlay.TopMost = this.TopMost;
+            if (overlay.ShowDialog() == DialogResult.OK)
+            {
+                this.Location = overlay.WindowSelection.Location;
+                if (Vertical) this.Height = overlay.WindowSelection.Height;
+                else this.Width = overlay.WindowSelection.Width;
+                checkOutOfBorders();
+                Settings.ShowOffsetLengthLabels = true;
+            }
+        }
+
+        private void checkOutOfBorders()
+        {
+            var screenRec = Screen.FromRectangle(Bounds).WorkingArea;
+            if (!screenRec.IntersectsWith(Bounds))
+            {
+                Point newLocation = Location;
+                if (Location.X < screenRec.X)
+                    newLocation.X = screenRec.X;
+                else if (Location.X > screenRec.Right)
+                    newLocation.X = screenRec.Right - Width;
+                if (Location.Y < screenRec.Y)
+                    newLocation.Y = screenRec.Y;
+                else if (Location.Y >= screenRec.Bottom)
+                    newLocation.Y = screenRec.Bottom - Height;
+                Location = newLocation;
+            }
+        }
 
         private void conMinimize_Click(object sender, EventArgs e)
         {

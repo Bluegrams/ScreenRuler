@@ -166,7 +166,7 @@
     <value>Sehr niedrig (40%)</value>
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
-    <value>Zusätzliche Marker löschen</value>
+    <value>Alle Marker löschen</value>
   </data>
   <data name="conOpacity.Text" xml:space="preserve">
     <value>Deckkraft</value>
@@ -176,5 +176,8 @@
   </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Versatz und Länge anzeigen</value>
+  </data>
+  <data name="conMeasure.Text" xml:space="preserve">
+    <value>Fenster ausmessen</value>
   </data>
 </root>

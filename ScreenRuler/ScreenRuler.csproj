@@ -73,6 +73,7 @@
     <Compile Include="HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OverlayForm.cs" />
     <Compile Include="Properties\EnumResources.Designer.cs">
       <DependentUpon>EnumResources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -114,6 +115,7 @@
     <Compile Include="Units\LocalizedDescriptionAttribute.cs" />
     <Compile Include="Units\MeasuringUnit.cs" />
     <Compile Include="Units\UnitConverters.cs" />
+    <Compile Include="WinApi.cs" />
     <EmbeddedResource Include="CustomLineForm.de.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
