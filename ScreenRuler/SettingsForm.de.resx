@@ -162,4 +162,7 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Bildschirm DPI</value>
   </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
 </root>

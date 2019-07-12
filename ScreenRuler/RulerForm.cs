@@ -127,9 +127,8 @@ namespace ScreenRuler
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (e.Shift) { resizeKeyDown(e); return; }
+            if (e.Control) { resizeKeyDown(e); return; }
             else if (e.Alt) { dockKeyDown(e); return; }
-            int step = e.Control ? 5 : 1;
             switch (e.KeyCode)
             {
                 case Keys.Escape:
@@ -182,7 +181,7 @@ namespace ScreenRuler
         /// </summary>
         private void moveKeyDown(KeyEventArgs e)
         {
-            int step = e.Control ? 5 : 1;
+            int step = e.Shift ? Settings.MediumStep : 1;
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -205,7 +204,7 @@ namespace ScreenRuler
         /// </summary>
         private void resizeKeyDown(KeyEventArgs e)
         {
-            int step = e.Control ? 5 : 1;
+            int step = e.Shift ? Settings.MediumStep : 1;
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -250,8 +249,8 @@ namespace ScreenRuler
         {
             // Resize according to mouse scroll direction.
             var amount = Math.Sign(e.Delta);
-            if (ModifierKeys.HasFlag(Keys.Control))
-                amount *= 10;
+            if (ModifierKeys.HasFlag(Keys.Shift))
+                amount *= Settings.BigStep;
             RulerLength += amount;
         }
 

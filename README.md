@@ -4,7 +4,7 @@
 [![GitHub](https://img.shields.io/github/tag/bluegrams/screenruler.svg)](https://github.com/bluegrams/screenruler)
 [![Download](https://img.shields.io/sourceforge/dm/screenruler.svg)](https://sourceforge.net/projects/screenruler/files/)
 
-> Configurable screen ruler for measuring in pixels, centimeters, inches and points.
+> Configurable screen ruler for measuring in pixels, centimeters, inches, points and percent.
 
 [![](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/screenruler/files/)
 
@@ -16,11 +16,13 @@ Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. I
 
 ## Features
 
-- Measure in pixels, centimeters, inches and points
+- Measure in pixels, centimeters, inches, points and percent
 
 - Dark theme and option for custom coloring
 
 - Horizontal or vertical orientation
+
+- Automatically measure the size of windows on screen
 
 - Add arbitrary number of custom marking lines
 
@@ -41,20 +43,22 @@ Screen Ruler requires Windows 7 or newer and .NET Framework 4.5 or higher.
 From the help window (press `F1` in the app):
 
 > Keyboard Actions:  
-Arrow keys -  Move the ruler by one pixel  
-Ctrl + Arrow keys -  Move the ruler by five pixels.  
-Shift + Arrow keys -  Resize the ruler by five pixels.  
+'Z' -  Select a window to measure. Cancel with 'Esc'.  
+Arrow keys -  Move the ruler by one pixel.  
+Shift + Arrow keys -  Move the ruler by five pixels.  
+Ctrl + Arrow keys Resize the ruler by one pixel.  
 Ctrl + Shift + Arrow keys -  Resize the ruler by five pixels.  
 Alt + Arrow keys -  Dock the ruler to screen boundaries.  
 'L' -  Set marker at current length.  
 'C' -  Remove the first custom marking line.  
-ESC -  Exit Screen Ruler/ Help window  
+Esc -  Exit Screen Ruler, window selection or help.  
 See more keyboard actions in context menu.  
 > 
 > Mouse Actions:  
 Click on a position where a marker is set -  Open dialog to view/ delete marker.  
 Double-click on ruler -  Set marker at the clicked position.  
-Mouse wheel -  Resize the ruler.
+Mouse wheel -  Resize the ruler.  
+Shift + Mouse wheel -  Fast resizing of the ruler.  
 
 
 ## Version History
@@ -76,4 +80,4 @@ You are very welcome to contribute fixes and new features by opening a [pull req
 
 ## License
 
-This software is published under [BSD-3-Clause license](LICENSE.txt) by Bluegrams.
+This software is published under [BSD-3-Clause license](https://github.com/Bluegrams/ScreenRuler/blob/master/LICENSE.txt) by Bluegrams.

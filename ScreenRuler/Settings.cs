@@ -66,5 +66,14 @@ namespace ScreenRuler
         /// The currently selected theme (influenced by SelectedTheme).
         /// </summary>
         public Theme Theme { get; set; } = CommonThemes.LightTheme;
+
+        /// <summary>
+        /// Defines the size of one medium ruler resizing step.
+        /// </summary>
+        public int MediumStep { get; set; } = 5;
+        /// <summary>
+        /// Defines the size of one big ruler resizing step.
+        /// </summary>
+        public int BigStep { get; set; } = 25;
     }
 }
