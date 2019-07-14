@@ -81,6 +81,7 @@ namespace ScreenRuler
                     break;
             }
             // Check for updates
+            manager.UpdateNotifyMode = Bluegrams.Application.UpdateNotifyMode.Always;
             Task.Run(() =>
             {
                 manager.CheckForUpdates("https://screenruler.sourceforge.io/update.xml");
