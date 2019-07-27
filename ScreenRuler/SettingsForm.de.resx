@@ -165,4 +165,22 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Allgemein</value>
   </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Markerdicke</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Aussehen</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Steuerung</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Mittlere Schrittweite</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Große Schrittweite</value>
+  </data>
 </root>

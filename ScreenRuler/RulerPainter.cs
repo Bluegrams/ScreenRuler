@@ -136,7 +136,7 @@ namespace ScreenRuler
             // Draw all given custom markers
             foreach (int line in customLines)
             {
-                drawLine(g,size, settings, line, settings.Theme.CustomLinesColor, converter);
+                drawLine(g, size, settings, line, settings.Theme.CustomLinesColor, converter);
             }
         }
 
@@ -145,7 +145,7 @@ namespace ScreenRuler
             StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
             var text = converter.ConvertFromPixel(pos).ToString(".##");
             using (Brush brush = new SolidBrush(col))
-            using (Pen pen = new Pen(brush, 2))
+            using (Pen pen = new Pen(brush, settings.MarkerThickness))
             using (Font font = new Font("Arial", 9))
             {
                 if (!settings.Vertical)

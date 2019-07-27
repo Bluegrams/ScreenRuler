@@ -251,7 +251,7 @@ namespace ScreenRuler
             // Resize according to mouse scroll direction.
             var amount = Math.Sign(e.Delta);
             if (ModifierKeys.HasFlag(Keys.Shift))
-                amount *= Settings.BigStep;
+                amount *= Settings.LargeStep;
             RulerLength += amount;
         }
 

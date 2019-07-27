@@ -19,7 +19,7 @@ namespace ScreenRuler
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            // Load the current settings
+            // --- Load: First Page ---
             txtDPI.Text = settings.MonitorDpi.ToString();
             foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
             {
@@ -31,6 +31,10 @@ namespace ScreenRuler
                 .Where(b => b.Tag.ToString() == settings.SelectedTheme.ToString())
                 .First();
             selected.Checked = true;
+            // --- Load: Second Page ---
+            numMediumStep.Value = settings.MediumStep;
+            numLargeStep.Value = settings.LargeStep;
+            numMarkerThickness.Value = settings.MarkerThickness;
         }
 
         private void radTheme_CheckedChanged(object sender, EventArgs e)
@@ -67,6 +71,7 @@ namespace ScreenRuler
 
         private void butSubmit_Click(object sender, EventArgs e)
         {
+            // --- Apply: First Page ---
             if (int.TryParse(txtDPI.Text, out int result))
             {
                 // Set monitor DPI
@@ -79,14 +84,18 @@ namespace ScreenRuler
                 settings.SelectedTheme = (ThemeOption)Enum.Parse(typeof(ThemeOption), themeVal.ToString());
                 if (settings.SelectedTheme == ThemeOption.Custom)
                     setCustomThemeColors(settings.Theme);
-                this.DialogResult = DialogResult.OK;
-                return;
             }
             else
             {
                 MessageBox.Show(Properties.Resources.SettingsInvalidDpi);
                 this.DialogResult = DialogResult.None;
+                return;
             }
+            // --- Apply: Second Page ---
+            settings.MediumStep = (int)numMediumStep.Value;
+            settings.LargeStep = (int)numLargeStep.Value;
+            settings.MarkerThickness = (byte)numMarkerThickness.Value;
+            this.DialogResult = DialogResult.OK;
         }
 
         // Reads all color values from color chooser buttons

@@ -53,11 +53,26 @@
             this.butSubmit = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numMediumStep = new System.Windows.Forms.NumericUpDown();
+            this.numLargeStep = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numMarkerThickness = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grpColors.SuspendLayout();
             this.panCustomColors.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -228,6 +243,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -239,6 +255,97 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.numLargeStep);
+            this.groupBox2.Controls.Add(this.numMediumStep);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.numMarkerThickness);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // numMediumStep
+            // 
+            resources.ApplyResources(this.numMediumStep, "numMediumStep");
+            this.numMediumStep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMediumStep.Name = "numMediumStep";
+            this.numMediumStep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numLargeStep
+            // 
+            resources.ApplyResources(this.numLargeStep, "numLargeStep");
+            this.numLargeStep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLargeStep.Name = "numLargeStep";
+            this.numLargeStep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // numMarkerThickness
+            // 
+            resources.ApplyResources(this.numMarkerThickness, "numMarkerThickness");
+            this.numMarkerThickness.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numMarkerThickness.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMarkerThickness.Name = "numMarkerThickness";
+            this.numMarkerThickness.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // SettingsForm
             // 
@@ -263,6 +370,14 @@
             this.panCustomColors.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +408,14 @@
         private System.Windows.Forms.Button butColorCustomMarkers;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numLargeStep;
+        private System.Windows.Forms.NumericUpDown numMediumStep;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numMarkerThickness;
     }
 }

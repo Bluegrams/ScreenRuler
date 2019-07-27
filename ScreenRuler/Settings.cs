@@ -33,6 +33,10 @@ namespace ScreenRuler
         /// </summary>
         public bool ShowMouseLine { get; set; } = true;
         /// <summary>
+        /// Defines the thickness (in pixels) of one marking line.
+        /// </summary>
+        public byte MarkerThickness { get; set; } = 1;
+        /// <summary>
         /// Determines if multiple markings are allowed.
         /// </summary>
         public bool MultiMarking { get; set; } = true;
@@ -74,6 +78,6 @@ namespace ScreenRuler
         /// <summary>
         /// Defines the size of one big ruler resizing step.
         /// </summary>
-        public int BigStep { get; set; } = 25;
+        public int LargeStep { get; set; } = 25;
     }
 }
