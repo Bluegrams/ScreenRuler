@@ -43,16 +43,17 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppHelpers.WinForms, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-beta\lib\net45\AppHelpers.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
-    <Reference Include="MiniAppManager.Shared, Version=0.4.1.18264, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MiniAppManager.WinForms.0.4.1\lib\net45\MiniAppManager.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="MiniAppManager.WinForms, Version=0.4.1.18264, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MiniAppManager.WinForms.0.4.1\lib\net45\MiniAppManager.WinForms.dll</HintPath>
+    <Reference Include="PortableSettingsProvider, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PortableSettingsProvider.0.2.3\lib\net45\PortableSettingsProvider.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

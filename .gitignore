@@ -244,3 +244,5 @@ ModelManifest.xml
 # Custom
 *.py
 *.bat
+FodyWeavers.xsd
+*.zip

@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bluegrams.Application.WinForms;
 using System.Configuration;
 using ScreenRuler.Units;
+using Bluegrams.Application;
+using Bluegrams.Application.WinForms;
 
 namespace ScreenRuler
 {
     public partial class RulerForm : Form
     {
-        private MiniAppManager manager;
+        private WinFormsWindowManager manager;
+        private WinFormsUpdateChecker updateChecker;
         private int mouseLine;
 
         public Settings Settings { get; set; }
@@ -34,13 +35,15 @@ namespace ScreenRuler
         public RulerForm()
         {
             Settings = new Settings();
-            manager = new MiniAppManager(this, true) { AlwaysTrackResize = true };
+            manager = new WinFormsWindowManager(this) { AlwaysTrackResize = true };
             // Name all the properties we want to have persisted
-            manager.AddManagedProperty(nameof(Settings));
-            manager.AddManagedProperty(nameof(CustomLines), SettingsSerializeAs.Binary);
-            manager.AddManagedProperties(nameof(Opacity), nameof(TopMost));
+            manager.ManageDefault();
+            manager.Manage(nameof(Settings), nameof(TopMost));
+            manager.Manage(nameof(CustomLines), SettingsSerializeAs.Binary);
+            manager.Manage(nameof(Opacity), defaultValue: 1);
             manager.Initialize();
             InitializeComponent();
+            updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
             this.TopMost = true;
@@ -81,11 +84,7 @@ namespace ScreenRuler
                     break;
             }
             // Check for updates
-            manager.UpdateNotifyMode = Bluegrams.Application.UpdateNotifyMode.Always;
-            Task.Run(() =>
-            {
-                manager.CheckForUpdates("https://screenruler.sourceforge.io/update.xml");
-            });
+            updateChecker.CheckForUpdates();
         }
 
         #region Input Events
@@ -455,7 +454,9 @@ namespace ScreenRuler
         {
             var resMan = new System.Resources.ResourceManager(this.GetType());
             var img = ((Icon)resMan.GetObject("$this.Icon")).ToBitmap();
-            manager.ShowAboutBox(img);
+            AboutForm aboutForm = new AboutForm(img);
+            aboutForm.UpdateChecker = updateChecker;
+            aboutForm.ShowDialog(this);
         }
 
         private void conExit_Click(object sender, EventArgs e) => Close();

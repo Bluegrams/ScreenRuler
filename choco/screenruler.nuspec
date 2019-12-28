@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>screenruler</id>
+    <version>0.3.0</version>
+    <owners>alxnull</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>Screen Ruler</title>
+    <authors>alxnull</authors>
+    <projectUrl>https://screenruler.sourceforge.io/</projectUrl>
+    <iconUrl>https://gitcdn.xyz/repo/Bluegrams/ScreenRuler/master/img/icon.png</iconUrl>
+    <copyright>© 2019 Bluegrams</copyright>
+    <licenseUrl>https://github.com/bluegrams/ScreenRuler/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/bluegrams/ScreenRuler</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/bluegrams/ScreenRuler/issues</bugTrackerUrl>
+    <tags>screenruler ruler pixel screen measure</tags>
+    <summary>Configurable screen ruler for measuring in pixels, centimeters, inches and points.</summary>
+    <description>Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. 
+    It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches. 
+    The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added. 
+    Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings. </description>
+    <releaseNotes>https://github.com/bluegrams/ScreenRuler/blob/master/Changelog.md</releaseNotes>
+    <!-- =============================== -->      
+
+    <dependencies>
+      <dependency id="dotnet4.5" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

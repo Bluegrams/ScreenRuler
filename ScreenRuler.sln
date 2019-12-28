@@ -18,14 +18,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{E2560076-F4E
 		img\screenruler_styles_small.png = img\screenruler_styles_small.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "choco", "choco", "{AAA7F469-AAC5-4DD7-AC3C-619BAE233F57}"
+	ProjectSection(SolutionItems) = preProject
+		choco\screenruler.nuspec = choco\screenruler.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{07FDF133-B8EB-40FF-9216-9F8D2239D11F}"
+	ProjectSection(SolutionItems) = preProject
+		choco\tools\chocolateyinstall.ps1 = choco\tools\chocolateyinstall.ps1
+		choco\tools\chocolateyUninstall.ps1 = choco\tools\chocolateyUninstall.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Publish-Portable|Any CPU = Publish-Portable|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Portable|Any CPU.ActiveCfg = Release|Any CPU
+		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Portable|Any CPU.Build.0 = Release|Any CPU
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
@@ -34,6 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E2560076-F4E6-44D0-843A-2F251607367E} = {6A4246E2-D82B-4BAC-BDD1-F3B198ABC8A4}
+		{AAA7F469-AAC5-4DD7-AC3C-619BAE233F57} = {6A4246E2-D82B-4BAC-BDD1-F3B198ABC8A4}
+		{07FDF133-B8EB-40FF-9216-9F8D2239D11F} = {AAA7F469-AAC5-4DD7-AC3C-619BAE233F57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D95859A-FF01-44A8-A580-18614EAEC245}

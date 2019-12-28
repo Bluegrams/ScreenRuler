@@ -5,9 +5,10 @@ namespace ScreenRuler
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public const string UPDATE_URL = "https://screenruler.sourceforge.io/update.xml";
+
+        public const string UPDATE_MODE = "portable";
+
         [STAThread]
         static void Main()
         {
