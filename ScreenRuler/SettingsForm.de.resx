@@ -183,4 +183,7 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Große Schrittweite</value>
   </data>
+  <data name="chkToolTip.Text" xml:space="preserve">
+    <value>Tool Tip anzeigen</value>
+  </data>
 </root>

@@ -54,25 +54,26 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.numMediumStep = new System.Windows.Forms.NumericUpDown();
-            this.numLargeStep = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.numMarkerThickness = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
+            this.numMarkerThickness = new System.Windows.Forms.NumericUpDown();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numLargeStep = new System.Windows.Forms.NumericUpDown();
+            this.numMediumStep = new System.Windows.Forms.NumericUpDown();
+            this.chkToolTip = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.grpColors.SuspendLayout();
             this.panCustomColors.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -264,63 +265,19 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.numLargeStep);
-            this.groupBox2.Controls.Add(this.numMediumStep);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkToolTip);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.numMarkerThickness);
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
-            // numMediumStep
+            // label10
             // 
-            resources.ApplyResources(this.numMediumStep, "numMediumStep");
-            this.numMediumStep.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMediumStep.Name = "numMediumStep";
-            this.numMediumStep.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numLargeStep
-            // 
-            resources.ApplyResources(this.numLargeStep, "numLargeStep");
-            this.numLargeStep.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numLargeStep.Name = "numLargeStep";
-            this.numLargeStep.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // numMarkerThickness
             // 
@@ -342,10 +299,61 @@
             0,
             0});
             // 
-            // label10
+            // groupBox2
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.numLargeStep);
+            this.groupBox2.Controls.Add(this.numMediumStep);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // numLargeStep
+            // 
+            resources.ApplyResources(this.numLargeStep, "numLargeStep");
+            this.numLargeStep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLargeStep.Name = "numLargeStep";
+            this.numLargeStep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numMediumStep
+            // 
+            resources.ApplyResources(this.numMediumStep, "numMediumStep");
+            this.numMediumStep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMediumStep.Name = "numMediumStep";
+            this.numMediumStep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // chkToolTip
+            // 
+            resources.ApplyResources(this.chkToolTip, "chkToolTip");
+            this.chkToolTip.Name = "chkToolTip";
+            this.chkToolTip.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -371,13 +379,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,5 +425,6 @@
         private System.Windows.Forms.NumericUpDown numMediumStep;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numMarkerThickness;
+        private System.Windows.Forms.CheckBox chkToolTip;
     }
 }

@@ -44,6 +44,10 @@ namespace ScreenRuler
         /// Determines whether labels for the ruler offset and length are shown.
         /// </summary>
         public bool ShowOffsetLengthLabels { get; set; } = true;
+        /// <summary>
+        /// Determines whether to show the tool tip.
+        /// </summary>
+        public bool ShowToolTip { get; set; } = true;
 
         private ThemeOption selectedTheme;
         /// <summary>

@@ -7,6 +7,7 @@ using System.Configuration;
 using ScreenRuler.Units;
 using Bluegrams.Application;
 using Bluegrams.Application.WinForms;
+using ScreenRuler.Properties;
 
 namespace ScreenRuler
 {
@@ -49,6 +50,7 @@ namespace ScreenRuler
             this.TopMost = true;
             CustomLines = new LinkedList<int>();
             this.MouseWheel += RulerForm_MouseWheel;
+            rulerToolTip.SetToolTip(this, RulerLength.ToString());
         }
 
         private UnitConverter getUnitConverter()
@@ -127,8 +129,6 @@ namespace ScreenRuler
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (e.Control) { resizeKeyDown(e); return; }
-            else if (e.Alt) { dockKeyDown(e); return; }
             switch (e.KeyCode)
             {
                 case Keys.Escape:
@@ -156,10 +156,19 @@ namespace ScreenRuler
                     conClearCustomMarker.PerformClick();
                     break;
                 case Keys.C:
-                    if (CustomLines.Count > 0)
+                    if (e.Control)
                     {
-                        CustomLines.RemoveFirst();
-                        this.Invalidate();
+                        // copy size
+                        Clipboard.SetText(RulerLength.ToString());
+                    }
+                    else
+                    {
+                        // clear first custom marker
+                        if (CustomLines.Count > 0)
+                        {
+                            CustomLines.RemoveFirst();
+                            this.Invalidate();
+                        }
                     }
                     break;
                 case Keys.L:
@@ -170,7 +179,9 @@ namespace ScreenRuler
                     conHelp.PerformClick();
                     break;
                 default:
-                    moveKeyDown(e);
+                    if (e.Control) resizeKeyDown(e);
+                    else if (e.Alt) dockKeyDown(e);
+                    else moveKeyDown(e);
                     break;
             }
             base.OnKeyDown(e);
@@ -433,6 +444,27 @@ namespace ScreenRuler
             {
                 this.RulerLength = sizeForm.RulerLength;
             }
+        }
+
+        private void setToolTip()
+        {
+            // Tool tip
+            if (Settings.ShowToolTip)
+            {
+                rulerToolTip.SetToolTip(this,
+                    String.Format(Resources.ToolTipText, RulerLength, $"{Left}, {Top}"));
+            }
+            else rulerToolTip.SetToolTip(this, String.Empty);
+        }
+
+        private void RulerForm_Move(object sender, EventArgs e)
+        {
+            setToolTip();
+        }
+
+        private void RulerForm_SizeChanged(object sender, EventArgs e)
+        {
+            setToolTip();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

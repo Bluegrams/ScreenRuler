@@ -56,6 +56,7 @@
             this.conAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,11 +258,13 @@
             this.Name = "RulerForm";
             this.Opacity = 0.8D;
             this.Load += new System.EventHandler(this.RulerForm_Load);
+            this.SizeChanged += new System.EventHandler(this.RulerForm_SizeChanged);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseClick);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseUp);
+            this.Move += new System.EventHandler(this.RulerForm_Move);
             this.contxtMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -295,6 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem conOffsetLength;
         private System.Windows.Forms.ToolStripMenuItem conMeasure;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolTip rulerToolTip;
     }
 }
 

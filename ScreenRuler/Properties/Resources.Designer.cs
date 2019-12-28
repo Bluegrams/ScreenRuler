@@ -68,5 +68,15 @@ namespace ScreenRuler.Properties {
                 return ResourceManager.GetString("SettingsInvalidDpi", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length: {0}
+        ///Position: {1}.
+        /// </summary>
+        internal static string ToolTipText {
+            get {
+                return ResourceManager.GetString("ToolTipText", resourceCulture);
+            }
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace ScreenRuler
             numMediumStep.Value = settings.MediumStep;
             numLargeStep.Value = settings.LargeStep;
             numMarkerThickness.Value = settings.MarkerThickness;
+            chkToolTip.Checked = settings.ShowToolTip;
         }
 
         private void radTheme_CheckedChanged(object sender, EventArgs e)
@@ -95,6 +96,7 @@ namespace ScreenRuler
             settings.MediumStep = (int)numMediumStep.Value;
             settings.LargeStep = (int)numLargeStep.Value;
             settings.MarkerThickness = (byte)numMarkerThickness.Value;
+            settings.ShowToolTip = chkToolTip.Checked;
             this.DialogResult = DialogResult.OK;
         }
 

@@ -120,11 +120,19 @@
   <metadata name="contxtMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 407</value>
+  </data>
+  <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
+    <value>contxtMenu</value>
+  </data>
+  <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="conMeasure.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Z</value>
-    <comment>@Invariant</comment>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="conMeasure.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
   </data>
@@ -136,7 +144,6 @@
   </data>
   <data name="conTopmost.ShortcutKeyDisplayString" xml:space="preserve">
     <value>S</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conTopmost.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -146,7 +153,6 @@
   </data>
   <data name="conMinimize.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+M</value>
-    <comment>@Invariant</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="conMinimize.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -160,13 +166,18 @@
   </data>
   <data name="conVertical.ShortcutKeyDisplayString" xml:space="preserve">
     <value>V</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conVertical.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
   </data>
   <data name="conVertical.Text" xml:space="preserve">
     <value>Vertical</value>
+  </data>
+  <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 22</value>
+  </data>
+  <data name="conOpacity.Text" xml:space="preserve">
+    <value>Opacity</value>
   </data>
   <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
@@ -192,12 +203,6 @@
   <data name="conVeryLow.Text" xml:space="preserve">
     <value>Very Low (40%)</value>
   </data>
-  <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
-  </data>
-  <data name="conOpacity.Text" xml:space="preserve">
-    <value>Opacity</value>
-  </data>
   <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 23</value>
   </data>
@@ -206,7 +211,6 @@
   </data>
   <data name="conLength.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+L</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conLength.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+L</value>
@@ -222,7 +226,6 @@
   </data>
   <data name="conMarkCenter.ShortcutKeyDisplayString" xml:space="preserve">
     <value>M</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conMarkCenter.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -232,7 +235,6 @@
   </data>
   <data name="conMarkThirds.ShortcutKeyDisplayString" xml:space="preserve">
     <value>T</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conMarkThirds.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -242,7 +244,6 @@
   </data>
   <data name="conMarkMouse.ShortcutKeyDisplayString" xml:space="preserve">
     <value>P</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conMarkMouse.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -264,7 +265,6 @@
   </data>
   <data name="conClearCustomMarker.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conClearCustomMarker.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -277,7 +277,6 @@
   </data>
   <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+,</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="settingsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Oemcomma</value>
@@ -290,7 +289,6 @@
   </data>
   <data name="conHelp.ShortcutKeyDisplayString" xml:space="preserve">
     <value>F1</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -309,7 +307,6 @@
   </data>
   <data name="conExit.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Esc</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="conExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
@@ -317,15 +314,9 @@
   <data name="conExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 429</value>
-  </data>
-  <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
-    <value>contxtMenu</value>
-  </data>
-  <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <metadata name="rulerToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>134, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1055,7 +1046,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Screen Ruler</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;conMeasure.Name" xml:space="preserve">
     <value>conMeasure</value>
@@ -1206,6 +1196,12 @@
   </data>
   <data name="&gt;&gt;conExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rulerToolTip.Name" xml:space="preserve">
+    <value>rulerToolTip</value>
+  </data>
+  <data name="&gt;&gt;rulerToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RulerForm</value>

@@ -120,4 +120,8 @@
   <data name="SettingsInvalidDpi" xml:space="preserve">
     <value>Der gegebene DPI Wert ist nicht gültig. Bitte geben Sie eine gültige Ganzzahl ein.</value>
   </data>
+  <data name="ToolTipText" xml:space="preserve">
+    <value>Länge: {0}
+Position: {1}</value>
+  </data>
 </root>
