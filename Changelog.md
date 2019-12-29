@@ -1,5 +1,10 @@
 # Screen Ruler Changelog
 
+### v.0.4 (2020-01)
+- **New:** Configure marker thickness.
+- **New:** Configure size of resize/ move steps.
+- **New:** Minor: Tool tip and copy shortcut
+
 ### v.0.3 (2019-07)
 - **New:** Select a window from screen to measure it automatically.
 - **New:** Measuring unit: percentage of screen width/ height.

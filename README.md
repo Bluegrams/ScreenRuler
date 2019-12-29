@@ -43,22 +43,23 @@ Screen Ruler requires Windows 7 or newer and .NET Framework 4.5 or higher.
 From the help window (press `F1` in the app):
 
 > Keyboard Actions:  
-'Z' -  Select a window to measure. Cancel with 'Esc'.  
+Z -  Select a window to measure. Cancel with 'Esc'.  
 Arrow keys -  Move the ruler by one pixel.  
-Shift + Arrow keys -  Move the ruler by five pixels.  
-Ctrl + Arrow keys Resize the ruler by one pixel.  
-Ctrl + Shift + Arrow keys -  Resize the ruler by five pixels.  
+Shift + Arrow keys -  Move the ruler by one medium step (defaults to 5px).  
+Ctrl + Arrow keys -  Resize the ruler by one pixel.  
+Ctrl + Shift + Arrow keys -  Resize the ruler by one medium step (defaults to 5px).  
 Alt + Arrow keys -  Dock the ruler to screen boundaries.  
-'L' -  Set marker at current length.  
-'C' -  Remove the first custom marking line.  
+Ctrl + C -  Copy current length to clipboard.  
+L -  Set marker at current length.  
+C -  Remove the first custom marking line.  
 Esc -  Exit Screen Ruler, window selection or help.  
 See more keyboard actions in context menu.  
-> 
+>
 > Mouse Actions:  
 Click on a position where a marker is set -  Open dialog to view/ delete marker.  
 Double-click on ruler -  Set marker at the clicked position.  
 Mouse wheel -  Resize the ruler.  
-Shift + Mouse wheel -  Fast resizing of the ruler.  
+Shift + Mouse wheel -  Fast resizing of the ruler (large steps).  
 
 
 ## Version History
