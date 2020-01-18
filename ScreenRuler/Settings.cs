@@ -29,6 +29,10 @@ namespace ScreenRuler
         /// </summary>
         public bool ShowThirdLines { get; set; }
         /// <summary>
+        /// Determines whether the Golden Ratio should be marked on the ruler.
+        /// </summary>
+        public bool ShowGoldenLine { get; set; }
+        /// <summary>
         /// Determines whether the position of the cursor should be marked.
         /// </summary>
         public bool ShowMouseLine { get; set; } = true;

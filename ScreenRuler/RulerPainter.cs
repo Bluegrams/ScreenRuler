@@ -21,14 +21,15 @@ namespace ScreenRuler
             {MeasuringUnit.Inches, new int[] {1, 5, 10} },
             {MeasuringUnit.Centimeters, new int[] {1, 5, 10} },
             {MeasuringUnit.Points, new int[] {50, 100, 500} },
-            {MeasuringUnit.Percent, new int[] {5, 10, 50 } }
+            {MeasuringUnit.Percent, new int[] {5, 10, 50 } },
         };
 
         private Size size;
         private Point position;
         private Settings settings;
         private UnitConverter converter;
-
+        private float phiInverted;
+        
         public RulerPainter(Form form, Settings settings)
         {
             this.size = form.Size;
@@ -37,6 +38,7 @@ namespace ScreenRuler
             var screenRect = Screen.FromControl(form).Bounds;
             var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
             this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, settings.MonitorDpi);
+            this.phiInverted = (float)(2 / (1 + Math.Sqrt(5)));
         }
 
         /// <summary>
@@ -132,6 +134,18 @@ namespace ScreenRuler
                 Color col = settings.Theme.ThirdsLinesColor;
                 drawLine(g, size, settings, third, col, converter);
                 drawLine(g, size, settings, 2 * third, col, converter);
+            }
+            // Draw the line showing the Golden Ratio  
+            // Golden Ratio: A/B = (A+B)/A, where A > B > 0
+            // The marker | shows A of Golden ratio: <---A---|-B->
+            // Add a second marker showing same thing but from right/bottom instead, called B
+            if (settings.ShowGoldenLine)
+            {
+                float goldenA = phiInverted * rulerLength;
+                float goldenB = rulerLength - goldenA;
+                Color col = settings.Theme.GoldenLineColor;
+                drawLine(g, size, settings, goldenB, col, converter);
+                drawLine(g, size, settings, goldenA, col, converter);
             }
             // Draw all given custom markers
             foreach (int line in customLines)

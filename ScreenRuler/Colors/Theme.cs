@@ -30,8 +30,13 @@ namespace ScreenRuler.Colors
         public ColorSetting CenterLineColor { get; set; }
         /// <summary>
         /// The color of the markers that divide the ruler into three parts.
-        /// </summary>
+        /// </summary>        
         public ColorSetting ThirdsLinesColor { get; set; }
+        /// <summary>
+        /// The color of the marker that indicates the golden ratio on the ruler.
+        /// </summary>
+        public ColorSetting GoldenLineColor { get; set; }
+
         /// <summary>
         /// The color of custom markers.
         /// </summary>

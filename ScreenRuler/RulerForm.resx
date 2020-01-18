@@ -120,33 +120,24 @@
   <metadata name="contxtMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 407</value>
-  </data>
-  <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
-    <value>contxtMenu</value>
-  </data>
-  <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="conMeasure.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Z</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="conMeasure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conMeasure.Text" xml:space="preserve">
     <value>Measure Window</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="conTopmost.ShortcutKeyDisplayString" xml:space="preserve">
     <value>S</value>
   </data>
   <data name="conTopmost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conTopmost.Text" xml:space="preserve">
     <value>Stay On Top</value>
@@ -159,7 +150,7 @@
     <value>Ctrl+M</value>
   </data>
   <data name="conMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimize</value>
@@ -168,43 +159,43 @@
     <value>V</value>
   </data>
   <data name="conVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conVertical.Text" xml:space="preserve">
     <value>Vertical</value>
   </data>
-  <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
-  </data>
-  <data name="conOpacity.Text" xml:space="preserve">
-    <value>Opacity</value>
-  </data>
   <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>193, 26</value>
   </data>
   <data name="conHigh.Text" xml:space="preserve">
     <value>High (100%)</value>
   </data>
   <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>193, 26</value>
   </data>
   <data name="conDefault.Text" xml:space="preserve">
     <value>Default (80%)</value>
   </data>
   <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>193, 26</value>
   </data>
   <data name="conLow.Text" xml:space="preserve">
     <value>Low (60%)</value>
   </data>
   <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>193, 26</value>
   </data>
   <data name="conVeryLow.Text" xml:space="preserve">
     <value>Very Low (40%)</value>
   </data>
+  <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 26</value>
+  </data>
+  <data name="conOpacity.Text" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
   <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>121, 28</value>
   </data>
   <data name="comUnits.ToolTipText" xml:space="preserve">
     <value>Measuring Unit</value>
@@ -216,19 +207,19 @@
     <value>Ctrl+L</value>
   </data>
   <data name="conLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conLength.Text" xml:space="preserve">
     <value>Set Length...</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="conMarkCenter.ShortcutKeyDisplayString" xml:space="preserve">
     <value>M</value>
   </data>
   <data name="conMarkCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conMarkCenter.Text" xml:space="preserve">
     <value>Mark Center</value>
@@ -237,28 +228,37 @@
     <value>T</value>
   </data>
   <data name="conMarkThirds.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conMarkThirds.Text" xml:space="preserve">
     <value>Mark Thirds</value>
+  </data>
+  <data name="conMarkGolden.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="conMarkGolden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 26</value>
+  </data>
+  <data name="conMarkGolden.Text" xml:space="preserve">
+    <value>Mark Golden Ratio</value>
   </data>
   <data name="conMarkMouse.ShortcutKeyDisplayString" xml:space="preserve">
     <value>P</value>
   </data>
   <data name="conMarkMouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conMarkMouse.Text" xml:space="preserve">
     <value>Mark Mouse Position</value>
   </data>
   <data name="conOffsetLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Show Offset and Length</value>
   </data>
   <data name="conMultiMarking.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conMultiMarking.Text" xml:space="preserve">
     <value>Limit To One Marker</value>
@@ -267,13 +267,13 @@
     <value>Del</value>
   </data>
   <data name="conClearCustomMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Clear All Markers</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+,</value>
@@ -282,7 +282,7 @@
     <value>Ctrl+Oemcomma</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Settings</value>
@@ -291,28 +291,37 @@
     <value>F1</value>
   </data>
   <data name="conHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conHelp.Text" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="conAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conAbout.Text" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="conExit.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Esc</value>
   </data>
   <data name="conExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>236, 26</value>
   </data>
   <data name="conExit.Text" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 530</value>
+  </data>
+  <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
+    <value>contxtMenu</value>
+  </data>
+  <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="rulerToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>134, 17</value>
@@ -321,10 +330,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>350, 80</value>
+    <value>467, 98</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1044,6 +1053,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Screen Ruler</value>
   </data>
@@ -1202,6 +1214,12 @@
   </data>
   <data name="&gt;&gt;rulerToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;markGoldenRatioToolStripMenuItem.Name" xml:space="preserve">
+    <value>markGoldenRatioToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;markGoldenRatioToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RulerForm</value>

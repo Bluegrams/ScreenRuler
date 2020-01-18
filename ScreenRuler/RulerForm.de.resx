@@ -180,4 +180,7 @@
   <data name="conMeasure.Text" xml:space="preserve">
     <value>Fenster ausmessen</value>
   </data>
+  <data name="conMarkGolden.Text" xml:space="preserve">
+    <value>Goldener Schnitt</value>
+  </data>
 </root>
