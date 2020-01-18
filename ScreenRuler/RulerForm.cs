@@ -149,6 +149,9 @@ namespace ScreenRuler
                 case Keys.T:
                     conMarkThirds.PerformClick();
                     break;
+                case Keys.G:
+                    conMarkGolden.PerformClick();
+                    break;
                 case Keys.P:
                     conMarkMouse.PerformClick();
                     break;
@@ -313,6 +316,7 @@ namespace ScreenRuler
             conVertical.Checked = Vertical;
             conMarkCenter.Checked = Settings.ShowCenterLine;
             conMarkThirds.Checked = Settings.ShowThirdLines;
+            conMarkGolden.Checked = Settings.ShowGoldenLine;
             conTopmost.Checked = this.TopMost;
             conMarkMouse.Checked = Settings.ShowMouseLine;
             conOffsetLength.Checked = Settings.ShowOffsetLengthLabels;
@@ -378,6 +382,12 @@ namespace ScreenRuler
         private void conMarkThirds_Click(object sender, EventArgs e)
         {
             Settings.ShowThirdLines = !Settings.ShowThirdLines;
+            this.Invalidate();
+        }
+
+        private void conMarkGolden_Click(object sender, EventArgs e)
+        {
+            Settings.ShowGoldenLine = !Settings.ShowGoldenLine;
             this.Invalidate();
         }
 
@@ -519,5 +529,6 @@ namespace ScreenRuler
         }
 
         #endregion
+
     }
 }

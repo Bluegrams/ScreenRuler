@@ -57,11 +57,13 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.conMarkGolden = new System.Windows.Forms.ToolStripMenuItem();
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // contxtMenu
             // 
+            this.contxtMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contxtMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conMeasure,
             this.toolStripSeparator4,
@@ -74,6 +76,7 @@
             this.toolStripSeparator1,
             this.conMarkCenter,
             this.conMarkThirds,
+            this.conMarkGolden,
             this.conMarkMouse,
             this.conOffsetLength,
             this.conMultiMarking,
@@ -187,6 +190,12 @@
             resources.ApplyResources(this.conMarkThirds, "conMarkThirds");
             this.conMarkThirds.Click += new System.EventHandler(this.conMarkThirds_Click);
             // 
+            // conMarkGolden
+            // 
+            this.conMarkGolden.Name = "conMarkGolden";
+            resources.ApplyResources(this.conMarkGolden, "conMarkGolden");
+            this.conMarkGolden.Click += new System.EventHandler(this.conMarkGolden_Click);
+            // 
             // conMarkMouse
             // 
             this.conMarkMouse.Checked = true;
@@ -292,6 +301,7 @@
         private System.Windows.Forms.ToolStripMenuItem conHelp;
         private System.Windows.Forms.ToolStripMenuItem conMultiMarking;
         private System.Windows.Forms.ToolStripMenuItem conMarkThirds;
+        private System.Windows.Forms.ToolStripMenuItem conMarkGolden;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox comUnits;
         private System.Windows.Forms.ToolStripMenuItem conMinimize;

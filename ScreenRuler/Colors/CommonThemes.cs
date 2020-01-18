@@ -23,6 +23,7 @@ namespace ScreenRuler.Colors
             CenterLineColor = Color.Blue,
             MouseLineColor = Color.Orange,
             ThirdsLinesColor = Color.DeepSkyBlue,
+            GoldenLineColor = Color.Gold,
             CustomLinesColor = Color.Red
         };
 
@@ -37,6 +38,7 @@ namespace ScreenRuler.Colors
             CenterLineColor = Color.Fuchsia,
             MouseLineColor = Color.Orange,
             ThirdsLinesColor = Color.DarkTurquoise,
+            GoldenLineColor = Color.DarkGoldenrod,
             CustomLinesColor = Color.OrangeRed
         };
     }
