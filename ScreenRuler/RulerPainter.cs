@@ -24,11 +24,17 @@ namespace ScreenRuler
             {MeasuringUnit.Percent, new int[] {5, 10, 50 } },
         };
 
+        private const string MarkerSymbolCenterLine = "\u00BD";
+        private const string MarkerSymbolMouseLine  = "\u271C"; // u271B u271C
+        private const string MarkerSymbolThirdLines = "\u2153"; 
+        private const string MarkerSymbolGoldenLine = "\u03D5"; // u03C6 u03A6 u03D5
+        private const int MarkerSymbolCustomLine1 = 0x2460; // Circled 1, add for up to 20
+
         private Size size;
         private Point position;
         private Settings settings;
         private UnitConverter converter;
-        private float phiInverted;
+        private float phi;
         
         public RulerPainter(Form form, Settings settings)
         {
@@ -38,7 +44,7 @@ namespace ScreenRuler
             var screenRect = Screen.FromControl(form).Bounds;
             var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
             this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, settings.MonitorDpi);
-            this.phiInverted = (float)(2 / (1 + Math.Sqrt(5)));
+            this.phi = (float)(2 / (1 + Math.Sqrt(5)));
         }
 
         /// <summary>
@@ -118,22 +124,22 @@ namespace ScreenRuler
             if (settings.ShowCenterLine)
             {
                 float pos = (float)rulerLength / 2;
-                drawLine(g, size, settings, pos,
-                    settings.Theme.CenterLineColor, converter);
+                Color col = settings.Theme.CenterLineColor;
+                drawLine(g, size, settings, MarkerSymbolCenterLine, pos, col, converter);
             }
             // Draw line showing the position of the cursor
             if (settings.ShowMouseLine)
             {
-                drawLine(g, size, settings, mouseLine,
-                    settings.Theme.MouseLineColor, converter);
+                Color col = settings.Theme.MouseLineColor;
+                drawLine(g, size, settings, MarkerSymbolMouseLine, mouseLine, col, converter);
             }
             // Draw the lines showing the thirds of the ruler
             if (settings.ShowThirdLines)
             {
                 float third = (float)rulerLength / 3;
                 Color col = settings.Theme.ThirdsLinesColor;
-                drawLine(g, size, settings, third, col, converter);
-                drawLine(g, size, settings, 2 * third, col, converter);
+                drawLine(g, size, settings, MarkerSymbolThirdLines, third, col, converter);
+                drawLine(g, size, settings, MarkerSymbolThirdLines, 2 * third, col, converter);
             }
             // Draw the line showing the Golden Ratio  
             // Golden Ratio: A/B = (A+B)/A, where A > B > 0
@@ -141,23 +147,30 @@ namespace ScreenRuler
             // Add a second marker showing same thing but from right/bottom instead, called B
             if (settings.ShowGoldenLine)
             {
-                float goldenA = phiInverted * rulerLength;
+                float goldenA = phi * rulerLength;
                 float goldenB = rulerLength - goldenA;
                 Color col = settings.Theme.GoldenLineColor;
-                drawLine(g, size, settings, goldenB, col, converter);
-                drawLine(g, size, settings, goldenA, col, converter);
+                drawLine(g, size, settings, MarkerSymbolGoldenLine, goldenB, col, converter);
+                drawLine(g, size, settings, MarkerSymbolGoldenLine, goldenA, col, converter);
             }
             // Draw all given custom markers
+            int x = 0;
             foreach (int line in customLines)
             {
-                drawLine(g, size, settings, line, settings.Theme.CustomLinesColor, converter);
+                // Symbols for 1-20 using unicode. More than 20 - skip symbol
+                var symbol = x < 20 ? char.ConvertFromUtf32(MarkerSymbolCustomLine1 + x++) : $"{x++} ";
+                Color col = settings.Theme.CustomLinesColor;
+                drawLine(g, size, settings, symbol, line, col, converter);
             }
         }
 
-        private static void drawLine(Graphics g, Size size, Settings settings, float pos, Color col, UnitConverter converter)
+        private static void drawLine(Graphics g, Size size, Settings settings, string symbol, float pos, Color col, UnitConverter converter)
         {
-            StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
-            var text = converter.ConvertFromPixel(pos).ToString(".##");
+            // Number format with or without symbol depending on settings
+            string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'.##" : ".##";
+            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };  // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages. Symbols gets placed before or after depending on category of language it belong to. 
+            var text = converter.ConvertFromPixel(pos).ToString(numberFormat);
+
             using (Brush brush = new SolidBrush(col))
             using (Pen pen = new Pen(brush, settings.MarkerThickness))
             using (Font font = new Font("Arial", 9))

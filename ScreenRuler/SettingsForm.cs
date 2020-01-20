@@ -35,6 +35,7 @@ namespace ScreenRuler
             numMediumStep.Value = settings.MediumStep;
             numLargeStep.Value = settings.LargeStep;
             numMarkerThickness.Value = settings.MarkerThickness;
+            chkMarkerSymbol.Checked = settings.ShowMarkerSymbol;
             chkToolTip.Checked = settings.ShowToolTip;
         }
 
@@ -96,6 +97,7 @@ namespace ScreenRuler
             settings.MediumStep = (int)numMediumStep.Value;
             settings.LargeStep = (int)numLargeStep.Value;
             settings.MarkerThickness = (byte)numMarkerThickness.Value;
+            settings.ShowMarkerSymbol = chkMarkerSymbol.Checked;
             settings.ShowToolTip = chkToolTip.Checked;
             this.DialogResult = DialogResult.OK;
         }
