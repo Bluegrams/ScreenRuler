@@ -52,6 +52,10 @@ namespace ScreenRuler
         /// Determines whether to show the tool tip.
         /// </summary>
         public bool ShowToolTip { get; set; } = true;
+        /// <summary>
+        /// Determines whether to show a symbol for markers
+        /// </summary>
+        public bool ShowMarkerSymbol { get; set; } = false;
 
         private ThemeOption selectedTheme;
         /// <summary>
