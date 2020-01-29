@@ -257,8 +257,6 @@ namespace ScreenRuler
                     break;
             }
         }
-
-
         private void RulerForm_MouseWheel(object sender, MouseEventArgs e)
         {
             // Resize according to mouse scroll direction.
@@ -302,9 +300,9 @@ namespace ScreenRuler
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.Clear(Settings.Theme.Background);
-            var painter = new RulerPainter(this, Settings);
-            painter.Paint(e.Graphics);
-            painter.PaintMarkers(e.Graphics, mouseLine, CustomLines);
+            var painter = new RulerPainter(e.Graphics, this, Settings);
+            painter.PaintRuler();
+            painter.PaintMarkers(mouseLine, CustomLines);
             base.OnPaint(e);
         }
         #endregion

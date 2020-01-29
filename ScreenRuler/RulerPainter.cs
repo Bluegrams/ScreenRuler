@@ -28,16 +28,18 @@ namespace ScreenRuler
         private const string MarkerSymbolMouseLine  = "\u271C"; // u271B u271C
         private const string MarkerSymbolThirdLines = "\u2153"; 
         private const string MarkerSymbolGoldenLine = "\u03D5"; // u03C6 u03A6 u03D5
-        private const int MarkerSymbolCustomLine1 = 0x2460; // Circled 1, add for up to 20
+        private const int MarkerSymbolCustomLine1 = 0x2460-1; // Circled 1, add for up to 20 (-1 for correct behaviour post 20)
 
+        private Graphics g;
         private Size size;
         private Point position;
         private Settings settings;
         private UnitConverter converter;
         private float phi;
         
-        public RulerPainter(Form form, Settings settings)
+        public RulerPainter(Graphics graphics, Form form, Settings settings)
         {
+            this.g = graphics;
             this.size = form.Size;
             this.position = form.Location;
             this.settings = settings;
@@ -50,7 +52,7 @@ namespace ScreenRuler
         /// <summary>
         /// Paints the ruler scale onto the given Graphics object.
         /// </summary>
-        public void Paint(Graphics g)
+        public void PaintRuler()
         {
             int max = settings.Vertical ? size.Height : size.Width;
             int height = settings.Vertical ? size.Width : size.Height;
@@ -117,7 +119,7 @@ namespace ScreenRuler
         /// <summary>
         /// Draws the markers onto the given Graphics object.
         /// </summary>
-        public void PaintMarkers(Graphics g, float mouseLine, LinkedList<int> customLines)
+        public void PaintMarkers(float mouseLine, LinkedList<int> customLines)
         {
             int rulerLength = settings.Vertical ? size.Height : size.Width;
             // Draw line showing the ruler's center
@@ -125,21 +127,21 @@ namespace ScreenRuler
             {
                 float pos = (float)rulerLength / 2;
                 Color col = settings.Theme.CenterLineColor;
-                drawLine(g, size, settings, MarkerSymbolCenterLine, pos, col, converter);
+                drawLine(MarkerSymbolCenterLine, pos, col);
             }
             // Draw line showing the position of the cursor
             if (settings.ShowMouseLine)
             {
                 Color col = settings.Theme.MouseLineColor;
-                drawLine(g, size, settings, MarkerSymbolMouseLine, mouseLine, col, converter);
+                drawLine(MarkerSymbolMouseLine, mouseLine, col);
             }
             // Draw the lines showing the thirds of the ruler
             if (settings.ShowThirdLines)
             {
                 float third = (float)rulerLength / 3;
                 Color col = settings.Theme.ThirdsLinesColor;
-                drawLine(g, size, settings, MarkerSymbolThirdLines, third, col, converter);
-                drawLine(g, size, settings, MarkerSymbolThirdLines, 2 * third, col, converter);
+                drawLine(MarkerSymbolThirdLines, third, col);
+                drawLine(MarkerSymbolThirdLines, 2 * third, col);
             }
             // Draw the line showing the Golden Ratio  
             // Golden Ratio: A/B = (A+B)/A, where A > B > 0
@@ -150,21 +152,21 @@ namespace ScreenRuler
                 float goldenA = phi * rulerLength;
                 float goldenB = rulerLength - goldenA;
                 Color col = settings.Theme.GoldenLineColor;
-                drawLine(g, size, settings, MarkerSymbolGoldenLine, goldenB, col, converter);
-                drawLine(g, size, settings, MarkerSymbolGoldenLine, goldenA, col, converter);
+                drawLine(MarkerSymbolGoldenLine, goldenB, col);
+                drawLine(MarkerSymbolGoldenLine, goldenA, col);
             }
             // Draw all given custom markers
             int x = 0;
             foreach (int line in customLines)
             {
                 // Symbols for 1-20 using unicode. More than 20 - skip symbol
-                var symbol = x < 20 ? char.ConvertFromUtf32(MarkerSymbolCustomLine1 + x++) : $"{x++} ";
+                var symbol = x < 20 ? char.ConvertFromUtf32(MarkerSymbolCustomLine1 + ++x) : $"({++x}) ";
                 Color col = settings.Theme.CustomLinesColor;
-                drawLine(g, size, settings, symbol, line, col, converter);
+                drawLine(symbol, line, col);
             }
         }
 
-        private static void drawLine(Graphics g, Size size, Settings settings, string symbol, float pos, Color col, UnitConverter converter)
+        private void drawLine(string symbol, float pos, Color col)
         {
             // Number format with or without symbol depending on settings
             string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'.##" : ".##";
