@@ -117,76 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Einstellungen</value>
-  </data>
-  <data name="conAbout.Text" xml:space="preserve">
-    <value>Über</value>
-  </data>
-  <data name="conHelp.Text" xml:space="preserve">
-    <value>Hilfe</value>
-  </data>
-  <data name="conExit.Text" xml:space="preserve">
-    <value>Beenden</value>
-  </data>
-  <data name="conMarkMouse.Text" xml:space="preserve">
-    <value>Mausposition markieren</value>
-  </data>
-  <data name="conLength.Text" xml:space="preserve">
-    <value>Länge setzen...</value>
-  </data>
-  <data name="conMarkCenter.Text" xml:space="preserve">
-    <value>Mitte markieren</value>
-  </data>
-  <data name="conMarkThirds.Text" xml:space="preserve">
-    <value>Drittel markieren</value>
-  </data>
-  <data name="comUnits.ToolTipText" xml:space="preserve">
-    <value>Maßeinheit</value>
-  </data>
-  <data name="conVertical.Text" xml:space="preserve">
-    <value>Vertikal</value>
-  </data>
-  <data name="conMinimize.Text" xml:space="preserve">
-    <value>Minimieren</value>
-  </data>
-  <data name="conTopmost.Text" xml:space="preserve">
-    <value>Oben anheften</value>
-  </data>
-  <data name="conHigh.Text" xml:space="preserve">
-    <value>Hoch (100%)</value>
-  </data>
-  <data name="conDefault.Text" xml:space="preserve">
-    <value>Standard (80%)</value>
-  </data>
-  <data name="conLow.Text" xml:space="preserve">
-    <value>Niedrig (60%)</value>
-  </data>
-  <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Sehr niedrig (40%)</value>
-  </data>
-  <data name="conClearCustomMarker.Text" xml:space="preserve">
-    <value>Alle Marker löschen</value>
-  </data>
-  <data name="conOpacity.Text" xml:space="preserve">
-    <value>Deckkraft</value>
-  </data>
-  <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>Auf einen Marker limitieren</value>
-  </data>
-  <data name="conOffsetLength.Text" xml:space="preserve">
-    <value>Versatz und Länge anzeigen</value>
-  </data>
-  <data name="conMeasure.Text" xml:space="preserve">
-    <value>Fenster ausmessen</value>
-  </data>
-  <data name="conMarkGolden.Text" xml:space="preserve">
-    <value>Goldener Schnitt</value>
-  </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Strg+,</value>
-  </data>
-  <data name="conCalibrate.Text" xml:space="preserve">
+  <data name="$this.Text" xml:space="preserve">
     <value>Lineal kalibrieren</value>
+  </data>
+  <data name="butSubmit.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Anzeigeeigenschaften</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Vorschau:</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Anzeigeskalierung (%)</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Monitor DPI</value>
+  </data>
+  <data name="lnkHelp.Text" xml:space="preserve">
+    <value>Wie verwende ich das?</value>
   </data>
 </root>

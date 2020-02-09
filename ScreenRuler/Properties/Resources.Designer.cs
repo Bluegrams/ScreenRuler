@@ -61,16 +61,16 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The given DPI value is not valid. Please insert a valid integer..
+        ///   Looks up a localized string similar to Monitor DPI / Scaling: {0} / {1}%.
         /// </summary>
-        internal static string SettingsInvalidDpi {
+        internal static string ScalingText {
             get {
-                return ResourceManager.GetString("SettingsInvalidDpi", resourceCulture);
+                return ResourceManager.GetString("ScalingText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length: {0}
+        ///   Looks up a localized string similar to Length: {0}px
         ///Position: {1}.
         /// </summary>
         internal static string ToolTipText {

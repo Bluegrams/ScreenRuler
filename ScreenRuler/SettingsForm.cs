@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ScreenRuler.Colors;
+using ScreenRuler.Properties;
 using ScreenRuler.Units;
 
 namespace ScreenRuler
@@ -20,7 +21,7 @@ namespace ScreenRuler
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             // --- Load: First Page ---
-            txtDPI.Text = settings.MonitorDpi.ToString();
+            lblScaling.Text = String.Format(Resources.ScalingText, settings.MonitorDpi, settings.MonitorScaling);
             foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
             {
                 comUnits.Items.Add(item.GetDescription());
@@ -73,26 +74,14 @@ namespace ScreenRuler
 
         private void butSubmit_Click(object sender, EventArgs e)
         {
-            // --- Apply: First Page ---
-            if (int.TryParse(txtDPI.Text, out int result))
-            {
-                // Set monitor DPI
-                settings.MonitorDpi = result;
-                // Set measuring unit
-                var unit = (MeasuringUnit)comUnits.SelectedIndex;
-                settings.MeasuringUnit = unit;
-                // Set color theme
-                var themeVal = grpColors.Controls.OfType<RadioButton>().Where(b => b.Checked).First().Tag;
-                settings.SelectedTheme = (ThemeOption)Enum.Parse(typeof(ThemeOption), themeVal.ToString());
-                if (settings.SelectedTheme == ThemeOption.Custom)
-                    setCustomThemeColors(settings.Theme);
-            }
-            else
-            {
-                MessageBox.Show(Properties.Resources.SettingsInvalidDpi);
-                this.DialogResult = DialogResult.None;
-                return;
-            }
+            // Set measuring unit
+            var unit = (MeasuringUnit)comUnits.SelectedIndex;
+            settings.MeasuringUnit = unit;
+            // Set color theme
+            var themeVal = grpColors.Controls.OfType<RadioButton>().Where(b => b.Checked).First().Tag;
+            settings.SelectedTheme = (ThemeOption)Enum.Parse(typeof(ThemeOption), themeVal.ToString());
+            if (settings.SelectedTheme == ThemeOption.Custom)
+                setCustomThemeColors(settings.Theme);
             // --- Apply: Second Page ---
             settings.MediumStep = (int)numMediumStep.Value;
             settings.LargeStep = (int)numLargeStep.Value;
@@ -112,6 +101,17 @@ namespace ScreenRuler
             theme.ThirdsLinesColor = butColorDivideMarkers.BackColor;
             theme.MouseLineColor = butColorMouseMarker.BackColor;
             theme.CustomLinesColor = butColorCustomMarkers.BackColor;
+        }
+
+        private void butConfigure_Click(object sender, EventArgs e)
+        {
+            CalibrationForm scalingForm = new CalibrationForm(settings);
+            if (scalingForm.ShowDialog(this) == DialogResult.OK)
+            {
+                settings.MonitorDpi = scalingForm.MonitorDpi;
+                settings.MonitorScaling = scalingForm.MonitorScaling;
+                lblScaling.Text = String.Format(Resources.ScalingText, settings.MonitorDpi, settings.MonitorScaling);
+            }
         }
 
         private void butCancel_Click(object sender, EventArgs e)

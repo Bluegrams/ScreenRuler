@@ -16,6 +16,7 @@ namespace ScreenRuler
         private WinFormsWindowManager manager;
         private WinFormsUpdateChecker updateChecker;
         private int mouseLine;
+        private RulerPainter painter;
 
         public Settings Settings { get; set; }
         public bool Vertical { get { return Settings.Vertical; } }
@@ -45,12 +46,12 @@ namespace ScreenRuler
             manager.Initialize();
             InitializeComponent();
             updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);
+            painter = new RulerPainter(this);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
             this.TopMost = true;
             CustomLines = new LinkedList<int>();
             this.MouseWheel += RulerForm_MouseWheel;
-            rulerToolTip.SetToolTip(this, RulerLength.ToString());
         }
 
         private UnitConverter getUnitConverter()
@@ -300,7 +301,7 @@ namespace ScreenRuler
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.Clear(Settings.Theme.Background);
-            var painter = new RulerPainter(e.Graphics, this, Settings);
+            painter.Update(e.Graphics, Settings);
             painter.PaintRuler();
             painter.PaintMarkers(mouseLine, CustomLines);
             base.OnPaint(e);
@@ -481,6 +482,16 @@ namespace ScreenRuler
             if (settingsForm.ShowDialog(this) == DialogResult.OK)
             {
                 this.Invalidate();
+            }
+        }
+
+        private void conCalibrate_Click(object sender, EventArgs e)
+        {
+            CalibrationForm scalingForm = new CalibrationForm(Settings);
+            if (scalingForm.ShowDialog(this) == DialogResult.OK)
+            {
+                Settings.MonitorDpi = scalingForm.MonitorDpi;
+                Settings.MonitorScaling = scalingForm.MonitorScaling;
             }
         }
 

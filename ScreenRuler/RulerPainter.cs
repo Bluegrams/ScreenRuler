@@ -30,23 +30,31 @@ namespace ScreenRuler
         private const string MarkerSymbolGoldenLine = "\u03D5"; // u03C6 u03A6 u03D5
         private const int MarkerSymbolCustomLine1 = 0x2460-1; // Circled 1, add for up to 20 (-1 for correct behaviour post 20)
 
-        private Graphics g;
-        private Size size;
-        private Point position;
+        private readonly Control c;
+        private readonly float phi;
         private Settings settings;
         private UnitConverter converter;
-        private float phi;
+        private Graphics g;
         
-        public RulerPainter(Graphics graphics, Form form, Settings settings)
+        public RulerPainter(Control control)
         {
-            this.g = graphics;
-            this.size = form.Size;
-            this.position = form.Location;
-            this.settings = settings;
-            var screenRect = Screen.FromControl(form).Bounds;
-            var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
-            this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, settings.MonitorDpi);
+            this.c = control;
             this.phi = (float)(2 / (1 + Math.Sqrt(5)));
+        }
+
+        /// <summary>
+        /// Updates relevant properties before repainting the ruler.
+        /// </summary>
+        /// <param name="g">The graphics to be painted on.</param>
+        /// <param name="settings">The settings.</param>
+        public void Update(Graphics g, Settings settings)
+        {
+            this.g = g;
+            this.settings = settings;
+            var screenRect = Screen.FromControl(c).Bounds;
+            var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
+            int virtualDpi = (int)(settings.MonitorDpi / (settings.MonitorScaling / 100.0));
+            this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, virtualDpi);
         }
 
         /// <summary>
@@ -54,8 +62,8 @@ namespace ScreenRuler
         /// </summary>
         public void PaintRuler()
         {
-            int max = settings.Vertical ? size.Height : size.Width;
-            int height = settings.Vertical ? size.Width : size.Height;
+            int max = settings.Vertical ? c.Size.Height : c.Size.Width;
+            int height = settings.Vertical ? c.Size.Width : c.Size.Height;
             // ----- Draw the ruler scale -----
             int[] ticks = Ticks[settings.MeasuringUnit];
             // valUnit: the current position in the chosen unit.
@@ -73,14 +81,14 @@ namespace ScreenRuler
                     if (!settings.Vertical)
                     {
                         g.DrawLine(pen, valPixel, 0, valPixel, length);
-                        g.DrawLine(pen, valPixel, size.Height - length, valPixel, size.Height);
+                        g.DrawLine(pen, valPixel, c.Size.Height - length, valPixel, c.Size.Height);
                         if (valPixel > 0 && i % ticks[2] == 0)
                             g.DrawString(valUnit.ToString(), font, brush, valPixel - 8, length + 3);
                     }
                     else
                     {
                         g.DrawLine(pen, 0, valPixel, length, valPixel);
-                        g.DrawLine(pen, size.Width - length, valPixel, size.Width, valPixel);
+                        g.DrawLine(pen, c.Size.Width - length, valPixel, c.Size.Width, valPixel);
                         if (valPixel > 0 && i % ticks[2] == 0)
                             g.DrawString(valUnit.ToString(), font, brush, length + 3, valPixel - 7);
                     }
@@ -92,7 +100,7 @@ namespace ScreenRuler
             {
                 string lblLength = String.Format("{0}{1}",
                     Math.Round(converter.ConvertFromPixel(max), 2), converter.UnitString);
-                int offset = settings.Vertical ? position.Y : position.X;
+                int offset = settings.Vertical ? c.Location.Y : c.Location.X;
                 string lblOffset = String.Format("{0}{1}",
                     Math.Round(converter.ConvertFromPixel(offset), 2), converter.UnitString);
                 using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
@@ -102,13 +110,13 @@ namespace ScreenRuler
                     StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
                     if (!settings.Vertical)
                     {
-                        float y = size.Height / 2.0f;
+                        float y = c.Size.Height / 2.0f;
                         g.DrawString(lblLength, font, brush, max, y, format);
                         g.DrawString(lblOffset, font, brush, 0, y);
                     }
                     else
                     {
-                        float x = size.Width * (7.0f / 8.0f);
+                        float x = c.Size.Width * (7.0f / 8.0f);
                         g.DrawString(lblLength, font, brush, x, max - 13, format);
                         g.DrawString(lblOffset, font, brush, x, 0, format);
                     }
@@ -121,7 +129,7 @@ namespace ScreenRuler
         /// </summary>
         public void PaintMarkers(float mouseLine, LinkedList<int> customLines)
         {
-            int rulerLength = settings.Vertical ? size.Height : size.Width;
+            int rulerLength = settings.Vertical ? c.Size.Height : c.Size.Width;
             // Draw line showing the ruler's center
             if (settings.ShowCenterLine)
             {
@@ -170,7 +178,9 @@ namespace ScreenRuler
         {
             // Number format with or without symbol depending on settings
             string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'.##" : ".##";
-            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };  // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages. Symbols gets placed before or after depending on category of language it belong to. 
+            // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages.
+            // Symbols gets placed before or after depending on category of language it belong to. 
+            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
             var text = converter.ConvertFromPixel(pos).ToString(numberFormat);
 
             using (Brush brush = new SolidBrush(col))
@@ -179,13 +189,13 @@ namespace ScreenRuler
             {
                 if (!settings.Vertical)
                 {
-                    g.DrawLine(pen, pos, 0, pos, size.Height);
-                    g.DrawString(text, font, brush, pos, size.Height/2, format);
+                    g.DrawLine(pen, pos, 0, pos, c.Size.Height);
+                    g.DrawString(text, font, brush, pos, c.Size.Height/2, format);
                 }
                 else
                 {
-                    g.DrawLine(pen, 0, pos, size.Width, pos);
-                    g.DrawString(text, font, brush, size.Width * (7.0f/8.0f), pos - 13, format);
+                    g.DrawLine(pen, 0, pos, c.Size.Width, pos);
+                    g.DrawString(text, font, brush, c.Size.Width * (7.0f/8.0f), pos - 13, format);
                 }
             }
         }

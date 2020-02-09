@@ -58,12 +58,12 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.conCalibrate = new System.Windows.Forms.ToolStripMenuItem();
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // contxtMenu
             // 
-            resources.ApplyResources(this.contxtMenu, "contxtMenu");
             this.contxtMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contxtMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conMeasure,
@@ -84,178 +84,185 @@
             this.conClearCustomMarker,
             this.toolStripSeparator3,
             this.settingsToolStripMenuItem,
+            this.conCalibrate,
             this.conHelp,
             this.conAbout,
             this.toolStripSeparator2,
             this.conExit});
             this.contxtMenu.Name = "contxtMenu";
-            this.rulerToolTip.SetToolTip(this.contxtMenu, resources.GetString("contxtMenu.ToolTip"));
+            resources.ApplyResources(this.contxtMenu, "contxtMenu");
             this.contxtMenu.Opening += new System.ComponentModel.CancelEventHandler(this.contxtMenu_Opening);
             // 
             // conMeasure
             // 
-            resources.ApplyResources(this.conMeasure, "conMeasure");
             this.conMeasure.Name = "conMeasure";
+            resources.ApplyResources(this.conMeasure, "conMeasure");
             this.conMeasure.Click += new System.EventHandler(this.conMeasure_Click);
             // 
             // toolStripSeparator4
             // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // conTopmost
             // 
-            resources.ApplyResources(this.conTopmost, "conTopmost");
             this.conTopmost.Checked = true;
             this.conTopmost.CheckState = System.Windows.Forms.CheckState.Checked;
             this.conTopmost.Name = "conTopmost";
+            resources.ApplyResources(this.conTopmost, "conTopmost");
             this.conTopmost.Click += new System.EventHandler(this.conTopmost_Click);
             // 
             // conMinimize
             // 
-            resources.ApplyResources(this.conMinimize, "conMinimize");
             this.conMinimize.Name = "conMinimize";
+            resources.ApplyResources(this.conMinimize, "conMinimize");
             this.conMinimize.Click += new System.EventHandler(this.conMinimize_Click);
             // 
             // conVertical
             // 
-            resources.ApplyResources(this.conVertical, "conVertical");
             this.conVertical.Name = "conVertical";
+            resources.ApplyResources(this.conVertical, "conVertical");
             this.conVertical.Click += new System.EventHandler(this.conVertical_Click);
             // 
             // conOpacity
             // 
-            resources.ApplyResources(this.conOpacity, "conOpacity");
             this.conOpacity.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conHigh,
             this.conDefault,
             this.conLow,
             this.conVeryLow});
             this.conOpacity.Name = "conOpacity";
+            resources.ApplyResources(this.conOpacity, "conOpacity");
             // 
             // conHigh
             // 
-            resources.ApplyResources(this.conHigh, "conHigh");
             this.conHigh.Name = "conHigh";
+            resources.ApplyResources(this.conHigh, "conHigh");
             this.conHigh.Tag = "100";
             this.conHigh.Click += new System.EventHandler(this.changeOpacity);
             // 
             // conDefault
             // 
-            resources.ApplyResources(this.conDefault, "conDefault");
             this.conDefault.Name = "conDefault";
+            resources.ApplyResources(this.conDefault, "conDefault");
             this.conDefault.Tag = "80";
             this.conDefault.Click += new System.EventHandler(this.changeOpacity);
             // 
             // conLow
             // 
-            resources.ApplyResources(this.conLow, "conLow");
             this.conLow.Name = "conLow";
+            resources.ApplyResources(this.conLow, "conLow");
             this.conLow.Tag = "60";
             this.conLow.Click += new System.EventHandler(this.changeOpacity);
             // 
             // conVeryLow
             // 
-            resources.ApplyResources(this.conVeryLow, "conVeryLow");
             this.conVeryLow.Name = "conVeryLow";
+            resources.ApplyResources(this.conVeryLow, "conVeryLow");
             this.conVeryLow.Tag = "40";
             this.conVeryLow.Click += new System.EventHandler(this.changeOpacity);
             // 
             // comUnits
             // 
-            resources.ApplyResources(this.comUnits, "comUnits");
             this.comUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comUnits.Name = "comUnits";
+            resources.ApplyResources(this.comUnits, "comUnits");
             this.comUnits.SelectedIndexChanged += new System.EventHandler(this.comUnits_SelectedIndexChanged);
             // 
             // conLength
             // 
-            resources.ApplyResources(this.conLength, "conLength");
             this.conLength.Name = "conLength";
+            resources.ApplyResources(this.conLength, "conLength");
             this.conLength.Click += new System.EventHandler(this.conLength_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // conMarkCenter
             // 
-            resources.ApplyResources(this.conMarkCenter, "conMarkCenter");
             this.conMarkCenter.Name = "conMarkCenter";
+            resources.ApplyResources(this.conMarkCenter, "conMarkCenter");
             this.conMarkCenter.Click += new System.EventHandler(this.conMarkCenter_Click);
             // 
             // conMarkThirds
             // 
-            resources.ApplyResources(this.conMarkThirds, "conMarkThirds");
             this.conMarkThirds.Name = "conMarkThirds";
+            resources.ApplyResources(this.conMarkThirds, "conMarkThirds");
             this.conMarkThirds.Click += new System.EventHandler(this.conMarkThirds_Click);
             // 
             // conMarkGolden
             // 
-            resources.ApplyResources(this.conMarkGolden, "conMarkGolden");
             this.conMarkGolden.Name = "conMarkGolden";
+            resources.ApplyResources(this.conMarkGolden, "conMarkGolden");
             this.conMarkGolden.Click += new System.EventHandler(this.conMarkGolden_Click);
             // 
             // conMarkMouse
             // 
-            resources.ApplyResources(this.conMarkMouse, "conMarkMouse");
             this.conMarkMouse.Checked = true;
             this.conMarkMouse.CheckState = System.Windows.Forms.CheckState.Checked;
             this.conMarkMouse.Name = "conMarkMouse";
+            resources.ApplyResources(this.conMarkMouse, "conMarkMouse");
             this.conMarkMouse.Click += new System.EventHandler(this.conMarkMouse_Click);
             // 
             // conOffsetLength
             // 
-            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
             this.conOffsetLength.Name = "conOffsetLength";
+            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
             this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
             // 
             // conMultiMarking
             // 
-            resources.ApplyResources(this.conMultiMarking, "conMultiMarking");
             this.conMultiMarking.Name = "conMultiMarking";
+            resources.ApplyResources(this.conMultiMarking, "conMultiMarking");
             this.conMultiMarking.Click += new System.EventHandler(this.conMultiMarking_Click);
             // 
             // conClearCustomMarker
             // 
-            resources.ApplyResources(this.conClearCustomMarker, "conClearCustomMarker");
             this.conClearCustomMarker.Name = "conClearCustomMarker";
+            resources.ApplyResources(this.conClearCustomMarker, "conClearCustomMarker");
             this.conClearCustomMarker.Click += new System.EventHandler(this.conClearCustomMarker_Click);
             // 
             // toolStripSeparator3
             // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // conHelp
             // 
-            resources.ApplyResources(this.conHelp, "conHelp");
             this.conHelp.Name = "conHelp";
+            resources.ApplyResources(this.conHelp, "conHelp");
             this.conHelp.Click += new System.EventHandler(this.conHelp_Click);
             // 
             // conAbout
             // 
-            resources.ApplyResources(this.conAbout, "conAbout");
             this.conAbout.Name = "conAbout";
+            resources.ApplyResources(this.conAbout, "conAbout");
             this.conAbout.Click += new System.EventHandler(this.conAbout_Click);
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // conExit
             // 
-            resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Name = "conExit";
+            resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Click += new System.EventHandler(this.conExit_Click);
+            // 
+            // conCalibrate
+            // 
+            this.conCalibrate.Name = "conCalibrate";
+            resources.ApplyResources(this.conCalibrate, "conCalibrate");
+            this.conCalibrate.Click += new System.EventHandler(this.conCalibrate_Click);
             // 
             // RulerForm
             // 
@@ -267,7 +274,6 @@
             this.MaximizeBox = false;
             this.Name = "RulerForm";
             this.Opacity = 0.8D;
-            this.rulerToolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.RulerForm_Load);
             this.SizeChanged += new System.EventHandler(this.RulerForm_SizeChanged);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseClick);
@@ -311,6 +317,7 @@
         private System.Windows.Forms.ToolStripMenuItem conMeasure;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolTip rulerToolTip;
+        private System.Windows.Forms.ToolStripMenuItem conCalibrate;
     }
 }
 

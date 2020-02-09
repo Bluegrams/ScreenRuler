@@ -21,6 +21,10 @@ namespace ScreenRuler
         /// </summary>
         public int MonitorDpi { get; set; } = 96;
         /// <summary>
+        /// The display scaling value in percent (100 by default).
+        /// </summary>
+        public int MonitorScaling { get; set; } = 100;
+        /// <summary>
         /// Determines whether the center of the ruler should be marked.
         /// </summary>
         public bool ShowCenterLine { get; set; }

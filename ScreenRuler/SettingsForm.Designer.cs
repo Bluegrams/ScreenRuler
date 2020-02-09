@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDPI = new System.Windows.Forms.TextBox();
+            this.butConfigure = new System.Windows.Forms.Button();
+            this.lblScaling = new System.Windows.Forms.Label();
             this.comUnits = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpColors = new System.Windows.Forms.GroupBox();
@@ -79,29 +79,31 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDPI);
+            this.groupBox1.Controls.Add(this.butConfigure);
+            this.groupBox1.Controls.Add(this.lblScaling);
             this.groupBox1.Controls.Add(this.comUnits);
             this.groupBox1.Controls.Add(this.label1);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // butConfigure
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.butConfigure, "butConfigure");
+            this.butConfigure.Name = "butConfigure";
+            this.butConfigure.UseVisualStyleBackColor = true;
+            this.butConfigure.Click += new System.EventHandler(this.butConfigure_Click);
             // 
-            // txtDPI
+            // lblScaling
             // 
-            resources.ApplyResources(this.txtDPI, "txtDPI");
-            this.txtDPI.Name = "txtDPI";
+            resources.ApplyResources(this.lblScaling, "lblScaling");
+            this.lblScaling.Name = "lblScaling";
             // 
             // comUnits
             // 
-            resources.ApplyResources(this.comUnits, "comUnits");
             this.comUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comUnits.FormattingEnabled = true;
+            resources.ApplyResources(this.comUnits, "comUnits");
             this.comUnits.Name = "comUnits";
             // 
             // label1
@@ -111,11 +113,11 @@
             // 
             // grpColors
             // 
-            resources.ApplyResources(this.grpColors, "grpColors");
             this.grpColors.Controls.Add(this.panCustomColors);
             this.grpColors.Controls.Add(this.radCustom);
             this.grpColors.Controls.Add(this.radDark);
             this.grpColors.Controls.Add(this.radLight);
+            resources.ApplyResources(this.grpColors, "grpColors");
             this.grpColors.Name = "grpColors";
             this.grpColors.TabStop = false;
             // 
@@ -228,51 +230,51 @@
             // 
             // butCancel
             // 
-            resources.ApplyResources(this.butCancel, "butCancel");
             this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.butCancel, "butCancel");
             this.butCancel.Name = "butCancel";
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
             // butSubmit
             // 
-            resources.ApplyResources(this.butSubmit, "butSubmit");
             this.butSubmit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.butSubmit, "butSubmit");
             this.butSubmit.Name = "butSubmit";
             this.butSubmit.UseVisualStyleBackColor = true;
             this.butSubmit.Click += new System.EventHandler(this.butSubmit_Click);
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.grpColors);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.chkMarkerSymbol);
             this.groupBox3.Controls.Add(this.chkToolTip);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.numMarkerThickness);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -315,11 +317,11 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.numLargeStep);
             this.groupBox2.Controls.Add(this.numMediumStep);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -401,8 +403,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDPI;
+        private System.Windows.Forms.Label lblScaling;
         private System.Windows.Forms.ComboBox comUnits;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpColors;
@@ -435,5 +436,6 @@
         private System.Windows.Forms.NumericUpDown numMarkerThickness;
         private System.Windows.Forms.CheckBox chkToolTip;
         private System.Windows.Forms.CheckBox chkMarkerSymbol;
+        private System.Windows.Forms.Button butConfigure;
     }
 }
