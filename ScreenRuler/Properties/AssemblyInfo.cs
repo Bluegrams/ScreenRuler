@@ -14,7 +14,7 @@ using Bluegrams.Application.Attributes;
 [assembly: ProductWebsite("https://screenruler.sourceforge.io")]
 [assembly: ProductLicense("https://github.com/Bluegrams/ScreenRuler/blob/master/LICENSE.txt", "BSD-3-Clause")]
 [assembly: CompanyWebsite("http://bluegrams.com", "Bluegrams")]
-[assembly: SupportedCultures("en", "de")]
+[assembly: SupportedCultures("en", "de", "es")]
 
 [assembly: AppPortable(true)]
 
