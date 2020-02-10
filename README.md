@@ -77,7 +77,15 @@ Places to get help:
 
 ## Contribute
 
-You are very welcome to contribute fixes and new features by opening a [pull request on GitHub](https://github.com/bluegrams/screenruler/pulls).
+You are very welcome to support the development of this app by reporting bugs, adding fixes, translating or suggesting new features.
+The easiest way to contribute is to open [pull request on GitHub](https://github.com/bluegrams/screenruler/pulls).
+
+#### Translations
+
+This app was translated into the following languages by helpful contributors:
+
+- English, German: @alxnull
+- Spanish: Leandro Martín Drudi
 
 ## License
 
