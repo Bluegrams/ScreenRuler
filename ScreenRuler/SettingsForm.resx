@@ -719,7 +719,7 @@
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>OK</value>
-    <comment>@Invariant</comment>
+    
   </data>
   <data name="&gt;&gt;butSubmit.Name" xml:space="preserve">
     <value>butSubmit</value>

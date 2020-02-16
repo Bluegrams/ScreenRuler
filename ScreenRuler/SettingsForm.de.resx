@@ -935,4 +935,7 @@
   <data name="butConfigure.Text" xml:space="preserve">
     <value>Konfigurieren</value>
   </data>
+  <data name="butSubmit.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>
