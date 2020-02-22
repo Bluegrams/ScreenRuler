@@ -26,7 +26,7 @@ Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. I
 
 - Add arbitrary number of custom marking lines
 
-- Auto-mark center or thirds of ruler
+- Auto-mark center, thirds or golden ratio
 
 - Precise moving and resizing with keyboard shortcuts
 
@@ -68,7 +68,7 @@ Read [the changelog](https://github.com/bluegrams/screenruler/blob/master/Change
 
 ## Feedback and Support
 
-_Please leave a feedback on [Sourceforge](https://sourceforge.net/p/screenruler/reviews) or on [AlternativeTo](https://alternativeto.net/software/bluegrams-screen-ruler/). Thank you!_
+_Please leave a feedback on [Sourceforge](https://sourceforge.net/p/screenruler/reviews), on [AlternativeTo](https://alternativeto.net/software/bluegrams-screen-ruler/) or anywhere else. Thank you!_
 
 Places to get help:
 
@@ -85,7 +85,7 @@ The easiest way to contribute is to open [pull request on GitHub](https://github
 This app was translated into the following languages by helpful contributors:
 
 - English, German: @alxnull
-- Spanish: Leandro Martín Drudi
+- Spanish: Leandro Martin Drudi
 
 ## License
 

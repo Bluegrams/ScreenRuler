@@ -1,5 +1,11 @@
 # Screen Ruler Changelog
 
+### v.0.5 (2020-02)
+- **New:** Marker for Golden Ratio
+- **New:** Symbols for marker lines (optional)
+- **New:** Spanish translation
+- **Changed:** Added window for easy ruler calibration
+
 ### v.0.4 (2020-01)
 - **New:** Configure marker thickness.
 - **New:** Configure size of resize/ move steps.
