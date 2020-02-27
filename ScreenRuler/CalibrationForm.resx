@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 141</value>
+    <value>0, 130</value>
   </data>
   <data name="panPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 70</value>
+    <value>284, 65</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panPreview.TabIndex" type="System.Int32, mscorlib">
@@ -145,10 +145,10 @@
     <value>3</value>
   </data>
   <data name="numScaling.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 45</value>
+    <value>148, 42</value>
   </data>
   <data name="numScaling.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
+    <value>80, 21</value>
   </data>
   <data name="numScaling.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -166,10 +166,10 @@
     <value>2</value>
   </data>
   <data name="numDPI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 19</value>
+    <value>148, 18</value>
   </data>
   <data name="numDPI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
+    <value>80, 21</value>
   </data>
   <data name="numDPI.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -193,16 +193,16 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 47</value>
+    <value>33, 43</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
+    <value>101, 12</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Display Scaling (%)</value>
+    <value>显示缩放比例 (%)</value>
   </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
@@ -223,16 +223,16 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 21</value>
+    <value>33, 19</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
+    <value>65, 12</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Monitor DPI</value>
+    <value>显示器 DPI</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -250,19 +250,19 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 117</value>
+    <value>9, 108</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+    <value>35, 12</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Preview:</value>
+    <value>预览:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -277,10 +277,10 @@
     <value>2</value>
   </data>
   <data name="comUnits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 114</value>
+    <value>142, 105</value>
   </data>
   <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 21</value>
+    <value>130, 20</value>
   </data>
   <data name="comUnits.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -301,16 +301,16 @@
     <value>True</value>
   </data>
   <data name="lnkHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 82</value>
+    <value>6, 76</value>
   </data>
   <data name="lnkHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
+    <value>83, 12</value>
   </data>
   <data name="lnkHelp.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="lnkHelp.Text" xml:space="preserve">
-    <value>How do I use this?</value>
+    <value>应该如何使用?</value>
   </data>
   <data name="&gt;&gt;lnkHelp.Name" xml:space="preserve">
     <value>lnkHelp</value>
@@ -328,16 +328,16 @@
     <value>NoControl</value>
   </data>
   <data name="butSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 76</value>
+    <value>180, 70</value>
   </data>
   <data name="butSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 24</value>
+    <value>74, 22</value>
   </data>
   <data name="butSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>确认</value>
   </data>
   <data name="&gt;&gt;butSubmit.Name" xml:space="preserve">
     <value>butSubmit</value>
@@ -355,13 +355,13 @@
     <value>12, 2</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 106</value>
+    <value>260, 98</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Screen Properties</value>
+    <value>显示器属性</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -379,10 +379,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 211</value>
+    <value>284, 195</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1106,7 +1106,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Calibrate Ruler</value>
+    <value>矫正标尺</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CalibrationForm</value>

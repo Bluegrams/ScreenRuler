@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 52</value>
+    <value>61, 48</value>
   </data>
   <data name="txtLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>100, 21</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtLength.TabIndex" type="System.Int32, mscorlib">
@@ -147,16 +147,16 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 55</value>
+    <value>12, 51</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>34, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Length:</value>
+    <value>长度:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -171,16 +171,16 @@
     <value>4</value>
   </data>
   <data name="butCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 92</value>
+    <value>110, 85</value>
   </data>
   <data name="butCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 27</value>
+    <value>92, 25</value>
   </data>
   <data name="butCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="butCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="&gt;&gt;butCancel.Name" xml:space="preserve">
     <value>butCancel</value>
@@ -195,16 +195,16 @@
     <value>3</value>
   </data>
   <data name="butSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 92</value>
+    <value>12, 85</value>
   </data>
   <data name="butSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 27</value>
+    <value>92, 25</value>
   </data>
   <data name="butSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>确认</value>
   </data>
   <data name="&gt;&gt;butSubmit.Name" xml:space="preserve">
     <value>butSubmit</value>
@@ -219,10 +219,10 @@
     <value>2</value>
   </data>
   <data name="comUnits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>12, 11</value>
   </data>
   <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 21</value>
+    <value>190, 20</value>
   </data>
   <data name="comUnits.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -243,10 +243,10 @@
     <value>True</value>
   </data>
   <data name="lblUnitString.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 55</value>
+    <value>167, 51</value>
   </data>
   <data name="lblUnitString.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>0, 12</value>
   </data>
   <data name="lblUnitString.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -267,17 +267,17 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>214, 131</value>
+    <value>214, 121</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Set Ruler Length</value>
+    <value>设置标尺长度</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SetSizeForm</value>

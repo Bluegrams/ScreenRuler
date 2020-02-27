@@ -117,44 +117,96 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="webBrowser1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="butConfigure.Text" xml:space="preserve">
+    <value>配置</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="webBrowser1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
   </data>
-  <data name="webBrowser1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 18</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>测量单位</value>
   </data>
-  <data name="webBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 213</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>单位</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="webBrowser1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>背景</value>
   </data>
-  <data name="&gt;&gt;webBrowser1.Name" xml:space="preserve">
-    <value>webBrowser1</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>刻度</value>
   </data>
-  <data name="&gt;&gt;webBrowser1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>自定义标记</value>
   </data>
-  <data name="&gt;&gt;webBrowser1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>鼠标标记</value>
   </data>
-  <data name="&gt;&gt;webBrowser1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>分隔</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+  <data name="radCustom.Text" xml:space="preserve">
+    <value>自定义</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 213</value>
+  <data name="radDark.Text" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="radLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="radLight.Text" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="grpColors.Text" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="butCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="butSubmit.Text" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>通用</value>
+  </data>
+  <data name="chkMarkerSymbol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="chkMarkerSymbol.Text" xml:space="preserve">
+    <value>显示标记符号</value>
+  </data>
+  <data name="chkToolTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="chkToolTip.Text" xml:space="preserve">
+    <value>显示工具提示</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>标记刻度</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>大步长尺寸</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>中等步长尺寸</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>控制</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>高级</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -874,16 +926,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>屏幕标尺(Screen Ruler) - 帮助</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>HelpForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>设置</value>
   </data>
 </root>
