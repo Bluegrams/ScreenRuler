@@ -126,10 +126,10 @@
     <value>0, 0</value>
   </data>
   <data name="webBrowser1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>20, 18</value>
   </data>
   <data name="webBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 231</value>
+    <value>334, 213</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="webBrowser1.TabIndex" type="System.Int32, mscorlib">
@@ -151,10 +151,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 231</value>
+    <value>334, 213</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -878,7 +878,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Screen Ruler - Help</value>
+    <value>屏幕标尺(Screen Ruler) - 帮助</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>HelpForm</value>

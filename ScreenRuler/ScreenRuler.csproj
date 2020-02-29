@@ -145,6 +145,12 @@
     <EmbeddedResource Include="CalibrationForm.es.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CalibrationForm.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalibrationForm.zh-CN.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomLineForm.de.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +160,9 @@
     <EmbeddedResource Include="CustomLineForm.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomLineForm.zh-CN.resx">
+      <DependentUpon>CustomLineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.de.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +170,9 @@
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.zh-CN.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
@@ -195,9 +207,6 @@
     <EmbeddedResource Include="RulerForm.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalibrationForm.resx">
-      <DependentUpon>CalibrationForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RulerForm.zh-CN.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +217,9 @@
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetSizeForm.resx">
+      <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetSizeForm.zh-CN.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.de.resx">
