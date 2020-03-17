@@ -81,8 +81,18 @@
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OverlayForm.cs" />
+    <Compile Include="Properties\EnumResources.zh-CN.Designer.cs">
+      <DependentUpon>EnumResources.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\EnumResources.Designer.cs">
       <DependentUpon>EnumResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.zh-CN.Designer.cs">
+      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -135,6 +145,12 @@
     <EmbeddedResource Include="CalibrationForm.es.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CalibrationForm.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalibrationForm.zh-CN.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomLineForm.de.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +158,9 @@
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomLineForm.resx">
+      <DependentUpon>CustomLineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomLineForm.zh-CN.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.de.resx">
@@ -153,11 +172,22 @@
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.zh-CN.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumResources.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.de.resx" />
     <EmbeddedResource Include="Properties\EnumResources.es.resx" />
     <EmbeddedResource Include="Properties\EnumResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,8 +207,8 @@
     <EmbeddedResource Include="RulerForm.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalibrationForm.resx">
-      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="RulerForm.zh-CN.resx">
+      <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetSizeForm.de.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
@@ -189,6 +219,9 @@
     <EmbeddedResource Include="SetSizeForm.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SetSizeForm.zh-CN.resx">
+      <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.de.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +229,9 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.zh-CN.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -208,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Help\Help.de.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\Help.zh.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Help\Help.en.html">
