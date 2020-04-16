@@ -152,24 +152,6 @@
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimize</value>
   </data>
-  <data name="conModeHorizontal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="conModeHorizontal.Text" xml:space="preserve">
-    <value>Horizontal</value>
-  </data>
-  <data name="conModeVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="conModeVertical.Text" xml:space="preserve">
-    <value>Vertical</value>
-  </data>
-  <data name="conModeTwoDimensional.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="conModeTwoDimensional.Text" xml:space="preserve">
-    <value>Two-Dimensional</value>
-  </data>
   <data name="conRulerMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 22</value>
   </data>
@@ -181,6 +163,15 @@
   </data>
   <data name="conOpacity.Text" xml:space="preserve">
     <value>Opacity</value>
+  </data>
+  <data name="conSlimMode.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>J</value>
+  </data>
+  <data name="conSlimMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 22</value>
+  </data>
+  <data name="conSlimMode.Text" xml:space="preserve">
+    <value>Slim Scale</value>
   </data>
   <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 23</value>
@@ -309,7 +300,7 @@
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 473</value>
+    <value>202, 495</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
@@ -317,26 +308,44 @@
   <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="conModeHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="conModeHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="conModeVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="conModeVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="conModeTwoDimensional.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="conModeTwoDimensional.Text" xml:space="preserve">
+    <value>Two-Dimensional</value>
+  </data>
   <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="conHigh.Text" xml:space="preserve">
     <value>High (100%)</value>
   </data>
   <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="conDefault.Text" xml:space="preserve">
     <value>Default (80%)</value>
   </data>
   <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="conLow.Text" xml:space="preserve">
     <value>Low (60%)</value>
   </data>
   <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="conVeryLow.Text" xml:space="preserve">
     <value>Very Low (40%)</value>
@@ -1265,6 +1274,12 @@
   </data>
   <data name="&gt;&gt;rulerToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conSlimMode.Name" xml:space="preserve">
+    <value>conSlimMode</value>
+  </data>
+  <data name="&gt;&gt;conSlimMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RulerForm</value>

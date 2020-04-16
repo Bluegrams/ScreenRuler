@@ -57,6 +57,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.butCancel;
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.lblLine);

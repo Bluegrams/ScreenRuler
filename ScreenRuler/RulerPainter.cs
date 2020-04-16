@@ -11,7 +11,8 @@ namespace ScreenRuler
     /// </summary>
     class RulerPainter
     {
-        public const int RULER_WIDTH = 80;
+        public const int RULER_WIDTH_WIDE = 80;
+        public const int RULER_WIDTH_SLIM = 45;
 
         /// <summary>
         /// Defines the position where ticks should be drawn dependent on the chosen unit.
@@ -37,6 +38,7 @@ namespace ScreenRuler
         private Settings settings;
         private UnitConverter converter;
         private Graphics g;
+        private int drawWidth;
         private FormResizeMode resizeMode = FormResizeMode.Horizontal;
         
         public RulerPainter(Control control)
@@ -58,6 +60,7 @@ namespace ScreenRuler
             var screenSize = Screen.FromControl(c).Bounds.Size;
             int virtualDpi = (int)(settings.MonitorDpi / (settings.MonitorScaling / 100.0));
             this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, virtualDpi);
+            this.drawWidth = settings.SlimMode ? RULER_WIDTH_SLIM : RULER_WIDTH_WIDE;
         }
 
         /// <summary>
@@ -69,9 +72,9 @@ namespace ScreenRuler
             using (Brush brush = new SolidBrush(settings.Theme.Background))
             {
                 if (resizeMode.HasFlag(FormResizeMode.Horizontal))
-                    g.FillRectangle(brush, 0, 0, c.Width, RULER_WIDTH);
+                    g.FillRectangle(brush, 0, 0, c.Width, drawWidth);
                 if (resizeMode.HasFlag(FormResizeMode.Vertical))
-                    g.FillRectangle(brush, 0, 0, RULER_WIDTH, c.Height);
+                    g.FillRectangle(brush, 0, 0, drawWidth, c.Height);
             }
             // ----- Draw the ruler scale -----
             if (resizeMode.HasFlag(FormResizeMode.Horizontal))
@@ -83,7 +86,6 @@ namespace ScreenRuler
         protected void PaintRulerScale(bool vertical)
         {
             int max = vertical ? c.Size.Height : c.Size.Width;
-            int width = RULER_WIDTH;
             // ----- Draw the ruler scale -----
             int[] ticks = Ticks[settings.MeasuringUnit];
             // valUnit: the current position in the chosen unit.
@@ -93,7 +95,7 @@ namespace ScreenRuler
             {
                 valUnit = i / 10;
                 valPixel = converter.ConvertToPixel(valUnit, vertical);
-                int length = i % ticks[2] == 0 ? width / 4 : i % ticks[1] == 0 ? width / 6 : width / 16;
+                int length = i % ticks[2] == 0 ? drawWidth / 4 : i % ticks[1] == 0 ? drawWidth / 6 : drawWidth / 16;
                 using (Brush brush = new SolidBrush(settings.Theme.TickColor))
                 using (Pen pen = new Pen(brush, 1))
                 using (Font font = new Font("Arial", 9))
@@ -103,8 +105,8 @@ namespace ScreenRuler
                     {
                         if (resizeMode == FormResizeMode.Horizontal || pos > length)
                             g.DrawLine(pen, pos, 0, pos, length);
-                        if (resizeMode == FormResizeMode.Horizontal || valPixel > RULER_WIDTH)
-                            g.DrawLine(pen, pos, width - length, pos, width);
+                        if (!settings.SlimMode && (resizeMode == FormResizeMode.Horizontal || valPixel > drawWidth))
+                            g.DrawLine(pen, pos, drawWidth - length, pos, drawWidth);
                         if (valPixel > 0 && i % ticks[2] == 0)
                             g.DrawString(valUnit.ToString(), font, brush, pos - 8, length + 3);
                     }
@@ -112,8 +114,8 @@ namespace ScreenRuler
                     {
                         if (resizeMode == FormResizeMode.Vertical || pos > length)
                             g.DrawLine(pen, 0, pos, length, pos);
-                        if (resizeMode == FormResizeMode.Vertical || valPixel > RULER_WIDTH)
-                            g.DrawLine(pen, width - length, pos, width, pos);
+                        if (!settings.SlimMode && (resizeMode == FormResizeMode.Vertical || valPixel > drawWidth))
+                            g.DrawLine(pen, drawWidth - length, pos, drawWidth, pos);
                         if (valPixel > 0 && i % ticks[2] == 0)
                             g.DrawString(valUnit.ToString(), font, brush, length + 3, pos - 7);
                     }
@@ -123,18 +125,22 @@ namespace ScreenRuler
             // ----- Optionally, draw total length bound to right border and start offset -----
             if (settings.ShowOffsetLengthLabels)
             {
+                int roundingDigits = settings.SlimMode ? 1 : 2;
                 string lblLength = String.Format("{0}{1}",
-                    Math.Round(converter.ConvertFromPixel(max, vertical), 2), converter.UnitString);
+                    Math.Round(converter.ConvertFromPixel(max, vertical), roundingDigits), converter.UnitString);
                 int offset = vertical ? c.Location.Y : c.Location.X;
                 string lblOffset = String.Format("{0}{1}",
-                    Math.Round(converter.ConvertFromPixel(offset, vertical), 2), converter.UnitString);
+                    Math.Round(converter.ConvertFromPixel(offset, vertical), roundingDigits), converter.UnitString);
                 using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
                 using (Font font = new Font("Arial", 9))
                 {
-                    StringFormat format = new StringFormat(StringFormatFlags.DirectionRightToLeft);
+                    StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
                     if (!vertical)
                     {
-                        float y = RULER_WIDTH / 2.0f;
+                        float y = drawWidth;
+                        // adjust the label text based on ruler width
+                        if (settings.SlimMode) y -= 14;
+                        else y /= 2.0f;
                         g.DrawString(lblLength, font, brush, max, y, format);
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
@@ -142,8 +148,9 @@ namespace ScreenRuler
                     }
                     else
                     {
-                        float x = RULER_WIDTH * (7.0f / 8.0f);
-                        g.DrawString(lblLength, font, brush, x, max - 13, format);
+                        float x = drawWidth;
+                        if (!settings.SlimMode) x *= (7.0f / 8.0f);
+                        g.DrawString(lblLength, font, brush, x, max - 14, format);
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
                             g.DrawString(lblOffset, font, brush, x, 0, format);
@@ -226,13 +233,16 @@ namespace ScreenRuler
                 float pos = marker.Value;
                 if (!marker.Vertical)
                 {
-                    g.DrawLine(pen, pos, 0, pos, RULER_WIDTH);
-                    g.DrawString(text, font, brush, pos, RULER_WIDTH / 2, format);
+                    g.DrawLine(pen, pos, 0, pos, drawWidth);
+                    // only draw labels if we have enough space
+                    if (!settings.SlimMode)
+                        g.DrawString(text, font, brush, pos, drawWidth / 2, format);
                 }
                 else
                 {
-                    g.DrawLine(pen, 0, pos, RULER_WIDTH, pos);
-                    g.DrawString(text, font, brush, RULER_WIDTH * (7.0f/8.0f), pos - 13, format);
+                    g.DrawLine(pen, 0, pos, drawWidth, pos);
+                    if (!settings.SlimMode)
+                        g.DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos - 13, format);
                 }
             }
         }

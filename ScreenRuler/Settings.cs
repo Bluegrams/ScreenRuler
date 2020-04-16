@@ -8,6 +8,10 @@ namespace ScreenRuler
     public class Settings
     {
         /// <summary>
+        /// Determines whether only a slim ruler scale should be shown.
+        /// </summary>
+        public bool SlimMode { get; set; }
+        /// <summary>
         /// The currently selected measuring unit.
         /// </summary>
         public MeasuringUnit MeasuringUnit { get; set; }

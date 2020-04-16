@@ -19,8 +19,19 @@ namespace ScreenRuler
 
         #region Sizing Restriction
 
+        private int restrictSize;
         private FormResizeMode resizeMode;
         private int cachedWidth, cachedHeight;
+
+        public int RestrictSize
+        {
+            get => restrictSize;
+            set
+            {
+                restrictSize = value;
+                MinimumSize = new Size(value, value);
+            }
+        }
 
         public FormResizeMode ResizeMode
         {
@@ -41,11 +52,11 @@ namespace ScreenRuler
             switch (resizeMode)
             {
                 case FormResizeMode.Horizontal:
-                    this.MaximumSize = new Size(int.MaxValue, RulerPainter.RULER_WIDTH);
+                    this.MaximumSize = new Size(int.MaxValue, RestrictSize);
                     if (wRest) this.Width = cachedWidth;
                     break;
                 case FormResizeMode.Vertical:
-                    this.MaximumSize = new Size(RulerPainter.RULER_WIDTH, int.MaxValue);
+                    this.MaximumSize = new Size(RestrictSize, int.MaxValue);
                     if (hRest) this.Height = cachedHeight;
                     break;
                 case FormResizeMode.TwoDimensional:

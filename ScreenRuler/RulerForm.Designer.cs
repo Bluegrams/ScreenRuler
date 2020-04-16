@@ -62,6 +62,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.conSlimMode = new System.Windows.Forms.ToolStripMenuItem();
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +76,7 @@
             this.conMinimize,
             this.conRulerMode,
             this.conOpacity,
+            this.conSlimMode,
             this.comUnits,
             this.conLength,
             this.toolStripSeparator1,
@@ -292,6 +294,12 @@
             resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Click += new System.EventHandler(this.conExit_Click);
             // 
+            // conSlimMode
+            // 
+            this.conSlimMode.Name = "conSlimMode";
+            resources.ApplyResources(this.conSlimMode, "conSlimMode");
+            this.conSlimMode.Click += new System.EventHandler(this.conSlimMode_Click);
+            // 
             // RulerForm
             // 
             resources.ApplyResources(this, "$this");
@@ -348,6 +356,7 @@
         private System.Windows.Forms.ToolStripMenuItem conModeHorizontal;
         private System.Windows.Forms.ToolStripMenuItem conModeVertical;
         private System.Windows.Forms.ToolStripMenuItem conModeTwoDimensional;
+        private System.Windows.Forms.ToolStripMenuItem conSlimMode;
     }
 }
 

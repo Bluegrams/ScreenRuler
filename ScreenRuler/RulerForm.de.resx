@@ -198,4 +198,7 @@
   <data name="conModeVertical.Text" xml:space="preserve">
     <value>Vertikal</value>
   </data>
+  <data name="conSlimMode.Text" xml:space="preserve">
+    <value>Schmale Skala</value>
+  </data>
 </root>

@@ -34,8 +34,7 @@ namespace ScreenRuler
 
         public void Stop()
         {
-            if (thread.IsAlive)
-                thread.Abort();
+            thread.Abort();
         }
     }
 }

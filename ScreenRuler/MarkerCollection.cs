@@ -54,10 +54,10 @@ namespace ScreenRuler
         /// Adds a marker to the collection based on its location on the ruler form.
         /// </summary>
         /// <param name="pos">The location of the marker.</param>
-        public void AddMarker(Point pos, bool verticalOnly = false)
+        public void AddMarker(Point pos, int limit, bool verticalOnly = false)
         {
             // Add the marker as horizontal or vertical marker based on position
-            bool vertical = verticalOnly || pos.Y >= RulerPainter.RULER_WIDTH;
+            bool vertical = verticalOnly || pos.Y >= limit;
             if (vertical)
                 Markers.AddLast(new Marker(pos.Y, true));
             else Markers.AddLast(new Marker(pos.X, false));
@@ -72,16 +72,19 @@ namespace ScreenRuler
         /// <param name="pos">The search location.</param>
         /// <param name="diff">The search window size.</param>
         /// <returns>The found marker if available, a default marker otherwise.</returns>
-        public Marker GetMarker(Point pos, int diff = 2)
+        public Marker GetMarker(Point pos, int limit, int diff = 2)
         {
-            if (pos.Y < RulerPainter.RULER_WIDTH)
+            Marker marker = Marker.Default;
+            // first search horizontal markers, then vertical markers
+            if (pos.Y < limit)
             {
-                return Markers.Where((v) => Math.Abs(pos.X - v.Value) <= diff).FirstOrDefault();
+                marker = Markers.Where((v) => Math.Abs(pos.X - v.Value) <= diff).FirstOrDefault();
             }
-            else
+            if (marker == Marker.Default)
             {
                 return Markers.Where((v) => Math.Abs(pos.Y - v.Value) <= diff).FirstOrDefault();
             }
+            return marker;
         }
     }
 }

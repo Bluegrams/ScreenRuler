@@ -32,7 +32,6 @@ namespace ScreenRuler
             manager.Manage(nameof(Opacity), defaultValue: 1);
             manager.Initialize();
             InitializeComponent();
-            this.MinimumSize = new Size(RulerPainter.RULER_WIDTH, RulerPainter.RULER_WIDTH);
             updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);
             mouseTracker = new MouseTracker(this);
             painter = new RulerPainter(this);
@@ -74,6 +73,8 @@ namespace ScreenRuler
             }
             // Set the marker limit
             CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
+            // Set the minimum size
+            RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
             // Check for updates
             updateChecker.CheckForUpdates();
             // Start tracking mouse
@@ -146,6 +147,9 @@ namespace ScreenRuler
                 case Keys.Space:
                     toggleRulerMode();
                     break;
+                case Keys.J:
+                    conSlimMode.PerformClick();
+                    break;
                 case Keys.Escape:
                     conExit.PerformClick();
                     break;
@@ -190,7 +194,7 @@ namespace ScreenRuler
                     }
                     break;
                 case Keys.L:
-                    CustomMarkers.AddMarker((Point)this.Size);
+                    CustomMarkers.AddMarker((Point)this.Size, RestrictSize);
                     this.Invalidate();
                     break;
                 case Keys.F1:
@@ -289,7 +293,7 @@ namespace ScreenRuler
             }
             else
             {
-                if (e.Y > RulerPainter.RULER_WIDTH)
+                if (e.Y > this.RestrictSize)
                     Height += amount;
                 else Width += amount;
             }
@@ -297,7 +301,7 @@ namespace ScreenRuler
 
         private void RulerForm_MouseClick(object sender, MouseEventArgs e)
         {
-            Marker marker = CustomMarkers.GetMarker(e.Location);
+            Marker marker = CustomMarkers.GetMarker(e.Location, RestrictSize);
             if (marker != Marker.Default)
             {
                 CustomLineForm lineForm = new CustomLineForm(marker,
@@ -313,7 +317,7 @@ namespace ScreenRuler
         private void RulerForm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Add a marker at the cursor position.
-            CustomMarkers.AddMarker(e.Location, ResizeMode == FormResizeMode.Vertical);
+            CustomMarkers.AddMarker(e.Location, RestrictSize, ResizeMode == FormResizeMode.Vertical);
         }
         #endregion
 
@@ -336,11 +340,12 @@ namespace ScreenRuler
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             // draw transparent background
+            int offset = this.RestrictSize;
             e.Graphics.FillRectangle(
                 new SolidBrush(TransparencyKey),
                 new Rectangle(
-                    RulerPainter.RULER_WIDTH, RulerPainter.RULER_WIDTH,
-                    this.Width - RulerPainter.RULER_WIDTH, this.Height - RulerPainter.RULER_WIDTH
+                    offset, offset,
+                    this.Width - offset, this.Height - offset
                 )
             );
         }
@@ -373,6 +378,7 @@ namespace ScreenRuler
         // Load current context menu state
         private void contxtMenu_Opening(object sender, CancelEventArgs e)
         {
+            conSlimMode.Checked = Settings.SlimMode;
             conMarkCenter.Checked = Settings.ShowCenterLine;
             conMarkThirds.Checked = Settings.ShowThirdLines;
             conMarkGolden.Checked = Settings.ShowGoldenLine;
@@ -478,14 +484,25 @@ namespace ScreenRuler
             this.Opacity = (double)opacity / 100;
         }
 
+        private void conSlimMode_Click(object sender, EventArgs e)
+        {
+            Settings.SlimMode = !Settings.SlimMode;
+            RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
+        }
+
         private void conLength_Click(object sender, EventArgs e)
         {
             SetSizeForm sizeForm = new SetSizeForm(this.Size, Settings);
             sizeForm.TopMost = this.TopMost;
             if (sizeForm.ShowDialog(this) == DialogResult.OK)
             {
-                this.Width = (int)Math.Round(sizeForm.RulerWidth);
-                this.Height = (int)Math.Round(sizeForm.RulerHeight);
+                int w = (int)Math.Round(sizeForm.RulerWidth);
+                int h = (int)Math.Round(sizeForm.RulerHeight);
+                // if both width and height are set, switch into 2d mode
+                if (w > RestrictSize && h > RestrictSize)
+                    ResizeMode = FormResizeMode.TwoDimensional;
+                this.Width = w;
+                this.Height = h;
             }
         }
 

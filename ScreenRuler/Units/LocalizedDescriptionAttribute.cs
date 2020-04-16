@@ -8,7 +8,7 @@ namespace ScreenRuler.Units
     public class LocalizedDescriptionAttribute : DescriptionAttribute
     {
         ResourceManager resMan;
-        string resourceKey;
+        readonly string resourceKey;
 
         public LocalizedDescriptionAttribute(string resourceKey, Type resourceType)
         {
