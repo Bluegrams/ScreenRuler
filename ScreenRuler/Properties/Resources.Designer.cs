@@ -70,8 +70,9 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Length: {0}px
-        ///Position: {1}.
+        ///   Looks up a localized string similar to Width: {0}px
+        ///Height: {1}px
+        ///Position: {2}.
         /// </summary>
         internal static string ToolTipText {
             get {

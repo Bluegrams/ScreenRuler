@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace ScreenRuler.Units
 {
@@ -15,9 +16,9 @@ namespace ScreenRuler.Units
         /// </summary>
         public MeasuringUnit Unit { get; private set; }
         /// <summary>
-        /// The total width of the screen (in pixels) along the axis to be looked at.
+        /// The size of the screen.
         /// </summary>
-        public int ScreenSize { get; set; }
+        public Size ScreenSize { get; set; }
         /// <summary>
         /// The screen DPI used for conversion.
         /// </summary>
@@ -27,7 +28,7 @@ namespace ScreenRuler.Units
         /// </summary>
         public string UnitString { get { return UnitStrings[Unit]; } }
 
-        public UnitConverter(MeasuringUnit unit, int screenSize, int dpi)
+        public UnitConverter(MeasuringUnit unit, Size screenSize, int dpi)
         {
             this.Unit = unit;
             this.ScreenSize = screenSize;
@@ -41,14 +42,32 @@ namespace ScreenRuler.Units
         /// </summary>
         /// <param name="value">A value in the unit this converter converts to/ from.</param>
         /// <returns>The value converted to pixels.</returns>
-        public float ConvertToPixel(float value) => toPixelConverter.Invoke(value, ScreenSize, DPI);
+        public float ConvertToPixel(float value, bool vertical)
+            => toPixelConverter.Invoke(value, vertical ? ScreenSize.Height : ScreenSize.Width, DPI);
+
+        /// <summary>
+        /// Converts the given marker to a pixel value.
+        /// </summary>
+        /// <param name="marker">The marker to be converted.</param>
+        /// <returns>The value converted to pixels.</returns>
+        public float ConvertToPixel(Marker marker)
+            => ConvertToPixel(marker.Value, marker.Vertical);
 
         /// <summary>
         /// Converts a given pixel value to the defined unit.
         /// </summary>
         /// <param name="value">A pixel value.</param>
         /// <returns>The value converted to the unit this converter converts to.</returns>
-        public float ConvertFromPixel(float value) => fromPixelConverter.Invoke(value, ScreenSize, DPI);
+        public float ConvertFromPixel(float value, bool vertical)
+            => fromPixelConverter.Invoke(value, vertical ? ScreenSize.Height : ScreenSize.Width, DPI);
+
+        /// <summary>
+        /// Converts a given marker from pixels to the defined unit.
+        /// </summary>
+        /// <param name="marker">The marker to be converted.</param>
+        /// <returns>The value converted to the unit this converter converts to.</returns>
+        public float ConvertFromPixel(Marker marker)
+            => ConvertFromPixel(marker.Value, marker.Vertical);
 
         /// <summary>
         /// Returns a function that converts the given measuring unit into pixels.

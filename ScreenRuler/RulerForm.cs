@@ -1,63 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using System.Configuration;
 using ScreenRuler.Units;
 using Bluegrams.Application;
 using Bluegrams.Application.WinForms;
 using ScreenRuler.Properties;
+using System.ComponentModel;
 
 namespace ScreenRuler
 {
-    public partial class RulerForm : Form
+    [DesignerCategory("Form")]
+    public partial class RulerForm : BaseForm
     {
         private WinFormsWindowManager manager;
         private WinFormsUpdateChecker updateChecker;
-        private int mouseLine;
+        private MouseTracker mouseTracker;
         private RulerPainter painter;
 
         public Settings Settings { get; set; }
-        public bool Vertical { get { return Settings.Vertical; } }
-        public LinkedList<int> CustomLines { get; set; }
-        /// <summary>
-        /// Gets/ sets the length of the ruler.
-        /// </summary>
-        public int RulerLength
-        {
-            get { return Vertical ? this.Height : this.Width; }
-            set
-            {
-                if (Vertical) this.Height = value;
-                else this.Width = value;
-            }
-        }
+        public MarkerCollection CustomMarkers { get; set; }
 
         public RulerForm()
         {
             Settings = new Settings();
+            CustomMarkers = new MarkerCollection();
             manager = new WinFormsWindowManager(this) { AlwaysTrackResize = true };
             // Name all the properties we want to have persisted
             manager.ManageDefault();
-            manager.Manage(nameof(Settings), nameof(TopMost));
-            manager.Manage(nameof(CustomLines), SettingsSerializeAs.Binary);
+            manager.Manage(nameof(Settings), nameof(TopMost), nameof(CustomMarkers));
+            manager.Manage(nameof(ResizeMode), defaultValue: FormResizeMode.Horizontal);
             manager.Manage(nameof(Opacity), defaultValue: 1);
             manager.Initialize();
             InitializeComponent();
+            this.MinimumSize = new Size(RulerPainter.RULER_WIDTH, RulerPainter.RULER_WIDTH);
             updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);
+            mouseTracker = new MouseTracker(this);
             painter = new RulerPainter(this);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-            this.DoubleBuffered = true;
             this.TopMost = true;
-            CustomLines = new LinkedList<int>();
             this.MouseWheel += RulerForm_MouseWheel;
         }
 
         private UnitConverter getUnitConverter()
         {
-            var screenRect = Screen.FromControl(this).Bounds;
-            var screenSize = Settings.Vertical ? screenRect.Height : screenRect.Width;
+            var screenSize = Screen.FromControl(this).Bounds.Size;
             return new UnitConverter(Settings.MeasuringUnit, screenSize, Settings.MonitorDpi);
         }
 
@@ -86,8 +72,17 @@ namespace ScreenRuler
                     conVeryLow.Checked = true;
                     break;
             }
+            // Set the marker limit
+            CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
             // Check for updates
             updateChecker.CheckForUpdates();
+            // Start tracking mouse
+            mouseTracker.Start();
+        }
+
+        private void RulerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mouseTracker.Stop();
         }
 
         #region Input Events
@@ -96,8 +91,12 @@ namespace ScreenRuler
         // HTRIGHT = 11 -> in right resize area
         // HTTOP = 12 -> in upper resize area
         // HTBOTTOM = 15 -> in lower resize area
-        private int FirstGrip { get { return Vertical ? 12 : 10; } }
-        private int SecondGrip { get { return Vertical ? 15 : 11; } }
+        private const int HTLEFT = 10;
+        private const int HTRIGHT = 11;
+        private const int HTTOP = 12;
+        private const int HTBOTTOM = 15;
+
+        private const int GRIP_OFFSET = 5;
 
         // Use Windows messages to handle resizing of the ruler at the edges
         // and moving of the cursor marker.
@@ -108,20 +107,32 @@ namespace ScreenRuler
                 // Get mouse position and convert to app coordinates
                 Point pos = Cursor.Position;
                 pos = this.PointToClient(pos);
-                int rpos = Vertical ? pos.Y : pos.X;
-                // Move mouse marker
-                mouseLine = rpos;
-                this.Invalidate();
                 // Check if inside grip area (5 pixels next to border)
-                if (rpos <= 5)
+                if (ResizeMode.HasFlag(FormResizeMode.Horizontal))
                 {
-                    m.Result = (IntPtr)FirstGrip;
-                    return;
+                    if (pos.X <= GRIP_OFFSET)
+                    {
+                        m.Result = (IntPtr)HTLEFT;
+                        return;
+                    }
+                    else if (pos.X >= this.ClientSize.Width - GRIP_OFFSET)
+                    {
+                        m.Result = (IntPtr)HTRIGHT;
+                        return;
+                    }
                 }
-                else if (rpos >= (Vertical ? this.ClientSize.Height : this.ClientSize.Width) - 5)
-                {
-                    m.Result = (IntPtr)SecondGrip;
-                    return;
+                if (ResizeMode.HasFlag(FormResizeMode.Vertical))
+                { 
+                    if (pos.Y <= GRIP_OFFSET)
+                    {
+                        m.Result = (IntPtr)HTTOP;
+                        return;
+                    }
+                    else if (pos.Y >= this.ClientSize.Height - GRIP_OFFSET)
+                    {
+                        m.Result = (IntPtr)HTBOTTOM;
+                        return;
+                    }
                 }
             }
             // Pass return message down to base class
@@ -132,6 +143,9 @@ namespace ScreenRuler
         {
             switch (e.KeyCode)
             {
+                case Keys.Space:
+                    toggleRulerMode();
+                    break;
                 case Keys.Escape:
                     conExit.PerformClick();
                     break;
@@ -142,7 +156,7 @@ namespace ScreenRuler
                     conTopmost.PerformClick();
                     break;
                 case Keys.V:
-                    conVertical.PerformClick();
+                    toggleVertical();
                     break;
                 case Keys.M:
                     conMarkCenter.PerformClick();
@@ -163,20 +177,20 @@ namespace ScreenRuler
                     if (e.Control)
                     {
                         // copy size
-                        Clipboard.SetText(RulerLength.ToString());
+                        Clipboard.SetText($"{Width}, {Height}");
                     }
                     else
                     {
                         // clear first custom marker
-                        if (CustomLines.Count > 0)
+                        if (CustomMarkers.Markers.Count > 0)
                         {
-                            CustomLines.RemoveFirst();
+                            CustomMarkers.Markers.RemoveFirst();
                             this.Invalidate();
                         }
                     }
                     break;
                 case Keys.L:
-                    setMarkerToList(RulerLength);
+                    CustomMarkers.AddMarker((Point)this.Size);
                     this.Invalidate();
                     break;
                 case Keys.F1:
@@ -223,16 +237,16 @@ namespace ScreenRuler
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    if (!Vertical) this.Width -= step;
+                    this.Width -= step;
                     break;
                 case Keys.Right:
-                    if (!Vertical) this.Width += step;
+                    this.Width += step;
                     break;
                 case Keys.Up:
-                    if (Vertical) this.Height -= step;
+                    this.Height -= step;
                     break;
                 case Keys.Down:
-                    if (Vertical) this.Height += step;
+                    this.Height += step;
                     break;
             }
         }
@@ -264,20 +278,33 @@ namespace ScreenRuler
             var amount = Math.Sign(e.Delta);
             if (ModifierKeys.HasFlag(Keys.Shift))
                 amount *= Settings.LargeStep;
-            RulerLength += amount;
+            // Add to width or height according to current mode and mouse location
+            if (ResizeMode == FormResizeMode.Horizontal)
+            {
+                Width += amount;
+            }
+            else if (ResizeMode == FormResizeMode.Vertical)
+            {
+                Height += amount;
+            }
+            else
+            {
+                if (e.Y > RulerPainter.RULER_WIDTH)
+                    Height += amount;
+                else Width += amount;
+            }
         }
 
         private void RulerForm_MouseClick(object sender, MouseEventArgs e)
         {
-            var position = Vertical ? e.Y : e.X;
-            var line = CustomLines.Where((val) => Math.Abs(position - val) <= 2).FirstOrDefault();
-            if (line != default(int))
+            Marker marker = CustomMarkers.GetMarker(e.Location);
+            if (marker != Marker.Default)
             {
-                CustomLineForm lineForm = new CustomLineForm(line,
+                CustomLineForm lineForm = new CustomLineForm(marker,
                     getUnitConverter(), Settings.Theme);
                 if (lineForm.ShowDialog(this) == DialogResult.OK)
                 {
-                    CustomLines.Remove(line);
+                    CustomMarkers.Markers.Remove(marker);
                     this.Invalidate();
                 }
             }
@@ -286,33 +313,66 @@ namespace ScreenRuler
         private void RulerForm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Add a marker at the cursor position.
-            setMarkerToList(Vertical ? e.Y : e.X);
-        }
-
-        private void setMarkerToList(int pos)
-        {
-            // By default a single new marker is set, replacing the old one.
-            if (!Settings.MultiMarking) CustomLines.Clear();
-            CustomLines.AddLast(pos);
+            CustomMarkers.AddMarker(e.Location, ResizeMode == FormResizeMode.Vertical);
         }
         #endregion
 
         #region Draw Components
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.Clear(Settings.Theme.Background);
-            painter.Update(e.Graphics, Settings);
+            BufferedGraphics buffer;
+            buffer = BufferedGraphicsManager.Current.Allocate(e.Graphics, e.ClipRectangle);
+            // clear the graphics first
+            buffer.Graphics.FillRectangle(new SolidBrush(TransparencyKey), e.ClipRectangle);
+            // paint the ruler into buffer
+            painter.Update(buffer.Graphics, Settings, ResizeMode);
             painter.PaintRuler();
-            painter.PaintMarkers(mouseLine, CustomLines);
-            base.OnPaint(e);
+            painter.PaintMarkers(CustomMarkers, mouseTracker.Position);
+            // paint buffer onto screen
+            buffer.Render();
+            buffer.Dispose();
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            // draw transparent background
+            e.Graphics.FillRectangle(
+                new SolidBrush(TransparencyKey),
+                new Rectangle(
+                    RulerPainter.RULER_WIDTH, RulerPainter.RULER_WIDTH,
+                    this.Width - RulerPainter.RULER_WIDTH, this.Height - RulerPainter.RULER_WIDTH
+                )
+            );
+        }
+        #endregion
+
+        #region Ruler Mode
+        private void toggleRulerMode()
+        {
+            ResizeMode = (FormResizeMode)(((int)ResizeMode + 1) % 3 + 1);
+        }
+
+        private void toggleVertical()
+        {
+            if (ResizeMode == FormResizeMode.Vertical)
+            {
+                int length = this.Height;
+                ResizeMode = FormResizeMode.Horizontal;
+                this.Width = length;
+            }
+            else
+            {
+                int length = this.Width;
+                ResizeMode = FormResizeMode.Vertical;
+                this.Height = length;
+            }
         }
         #endregion
 
         #region Context Menu
         // Load current context menu state
-        private void contxtMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        private void contxtMenu_Opening(object sender, CancelEventArgs e)
         {
-            conVertical.Checked = Vertical;
             conMarkCenter.Checked = Settings.ShowCenterLine;
             conMarkThirds.Checked = Settings.ShowThirdLines;
             conMarkGolden.Checked = Settings.ShowGoldenLine;
@@ -323,35 +383,25 @@ namespace ScreenRuler
             comUnits.SelectedIndex = (int)Settings.MeasuringUnit;
         }
 
+        private void conRulerMode_DropDownOpening(object sender, EventArgs e)
+        {
+            conModeHorizontal.Checked = ResizeMode == FormResizeMode.Horizontal;
+            conModeVertical.Checked = ResizeMode == FormResizeMode.Vertical;
+            conModeTwoDimensional.Checked = ResizeMode == FormResizeMode.TwoDimensional;
+        }
+
         private void conMeasure_Click(object sender, EventArgs e)
         {
             var overlay = new OverlayForm();
             overlay.TopMost = this.TopMost;
             if (overlay.ShowDialog() == DialogResult.OK)
             {
+                this.ResizeMode = FormResizeMode.TwoDimensional;
                 this.Location = overlay.WindowSelection.Location;
-                if (Vertical) this.Height = overlay.WindowSelection.Height;
-                else this.Width = overlay.WindowSelection.Width;
-                checkOutOfBorders();
+                this.Height = overlay.WindowSelection.Height;
+                this.Width = overlay.WindowSelection.Width;
+                this.CheckOutOfBounds();
                 Settings.ShowOffsetLengthLabels = true;
-            }
-        }
-
-        private void checkOutOfBorders()
-        {
-            var screenRec = Screen.FromRectangle(Bounds).WorkingArea;
-            if (!screenRec.IntersectsWith(Bounds))
-            {
-                Point newLocation = Location;
-                if (Location.X < screenRec.X)
-                    newLocation.X = screenRec.X;
-                else if (Location.X > screenRec.Right)
-                    newLocation.X = screenRec.Right - Width;
-                if (Location.Y < screenRec.Y)
-                    newLocation.Y = screenRec.Y;
-                else if (Location.Y >= screenRec.Bottom)
-                    newLocation.Y = screenRec.Bottom - Height;
-                Location = newLocation;
             }
         }
 
@@ -399,41 +449,24 @@ namespace ScreenRuler
         private void conMultiMarking_Click(object sender, EventArgs e)
         {
             Settings.MultiMarking = !Settings.MultiMarking;
-            if (CustomLines.Count > 0) setMarkerToList(CustomLines.Last.Value);
+            CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
             this.Invalidate();
         }
 
         private void conClearCustomMarker_Click(object sender, EventArgs e)
         {
-            CustomLines.Clear();
+            CustomMarkers.Markers.Clear();
             this.Invalidate();
         }
 
         private void conTopmost_Click(object sender, EventArgs e) => TopMost = !TopMost;
 
-        private void conVertical_Click(object sender, EventArgs e)
+        private void changeRulerMode(object sender, EventArgs e)
         {
-            Settings.Vertical = !Settings.Vertical;
-            changeVertical();
-        }
-
-        private void changeVertical()
-        {
-            this.Size = new Size(this.Height, this.Width);
-            Rectangle windowRect = new Rectangle(this.Location, this.Size);
-            Rectangle screenRect = Screen.FromRectangle(windowRect).WorkingArea;
-            // If the ruler got out of the visible area, move it back in
-            if (!screenRect.IntersectsWith(windowRect))
-            {
-                if (this.Left < screenRect.Left)
-                    this.Left = screenRect.Left;
-                else if (this.Left > screenRect.Right)
-                    this.Left = screenRect.Right - this.Width;
-                if (this.Top < screenRect.Top)
-                    this.Top = screenRect.Top;
-                else if (this.Top > screenRect.Bottom)
-                    this.Top = screenRect.Bottom - this.Height;
-            }
+            foreach (ToolStripMenuItem it in conRulerMode.DropDownItems)
+                it.Checked = false;
+            ((ToolStripMenuItem)sender).Checked = true;
+            ResizeMode = (FormResizeMode)Enum.Parse(typeof(FormResizeMode), (string)((ToolStripMenuItem)sender).Tag);
         }
 
         private void changeOpacity(object sender, EventArgs e)
@@ -447,11 +480,12 @@ namespace ScreenRuler
 
         private void conLength_Click(object sender, EventArgs e)
         {
-            SetSizeForm sizeForm = new SetSizeForm(RulerLength, Settings);
+            SetSizeForm sizeForm = new SetSizeForm(this.Size, Settings);
             sizeForm.TopMost = this.TopMost;
             if (sizeForm.ShowDialog(this) == DialogResult.OK)
             {
-                this.RulerLength = sizeForm.RulerLength;
+                this.Width = (int)Math.Round(sizeForm.RulerWidth);
+                this.Height = (int)Math.Round(sizeForm.RulerHeight);
             }
         }
 
@@ -461,7 +495,7 @@ namespace ScreenRuler
             if (Settings.ShowToolTip)
             {
                 rulerToolTip.SetToolTip(this,
-                    String.Format(Resources.ToolTipText, RulerLength, $"{Left}, {Top}"));
+                    String.Format(Resources.ToolTipText, Width, Height, $"{Left}, {Top}"));
             }
             else rulerToolTip.SetToolTip(this, String.Empty);
         }
@@ -512,32 +546,5 @@ namespace ScreenRuler
 
         private void conExit_Click(object sender, EventArgs e) => Close();
         #endregion
-
-        // Handles dragging of the ruler
-        #region Form Dragging
-        private bool mouseDown;
-        private Point mouseLoc;
-
-        private void RulerForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDown = true;
-            mouseLoc = e.Location;
-        }
-
-        private void RulerForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown)
-            {
-                this.Location = new Point(this.Location.X - mouseLoc.X + e.X, this.Location.Y - mouseLoc.Y + e.Y);
-            }
-        }
-
-        private void RulerForm_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-        }
-
-        #endregion
-
     }
 }

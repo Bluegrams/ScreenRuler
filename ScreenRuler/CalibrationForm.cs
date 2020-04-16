@@ -40,7 +40,7 @@ namespace ScreenRuler
 
         private void panPreview_Paint(object sender, PaintEventArgs e)
         {
-            painter.Update(e.Graphics, previewSettings);
+            painter.Update(e.Graphics, previewSettings, FormResizeMode.Horizontal);
             painter.PaintRuler();
         }
 

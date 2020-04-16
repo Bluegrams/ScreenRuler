@@ -1,23 +1,23 @@
 ﻿using ScreenRuler.Units;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ScreenRuler
 {
     public partial class SetSizeForm : Form
     {
-        /// <summary>
-        /// The ruler length in pixels.
-        /// </summary>
-        public int RulerLength;
+        public float RulerWidth { get; private set; }
+        public float RulerHeight { get; private set; }
 
         private Settings settings;
         private UnitConverter converter;
 
-        public SetSizeForm(int rulerLength, Settings settings)
+        public SetSizeForm(Size rulerSize, Settings settings)
         {
             InitializeComponent();
-            RulerLength = rulerLength;
+            this.RulerWidth = rulerSize.Width;
+            this.RulerHeight = rulerSize.Height;
             this.settings = settings;
             setConverter(settings.MeasuringUnit);
         }
@@ -34,8 +34,7 @@ namespace ScreenRuler
 
         private void setConverter(MeasuringUnit unit)
         {
-            var screenRect = Screen.FromControl(this).Bounds;
-            var screenSize = settings.Vertical ? screenRect.Height : screenRect.Width;
+            var screenSize = Screen.FromControl(this).Bounds.Size;
             converter = new UnitConverter(unit, screenSize, settings.MonitorDpi);
         }
 
@@ -51,19 +50,25 @@ namespace ScreenRuler
         /// </summary>
         private void updateText()
         {
-            txtLength.Text = converter.ConvertFromPixel(RulerLength).ToString();
-            lblUnitString.Text = converter.UnitString;
+            numWidth.Value = (decimal)converter.ConvertFromPixel(RulerWidth, false);
+            numHeight.Value = (decimal)converter.ConvertFromPixel(RulerHeight, true);
+            lblUnit1.Text = converter.UnitString;
+            lblUnit2.Text = converter.UnitString;
+        }
+
+        private void numWidth_ValueChanged(object sender, EventArgs e)
+        {
+            this.RulerWidth = converter.ConvertToPixel((float)numWidth.Value, false);
+        }
+
+        private void numHeight_ValueChanged(object sender, EventArgs e)
+        {
+            this.RulerHeight = converter.ConvertToPixel((float)numHeight.Value, true);
         }
 
         private void butSubmit_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            float result;
-            if (float.TryParse(txtLength.Text, out result))
-            {
-                // Convert the specified length back to pixels.
-                this.RulerLength = (int)Math.Round(converter.ConvertToPixel(result));
-            }
             this.Close();
         }
     }

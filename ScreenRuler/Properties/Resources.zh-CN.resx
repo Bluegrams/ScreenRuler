@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ToolTipText" xml:space="preserve">
-    <value>长度: {0}px
-位置: {1}</value>
-  </data>
   <data name="ScalingText" xml:space="preserve">
     <value>显示器 DPI / 缩放: {0} / {1}%</value>
   </data>

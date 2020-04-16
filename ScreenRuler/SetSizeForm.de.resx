@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Lineallänge setzen</value>
+    <value>Linealgröße setzen</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>OK</value>
@@ -127,6 +127,9 @@
     <value>Abbrechen</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Länge:</value>
+    <value>Breite:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Höhe:</value>
   </data>
 </root>

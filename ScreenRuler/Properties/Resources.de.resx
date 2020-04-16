@@ -118,8 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ToolTipText" xml:space="preserve">
-    <value>Länge: {0}px
-Position: {1}</value>
+    <value>Breite: {0}px
+Höhe: {1}px
+Position: {2}</value>
   </data>
   <data name="ScalingText" xml:space="preserve">
     <value>Monitor DPI / Skalierung: {0} / {1}%</value>

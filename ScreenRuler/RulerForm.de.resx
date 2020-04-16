@@ -133,7 +133,7 @@
     <value>Mausposition markieren</value>
   </data>
   <data name="conLength.Text" xml:space="preserve">
-    <value>Länge setzen...</value>
+    <value>Größe setzen...</value>
   </data>
   <data name="conMarkCenter.Text" xml:space="preserve">
     <value>Mitte markieren</value>
@@ -143,9 +143,6 @@
   </data>
   <data name="comUnits.ToolTipText" xml:space="preserve">
     <value>Maßeinheit</value>
-  </data>
-  <data name="conVertical.Text" xml:space="preserve">
-    <value>Vertikal</value>
   </data>
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimieren</value>
@@ -188,5 +185,17 @@
   </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>Lineal kalibrieren</value>
+  </data>
+  <data name="conRulerMode.Text" xml:space="preserve">
+    <value>Linealmodus</value>
+  </data>
+  <data name="conModeHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="conModeTwoDimensional.Text" xml:space="preserve">
+    <value>Zweidimensional</value>
+  </data>
+  <data name="conModeVertical.Text" xml:space="preserve">
+    <value>Vertikal</value>
   </data>
 </root>

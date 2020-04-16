@@ -117,46 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 52</value>
-  </data>
-  <data name="txtLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtLength.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtLength.Name" xml:space="preserve">
-    <value>txtLength</value>
-  </data>
-  <data name="&gt;&gt;txtLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtLength.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtLength.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 55</value>
+    <value>12, 47</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>38, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Length:</value>
+    <value>Width:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -168,13 +147,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="butCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 92</value>
+    <value>105, 105</value>
   </data>
   <data name="butCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 27</value>
+    <value>87, 24</value>
   </data>
   <data name="butCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -192,13 +171,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="butSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 92</value>
+    <value>12, 105</value>
   </data>
   <data name="butSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 27</value>
+    <value>87, 24</value>
   </data>
   <data name="butSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -216,13 +195,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butSubmit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="comUnits.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
   <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 21</value>
+    <value>180, 21</value>
   </data>
   <data name="comUnits.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -237,30 +216,133 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comUnits.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
-  <data name="lblUnitString.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblUnit1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblUnitString.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 55</value>
+  <data name="lblUnit1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 47</value>
   </data>
-  <data name="lblUnitString.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+  <data name="lblUnit1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
   </data>
-  <data name="lblUnitString.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblUnit1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;lblUnitString.Name" xml:space="preserve">
-    <value>lblUnitString</value>
+  <data name="&gt;&gt;lblUnit1.Name" xml:space="preserve">
+    <value>lblUnit1</value>
   </data>
-  <data name="&gt;&gt;lblUnitString.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblUnit1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblUnitString.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblUnit1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblUnitString.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblUnit1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="numWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 45</value>
+  </data>
+  <data name="numWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="numWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;numWidth.Name" xml:space="preserve">
+    <value>numWidth</value>
+  </data>
+  <data name="&gt;&gt;numWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numWidth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numWidth.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="numHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 71</value>
+  </data>
+  <data name="numHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="numHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;numHeight.Name" xml:space="preserve">
+    <value>numHeight</value>
+  </data>
+  <data name="&gt;&gt;numHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numHeight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numHeight.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblUnit2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblUnit2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUnit2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 73</value>
+  </data>
+  <data name="lblUnit2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblUnit2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblUnit2.Name" xml:space="preserve">
+    <value>lblUnit2</value>
+  </data>
+  <data name="&gt;&gt;lblUnit2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUnit2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblUnit2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 73</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -270,14 +352,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>214, 131</value>
+    <value>204, 141</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Set Ruler Length</value>
+    <value>Set Ruler Size</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SetSizeForm</value>

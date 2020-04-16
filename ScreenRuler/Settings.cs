@@ -8,10 +8,6 @@ namespace ScreenRuler
     public class Settings
     {
         /// <summary>
-        /// Determines whether the ruler is in vertical mode.
-        /// </summary>
-        public bool Vertical { get; set; }
-        /// <summary>
         /// The currently selected measuring unit.
         /// </summary>
         public MeasuringUnit MeasuringUnit { get; set; }

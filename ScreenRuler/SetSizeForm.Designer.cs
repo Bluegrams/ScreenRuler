@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetSizeForm));
-            this.txtLength = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butCancel = new System.Windows.Forms.Button();
             this.butSubmit = new System.Windows.Forms.Button();
             this.comUnits = new System.Windows.Forms.ComboBox();
-            this.lblUnitString = new System.Windows.Forms.Label();
+            this.lblUnit1 = new System.Windows.Forms.Label();
+            this.numWidth = new System.Windows.Forms.NumericUpDown();
+            this.numHeight = new System.Windows.Forms.NumericUpDown();
+            this.lblUnit2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtLength
-            // 
-            resources.ApplyResources(this.txtLength, "txtLength");
-            this.txtLength.Name = "txtLength";
             // 
             // label1
             // 
@@ -69,10 +69,54 @@
             this.comUnits.Name = "comUnits";
             this.comUnits.SelectedIndexChanged += new System.EventHandler(this.comUnits_SelectedIndexChanged);
             // 
-            // lblUnitString
+            // lblUnit1
             // 
-            resources.ApplyResources(this.lblUnitString, "lblUnitString");
-            this.lblUnitString.Name = "lblUnitString";
+            resources.ApplyResources(this.lblUnit1, "lblUnit1");
+            this.lblUnit1.Name = "lblUnit1";
+            // 
+            // numWidth
+            // 
+            this.numWidth.DecimalPlaces = 2;
+            resources.ApplyResources(this.numWidth, "numWidth");
+            this.numWidth.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numWidth.Name = "numWidth";
+            this.numWidth.Value = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.numWidth.ValueChanged += new System.EventHandler(this.numWidth_ValueChanged);
+            // 
+            // numHeight
+            // 
+            this.numHeight.DecimalPlaces = 2;
+            resources.ApplyResources(this.numHeight, "numHeight");
+            this.numHeight.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numHeight.Name = "numHeight";
+            this.numHeight.Value = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.numHeight.ValueChanged += new System.EventHandler(this.numHeight_ValueChanged);
+            // 
+            // lblUnit2
+            // 
+            resources.ApplyResources(this.lblUnit2, "lblUnit2");
+            this.lblUnit2.Name = "lblUnit2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // SetSizeForm
             // 
@@ -80,12 +124,15 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.butCancel;
-            this.Controls.Add(this.lblUnitString);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblUnit2);
+            this.Controls.Add(this.numHeight);
+            this.Controls.Add(this.numWidth);
+            this.Controls.Add(this.lblUnit1);
             this.Controls.Add(this.comUnits);
             this.Controls.Add(this.butSubmit);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLength);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -93,18 +140,22 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.SetSizeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtLength;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butCancel;
         private System.Windows.Forms.Button butSubmit;
         private System.Windows.Forms.ComboBox comUnits;
-        private System.Windows.Forms.Label lblUnitString;
+        private System.Windows.Forms.Label lblUnit1;
+        private System.Windows.Forms.NumericUpDown numWidth;
+        private System.Windows.Forms.NumericUpDown numHeight;
+        private System.Windows.Forms.Label lblUnit2;
+        private System.Windows.Forms.Label label3;
     }
 }

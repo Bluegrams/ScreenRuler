@@ -126,9 +126,6 @@
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimizar</value>
   </data>
-  <data name="conVertical.Text" xml:space="preserve">
-    <value>Vertical</value>
-  </data>
   <data name="conOpacity.Text" xml:space="preserve">
     <value>Opacidad</value>
   </data>

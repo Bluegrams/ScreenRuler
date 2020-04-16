@@ -119,151 +119,157 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="conMeasure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMeasure.Text" xml:space="preserve">
     <value>测量窗口</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="conTopmost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conTopmost.Text" xml:space="preserve">
     <value>置顶</value>
   </data>
   <data name="conMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMinimize.Text" xml:space="preserve">
     <value>最小化</value>
   </data>
   <data name="conVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="conVertical.Text" xml:space="preserve">
-    <value>竖直方向</value>
-  </data>
-  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="conHigh.Text" xml:space="preserve">
-    <value>高 (100%)</value>
-  </data>
-  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="conDefault.Text" xml:space="preserve">
-    <value>默认 (80%)</value>
-  </data>
-  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="conLow.Text" xml:space="preserve">
-    <value>低 (60%)</value>
-  </data>
-  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="conVeryLow.Text" xml:space="preserve">
-    <value>很低 (40%)</value>
+    <value>197, 22</value>
   </data>
   <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conOpacity.Text" xml:space="preserve">
     <value>透明度</value>
   </data>
+  <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
   <data name="conLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conLength.Text" xml:space="preserve">
     <value>设置长度...</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="conMarkCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMarkCenter.Text" xml:space="preserve">
     <value>二等分标记</value>
   </data>
   <data name="conMarkThirds.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMarkThirds.Text" xml:space="preserve">
     <value>三等分标记</value>
   </data>
   <data name="conMarkGolden.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMarkGolden.Text" xml:space="preserve">
     <value>黄金分割比标记</value>
   </data>
   <data name="conMarkMouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMarkMouse.Text" xml:space="preserve">
     <value>标记鼠标位置</value>
   </data>
   <data name="conOffsetLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>显示偏移与长度</value>
   </data>
   <data name="conMultiMarking.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conMultiMarking.Text" xml:space="preserve">
     <value>至多一条鼠标标记</value>
   </data>
   <data name="conClearCustomMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>清除所有鼠标标记</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>设置</value>
   </data>
   <data name="conCalibrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>矫正标尺</value>
   </data>
   <data name="conHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conHelp.Text" xml:space="preserve">
     <value>帮助</value>
   </data>
   <data name="conAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conAbout.Text" xml:space="preserve">
     <value>关于</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="conExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="conExit.Text" xml:space="preserve">
     <value>退出</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 475</value>
+    <value>198, 451</value>
+  </data>
+  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="conHigh.Text" xml:space="preserve">
+    <value>高 (100%)</value>
+  </data>
+  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="conDefault.Text" xml:space="preserve">
+    <value>默认 (80%)</value>
+  </data>
+  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="conLow.Text" xml:space="preserve">
+    <value>低 (60%)</value>
+  </data>
+  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="conVeryLow.Text" xml:space="preserve">
+    <value>很低 (40%)</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>350, 80</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

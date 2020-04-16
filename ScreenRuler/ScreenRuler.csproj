@@ -43,8 +43,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppHelpers.WinForms, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-beta3\lib\net45\AppHelpers.WinForms.dll</HintPath>
+    <Reference Include="AppHelpers.WinForms, Version=0.1.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-beta7\lib\net45\AppHelpers.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForm.cs" />
     <Compile Include="Colors\ColorSetting.cs" />
     <Compile Include="Colors\CommonThemes.cs" />
     <Compile Include="CustomLineForm.cs">
@@ -80,6 +81,9 @@
     <Compile Include="HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marker.cs" />
+    <Compile Include="MarkerCollection.cs" />
+    <Compile Include="MouseTracker.cs" />
     <Compile Include="OverlayForm.cs" />
     <Compile Include="Properties\EnumResources.zh-CN.Designer.cs">
       <DependentUpon>EnumResources.zh-CN.resx</DependentUpon>
@@ -114,6 +118,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormResizeMode.cs" />
     <Compile Include="RulerPainter.cs" />
     <Compile Include="CalibrationForm.cs">
       <SubType>Form</SubType>
@@ -206,6 +211,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RulerForm.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RulerForm.zh-CN.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
@@ -256,6 +262,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="rulerico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
