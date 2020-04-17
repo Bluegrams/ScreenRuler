@@ -75,10 +75,28 @@ namespace ScreenRuler
             CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
             // Set the minimum size
             RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
+            // apply other loaded settings
+            applySettings();
             // Check for updates
             updateChecker.CheckForUpdates();
             // Start tracking mouse
             mouseTracker.Start();
+        }
+
+        // a helper method to be called after settings values have changed
+        private void applySettings()
+        {
+            // Show notify icon or task bar entry based on settings
+            if (Settings.UseNotifyIcon)
+            {
+                this.ShowInTaskbar = false;
+                notifyIcon.Visible = true;
+            }
+            else if (!this.ShowInTaskbar)
+            {
+                this.ShowInTaskbar = true;
+                notifyIcon.Visible = false;
+            }
         }
 
         private void RulerForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -387,6 +405,12 @@ namespace ScreenRuler
             conOffsetLength.Checked = Settings.ShowOffsetLengthLabels;
             conMultiMarking.Checked = !Settings.MultiMarking;
             comUnits.SelectedIndex = (int)Settings.MeasuringUnit;
+            // Show ruler if it was minimized
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.Activate();
+            }
         }
 
         private void conRulerMode_DropDownOpening(object sender, EventArgs e)
@@ -532,6 +556,7 @@ namespace ScreenRuler
             SettingsForm settingsForm = new SettingsForm(Settings);
             if (settingsForm.ShowDialog(this) == DialogResult.OK)
             {
+                applySettings();
                 this.Invalidate();
             }
         }
@@ -563,5 +588,14 @@ namespace ScreenRuler
 
         private void conExit_Click(object sender, EventArgs e) => Close();
         #endregion
+
+        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Right)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.Activate();
+            }
+        }
     }
 }

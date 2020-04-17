@@ -38,6 +38,7 @@ namespace ScreenRuler
             numMarkerThickness.Value = settings.MarkerThickness;
             chkMarkerSymbol.Checked = settings.ShowMarkerSymbol;
             chkToolTip.Checked = settings.ShowToolTip;
+            chkNotifyIcon.Checked = settings.UseNotifyIcon;
         }
 
         private void radTheme_CheckedChanged(object sender, EventArgs e)
@@ -88,6 +89,7 @@ namespace ScreenRuler
             settings.MarkerThickness = (byte)numMarkerThickness.Value;
             settings.ShowMarkerSymbol = chkMarkerSymbol.Checked;
             settings.ShowToolTip = chkToolTip.Checked;
+            settings.UseNotifyIcon = chkNotifyIcon.Checked;
             this.DialogResult = DialogResult.OK;
         }
 

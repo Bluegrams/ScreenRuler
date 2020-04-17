@@ -60,6 +60,10 @@ namespace ScreenRuler
         /// Determines whether to show a symbol for markers
         /// </summary>
         public bool ShowMarkerSymbol { get; set; } = false;
+        /// <summary>
+        /// Determines whether to use a notify icon instead of showing window in task bar.
+        /// </summary>
+        public bool UseNotifyIcon { get; set; } = true;
 
         private ThemeOption selectedTheme;
         /// <summary>

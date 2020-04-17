@@ -938,4 +938,7 @@
   <data name="butSubmit.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="chkNotifyIcon.Text" xml:space="preserve">
+    <value>Icon in Benachrichtigungsfeld anzeigen</value>
+  </data>
 </root>

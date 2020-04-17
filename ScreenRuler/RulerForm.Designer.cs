@@ -44,6 +44,7 @@
             this.conDefault = new System.Windows.Forms.ToolStripMenuItem();
             this.conLow = new System.Windows.Forms.ToolStripMenuItem();
             this.conVeryLow = new System.Windows.Forms.ToolStripMenuItem();
+            this.conSlimMode = new System.Windows.Forms.ToolStripMenuItem();
             this.comUnits = new System.Windows.Forms.ToolStripComboBox();
             this.conLength = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -62,7 +63,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.conSlimMode = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contxtMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,6 +193,12 @@
             this.conVeryLow.Tag = "40";
             this.conVeryLow.Click += new System.EventHandler(this.changeOpacity);
             // 
+            // conSlimMode
+            // 
+            this.conSlimMode.Name = "conSlimMode";
+            resources.ApplyResources(this.conSlimMode, "conSlimMode");
+            this.conSlimMode.Click += new System.EventHandler(this.conSlimMode_Click);
+            // 
             // comUnits
             // 
             this.comUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -294,11 +301,11 @@
             resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Click += new System.EventHandler(this.conExit_Click);
             // 
-            // conSlimMode
+            // notifyIcon
             // 
-            this.conSlimMode.Name = "conSlimMode";
-            resources.ApplyResources(this.conSlimMode, "conSlimMode");
-            this.conSlimMode.Click += new System.EventHandler(this.conSlimMode_Click);
+            this.notifyIcon.ContextMenuStrip = this.contxtMenu;
+            resources.ApplyResources(this.notifyIcon, "notifyIcon");
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
             // RulerForm
             // 
@@ -357,6 +364,7 @@
         private System.Windows.Forms.ToolStripMenuItem conModeVertical;
         private System.Windows.Forms.ToolStripMenuItem conModeTwoDimensional;
         private System.Windows.Forms.ToolStripMenuItem conSlimMode;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

@@ -17,7 +17,7 @@ namespace ScreenRuler
             {
                 while (true)
                 {
-                    if (form.Bounds.Contains(Cursor.Position))
+                    if (form.Bounds.Contains(Cursor.Position) && form.IsHandleCreated)
                     {
                         form.Invoke(new MethodInvoker(() => {
 
