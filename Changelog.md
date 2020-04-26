@@ -1,5 +1,13 @@
 # Screen Ruler Changelog
 
+### v.0.6 (2020-04)
+- **New:**: Two-dimensional mode: measure the width and height simultaneously
+- **New:**: Toggle ruler mode using 'Space'
+- **New:**: Slim ruler scale
+- **New:** Ruler icon in notification area instead of task bar
+- **New:**: Improved dialog for setting ruler size
+- **New**: Chinese translation
+
 ### v.0.5 (2020-02)
 - **New:** Marker for Golden Ratio
 - **New:** Symbols for marker lines (optional)

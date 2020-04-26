@@ -117,271 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="butConfigure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 46</value>
-  </data>
-  <data name="butConfigure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 24</value>
-  </data>
   <data name="butConfigure.Text" xml:space="preserve">
     <value>配置</value>
-  </data>
-  <data name="lblScaling.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 51</value>
-  </data>
-  <data name="lblScaling.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="comUnits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 20</value>
-  </data>
-  <data name="comUnits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 21</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>测量单位</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 7</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 79</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>单位</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 31</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>背景</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 31</value>
-  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>刻度</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 62</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 33</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>自定义标记</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 31</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 31</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>鼠标标记</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 31</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 31</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>分隔</value>
   </data>
-  <data name="butColorTicks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 25</value>
-  </data>
-  <data name="butColorMouseMarker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 34</value>
-  </data>
-  <data name="butColorMouseMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 25</value>
-  </data>
-  <data name="butColorBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 25</value>
-  </data>
-  <data name="butColorDivideMarkers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 34</value>
-  </data>
-  <data name="butColorDivideMarkers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 25</value>
-  </data>
-  <data name="butColorCustomMarkers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 65</value>
-  </data>
-  <data name="butColorCustomMarkers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 27</value>
-  </data>
-  <data name="panCustomColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 42</value>
-  </data>
-  <data name="panCustomColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 95</value>
-  </data>
-  <data name="radCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 20</value>
-  </data>
-  <data name="radCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 17</value>
-  </data>
   <data name="radCustom.Text" xml:space="preserve">
     <value>自定义</value>
-  </data>
-  <data name="radDark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 20</value>
-  </data>
-  <data name="radDark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
   </data>
   <data name="radDark.Text" xml:space="preserve">
     <value>深色</value>
   </data>
-  <data name="radLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 20</value>
-  </data>
-  <data name="radLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 17</value>
-  </data>
   <data name="radLight.Text" xml:space="preserve">
     <value>浅色</value>
-  </data>
-  <data name="grpColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 91</value>
-  </data>
-  <data name="grpColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 142</value>
   </data>
   <data name="grpColors.Text" xml:space="preserve">
     <value>颜色</value>
   </data>
-  <data name="butCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 270</value>
-  </data>
-  <data name="butCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 27</value>
-  </data>
   <data name="butCancel.Text" xml:space="preserve">
     <value>取消</value>
-  </data>
-  <data name="butSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 270</value>
-  </data>
-  <data name="butSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 27</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>确认</value>
   </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 239</value>
-  </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>通用</value>
-  </data>
-  <data name="chkMarkerSymbol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 42</value>
-  </data>
-  <data name="chkMarkerSymbol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
   </data>
   <data name="chkMarkerSymbol.Text" xml:space="preserve">
     <value>显示标记符号</value>
   </data>
-  <data name="chkToolTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 66</value>
-  </data>
-  <data name="chkToolTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
-  </data>
   <data name="chkToolTip.Text" xml:space="preserve">
     <value>显示工具提示</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>标记刻度</value>
   </data>
-  <data name="numMarkerThickness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 20</value>
-  </data>
-  <data name="numMarkerThickness.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 87</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 93</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>外观</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>大步长尺寸</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
-  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>中等步长尺寸</value>
-  </data>
-  <data name="numLargeStep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 46</value>
-  </data>
-  <data name="numLargeStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="numMediumStep.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 20</value>
-  </data>
-  <data name="numMediumStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 7</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 75</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>控制</value>
   </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 239</value>
-  </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>高级</value>
   </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 265</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>319, 306</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAcAUFAAAAEACADoIAAAdgAAAICAAAABAAgAKEwAAF4hAABAQAAAAQAIACgWAACGbQAAMDAAAAEA

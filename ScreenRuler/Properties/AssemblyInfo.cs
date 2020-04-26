@@ -26,5 +26,5 @@ using Bluegrams.Application.Attributes;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("67b8f96e-8237-4c57-983b-a2ca5bddc9ae")]
 
-[assembly: AssemblyVersion("0.5.0")]
-[assembly: AssemblyFileVersion("0.5.0")]
+[assembly: AssemblyVersion("0.6.0")]
+[assembly: AssemblyFileVersion("0.6.0")]

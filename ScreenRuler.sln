@@ -15,6 +15,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{E2560076-F4E6-44D0-843A-2F251607367E}"
 	ProjectSection(SolutionItems) = preProject
 		img\icon.png = img\icon.png
+		img\screenruler_2d.png = img\screenruler_2d.png
 		img\screenruler_styles_small.png = img\screenruler_styles_small.png
 	EndProjectSection
 EndProject
@@ -52,9 +53,9 @@ Global
 		{07FDF133-B8EB-40FF-9216-9F8D2239D11F} = {AAA7F469-AAC5-4DD7-AC3C-619BAE233F57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_Rules = {"EnabledRules":["StringFormat","WhiteSpaceLead","WhiteSpaceTail","PunctuationTail"]}
-		SolutionGuid = {3D95859A-FF01-44A8-A580-18614EAEC245}
-		RESX_ShowErrorsInErrorList = True
 		RESX_TaskErrorCategory = Message
+		RESX_ShowErrorsInErrorList = True
+		SolutionGuid = {3D95859A-FF01-44A8-A580-18614EAEC245}
+		RESX_Rules = {"EnabledRules":["StringFormat","WhiteSpaceLead","WhiteSpaceTail","PunctuationTail"]}
 	EndGlobalSection
 EndGlobal

@@ -8,19 +8,25 @@
 
 [![](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/screenruler/files/)
 
-Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches. The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added. Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings.
+Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop.
+It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches.
+Measuring is possible either using a two-dimensional, rectangular ruler scale or a one-dimensional, horizontal or vertical scale.
+The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added.
+Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings.
 
 <p align="center">
-<img src="img/screenruler_styles_small.png" height="350px">
+<img src="img/screenruler_2d.png" height="350px">
 </p>
 
 ## Features
 
 - Measure in pixels, centimeters, inches, points and percent
 
-- Dark theme and option for custom coloring
+- Two-dimensional, rectangular ruler scale
 
-- Horizontal or vertical orientation
+- One-dimensional, horizontal or vertical ruler scale
+
+- Dark theme and option for custom coloring
 
 - Automatically measure the size of windows on screen
 
@@ -38,11 +44,20 @@ Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. I
 
 Screen Ruler requires Windows 7 or newer and .NET Framework 4.5 or higher.
 
+#### Get Screen Ruler
+
+- Download the [latest release from SourceForge](https://sourceforge.net/projects/screenruler/files/)
+
+or
+
+- Install from [Chocolatey](https://chocolatey.org): `choco install screenruler`
+
 #### How To Use
 
 From the help window (press `F1` in the app):
 
 > Keyboard Actions:  
+Space - Switch ruler mode between horizontal, vertical and two-dimensional.  
 Z -  Select a window to measure. Cancel with 'Esc'.  
 Arrow keys -  Move the ruler by one pixel.  
 Shift + Arrow keys -  Move the ruler by one medium step (defaults to 5px).  
@@ -86,6 +101,7 @@ This app was translated into the following languages by helpful contributors:
 
 - English, German: @alxnull
 - Spanish: Leandro Martin Drudi
+- Chinese: @lzporter
 
 ## License
 

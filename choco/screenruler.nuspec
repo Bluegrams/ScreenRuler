@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>screenruler</id>
-    <version>0.5.0</version>
+    <version>0.6.0</version>
     <owners>alxnull</owners>
     <!-- ============================== -->
 
@@ -20,10 +20,11 @@
     <bugTrackerUrl>https://github.com/bluegrams/ScreenRuler/issues</bugTrackerUrl>
     <tags>screenruler ruler pixel screen measure</tags>
     <summary>Configurable screen ruler for measuring in pixels, centimeters, inches and points.</summary>
-    <description>Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop. 
-    It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches. 
-    The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added. 
-    Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings. </description>
+    <description>Screen Ruler is a lightweight and configurable ruler tool for Windows Desktop.
+      It allows you to measure the size of elements on the screen in different units, including pixels, centimeters and inches.
+      Measuring is possible either using a two-dimensional, rectangular ruler scale or a one-dimensional, horizontal or vertical scale.
+      The ruler can be moved and resized precisely using either the mouse or the keyboard and custom marking lines can be added.
+      Besides coming with a light and a dark theme, Screen Ruler also allows you to fully customize its appearance by changing all color settings. </description>
     <releaseNotes>https://github.com/bluegrams/ScreenRuler/blob/master/Changelog.md</releaseNotes>
     <!-- =============================== -->      
 

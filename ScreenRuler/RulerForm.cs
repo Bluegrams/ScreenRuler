@@ -99,7 +99,7 @@ namespace ScreenRuler
             }
         }
 
-        private void RulerForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void RulerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             mouseTracker.Stop();
         }

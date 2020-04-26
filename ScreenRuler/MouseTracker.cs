@@ -28,6 +28,7 @@ namespace ScreenRuler
                     Thread.Sleep(ticks);
                 }
             });
+            thread.IsBackground = true;
         }
 
         public void Start() => thread.Start();

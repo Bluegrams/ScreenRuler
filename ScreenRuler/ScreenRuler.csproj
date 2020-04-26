@@ -43,8 +43,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppHelpers.WinForms, Version=0.1.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-beta7\lib\net45\AppHelpers.WinForms.dll</HintPath>
+    <Reference Include="AppHelpers.WinForms, Version=0.1.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-beta8\lib\net45\AppHelpers.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -69,16 +69,16 @@
     <Compile Include="BaseForm.cs" />
     <Compile Include="Colors\ColorSetting.cs" />
     <Compile Include="Colors\CommonThemes.cs" />
-    <Compile Include="CustomLineForm.cs">
+    <Compile Include="Forms\CustomLineForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomLineForm.Designer.cs">
+    <Compile Include="Forms\CustomLineForm.Designer.cs">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelpForm.cs">
+    <Compile Include="Forms\HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpForm.Designer.cs">
+    <Compile Include="Forms\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Marker.cs" />
@@ -120,23 +120,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormResizeMode.cs" />
     <Compile Include="RulerPainter.cs" />
-    <Compile Include="CalibrationForm.cs">
+    <Compile Include="Forms\CalibrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalibrationForm.Designer.cs">
+    <Compile Include="Forms\CalibrationForm.Designer.cs">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SetSizeForm.cs">
+    <Compile Include="Forms\SetSizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetSizeForm.Designer.cs">
+    <Compile Include="Forms\SetSizeForm.Designer.cs">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="SettingsForm.cs">
+    <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
+    <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Colors\Theme.cs" />
@@ -144,40 +144,40 @@
     <Compile Include="Units\MeasuringUnit.cs" />
     <Compile Include="Units\UnitConverters.cs" />
     <Compile Include="WinApi.cs" />
-    <EmbeddedResource Include="CalibrationForm.de.resx">
+    <EmbeddedResource Include="Forms\CalibrationForm.de.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalibrationForm.es.resx">
+    <EmbeddedResource Include="Forms\CalibrationForm.es.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalibrationForm.resx">
+    <EmbeddedResource Include="Forms\CalibrationForm.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalibrationForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\CalibrationForm.zh-CN.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomLineForm.de.resx">
+    <EmbeddedResource Include="Forms\CustomLineForm.de.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomLineForm.es.resx">
+    <EmbeddedResource Include="Forms\CustomLineForm.es.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomLineForm.resx">
+    <EmbeddedResource Include="Forms\CustomLineForm.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomLineForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\CustomLineForm.zh-CN.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.de.resx">
+    <EmbeddedResource Include="Forms\HelpForm.de.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.es.resx">
+    <EmbeddedResource Include="Forms\HelpForm.es.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.resx">
+    <EmbeddedResource Include="Forms\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\HelpForm.zh-CN.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
@@ -216,28 +216,28 @@
     <EmbeddedResource Include="RulerForm.zh-CN.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetSizeForm.de.resx">
+    <EmbeddedResource Include="Forms\SetSizeForm.de.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetSizeForm.es.resx">
+    <EmbeddedResource Include="Forms\SetSizeForm.es.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetSizeForm.resx">
+    <EmbeddedResource Include="Forms\SetSizeForm.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetSizeForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\SetSizeForm.zh-CN.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.de.resx">
+    <EmbeddedResource Include="Forms\SettingsForm.de.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.es.resx">
+    <EmbeddedResource Include="Forms\SettingsForm.es.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.resx">
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\SettingsForm.zh-CN.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -263,9 +263,7 @@
     </Content>
     <Content Include="rulerico.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

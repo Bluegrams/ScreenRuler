@@ -318,7 +318,7 @@
             this.Name = "RulerForm";
             this.Opacity = 0.8D;
             this.TransparencyKey = System.Drawing.Color.Thistle;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RulerForm_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RulerForm_FormClosing);
             this.Load += new System.EventHandler(this.RulerForm_Load);
             this.SizeChanged += new System.EventHandler(this.RulerForm_SizeChanged);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RulerForm_MouseClick);
