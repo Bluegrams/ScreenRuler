@@ -146,7 +146,7 @@
     <Compile Include="WinApi.cs" />
     <EmbeddedResource Include="Forms\CalibrationForm.de.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
-    </EmbeddedResource>
+    </EmbeddedResource>    
     <EmbeddedResource Include="Forms\CalibrationForm.es.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +154,9 @@
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalibrationForm.zh-CN.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalibrationForm.it.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomLineForm.de.resx">
@@ -168,6 +171,9 @@
     <EmbeddedResource Include="Forms\CustomLineForm.zh-CN.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomLineForm.it.resx">
+      <DependentUpon>CustomLineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpForm.de.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,12 +186,16 @@
     <EmbeddedResource Include="Forms\HelpForm.zh-CN.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.it.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.de.resx" />
     <EmbeddedResource Include="Properties\EnumResources.es.resx" />
+    <EmbeddedResource Include="Properties\EnumResources.it.resx" />
     <EmbeddedResource Include="Properties\EnumResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
@@ -199,6 +209,10 @@
       <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -216,6 +230,9 @@
     <EmbeddedResource Include="RulerForm.zh-CN.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RulerForm.it.resx">
+      <DependentUpon>RulerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetSizeForm.de.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +245,9 @@
     <EmbeddedResource Include="Forms\SetSizeForm.zh-CN.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetSizeForm.it.resx">
+      <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.de.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +258,9 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.zh-CN.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.it.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -259,6 +282,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Help\Help.es.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\Help.it.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="rulerico.ico" />
