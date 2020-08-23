@@ -100,11 +100,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Properties\Resources.de.Designer.cs">
-      <DependentUpon>Resources.de.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,7 +141,7 @@
     <Compile Include="WinApi.cs" />
     <EmbeddedResource Include="Forms\CalibrationForm.de.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
-    </EmbeddedResource>    
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalibrationForm.es.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
