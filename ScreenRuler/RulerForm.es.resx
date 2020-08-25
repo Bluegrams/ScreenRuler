@@ -175,12 +175,15 @@
     <value>Predeterminado (80%)</value>
   </data>
   <data name="conLow.Text" xml:space="preserve">
-    <value>Transparente (60%)</value>
+    <value>Transparente (40%)</value>
   </data>
   <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Muy transparente (40%)</value>
+    <value>Muy transparente (20%)</value>
   </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>Calibrar regla</value>
+  </data>
+  <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apariencia</value>
   </data>
 </root>

@@ -157,10 +157,10 @@
     <value>Standard (80%)</value>
   </data>
   <data name="conLow.Text" xml:space="preserve">
-    <value>Niedrig (60%)</value>
+    <value>Niedrig (40%)</value>
   </data>
   <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Sehr niedrig (40%)</value>
+    <value>Sehr niedrig (20%)</value>
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Alle Marker löschen</value>
@@ -200,5 +200,17 @@
   </data>
   <data name="conSlimMode.Text" xml:space="preserve">
     <value>Schmale Skala</value>
+  </data>
+  <data name="conFollowMousePointer.Text" xml:space="preserve">
+    <value>Mauszeiger folgen</value>
+  </data>
+  <data name="conMedium.Text" xml:space="preserve">
+    <value>Medium (60%)</value>
+  </data>
+  <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aussehen</value>
+  </data>
+  <data name="conHideRulerScale.Text" xml:space="preserve">
+    <value>Linealskala verstecken</value>
   </data>
 </root>

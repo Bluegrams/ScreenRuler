@@ -41,6 +41,10 @@ namespace ScreenRuler
         /// </summary>
         public bool ShowMouseLine { get; set; } = true;
         /// <summary>
+        /// If set to true, ruler scale and custom markings are not drawn.
+        /// </summary>
+        public bool HideRulerScale { get; set; } = false;
+        /// <summary>
         /// Defines the thickness (in pixels) of one marking line.
         /// </summary>
         public byte MarkerThickness { get; set; } = 1;
@@ -64,6 +68,14 @@ namespace ScreenRuler
         /// Determines whether to use a notify icon instead of showing window in task bar.
         /// </summary>
         public bool UseNotifyIcon { get; set; } = true;
+        /// <summary>
+        /// Determines whether the ruler should follow the mouse pointer.
+        /// </summary>
+        public bool FollowMousePointer { get; set; } = false;
+        /// <summary>
+        /// If set to true, the center point of the ruler will follow the mouse pointer; otherwise left upper corner will be attached. 
+        /// </summary>
+        public bool FollowMousePointerCenter { get; set; } = true;
 
         private ThemeOption selectedTheme;
         /// <summary>
@@ -91,6 +103,10 @@ namespace ScreenRuler
         /// </summary>
         public Theme Theme { get; set; } = CommonThemes.LightTheme;
 
+        /// <summary>
+        /// Defines the size of one small ruler moving/ resizing step.
+        /// </summary>
+        public int SmallStep { get; set; } = 1;
         /// <summary>
         /// Defines the size of one medium ruler resizing step.
         /// </summary>

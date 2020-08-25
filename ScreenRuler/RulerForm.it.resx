@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -156,10 +156,10 @@
     <value>Standard (80%)</value>
   </data>
   <data name="conLow.Text" xml:space="preserve">
-    <value>Bassa (60%)</value>
+    <value>Bassa (40%)</value>
   </data>
   <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Molto Bassa (40%)</value>
+    <value>Molto Bassa (20%)</value>
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Rimuovi tutti i segni</value>
@@ -199,5 +199,8 @@
   </data>
   <data name="conSlimMode.Text" xml:space="preserve">
     <value>Scala Ridotta</value>
+  </data>
+  <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apparenza</value>
   </data>
 </root>

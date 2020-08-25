@@ -55,6 +55,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkNotifyIcon = new System.Windows.Forms.CheckBox();
             this.chkMarkerSymbol = new System.Windows.Forms.CheckBox();
             this.chkToolTip = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +65,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.numLargeStep = new System.Windows.Forms.NumericUpDown();
             this.numMediumStep = new System.Windows.Forms.NumericUpDown();
-            this.chkNotifyIcon = new System.Windows.Forms.CheckBox();
+            this.numSmallStep = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grpColors.SuspendLayout();
             this.panCustomColors.SuspendLayout();
@@ -76,6 +78,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSmallStep)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -280,6 +283,12 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
+            // chkNotifyIcon
+            // 
+            resources.ApplyResources(this.chkNotifyIcon, "chkNotifyIcon");
+            this.chkNotifyIcon.Name = "chkNotifyIcon";
+            this.chkNotifyIcon.UseVisualStyleBackColor = true;
+            // 
             // chkMarkerSymbol
             // 
             resources.ApplyResources(this.chkMarkerSymbol, "chkMarkerSymbol");
@@ -319,6 +328,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.numSmallStep);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.numLargeStep);
@@ -367,11 +378,25 @@
             0,
             0});
             // 
-            // chkNotifyIcon
+            // numSmallStep
             // 
-            resources.ApplyResources(this.chkNotifyIcon, "chkNotifyIcon");
-            this.chkNotifyIcon.Name = "chkNotifyIcon";
-            this.chkNotifyIcon.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.numSmallStep, "numSmallStep");
+            this.numSmallStep.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSmallStep.Name = "numSmallStep";
+            this.numSmallStep.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // SettingsForm
             // 
@@ -404,6 +429,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSmallStep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,5 +472,7 @@
         private System.Windows.Forms.CheckBox chkMarkerSymbol;
         private System.Windows.Forms.Button butConfigure;
         private System.Windows.Forms.CheckBox chkNotifyIcon;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numSmallStep;
     }
 }

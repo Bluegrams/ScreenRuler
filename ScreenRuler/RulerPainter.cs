@@ -77,10 +77,13 @@ namespace ScreenRuler
                     g.FillRectangle(brush, 0, 0, drawWidth, c.Height);
             }
             // ----- Draw the ruler scale -----
-            if (resizeMode.HasFlag(FormResizeMode.Horizontal))
-                PaintRulerScale(false);
-            if (resizeMode.HasFlag(FormResizeMode.Vertical))
-                PaintRulerScale(true);
+            if (!settings.HideRulerScale)
+            {
+                if (resizeMode.HasFlag(FormResizeMode.Horizontal))
+                    PaintRulerScale(false);
+                if (resizeMode.HasFlag(FormResizeMode.Vertical))
+                    PaintRulerScale(true);
+            }
         }
 
         protected void PaintRulerScale(bool vertical)
@@ -207,13 +210,16 @@ namespace ScreenRuler
                 drawMarker(new Marker(goldenB, vertical), MarkerSymbolGoldenLine, col);
             }
             // Draw all given custom markers
-            int x = 0;
-            foreach (Marker marker in markers)
+            if (!settings.HideRulerScale)
             {
-                // Symbols for 1-20 using unicode. More than 20 - skip symbol
-                var symbol = x < 20 ? char.ConvertFromUtf32(MarkerSymbolCustomLine1 + ++x) : $"({++x}) ";
-                Color col = settings.Theme.CustomLinesColor;
-                drawMarker(marker, symbol, col);
+                int x = 0;
+                foreach (Marker marker in markers)
+                {
+                    // Symbols for 1-20 using unicode. More than 20 - skip symbol
+                    var symbol = x < 20 ? char.ConvertFromUtf32(MarkerSymbolCustomLine1 + ++x) : $"({++x}) ";
+                    Color col = settings.Theme.CustomLinesColor;
+                    drawMarker(marker, symbol, col);
+                }
             }
         }
 

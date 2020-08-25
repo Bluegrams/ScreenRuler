@@ -941,4 +941,7 @@
   <data name="chkNotifyIcon.Text" xml:space="preserve">
     <value>Icon in Benachrichtigungsfeld anzeigen</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Kleine Schrittweite</value>
+  </data>
 </root>

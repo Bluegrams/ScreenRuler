@@ -33,6 +33,7 @@ namespace ScreenRuler
                 .First();
             selected.Checked = true;
             // --- Load: Second Page ---
+            numSmallStep.Value = settings.SmallStep;
             numMediumStep.Value = settings.MediumStep;
             numLargeStep.Value = settings.LargeStep;
             numMarkerThickness.Value = settings.MarkerThickness;
@@ -84,6 +85,7 @@ namespace ScreenRuler
             if (settings.SelectedTheme == ThemeOption.Custom)
                 setCustomThemeColors(settings.Theme);
             // --- Apply: Second Page ---
+            settings.SmallStep = (int)numSmallStep.Value;
             settings.MediumStep = (int)numMediumStep.Value;
             settings.LargeStep = (int)numLargeStep.Value;
             settings.MarkerThickness = (byte)numMarkerThickness.Value;

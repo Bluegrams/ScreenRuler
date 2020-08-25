@@ -11,19 +11,24 @@ namespace ScreenRuler
 
         public Point Position { get; private set; }
 
+        public event EventHandler Tick;
+
         public MouseTracker(Form form, int ticks = 50)
         {
             thread = new Thread(() =>
             {
                 while (true)
                 {
-                    if (form.Bounds.Contains(Cursor.Position) && form.IsHandleCreated)
+                    if (form.IsHandleCreated)
                     {
                         form.Invoke(new MethodInvoker(() => {
-
-                            this.Position = form.PointToClient(Cursor.Position);
+                            if (form.Bounds.Contains(Cursor.Position))
+                            {
+                                this.Position = form.PointToClient(Cursor.Position);
+                                form.Invalidate();
+                            }
+                            Tick?.Invoke(this, EventArgs.Empty);
                         }));
-                        form.Invalidate();
                     }
                     Thread.Sleep(ticks);
                 }

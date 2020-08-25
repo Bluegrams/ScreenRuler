@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -122,6 +122,6 @@ Altezza: {1}px
 Posizione: {2}</value>
   </data>
   <data name="ScalingText" xml:space="preserve">
-    <value> DPI del Monitor / Scala: {0} / {1}%</value>
+    <value>DPI del Monitor / Scala: {0} / {1}%</value>
   </data>
 </root>

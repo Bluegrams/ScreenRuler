@@ -34,6 +34,7 @@ namespace ScreenRuler
             InitializeComponent();
             updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);
             mouseTracker = new MouseTracker(this);
+            mouseTracker.Tick += mouseTracker_Tick;
             painter = new RulerPainter(this);
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.TopMost = true;
@@ -158,6 +159,25 @@ namespace ScreenRuler
             base.WndProc(ref m);
         }
 
+        private void mouseTracker_Tick(object sender, EventArgs e)
+        {
+            if (Settings.FollowMousePointer)
+            {
+                int offsetX, offsetY;
+                if (Settings.FollowMousePointerCenter)
+                {
+                    offsetX = this.Size.Width / 2;
+                    offsetY = ResizeMode == FormResizeMode.Vertical ? this.Size.Height / 2 : this.RestrictSize / 2;
+                }
+                else
+                {
+                    offsetX = 10;
+                    offsetY = 10;
+                }
+                this.Location = new Point(Cursor.Position.X - offsetX, Cursor.Position.Y - offsetY);
+            }
+        }
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -215,6 +235,9 @@ namespace ScreenRuler
                     CustomMarkers.AddMarker((Point)this.Size, RestrictSize);
                     this.Invalidate();
                     break;
+                case Keys.W:
+                    conFollowMousePointer.PerformClick();
+                    break;
                 case Keys.F1:
                     conHelp.PerformClick();
                     break;
@@ -232,7 +255,7 @@ namespace ScreenRuler
         /// </summary>
         private void moveKeyDown(KeyEventArgs e)
         {
-            int step = e.Shift ? Settings.MediumStep : 1;
+            int step = e.Shift ? Settings.MediumStep : Settings.SmallStep;
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -255,7 +278,7 @@ namespace ScreenRuler
         /// </summary>
         private void resizeKeyDown(KeyEventArgs e)
         {
-            int step = e.Shift ? Settings.MediumStep : 1;
+            int step = e.Shift ? Settings.MediumStep : Settings.SmallStep;
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -300,6 +323,7 @@ namespace ScreenRuler
             var amount = Math.Sign(e.Delta);
             if (ModifierKeys.HasFlag(Keys.Shift))
                 amount *= Settings.LargeStep;
+            else amount *= Settings.SmallStep;
             // Add to width or height according to current mode and mouse location
             if (ResizeMode == FormResizeMode.Horizontal)
             {
@@ -319,15 +343,18 @@ namespace ScreenRuler
 
         private void RulerForm_MouseClick(object sender, MouseEventArgs e)
         {
-            Marker marker = CustomMarkers.GetMarker(e.Location, RestrictSize);
-            if (marker != Marker.Default)
+            if (!Settings.HideRulerScale)
             {
-                CustomLineForm lineForm = new CustomLineForm(marker,
-                    getUnitConverter(), Settings.Theme);
-                if (lineForm.ShowDialog(this) == DialogResult.OK)
+                Marker marker = CustomMarkers.GetMarker(e.Location, RestrictSize);
+                if (marker != Marker.Default)
                 {
-                    CustomMarkers.Markers.Remove(marker);
-                    this.Invalidate();
+                    CustomLineForm lineForm = new CustomLineForm(marker,
+                        getUnitConverter(), Settings.Theme);
+                    if (lineForm.ShowDialog(this) == DialogResult.OK)
+                    {
+                        CustomMarkers.Markers.Remove(marker);
+                        this.Invalidate();
+                    }
                 }
             }
         }
@@ -397,20 +424,27 @@ namespace ScreenRuler
         private void contxtMenu_Opening(object sender, CancelEventArgs e)
         {
             conSlimMode.Checked = Settings.SlimMode;
-            conMarkCenter.Checked = Settings.ShowCenterLine;
-            conMarkThirds.Checked = Settings.ShowThirdLines;
-            conMarkGolden.Checked = Settings.ShowGoldenLine;
             conTopmost.Checked = this.TopMost;
-            conMarkMouse.Checked = Settings.ShowMouseLine;
-            conOffsetLength.Checked = Settings.ShowOffsetLengthLabels;
             conMultiMarking.Checked = !Settings.MultiMarking;
             comUnits.SelectedIndex = (int)Settings.MeasuringUnit;
+            conFollowMousePointer.Checked = Settings.FollowMousePointer;
+            setAppearanceCheckboxes();
             // Show ruler if it was minimized
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.WindowState = FormWindowState.Normal;
                 this.Activate();
             }
+        }
+
+        private void setAppearanceCheckboxes()
+        {
+            conMarkCenter.Checked = Settings.ShowCenterLine;
+            conMarkThirds.Checked = Settings.ShowThirdLines;
+            conMarkGolden.Checked = Settings.ShowGoldenLine;
+            conMarkMouse.Checked = Settings.ShowMouseLine;
+            conOffsetLength.Checked = Settings.ShowOffsetLengthLabels;
+            conHideRulerScale.Checked = Settings.HideRulerScale;
         }
 
         private void conRulerMode_DropDownOpening(object sender, EventArgs e)
@@ -446,6 +480,11 @@ namespace ScreenRuler
             this.Invalidate();
         }
 
+        private void conFollowMousePointer_Click(object sender, EventArgs e)
+        {
+            Settings.FollowMousePointer = !Settings.FollowMousePointer;
+        }
+
         private void conMarkMouse_Click(object sender, EventArgs e)
         {
             Settings.ShowMouseLine = !Settings.ShowMouseLine;
@@ -473,6 +512,21 @@ namespace ScreenRuler
         private void conOffsetLength_Click(object sender, EventArgs e)
         {
             Settings.ShowOffsetLengthLabels = !Settings.ShowOffsetLengthLabels;
+            this.Invalidate();
+        }
+
+        private void conHideRulerScale_Click(object sender, EventArgs e)
+        {
+            Settings.HideRulerScale = !Settings.HideRulerScale;
+            if (Settings.HideRulerScale)
+            {
+                Settings.ShowCenterLine = false;
+                Settings.ShowThirdLines = false;
+                Settings.ShowGoldenLine = false;
+                Settings.ShowMouseLine = false;
+                Settings.ShowOffsetLengthLabels = false;
+                setAppearanceCheckboxes();
+            }
             this.Invalidate();
         }
 
