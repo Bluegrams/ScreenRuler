@@ -167,9 +167,6 @@
   <data name="conOpacity.Text" xml:space="preserve">
     <value>Opacità</value>
   </data>
-  <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>Limita ad un solo segno</value>
-  </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Mostra Offset e Lunghezza</value>
   </data>

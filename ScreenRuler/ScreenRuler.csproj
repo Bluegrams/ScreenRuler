@@ -69,6 +69,15 @@
     <Compile Include="BaseForm.cs" />
     <Compile Include="Colors\ColorSetting.cs" />
     <Compile Include="Colors\CommonThemes.cs" />
+    <Compile Include="Controls\MarkerListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MarkerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MarkerListForm.Designer.cs">
+      <DependentUpon>MarkerListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomLineForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +171,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomLineForm.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomLineForm.zh-CN.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
@@ -183,6 +193,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpForm.it.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MarkerListForm.de.resx">
+      <DependentUpon>MarkerListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MarkerListForm.resx">
+      <DependentUpon>MarkerListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,9 +262,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.de.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.es.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>

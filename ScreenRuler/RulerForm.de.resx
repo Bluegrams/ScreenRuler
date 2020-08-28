@@ -168,9 +168,6 @@
   <data name="conOpacity.Text" xml:space="preserve">
     <value>Deckkraft</value>
   </data>
-  <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>Auf einen Marker limitieren</value>
-  </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Versatz und Länge anzeigen</value>
   </data>
@@ -212,5 +209,8 @@
   </data>
   <data name="conHideRulerScale.Text" xml:space="preserve">
     <value>Linealskala verstecken</value>
+  </data>
+  <data name="conEditMarkers.Text" xml:space="preserve">
+    <value>Marker bearbeiten</value>
   </data>
 </root>

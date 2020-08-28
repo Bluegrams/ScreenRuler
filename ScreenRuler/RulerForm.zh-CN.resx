@@ -147,9 +147,6 @@
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>显示偏移与长度</value>
   </data>
-  <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>至多一条鼠标标记</value>
-  </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>清除所有鼠标标记</value>
   </data>

@@ -176,7 +176,7 @@
     <value>Erweitert</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Aussehen</value>
+    <value>Verschiedenes</value>
   </data>
   <data name="chkMarkerSymbol.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 21</value>
@@ -943,5 +943,17 @@
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Kleine Schrittweite</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Marker</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="chkLimitOneMarker.Text" xml:space="preserve">
+    <value>Auf einen Marker limitieren</value>
+  </data>
+  <data name="chkFollowMousePointerCenter.Text" xml:space="preserve">
+    <value>Mit Linealmitte Mauszeiger folgen</value>
   </data>
 </root>

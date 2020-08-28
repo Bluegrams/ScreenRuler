@@ -42,6 +42,15 @@ namespace ScreenRuler
             return Value.GetHashCode();
         }
 
+        public string DisplayString
+        {
+            get
+            {
+                if (!Vertical) return String.Format("⇄ {0,6} px", Value);
+                else return String.Format("⇅ {0,6} px", Value);
+            }
+        }
+
         public static Marker FromString(string s)
         {
             string v = s.Substring(0, s.Length - 1);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -157,9 +157,6 @@
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Avanzato</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Apparenza</value>
   </data>
   <data name="chkMarkerSymbol.Text" xml:space="preserve">
     <value>Mostra definizione segni speciali</value>

@@ -168,9 +168,6 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Espesor del marcador</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Apariencia</value>
-  </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Espaciado largo</value>
   </data>

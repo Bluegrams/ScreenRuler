@@ -16,6 +16,7 @@ namespace ScreenRuler
         private WinFormsUpdateChecker updateChecker;
         private MouseTracker mouseTracker;
         private RulerPainter painter;
+        private MarkerListForm markerListForm;
 
         public Settings Settings { get; set; }
         public MarkerCollection CustomMarkers { get; set; }
@@ -72,8 +73,6 @@ namespace ScreenRuler
                     conVeryLow.Checked = true;
                     break;
             }
-            // Set the marker limit
-            CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
             // Set the minimum size
             RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
             // apply other loaded settings
@@ -87,6 +86,8 @@ namespace ScreenRuler
         // a helper method to be called after settings values have changed
         private void applySettings()
         {
+            // Set the marker limit
+            CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
             // Show notify icon or task bar entry based on settings
             if (Settings.UseNotifyIcon)
             {
@@ -226,7 +227,7 @@ namespace ScreenRuler
                         // clear first custom marker
                         if (CustomMarkers.Markers.Count > 0)
                         {
-                            CustomMarkers.Markers.RemoveFirst();
+                            CustomMarkers.RemoveFirstMarker();
                             this.Invalidate();
                         }
                     }
@@ -352,7 +353,7 @@ namespace ScreenRuler
                         getUnitConverter(), Settings.Theme);
                     if (lineForm.ShowDialog(this) == DialogResult.OK)
                     {
-                        CustomMarkers.Markers.Remove(marker);
+                        CustomMarkers.RemoveMarker(marker);
                         this.Invalidate();
                     }
                 }
@@ -425,7 +426,6 @@ namespace ScreenRuler
         {
             conSlimMode.Checked = Settings.SlimMode;
             conTopmost.Checked = this.TopMost;
-            conMultiMarking.Checked = !Settings.MultiMarking;
             comUnits.SelectedIndex = (int)Settings.MeasuringUnit;
             conFollowMousePointer.Checked = Settings.FollowMousePointer;
             setAppearanceCheckboxes();
@@ -530,16 +530,25 @@ namespace ScreenRuler
             this.Invalidate();
         }
 
-        private void conMultiMarking_Click(object sender, EventArgs e)
+        private void conEditMarkers_Click(object sender, EventArgs e)
         {
-            Settings.MultiMarking = !Settings.MultiMarking;
-            CustomMarkers.Limit = Settings.MultiMarking ? int.MaxValue : 1;
-            this.Invalidate();
+            if (markerListForm == null || markerListForm.IsDisposed)
+            {
+                markerListForm = new MarkerListForm(CustomMarkers, Settings);
+                markerListForm.TopMost = this.TopMost;
+                markerListForm.Show(this);
+            }
+            else
+            {
+                if (!markerListForm.Visible)
+                    markerListForm.Show(this);
+                markerListForm.Activate();
+            }
         }
 
         private void conClearCustomMarker_Click(object sender, EventArgs e)
         {
-            CustomMarkers.Markers.Clear();
+            CustomMarkers.Clear();
             this.Invalidate();
         }
 

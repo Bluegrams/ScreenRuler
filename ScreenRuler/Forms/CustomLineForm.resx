@@ -124,6 +124,10 @@
   <data name="lblLine.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 9</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblLine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 0</value>
+  </data>
   <data name="lblLine.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 65</value>
   </data>
@@ -144,9 +148,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblLine.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="butCancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -175,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="butDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -205,6 +208,42 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butDelete.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblDirection.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="lblDirection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblDirection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="lblDirection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblDirection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 65</value>
+  </data>
+  <data name="lblDirection.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblDirection.Text" xml:space="preserve">
+    <value>⇅</value>
+  </data>
+  <data name="lblDirection.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblDirection.Name" xml:space="preserve">
+    <value>lblDirection</value>
+  </data>
+  <data name="&gt;&gt;lblDirection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDirection.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblDirection.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

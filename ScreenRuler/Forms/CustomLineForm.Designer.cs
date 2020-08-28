@@ -32,6 +32,7 @@
             this.lblLine = new System.Windows.Forms.Label();
             this.butCancel = new System.Windows.Forms.Button();
             this.butDelete = new System.Windows.Forms.Button();
+            this.lblDirection = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblLine
@@ -53,11 +54,17 @@
             this.butDelete.UseVisualStyleBackColor = true;
             this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
             // 
+            // lblDirection
+            // 
+            resources.ApplyResources(this.lblDirection, "lblDirection");
+            this.lblDirection.Name = "lblDirection";
+            // 
             // CustomLineForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.butCancel;
+            this.Controls.Add(this.lblDirection);
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.lblLine);
@@ -76,5 +83,6 @@
         private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Button butCancel;
         private System.Windows.Forms.Button butDelete;
+        private System.Windows.Forms.Label lblDirection;
     }
 }

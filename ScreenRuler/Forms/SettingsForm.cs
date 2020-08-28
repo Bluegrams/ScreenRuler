@@ -33,13 +33,16 @@ namespace ScreenRuler
                 .First();
             selected.Checked = true;
             // --- Load: Second Page ---
+            numMarkerThickness.Value = settings.MarkerThickness;
+            chkMarkerSymbol.Checked = settings.ShowMarkerSymbol;
+            chkLimitOneMarker.Checked = !settings.MultiMarking;
+            // --- Load: Third Page ---
             numSmallStep.Value = settings.SmallStep;
             numMediumStep.Value = settings.MediumStep;
             numLargeStep.Value = settings.LargeStep;
-            numMarkerThickness.Value = settings.MarkerThickness;
-            chkMarkerSymbol.Checked = settings.ShowMarkerSymbol;
             chkToolTip.Checked = settings.ShowToolTip;
             chkNotifyIcon.Checked = settings.UseNotifyIcon;
+            chkFollowMousePointerCenter.Checked = settings.FollowMousePointerCenter;
         }
 
         private void radTheme_CheckedChanged(object sender, EventArgs e)
@@ -85,13 +88,16 @@ namespace ScreenRuler
             if (settings.SelectedTheme == ThemeOption.Custom)
                 setCustomThemeColors(settings.Theme);
             // --- Apply: Second Page ---
+            settings.MarkerThickness = (byte)numMarkerThickness.Value;
+            settings.ShowMarkerSymbol = chkMarkerSymbol.Checked;
+            settings.MultiMarking = !chkLimitOneMarker.Checked;
+            // --- Apply: Third Page ---
             settings.SmallStep = (int)numSmallStep.Value;
             settings.MediumStep = (int)numMediumStep.Value;
             settings.LargeStep = (int)numLargeStep.Value;
-            settings.MarkerThickness = (byte)numMarkerThickness.Value;
-            settings.ShowMarkerSymbol = chkMarkerSymbol.Checked;
             settings.ShowToolTip = chkToolTip.Checked;
             settings.UseNotifyIcon = chkNotifyIcon.Checked;
+            settings.FollowMousePointerCenter = chkFollowMousePointerCenter.Checked;
             this.DialogResult = DialogResult.OK;
         }
 

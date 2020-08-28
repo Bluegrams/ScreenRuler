@@ -78,6 +78,12 @@ namespace ScreenRuler
         public bool FollowMousePointerCenter { get; set; } = true;
 
         private ThemeOption selectedTheme;
+
+        /// <summary>
+        /// This event is raised whenever the selected theme option has changed.
+        /// </summary>
+        public event EventHandler SelectedThemeChanged;
+
         /// <summary>
         /// The currently selected theme option.
         /// </summary>
@@ -96,8 +102,10 @@ namespace ScreenRuler
                         Theme = CommonThemes.DarkTheme;
                         break;
                 }
+                SelectedThemeChanged?.Invoke(this, new EventArgs());
             }
         }
+
         /// <summary>
         /// The currently selected theme (influenced by SelectedTheme).
         /// </summary>

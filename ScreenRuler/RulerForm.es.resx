@@ -150,9 +150,6 @@
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Mostrar desplazamiento y longitud</value>
   </data>
-  <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>Limitar a una sola marca</value>
-  </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Eliminar todas las marcas</value>
   </data>

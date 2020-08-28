@@ -50,7 +50,16 @@
             this.conLength = new System.Windows.Forms.ToolStripMenuItem();
             this.conFollowMousePointer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.conMultiMarking = new System.Windows.Forms.ToolStripMenuItem();
+            this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contxtAppearance = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.conMarkCenter = new System.Windows.Forms.ToolStripMenuItem();
+            this.conMarkThirds = new System.Windows.Forms.ToolStripMenuItem();
+            this.conMarkGolden = new System.Windows.Forms.ToolStripMenuItem();
+            this.conMarkMouse = new System.Windows.Forms.ToolStripMenuItem();
+            this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.conHideRulerScale = new System.Windows.Forms.ToolStripMenuItem();
+            this.conEditMarkers = new System.Windows.Forms.ToolStripMenuItem();
             this.conClearCustomMarker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,15 +70,6 @@
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.contxtAppearance = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.conMarkCenter = new System.Windows.Forms.ToolStripMenuItem();
-            this.conMarkThirds = new System.Windows.Forms.ToolStripMenuItem();
-            this.conMarkGolden = new System.Windows.Forms.ToolStripMenuItem();
-            this.conMarkMouse = new System.Windows.Forms.ToolStripMenuItem();
-            this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
-            this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conHideRulerScale = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.contxtMenu.SuspendLayout();
             this.contxtAppearance.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             this.conFollowMousePointer,
             this.toolStripSeparator1,
             this.appearanceToolStripMenuItem,
-            this.conMultiMarking,
+            this.conEditMarkers,
             this.conClearCustomMarker,
             this.toolStripSeparator3,
             this.settingsToolStripMenuItem,
@@ -235,11 +235,74 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
-            // conMultiMarking
+            // appearanceToolStripMenuItem
             // 
-            this.conMultiMarking.Name = "conMultiMarking";
-            resources.ApplyResources(this.conMultiMarking, "conMultiMarking");
-            this.conMultiMarking.Click += new System.EventHandler(this.conMultiMarking_Click);
+            this.appearanceToolStripMenuItem.DropDown = this.contxtAppearance;
+            this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
+            resources.ApplyResources(this.appearanceToolStripMenuItem, "appearanceToolStripMenuItem");
+            // 
+            // contxtAppearance
+            // 
+            this.contxtAppearance.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conMarkCenter,
+            this.conMarkThirds,
+            this.conMarkGolden,
+            this.conMarkMouse,
+            this.conOffsetLength,
+            this.toolStripSeparator5,
+            this.conHideRulerScale});
+            this.contxtAppearance.Name = "contxtAppearance";
+            this.contxtAppearance.OwnerItem = this.appearanceToolStripMenuItem;
+            resources.ApplyResources(this.contxtAppearance, "contxtAppearance");
+            // 
+            // conMarkCenter
+            // 
+            this.conMarkCenter.Name = "conMarkCenter";
+            resources.ApplyResources(this.conMarkCenter, "conMarkCenter");
+            this.conMarkCenter.Click += new System.EventHandler(this.conMarkCenter_Click);
+            // 
+            // conMarkThirds
+            // 
+            this.conMarkThirds.Name = "conMarkThirds";
+            resources.ApplyResources(this.conMarkThirds, "conMarkThirds");
+            this.conMarkThirds.Click += new System.EventHandler(this.conMarkThirds_Click);
+            // 
+            // conMarkGolden
+            // 
+            this.conMarkGolden.Name = "conMarkGolden";
+            resources.ApplyResources(this.conMarkGolden, "conMarkGolden");
+            this.conMarkGolden.Click += new System.EventHandler(this.conMarkGolden_Click);
+            // 
+            // conMarkMouse
+            // 
+            this.conMarkMouse.Checked = true;
+            this.conMarkMouse.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.conMarkMouse.Name = "conMarkMouse";
+            resources.ApplyResources(this.conMarkMouse, "conMarkMouse");
+            this.conMarkMouse.Click += new System.EventHandler(this.conMarkMouse_Click);
+            // 
+            // conOffsetLength
+            // 
+            this.conOffsetLength.Name = "conOffsetLength";
+            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
+            this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            // 
+            // conHideRulerScale
+            // 
+            this.conHideRulerScale.Name = "conHideRulerScale";
+            resources.ApplyResources(this.conHideRulerScale, "conHideRulerScale");
+            this.conHideRulerScale.Click += new System.EventHandler(this.conHideRulerScale_Click);
+            // 
+            // conEditMarkers
+            // 
+            this.conEditMarkers.Name = "conEditMarkers";
+            resources.ApplyResources(this.conEditMarkers, "conEditMarkers");
+            this.conEditMarkers.Click += new System.EventHandler(this.conEditMarkers_Click);
             // 
             // conClearCustomMarker
             // 
@@ -293,68 +356,6 @@
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
-            // contxtAppearance
-            // 
-            this.contxtAppearance.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.conMarkCenter,
-            this.conMarkThirds,
-            this.conMarkGolden,
-            this.conMarkMouse,
-            this.conOffsetLength,
-            this.toolStripSeparator5,
-            this.conHideRulerScale});
-            this.contxtAppearance.Name = "contxtAppearance";
-            resources.ApplyResources(this.contxtAppearance, "contxtAppearance");
-            // 
-            // conMarkCenter
-            // 
-            this.conMarkCenter.Name = "conMarkCenter";
-            resources.ApplyResources(this.conMarkCenter, "conMarkCenter");
-            this.conMarkCenter.Click += new System.EventHandler(this.conMarkCenter_Click);
-            // 
-            // conMarkThirds
-            // 
-            this.conMarkThirds.Name = "conMarkThirds";
-            resources.ApplyResources(this.conMarkThirds, "conMarkThirds");
-            this.conMarkThirds.Click += new System.EventHandler(this.conMarkThirds_Click);
-            // 
-            // conMarkGolden
-            // 
-            this.conMarkGolden.Name = "conMarkGolden";
-            resources.ApplyResources(this.conMarkGolden, "conMarkGolden");
-            this.conMarkGolden.Click += new System.EventHandler(this.conMarkGolden_Click);
-            // 
-            // conMarkMouse
-            // 
-            this.conMarkMouse.Checked = true;
-            this.conMarkMouse.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.conMarkMouse.Name = "conMarkMouse";
-            resources.ApplyResources(this.conMarkMouse, "conMarkMouse");
-            this.conMarkMouse.Click += new System.EventHandler(this.conMarkMouse_Click);
-            // 
-            // conOffsetLength
-            // 
-            this.conOffsetLength.Name = "conOffsetLength";
-            resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
-            this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
-            // 
-            // appearanceToolStripMenuItem
-            // 
-            this.appearanceToolStripMenuItem.DropDown = this.contxtAppearance;
-            this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            resources.ApplyResources(this.appearanceToolStripMenuItem, "appearanceToolStripMenuItem");
-            // 
-            // conHideRulerScale
-            // 
-            this.conHideRulerScale.Name = "conHideRulerScale";
-            resources.ApplyResources(this.conHideRulerScale, "conHideRulerScale");
-            this.conHideRulerScale.Click += new System.EventHandler(this.conHideRulerScale_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-            // 
             // RulerForm
             // 
             resources.ApplyResources(this, "$this");
@@ -395,7 +396,7 @@
         private System.Windows.Forms.ToolStripMenuItem conClearCustomMarker;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem conHelp;
-        private System.Windows.Forms.ToolStripMenuItem conMultiMarking;
+        private System.Windows.Forms.ToolStripMenuItem conEditMarkers;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox comUnits;
         private System.Windows.Forms.ToolStripMenuItem conMinimize;

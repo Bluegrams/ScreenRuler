@@ -171,9 +171,6 @@
   <data name="label10.Text" xml:space="preserve">
     <value>标记刻度</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>外观</value>
-  </data>
   <data name="label9.Text" xml:space="preserve">
     <value>大步长尺寸</value>
   </data>

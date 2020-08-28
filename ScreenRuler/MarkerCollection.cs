@@ -11,6 +11,11 @@ namespace ScreenRuler
     {
         private int limit = int.MaxValue;
 
+        /// <summary>
+        /// This event is raised when a marker was added to the collection or if a marker was removed.
+        /// </summary>
+        public event EventHandler<MarkerCollectionEventArgs> MarkerCollectionChanged;
+
         public MarkerCollection()
         {
             Markers = new LinkedList<Marker>();
@@ -25,7 +30,7 @@ namespace ScreenRuler
                 limit = value;
                 // remove additional markers
                 while (Markers.Count > limit)
-                    Markers.RemoveFirst();
+                    RemoveFirstMarker();
             }
         }
 
@@ -58,12 +63,15 @@ namespace ScreenRuler
         {
             // Add the marker as horizontal or vertical marker based on position
             bool vertical = verticalOnly || pos.Y >= limit;
+            Marker newMarker;
             if (vertical)
-                Markers.AddLast(new Marker(pos.Y, true));
-            else Markers.AddLast(new Marker(pos.X, false));
+                newMarker = new Marker(pos.Y, true);
+            else newMarker = new Marker(pos.X, false);
+            Markers.AddLast(newMarker);
             // remove first if we hit limit
             if (Markers.Count > Limit)
-                Markers.RemoveFirst();
+                RemoveFirstMarker();
+            MarkerCollectionChanged?.Invoke(this, new MarkerCollectionEventArgs(true, newMarker));
         }
 
         /// <summary>
@@ -85,6 +93,38 @@ namespace ScreenRuler
                 return Markers.Where((v) => Math.Abs(pos.Y - v.Value) <= diff).FirstOrDefault();
             }
             return marker;
+        }
+
+        public void RemoveMarker(Marker marker)
+        {
+            Markers.Remove(marker);
+            MarkerCollectionChanged?.Invoke(this, new MarkerCollectionEventArgs(false, marker));
+        }
+
+        public void RemoveFirstMarker()
+        {
+            var first = Markers.First.Value;
+            Markers.RemoveFirst();
+            MarkerCollectionChanged?.Invoke(this, new MarkerCollectionEventArgs(false, first));
+        }
+
+        public void Clear()
+        {
+            var removedItems = Markers.ToArray();
+            Markers.Clear();
+            MarkerCollectionChanged?.Invoke(this, new MarkerCollectionEventArgs(false, removedItems));
+        }
+    }
+
+    public class MarkerCollectionEventArgs : EventArgs
+    {
+        public Marker[] AddedMarkers { get; }
+        public Marker[] RemovedMarkers { get; }
+
+        public MarkerCollectionEventArgs(bool isAdded, params Marker[] changedMarkers)
+        {
+            if (isAdded) AddedMarkers = changedMarkers;
+            else RemovedMarkers = changedMarkers;
         }
     }
 }

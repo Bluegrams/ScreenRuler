@@ -320,11 +320,14 @@
   <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
     <value>Appearance</value>
   </data>
-  <data name="conMultiMarking.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="conEditMarkers.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="conEditMarkers.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
-  <data name="conMultiMarking.Text" xml:space="preserve">
-    <value>Limit To One Marker</value>
+  <data name="conEditMarkers.Text" xml:space="preserve">
+    <value>Edit Markers</value>
   </data>
   <data name="conClearCustomMarker.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
@@ -1972,10 +1975,58 @@
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;conMultiMarking.Name" xml:space="preserve">
-    <value>conMultiMarking</value>
+  <data name="&gt;&gt;appearanceToolStripMenuItem.Name" xml:space="preserve">
+    <value>appearanceToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;conMultiMarking.Type" xml:space="preserve">
+  <data name="&gt;&gt;appearanceToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conMarkCenter.Name" xml:space="preserve">
+    <value>conMarkCenter</value>
+  </data>
+  <data name="&gt;&gt;conMarkCenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conMarkThirds.Name" xml:space="preserve">
+    <value>conMarkThirds</value>
+  </data>
+  <data name="&gt;&gt;conMarkThirds.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conMarkGolden.Name" xml:space="preserve">
+    <value>conMarkGolden</value>
+  </data>
+  <data name="&gt;&gt;conMarkGolden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conMarkMouse.Name" xml:space="preserve">
+    <value>conMarkMouse</value>
+  </data>
+  <data name="&gt;&gt;conMarkMouse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conOffsetLength.Name" xml:space="preserve">
+    <value>conOffsetLength</value>
+  </data>
+  <data name="&gt;&gt;conOffsetLength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conHideRulerScale.Name" xml:space="preserve">
+    <value>conHideRulerScale</value>
+  </data>
+  <data name="&gt;&gt;conHideRulerScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conEditMarkers.Name" xml:space="preserve">
+    <value>conEditMarkers</value>
+  </data>
+  <data name="&gt;&gt;conEditMarkers.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;conClearCustomMarker.Name" xml:space="preserve">
@@ -2037,54 +2088,6 @@
   </data>
   <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conMarkCenter.Name" xml:space="preserve">
-    <value>conMarkCenter</value>
-  </data>
-  <data name="&gt;&gt;conMarkCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conMarkThirds.Name" xml:space="preserve">
-    <value>conMarkThirds</value>
-  </data>
-  <data name="&gt;&gt;conMarkThirds.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conMarkGolden.Name" xml:space="preserve">
-    <value>conMarkGolden</value>
-  </data>
-  <data name="&gt;&gt;conMarkGolden.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conMarkMouse.Name" xml:space="preserve">
-    <value>conMarkMouse</value>
-  </data>
-  <data name="&gt;&gt;conMarkMouse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conOffsetLength.Name" xml:space="preserve">
-    <value>conOffsetLength</value>
-  </data>
-  <data name="&gt;&gt;conOffsetLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;appearanceToolStripMenuItem.Name" xml:space="preserve">
-    <value>appearanceToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;appearanceToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conHideRulerScale.Name" xml:space="preserve">
-    <value>conHideRulerScale</value>
-  </data>
-  <data name="&gt;&gt;conHideRulerScale.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RulerForm</value>
