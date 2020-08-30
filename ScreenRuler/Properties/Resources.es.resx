@@ -120,4 +120,9 @@
   <data name="ScalingText" xml:space="preserve">
     <value>DPI del monitor / Escalado: {0} / {1}%</value>
   </data>
+  <data name="ToolTipText" xml:space="preserve">
+    <value>Ancho: {0}px
+Alto: {1}px
+Posición: {2}</value>
+  </data>
 </root>

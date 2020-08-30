@@ -186,4 +186,25 @@
   <data name="butConfigure.Text" xml:space="preserve">
     <value>Configurar</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Misceláneos</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Espaciado pequeño</value>
+  </data>
+  <data name="chkNotifyIcon.Text" xml:space="preserve">
+    <value>Mostrar icono en el área de notificación</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Herramientas</value>
+  </data>
+  <data name="chkFollowMousePointerCenter.Text" xml:space="preserve">
+    <value>Seguir el puntero del ratón con el centro de la regla</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Marcas</value>
+  </data>
+  <data name="chkLimitOneMarker.Text" xml:space="preserve">
+    <value>Limitar a una marca</value>
+  </data>
 </root>
