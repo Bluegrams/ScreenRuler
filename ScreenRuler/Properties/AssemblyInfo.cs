@@ -16,7 +16,9 @@ using Bluegrams.Application.Attributes;
 [assembly: CompanyWebsite("http://bluegrams.com", "Bluegrams")]
 [assembly: SupportedCultures("en", "de", "es", "zh-CN", "it")]
 
+#if PORTABLE
 [assembly: AppPortable(true)]
+#endif
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -26,5 +28,5 @@ using Bluegrams.Application.Attributes;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("67b8f96e-8237-4c57-983b-a2ca5bddc9ae")]
 
-[assembly: AssemblyVersion("0.6.0")]
-[assembly: AssemblyFileVersion("0.6.0")]
+[assembly: AssemblyVersion("0.7.0")]
+[assembly: AssemblyFileVersion("0.7.0")]

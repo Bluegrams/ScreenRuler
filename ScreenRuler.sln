@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2002
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenRuler", "ScreenRuler\ScreenRuler.csproj", "{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}"
 EndProject
@@ -34,13 +34,16 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Publish-Portable|Any CPU = Publish-Portable|Any CPU
+		Publish-Release|Any CPU = Publish-Release|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Portable|Any CPU.ActiveCfg = Release|Any CPU
-		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Portable|Any CPU.Build.0 = Release|Any CPU
+		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Portable|Any CPU.ActiveCfg = Portable|Any CPU
+		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Portable|Any CPU.Build.0 = Portable|Any CPU
+		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Publish-Release|Any CPU.Build.0 = Release|Any CPU
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67B8F96E-8237-4C57-983B-A2CA5BDDC9AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
@@ -53,9 +56,9 @@ Global
 		{07FDF133-B8EB-40FF-9216-9F8D2239D11F} = {AAA7F469-AAC5-4DD7-AC3C-619BAE233F57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_TaskErrorCategory = Message
-		RESX_ShowErrorsInErrorList = True
-		SolutionGuid = {3D95859A-FF01-44A8-A580-18614EAEC245}
 		RESX_Rules = {"EnabledRules":["StringFormat","WhiteSpaceLead","WhiteSpaceTail","PunctuationTail"]}
+		SolutionGuid = {3D95859A-FF01-44A8-A580-18614EAEC245}
+		RESX_ShowErrorsInErrorList = True
+		RESX_TaskErrorCategory = Message
 	EndGlobalSection
 EndGlobal

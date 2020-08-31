@@ -1,12 +1,19 @@
 # Screen Ruler Changelog
 
+### v.0.7 (2020-09)
+- **New:** Added window for listing & managing custom markers
+- **New:** Option to hide ruler scale
+- **New:** Let ruler automatically follow mouse pointer
+- **New:** Italian translation
+- **New/ Changed:** Minor changes in options & settings (opacity, markers, step size)
+
 ### v.0.6 (2020-04)
-- **New:**: Two-dimensional mode: measure the width and height simultaneously
-- **New:**: Toggle ruler mode using 'Space'
-- **New:**: Slim ruler scale
+- **New:** Two-dimensional mode: measure the width and height simultaneously
+- **New:** Toggle ruler mode using 'Space'
+- **New:** Slim ruler scale
 - **New:** Ruler icon in notification area instead of task bar
-- **New:**: Improved dialog for setting ruler size
-- **New**: Chinese translation
+- **New:** Improved dialog for setting ruler size
+- **New:** Chinese translation
 
 ### v.0.5 (2020-02)
 - **New:** Marker for Golden Ratio

@@ -95,13 +95,15 @@ Places to get help:
 You are very welcome to support the development of this app by reporting bugs, adding fixes, translating or suggesting new features.
 The easiest way to contribute is to open [pull request on GitHub](https://github.com/bluegrams/screenruler/pulls).
 
-#### Translations
+#### Contributors
 
-This app was translated into the following languages by helpful contributors:
+These great people have contributed to this project:
 
-- English, German: @alxnull
-- Spanish: Leandro Martin Drudi
-- Chinese: @lzporter
+- @jensbrak (Golden ratio marker & marker symbols)
+- @IlBako (Italian translation)
+- Leandro Martin Drudi (Spanish translation)
+- @lzporter (Chinese translation)
+- @alxnull (Core, English & German translation)
 
 ## License
 
