@@ -123,4 +123,7 @@
   <data name="butDelete.Text" xml:space="preserve">
     <value>Eliminar</value>
   </data>
+  <data name="lblDirection.Text" xml:space="preserve">
+    <value>⇅</value>
+  </data>
 </root>

@@ -133,7 +133,7 @@
     <value>Unidad de medida</value>
   </data>
   <data name="conLength.Text" xml:space="preserve">
-    <value>Establecer longitud...</value>
+    <value>Establecer largo...</value>
   </data>
   <data name="conMarkCenter.Text" xml:space="preserve">
     <value>Marcar centro</value>
@@ -160,7 +160,7 @@
     <value>Ayuda</value>
   </data>
   <data name="conAbout.Text" xml:space="preserve">
-    <value>Acerca de</value>
+    <value>Acerca de…</value>
   </data>
   <data name="conExit.Text" xml:space="preserve">
     <value>Salir</value>
@@ -208,13 +208,13 @@
     <value>J</value>
   </data>
   <data name="conSlimMode.Text" xml:space="preserve">
-    <value>Escala delgada</value>
+    <value>Regla pequeña</value>
   </data>
   <data name="conFollowMousePointer.ShortcutKeyDisplayString" xml:space="preserve">
     <value>W</value>
   </data>
   <data name="conFollowMousePointer.Text" xml:space="preserve">
-    <value>Seguir el puntero del ratón</value>
+    <value>Anclar al puntero del mouse</value>
   </data>
   <data name="conMarkCenter.ShortcutKeyDisplayString" xml:space="preserve">
     <value>M</value>

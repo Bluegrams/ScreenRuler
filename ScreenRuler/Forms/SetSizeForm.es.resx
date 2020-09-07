@@ -127,9 +127,9 @@
     <value>Establecer largo de la regla</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Ancho:</value>
+    <value>Ancho</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Alto:</value>
+    <value>Alto</value>
   </data>
 </root>
