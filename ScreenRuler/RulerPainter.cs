@@ -203,7 +203,7 @@ namespace ScreenRuler
             if (settings.ShowMouseLine)
             {
                 Color col = settings.Theme.MouseLineColor;
-                drawMarker(new Marker(mouseLine, vertical), MarkerSymbolMouseLine, col);
+                drawMarker(new Marker(mouseLine, vertical), MarkerSymbolMouseLine, col, moveToRight: true);
             }
             // Draw the lines showing the thirds of the ruler
             if (settings.ShowThirdLines)
@@ -239,19 +239,26 @@ namespace ScreenRuler
             }
         }
 
-        private void drawMarker(Marker marker, string symbol, Color col)
+        private void drawMarker(Marker marker, string symbol, Color col, bool moveToRight = false)
         {
             // Number format with or without symbol depending on settings
             string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'.##" : ".##";
             // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages.
             // Symbols gets placed before or after depending on category of language it belong to. 
-            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
+            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far };
             var text = converter.ConvertFromPixel(marker).ToString(numberFormat);
 
             using (Brush brush = new SolidBrush(col))
             using (Pen pen = new Pen(brush, settings.MarkerThickness))
             using (Font font = new Font("Arial", 9))
             {
+                // If the marker is too far to the left/ top, the label would be cut. Therefore, move it to the right/ bottom.
+                if (moveToRight)
+                {
+                    SizeF size = g.MeasureString(text, font);
+                    if (marker.Vertical && marker.Value < size.Height) format.LineAlignment = StringAlignment.Near;
+                    else if (!marker.Vertical && marker.Value < size.Width) format.Alignment = StringAlignment.Near;
+                }
                 float pos = marker.Value;
                 if (!marker.Vertical)
                 {
@@ -264,7 +271,7 @@ namespace ScreenRuler
                 {
                     g.DrawLine(pen, 0, pos, drawWidth, pos);
                     if (!settings.SlimMode)
-                        g.DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos - 13, format);
+                        g.DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos, format);
                 }
             }
         }

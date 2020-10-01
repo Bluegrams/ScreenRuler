@@ -255,7 +255,7 @@
     <value>M</value>
   </data>
   <data name="conMarkCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
+    <value>201, 22</value>
   </data>
   <data name="conMarkCenter.Text" xml:space="preserve">
     <value>Mark Center</value>
@@ -264,7 +264,7 @@
     <value>T</value>
   </data>
   <data name="conMarkThirds.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
+    <value>201, 22</value>
   </data>
   <data name="conMarkThirds.Text" xml:space="preserve">
     <value>Mark Thirds</value>
@@ -273,7 +273,7 @@
     <value>G</value>
   </data>
   <data name="conMarkGolden.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
+    <value>201, 22</value>
   </data>
   <data name="conMarkGolden.Text" xml:space="preserve">
     <value>Mark Golden Ratio</value>
@@ -282,31 +282,19 @@
     <value>P</value>
   </data>
   <data name="conMarkMouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
+    <value>201, 22</value>
   </data>
   <data name="conMarkMouse.Text" xml:space="preserve">
     <value>Mark Mouse Position</value>
   </data>
   <data name="conOffsetLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
+    <value>201, 22</value>
   </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Show Offset and Length</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 6</value>
-  </data>
-  <data name="conHideRulerScale.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+H</value>
-  </data>
-  <data name="conHideRulerScale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
-  </data>
-  <data name="conHideRulerScale.Text" xml:space="preserve">
-    <value>Hide Ruler Scale</value>
-  </data>
   <data name="contxtAppearance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 142</value>
+    <value>202, 114</value>
   </data>
   <data name="&gt;&gt;contxtAppearance.Name" xml:space="preserve">
     <value>contxtAppearance</value>
@@ -319,6 +307,15 @@
   </data>
   <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
     <value>Appearance</value>
+  </data>
+  <data name="conHideRulerScale.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+H</value>
+  </data>
+  <data name="conHideRulerScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="conHideRulerScale.Text" xml:space="preserve">
+    <value>Hide Ruler Scale</value>
   </data>
   <data name="conEditMarkers.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+E</value>
@@ -390,7 +387,7 @@
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 407</value>
+    <value>208, 429</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
@@ -2011,12 +2008,6 @@
   <data name="&gt;&gt;conOffsetLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;conHideRulerScale.Name" xml:space="preserve">
     <value>conHideRulerScale</value>
   </data>
@@ -2093,6 +2084,6 @@
     <value>RulerForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ScreenRuler.BaseForm, screenruler, Version=0.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ScreenRuler.BaseForm, screenruler, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

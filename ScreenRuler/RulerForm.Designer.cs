@@ -57,7 +57,6 @@
             this.conMarkGolden = new System.Windows.Forms.ToolStripMenuItem();
             this.conMarkMouse = new System.Windows.Forms.ToolStripMenuItem();
             this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.conHideRulerScale = new System.Windows.Forms.ToolStripMenuItem();
             this.conEditMarkers = new System.Windows.Forms.ToolStripMenuItem();
             this.conClearCustomMarker = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +89,7 @@
             this.conFollowMousePointer,
             this.toolStripSeparator1,
             this.appearanceToolStripMenuItem,
+            this.conHideRulerScale,
             this.conEditMarkers,
             this.conClearCustomMarker,
             this.toolStripSeparator3,
@@ -248,9 +248,7 @@
             this.conMarkThirds,
             this.conMarkGolden,
             this.conMarkMouse,
-            this.conOffsetLength,
-            this.toolStripSeparator5,
-            this.conHideRulerScale});
+            this.conOffsetLength});
             this.contxtAppearance.Name = "contxtAppearance";
             this.contxtAppearance.OwnerItem = this.appearanceToolStripMenuItem;
             resources.ApplyResources(this.contxtAppearance, "contxtAppearance");
@@ -286,11 +284,6 @@
             this.conOffsetLength.Name = "conOffsetLength";
             resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
             this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // conHideRulerScale
             // 
@@ -419,7 +412,6 @@
         private System.Windows.Forms.ToolStripMenuItem conMarkGolden;
         private System.Windows.Forms.ToolStripMenuItem conMarkMouse;
         private System.Windows.Forms.ToolStripMenuItem conOffsetLength;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem conHideRulerScale;
     }
 }
