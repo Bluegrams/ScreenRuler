@@ -6,6 +6,22 @@ using ScreenRuler.Units;
 
 namespace ScreenRuler
 {
+    class UnitScale
+    {
+        /// <summary>
+        /// The size of one step in the corresponding unit.
+        /// </summary>
+        public float StepSize { get; set; }
+        /// <summary>
+        /// After how many steps to set a medium tick.
+        /// </summary>
+        public int MTickSteps { get; set; }
+        /// <summary>
+        /// After how many steps to set a big tick.
+        /// </summary>
+        public int BTickSteps { get; set; }
+    }
+
     /// <summary>
     /// Holds methods for painting the ruler form.
     /// </summary>
@@ -18,13 +34,13 @@ namespace ScreenRuler
         /// Defines the position where ticks should be drawn dependent on the chosen unit.
         /// (To deal with integers, all values are multiplied by 10 (e.g. 50 means 5px)).
         /// </summary>
-        public static Dictionary<MeasuringUnit, int[]> Ticks = new Dictionary<MeasuringUnit, int[]>()
+        public static Dictionary<MeasuringUnit, UnitScale> Ticks = new Dictionary<MeasuringUnit, UnitScale>()
         {
-            {MeasuringUnit.Pixels, new int[] {50, 100, 500} },
-            {MeasuringUnit.Inches, new int[] {1, 5, 10} },
-            {MeasuringUnit.Centimeters, new int[] {1, 5, 10} },
-            {MeasuringUnit.Points, new int[] {50, 100, 500} },
-            {MeasuringUnit.Percent, new int[] {5, 10, 50 } },
+            {MeasuringUnit.Pixels, new UnitScale { StepSize=5, MTickSteps=2, BTickSteps=10 } },
+            {MeasuringUnit.Inches, new UnitScale { StepSize=0.0625f, MTickSteps=4, BTickSteps=16 } },
+            {MeasuringUnit.Centimeters, new UnitScale { StepSize=0.1f, MTickSteps=5, BTickSteps=10 } },
+            {MeasuringUnit.Points, new UnitScale { StepSize=5, MTickSteps=2, BTickSteps=10 } },
+            {MeasuringUnit.Percent, new UnitScale { StepSize=0.5f, MTickSteps=2, BTickSteps=10 } },
         };
 
         private const string MarkerSymbolCenterLine = "\u00BD";
@@ -90,15 +106,14 @@ namespace ScreenRuler
         {
             int max = vertical ? c.Size.Height : c.Size.Width;
             // ----- Draw the ruler scale -----
-            int[] ticks = Ticks[settings.MeasuringUnit];
+            UnitScale scale = Ticks[settings.MeasuringUnit];
             // valUnit: the current position in the chosen unit.
             // valPixel: the current position in pixels.
             float valUnit = 0, valPixel = 0, i = 0;
             while (valPixel <= max)
             {
-                valUnit = i / 10;
                 valPixel = converter.ConvertToPixel(valUnit, vertical);
-                int length = i % ticks[2] == 0 ? drawWidth / 4 : i % ticks[1] == 0 ? drawWidth / 6 : drawWidth / 16;
+                int length = i % scale.BTickSteps == 0 ? drawWidth / 4 : i % scale.MTickSteps == 0 ? drawWidth / 6 : drawWidth / 16;
                 using (Brush brush = new SolidBrush(settings.Theme.TickColor))
                 using (Pen pen = new Pen(brush, 1))
                 using (Font font = new Font("Arial", 9))
@@ -110,8 +125,8 @@ namespace ScreenRuler
                             g.DrawLine(pen, pos, 0, pos, length);
                         if (!settings.SlimMode && (resizeMode == FormResizeMode.Horizontal || valPixel > drawWidth))
                             g.DrawLine(pen, pos, drawWidth - length, pos, drawWidth);
-                        if (valPixel > 0 && i % ticks[2] == 0)
-                            g.DrawString(valUnit.ToString(), font, brush, pos - 8, length + 3);
+                        if (valPixel > 0 && i % scale.BTickSteps == 0)
+                            g.DrawString(Math.Round(valUnit, 2).ToString(), font, brush, pos - 8, length + 3);
                     }
                     else
                     {
@@ -119,11 +134,12 @@ namespace ScreenRuler
                             g.DrawLine(pen, 0, pos, length, pos);
                         if (!settings.SlimMode && (resizeMode == FormResizeMode.Vertical || valPixel > drawWidth))
                             g.DrawLine(pen, drawWidth - length, pos, drawWidth, pos);
-                        if (valPixel > 0 && i % ticks[2] == 0)
-                            g.DrawString(valUnit.ToString(), font, brush, length + 3, pos - 7);
+                        if (valPixel > 0 && i % scale.BTickSteps == 0)
+                            g.DrawString(Math.Round(valUnit, 2).ToString(), font, brush, length + 3, pos - 7);
                     }
                 }
-                i += ticks[0];
+                valUnit += scale.StepSize;
+                i += 1;
             }
             // ----- Optionally, draw total length bound to right border and start offset -----
             if (settings.ShowOffsetLengthLabels)
