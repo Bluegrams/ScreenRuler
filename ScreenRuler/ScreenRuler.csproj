@@ -165,6 +165,9 @@
     <EmbeddedResource Include="Forms\CalibrationForm.es.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalibrationForm.ml.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalibrationForm.pt-PT.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +186,9 @@
     <EmbeddedResource Include="Forms\CustomLineForm.es.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomLineForm.ml.resx">
+      <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomLineForm.pt-PT.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
@@ -203,6 +209,9 @@
     <EmbeddedResource Include="Forms\HelpForm.es.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.ml.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpForm.pt-PT.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +230,9 @@
     <EmbeddedResource Include="Forms\MarkerListForm.es.resx">
       <DependentUpon>MarkerListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MarkerListForm.ml.resx">
+      <DependentUpon>MarkerListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarkerListForm.pt-PT.resx">
       <DependentUpon>MarkerListForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,11 +240,20 @@
       <DependentUpon>MarkerListForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RulerForm.ml.resx">
+      <DependentUpon>RulerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.pt-PT.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetSizeForm.ml.resx">
+      <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetSizeForm.pt-PT.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.ml.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.pt-PT.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
