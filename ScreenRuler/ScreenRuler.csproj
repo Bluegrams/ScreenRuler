@@ -105,6 +105,11 @@
     <Compile Include="MarkerCollection.cs" />
     <Compile Include="MouseTracker.cs" />
     <Compile Include="Forms\OverlayForm.cs" />
+    <Compile Include="Properties\EnumResources.pl.Designer.cs">
+      <DependentUpon>EnumResources.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\EnumResources.zh-CN.Designer.cs">
       <DependentUpon>EnumResources.zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -112,6 +117,11 @@
     </Compile>
     <Compile Include="Properties\EnumResources.Designer.cs">
       <DependentUpon>EnumResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.pl.Designer.cs">
+      <DependentUpon>Resources.pl.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -267,7 +277,6 @@
     <EmbeddedResource Include="Forms\SetSizeForm.pt-PT.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\SettingsForm.ml.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +285,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.pt-PT.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\EnumResources.pl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumResources.pl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.ml.resx" />
     <EmbeddedResource Include="Forms\SettingsForm.ru.resx">
@@ -293,6 +306,10 @@
     <EmbeddedResource Include="Properties\EnumResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.pl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pl.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ml.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
@@ -376,6 +393,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Help\Help.de.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\Help.pl.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Help\Help.ml.html" />
