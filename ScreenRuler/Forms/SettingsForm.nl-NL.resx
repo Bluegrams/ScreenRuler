@@ -201,4 +201,10 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Werktuigen</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Bediening</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Eenheden</value>
+  </data>
 </root>

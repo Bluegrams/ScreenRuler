@@ -126,9 +126,6 @@
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Alle markers wissen</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
-  </data>
   <data name="conDefault.Text" xml:space="preserve">
     <value>Standaard (80%)</value>
   </data>
@@ -138,14 +135,8 @@
   <data name="conExit.Text" xml:space="preserve">
     <value>Afsluiten</value>
   </data>
-  <data name="conHelp.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>F1</value>
-  </data>
   <data name="conFollowMousePointer.Text" xml:space="preserve">
     <value>Volg muis wijzer</value>
-  </data>
-  <data name="conMarkGolden.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>G</value>
   </data>
   <data name="conHelp.Text" xml:space="preserve">
     <value>Hulp</value>
@@ -159,14 +150,8 @@
   <data name="conModeHorizontal.Text" xml:space="preserve">
     <value>Horizontaal</value>
   </data>
-  <data name="conSlimMode.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>J</value>
-  </data>
   <data name="conLow.Text" xml:space="preserve">
     <value>Laag (40%)</value>
-  </data>
-  <data name="conMarkCenter.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>M</value>
   </data>
   <data name="conMarkCenter.Text" xml:space="preserve">
     <value>Markeer centrum</value>
