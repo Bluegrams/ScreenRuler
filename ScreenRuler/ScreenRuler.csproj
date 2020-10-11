@@ -54,8 +54,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppHelpers.WinForms, Version=0.1.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-beta9\lib\net45\AppHelpers.WinForms.dll</HintPath>
+    <Reference Include="AppHelpers.WinForms, Version=0.1.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WinForms.0.1.0-rc2\lib\net45\AppHelpers.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
