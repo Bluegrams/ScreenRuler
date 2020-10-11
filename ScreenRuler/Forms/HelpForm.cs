@@ -15,13 +15,8 @@ namespace ScreenRuler
         {
             InitializeComponent();
             this.KeyPreview = true;
-            // Choose right help file.
-            var current = CultureInfo.CurrentUICulture;
-            if (Bluegrams.Application.AppInfo.SupportedCultures
-                    .Where(c => c.TwoLetterISOLanguageName == current.TwoLetterISOLanguageName)
-                    .Count() > 0)
-                lang = current.TwoLetterISOLanguageName;
-            else lang = "en";
+            // Set lang code
+            lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
