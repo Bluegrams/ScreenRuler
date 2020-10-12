@@ -15,8 +15,15 @@ namespace ScreenRuler
         {
             InitializeComponent();
             this.KeyPreview = true;
-            // Set lang code
+            // Set lang and check if there is a help file for it.
+            // If not, notify user and fall back to English.
             lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+            if (!File.Exists(HelpFileLocation))
+            {
+                var languageName = CultureInfo.CurrentUICulture.DisplayName;
+                MessageBox.Show($"No help file found for {languageName}. Showing English help.", "Language-specific help file not found");
+                lang = "en";
+            }
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
