@@ -19,9 +19,7 @@ namespace ScreenRuler
             // If not, fall back to English.
             lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
             if (!File.Exists(HelpFileLocation))
-            {
                 lang = "en";
-            }
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
