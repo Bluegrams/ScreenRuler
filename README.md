@@ -99,11 +99,12 @@ The easiest way to contribute is to open [pull request on GitHub](https://github
 
 These great people have contributed to this project:
 
-- @jensbrak (Golden ratio marker & marker symbols)
-- @IlBako (Italian translation)
+- [jensbrak](https://github.com/jensbrak) (Golden ratio marker & marker symbols)
+- [IlBako](https://github.com/IlBako) (Italian translation)
+- [lzporter](https://github.com/lzporter) (Chinese translation)
+- [FrejBjornsson](https://github.com/FrejBjornsson) (Swedish translation)
+- [alxnull](https://github.com/alxnull)(Core, English & German translation)
 - Leandro Martin Drudi (Spanish translation)
-- @lzporter (Chinese translation)
-- @alxnull (Core, English & German translation)
 
 ## License
 
