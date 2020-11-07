@@ -50,7 +50,10 @@ Screen Ruler requires Windows 7 or newer and .NET Framework 4.5 or higher.
 
 or
 
-- Install from [Chocolatey](https://chocolatey.org): `choco install screenruler`
+- Install from [Chocolatey](https://chocolatey.org):
+```
+choco install screenruler
+```
 
 #### How To Use
 
@@ -95,16 +98,8 @@ Places to get help:
 You are very welcome to support the development of this app by reporting bugs, adding fixes, translating or suggesting new features.
 The easiest way to contribute is to open [pull request on GitHub](https://github.com/bluegrams/screenruler/pulls).
 
-#### Contributors
-
-These great people have contributed to this project:
-
-- [jensbrak](https://github.com/jensbrak) (Golden ratio marker & marker symbols)
-- [IlBako](https://github.com/IlBako) (Italian translation)
-- [lzporter](https://github.com/lzporter) (Chinese translation)
-- [FrejBjornsson](https://github.com/FrejBjornsson) (Swedish translation)
-- [alxnull](https://github.com/alxnull)(Core, English & German translation)
-- Leandro Martin Drudi (Spanish translation)
+See all the great people that have contributed in the [list of contributors](https://github.com/bluegrams/screenruler/blob/master/CONTRIBUTORS.md).
+Make sure to add yourself in your pull request!
 
 ## License
 

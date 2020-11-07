@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>screenruler</id>
-    <version>0.7.0</version>
+    <version>0.8.0</version>
     <owners>alxnull</owners>
     <!-- ============================== -->
 
@@ -13,7 +13,7 @@
     <authors>alxnull</authors>
     <projectUrl>https://screenruler.sourceforge.io/</projectUrl>
     <iconUrl>https://gitcdn.xyz/repo/Bluegrams/ScreenRuler/master/img/icon.png</iconUrl>
-    <copyright>© 2020 Bluegrams</copyright>
+    <copyright>© 2017-2020 Bluegrams</copyright>
     <licenseUrl>https://github.com/bluegrams/ScreenRuler/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/bluegrams/ScreenRuler</projectSourceUrl>

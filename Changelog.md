@@ -1,5 +1,10 @@
 # Screen Ruler Changelog
 
+### v.0.8 (2020-11)
+- **New:** Portuguese, Russian, Malayalam, Polish, Finnish, Dutch, Swedish and Thai translation
+- **Updated:** Italian and Spanish translation
+- **Changed:** Divide inch scale into 16 parts; minor UI fixes
+
 ### v.0.7 (2020-09)
 - **New:** Added window for listing & managing custom markers
 - **New:** Option to hide ruler scale
