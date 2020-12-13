@@ -196,6 +196,9 @@
     <EmbeddedResource Include="Forms\CalibrationForm.ru.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalibrationForm.sk.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalibrationForm.th-TH.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +240,9 @@
     <EmbeddedResource Include="Forms\CustomLineForm.ru.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomLineForm.sk.resx">
+      <DependentUpon>CustomLineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomLineForm.th-TH.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +282,9 @@
     <EmbeddedResource Include="Forms\HelpForm.ru.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.sk.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpForm.th-TH.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +322,9 @@
       <DependentUpon>MarkerListForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MarkerListForm.sk.resx">
+      <DependentUpon>MarkerListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarkerListForm.th-TH.resx">
       <DependentUpon>MarkerListForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +347,9 @@
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.pt-PT.resx">
+      <DependentUpon>RulerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RulerForm.sk.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.th-TH.resx">
@@ -361,6 +376,9 @@
     <EmbeddedResource Include="Forms\SetSizeForm.pt-PT.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetSizeForm.sk.resx">
+      <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetSizeForm.th-TH.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +403,9 @@
     <EmbeddedResource Include="Forms\SettingsForm.pt-PT.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.sk.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.th-TH.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +424,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\EnumResources.ru.resx" />
+    <EmbeddedResource Include="Properties\EnumResources.sk.resx" />
     <EmbeddedResource Include="Properties\EnumResources.th-TH.resx" />
     <EmbeddedResource Include="Properties\EnumResources.sv.resx" />
     <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
@@ -425,6 +447,7 @@
     <EmbeddedResource Include="Properties\Resources.ml.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
+    <EmbeddedResource Include="Properties\Resources.sk.resx" />
     <EmbeddedResource Include="Properties\Resources.th-TH.resx" />
     <EmbeddedResource Include="Properties\Resources.sv.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
@@ -526,6 +549,7 @@
     <Content Include="Help\Help.ru.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Help\Help.sk.html" />
     <Content Include="Help\Help.sv.html" />
     <Content Include="Help\Help.zh-CN.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

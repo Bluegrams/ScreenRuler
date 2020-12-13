@@ -15,3 +15,4 @@
 - [Michel van Os](https://github.com/michelvosje): Dutch translation
 - [FrejBjornsson](https://github.com/FrejBjornsson): Swedish translation
 - [kerlos](https://github.com/kerlos): Thai translation
+- Peter Ditrich: Slovak translation
