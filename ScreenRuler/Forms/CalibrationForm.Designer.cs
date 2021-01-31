@@ -78,6 +78,7 @@
             // 
             // numDPI
             // 
+            this.numDPI.DecimalPlaces = 2;
             resources.ApplyResources(this.numDPI, "numDPI");
             this.numDPI.Maximum = new decimal(new int[] {
             500,

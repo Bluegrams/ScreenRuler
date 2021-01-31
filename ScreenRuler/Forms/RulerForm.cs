@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using ScreenRuler.Units;
 using Bluegrams.Application;
 using Bluegrams.Application.WinForms;
 using ScreenRuler.Properties;
 using System.ComponentModel;
+using ScreenRuler.Colors;
+using ScreenRuler.Units;
 
 namespace ScreenRuler
 {
@@ -78,7 +79,7 @@ namespace ScreenRuler
             // apply other loaded settings
             applySettings();
             // Check for updates
-            updateChecker.CheckForUpdates();
+            updateChecker.CheckForUpdates(UpdateNotifyMode.Auto);
             // Start tracking mouse
             mouseTracker.Start();
         }
@@ -205,7 +206,21 @@ namespace ScreenRuler
                     conMarkCenter.PerformClick();
                     break;
                 case Keys.T:
-                    conMarkThirds.PerformClick();
+                    if (e.Control)
+                    {
+                        if (Settings.SelectedTheme == ThemeOption.Light)
+                        {
+                            Settings.SelectedTheme = ThemeOption.Dark;
+                        }
+                        else
+                        {
+                            Settings.SelectedTheme = ThemeOption.Light;
+                        }
+                    }
+                    else
+                    {
+                        conMarkThirds.PerformClick();
+                    }
                     break;
                 case Keys.G:
                     conMarkGolden.PerformClick();
@@ -238,6 +253,12 @@ namespace ScreenRuler
                     break;
                 case Keys.W:
                     conFollowMousePointer.PerformClick();
+                    break;
+                case Keys.Oemplus:
+                    if (e.Control) changeOpacity(true);
+                    break;
+                case Keys.OemMinus:
+                    if (e.Control) changeOpacity(false);
                     break;
                 case Keys.F1:
                     conHelp.PerformClick();
@@ -560,6 +581,24 @@ namespace ScreenRuler
                 it.Checked = false;
             ((ToolStripMenuItem)sender).Checked = true;
             ResizeMode = (FormResizeMode)Enum.Parse(typeof(FormResizeMode), (string)((ToolStripMenuItem)sender).Tag);
+        }
+
+        private void changeOpacity(bool increase)
+        {
+            int current = 0;
+            foreach (ToolStripMenuItem item in conOpacity.DropDownItems)
+            {
+                if (item.Checked)
+                {
+                    item.Checked = false;
+                    break;
+                }
+                current++;
+            }
+            // drop down items are in order from highest to lowest, therefore reverse
+            int newIndex = increase ? current - 1 : current + 1;
+            newIndex = Math.Max(0, Math.Min(newIndex, conOpacity.DropDownItems.Count - 1));
+            changeOpacity(conOpacity.DropDownItems[newIndex], EventArgs.Empty);
         }
 
         private void changeOpacity(object sender, EventArgs e)

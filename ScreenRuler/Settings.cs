@@ -19,7 +19,7 @@ namespace ScreenRuler
         /// The DPI value that is used for calculating the distances on the ruler scale
         /// (hardcoded to 96 by default).
         /// </summary>
-        public int MonitorDpi { get; set; } = 96;
+        public float MonitorDpi { get; set; } = 96;
         /// <summary>
         /// The display scaling value in percent (100 by default).
         /// </summary>

@@ -74,7 +74,7 @@ namespace ScreenRuler
             this.settings = settings;
             this.resizeMode = resizeMode;
             var screenSize = Screen.FromControl(c).Bounds.Size;
-            int virtualDpi = (int)(settings.MonitorDpi / (settings.MonitorScaling / 100.0));
+            float virtualDpi = settings.MonitorDpi / (settings.MonitorScaling / 100.0f);
             this.converter = new UnitConverter(settings.MeasuringUnit, screenSize, virtualDpi);
             this.drawWidth = settings.SlimMode ? RULER_WIDTH_SLIM : RULER_WIDTH_WIDE;
         }

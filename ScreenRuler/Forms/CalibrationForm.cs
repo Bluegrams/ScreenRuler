@@ -10,7 +10,7 @@ namespace ScreenRuler
         private RulerPainter painter;
         private Settings previewSettings;
 
-        public int MonitorDpi => previewSettings.MonitorDpi;
+        public float MonitorDpi => previewSettings.MonitorDpi;
         public int MonitorScaling => previewSettings.MonitorScaling;
 
         public CalibrationForm(Settings settings)
@@ -29,7 +29,7 @@ namespace ScreenRuler
         private void CalibrationForm_Load(object sender, EventArgs e)
         {
             // Set initial states
-            numDPI.Value = previewSettings.MonitorDpi;
+            numDPI.Value = (decimal)previewSettings.MonitorDpi;
             numScaling.Value = previewSettings.MonitorScaling;
             foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
             {
@@ -46,7 +46,7 @@ namespace ScreenRuler
 
         private void numDPI_ValueChanged(object sender, EventArgs e)
         {
-            previewSettings.MonitorDpi = (int)numDPI.Value;
+            previewSettings.MonitorDpi = (float)Math.Round(numDPI.Value, 2);
             panPreview.Invalidate();
         }
 

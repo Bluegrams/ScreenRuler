@@ -9,7 +9,7 @@ namespace ScreenRuler.Units
     /// </summary>
     public class UnitConverter
     {
-        private Func<float, int, int, float> toPixelConverter, fromPixelConverter;
+        private Func<float, int, float, float> toPixelConverter, fromPixelConverter;
 
         /// <summary>
         /// The measuring unit this converter converts to/ from.
@@ -22,13 +22,13 @@ namespace ScreenRuler.Units
         /// <summary>
         /// The screen DPI used for conversion.
         /// </summary>
-        public int DPI { get; set; }
+        public float DPI { get; set; }
         /// <summary>
         /// The string symbol of the unit this converter converts to/ from.
         /// </summary>
         public string UnitString { get { return UnitStrings[Unit]; } }
 
-        public UnitConverter(MeasuringUnit unit, Size screenSize, int dpi)
+        public UnitConverter(MeasuringUnit unit, Size screenSize, float dpi)
         {
             this.Unit = unit;
             this.ScreenSize = screenSize;
@@ -72,7 +72,7 @@ namespace ScreenRuler.Units
         /// <summary>
         /// Returns a function that converts the given measuring unit into pixels.
         /// </summary>
-        private static Func<float, int, int, float> getToPixelConverter(MeasuringUnit unit)
+        private static Func<float, int, float, float> getToPixelConverter(MeasuringUnit unit)
         {
             switch (unit)
             {
@@ -92,7 +92,7 @@ namespace ScreenRuler.Units
         /// <summary>
         /// Returns a function that converts pixels into the given measuring unit.
         /// </summary>
-        private static Func<float, int, int, float> getFromPixelConverter(MeasuringUnit unit)
+        private static Func<float, int, float, float> getFromPixelConverter(MeasuringUnit unit)
         {
             switch (unit)
             {
