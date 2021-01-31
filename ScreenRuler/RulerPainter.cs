@@ -245,7 +245,8 @@ namespace ScreenRuler
             string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'.##" : ".##";
             // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages.
             // Symbols gets placed before or after depending on category of language it belong to. 
-            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far, LineAlignment = StringAlignment.Far };
+            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
+            if (marker.Vertical) format.LineAlignment = StringAlignment.Far;
             var text = converter.ConvertFromPixel(marker).ToString(numberFormat);
 
             using (Brush brush = new SolidBrush(col))
