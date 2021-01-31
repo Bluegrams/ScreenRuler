@@ -1,5 +1,11 @@
 # Screen Ruler Changelog
 
+#### v.0.8.1 (2021-01)
+- **New:** Slovak translation
+- **New:** Increase precision of screen DPI setting
+- **New:** Keyboard shortcuts for toggling theme and setting opacity
+- **Fixed:** Position of marker labels on ruler
+
 ### v.0.8 (2020-11)
 - **New:** Portuguese, Russian, Malayalam, Polish, Finnish, Dutch, Swedish and Thai translation
 - **Updated:** Italian and Spanish translation
