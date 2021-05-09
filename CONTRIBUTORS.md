@@ -7,7 +7,7 @@
 - [CloverGit](https://github.com/CloverGit): Chinese translation
 - [IlBako](https://github.com/IlBako): Italian translation
 - [3t8](https://github.com/3t8): Italian translation
-- [Jo�o Fel�cio](https://github.com/Joaolfelicio): Portuguese translation
+- [João Felício](https://github.com/Joaolfelicio): Portuguese translation
 - [SvA1](https://github.com/SvA1): Russian translation
 - [id-konstantin-stepanov](https://github.com/id-konstantin-stepanov): Russian translation
 - [Farshan Ahamed](https://github.com/FarshanAhamed): Malayalam translation
