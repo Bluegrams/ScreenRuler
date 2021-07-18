@@ -76,6 +76,10 @@ namespace ScreenRuler
         /// If set to true, the center point of the ruler will follow the mouse pointer; otherwise left upper corner will be attached. 
         /// </summary>
         public bool FollowMousePointerCenter { get; set; } = true;
+        /// <summary>
+        /// If set to true, will snap the ruler to screen edges.
+        /// </summary>
+        public bool SnapToScreenEdges { get; set; } = false;
 
         private ThemeOption selectedTheme;
 

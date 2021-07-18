@@ -100,6 +100,7 @@ namespace ScreenRuler
                 this.ShowInTaskbar = true;
                 notifyIcon.Visible = false;
             }
+            this.SnapMode = Settings.SnapToScreenEdges ? SnapMode.LimitToEdges : SnapMode.None;
         }
 
         private void RulerForm_FormClosing(object sender, FormClosingEventArgs e)
