@@ -127,5 +127,16 @@ namespace ScreenRuler
         /// Defines the size of one big ruler resizing step.
         /// </summary>
         public int LargeStep { get; set; } = 25;
+
+        
+        /// <summary>
+        /// An event that allows to explicitly inform users of this class about changes.
+        /// </summary>
+        public event EventHandler Changed;
+
+        /// <summary>
+        /// Invoke the Changed event.
+        /// </summary>
+        public void InvokeChanged() => Changed?.Invoke(this, EventArgs.Empty);
     }
 }

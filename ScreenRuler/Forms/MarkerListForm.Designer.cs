@@ -35,15 +35,18 @@ namespace ScreenRuler
             this.lstMarkers = new ScreenRuler.Controls.MarkerListBox();
             this.contxtListMarkers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.conDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.conUnits = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.contxtListMarkers.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstMarkers
             // 
-            resources.ApplyResources(this.lstMarkers, "lstMarkers");
             this.lstMarkers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstMarkers.ContextMenuStrip = this.contxtListMarkers;
             this.lstMarkers.DisplayMember = "DisplayString";
+            resources.ApplyResources(this.lstMarkers, "lstMarkers");
+            this.lstMarkers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lstMarkers.FormattingEnabled = true;
             this.lstMarkers.Name = "lstMarkers";
             this.lstMarkers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
@@ -52,16 +55,28 @@ namespace ScreenRuler
             // 
             // contxtListMarkers
             // 
-            resources.ApplyResources(this.contxtListMarkers, "contxtListMarkers");
             this.contxtListMarkers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conUnits,
+            this.toolStripSeparator1,
             this.conDelete});
             this.contxtListMarkers.Name = "contxtListMarkers";
+            resources.ApplyResources(this.contxtListMarkers, "contxtListMarkers");
             // 
             // conDelete
             // 
-            resources.ApplyResources(this.conDelete, "conDelete");
             this.conDelete.Name = "conDelete";
+            resources.ApplyResources(this.conDelete, "conDelete");
             this.conDelete.Click += new System.EventHandler(this.conDelete_Click);
+            // 
+            // conUnits
+            // 
+            this.conUnits.Name = "conUnits";
+            resources.ApplyResources(this.conUnits, "conUnits");
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // MarkerListForm
             // 
@@ -81,5 +96,7 @@ namespace ScreenRuler
         private MarkerListBox lstMarkers;
         private System.Windows.Forms.ContextMenuStrip contxtListMarkers;
         private System.Windows.Forms.ToolStripMenuItem conDelete;
+        private System.Windows.Forms.ToolStripMenuItem conUnits;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

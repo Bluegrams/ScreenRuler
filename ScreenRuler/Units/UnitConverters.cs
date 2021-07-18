@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ScreenRuler.Units
 {
@@ -37,6 +38,13 @@ namespace ScreenRuler.Units
             fromPixelConverter = getFromPixelConverter(unit);
         }
 
+        public static UnitConverter FromSettings(Control control, Settings settings, MeasuringUnit? unit = null)
+        {
+            var screenSize = Screen.FromControl(control).Bounds.Size;
+            float virtualDpi = settings.MonitorDpi / (settings.MonitorScaling / 100.0f);
+            return new UnitConverter(unit ?? settings.MeasuringUnit, screenSize, virtualDpi);
+        }
+
         /// <summary>
         /// Converts the given value to a pixel value.
         /// </summary>
@@ -68,6 +76,25 @@ namespace ScreenRuler.Units
         /// <returns>The value converted to the unit this converter converts to.</returns>
         public float ConvertFromPixel(Marker marker)
             => ConvertFromPixel(marker.Value, marker.Vertical);
+
+        /// <summary>
+        /// Converts a given pixel value to the defined unit and formats it as a string.
+        /// </summary>
+        /// <param name="value">The pixel value to convert.</param>
+        /// <param name="vertical">Whether the value is in vertical or horizontal direction.</param>
+        /// <param name="roundingDigits">Round the formatted string to this number of digits.</param>
+        /// <returns>The converted value, formatted as string.</returns>
+        public string FormatFromPixel(float value, bool vertical, int roundingDigits = 2)
+            => String.Format("{0}{1}", Math.Round(ConvertFromPixel(value, vertical), roundingDigits), UnitString);
+
+        /// <summary>
+        /// Converts a given marker from pixels to the defined unit and formats it as a string.
+        /// </summary>
+        /// <param name="marker">The marker to convert.</param>
+        /// <param name="roundingDigits">Round the formatted string to this number of digits.</param>
+        /// <returns>The converted value, formatted as string.</returns>
+        public string FormatFromPixel(Marker marker, int roundingDigits = 2)
+            => String.Format("{0}{1}", Math.Round(ConvertFromPixel(marker), roundingDigits), UnitString);
 
         /// <summary>
         /// Returns a function that converts the given measuring unit into pixels.

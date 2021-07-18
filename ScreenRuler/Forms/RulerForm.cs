@@ -43,11 +43,7 @@ namespace ScreenRuler
             this.MouseWheel += RulerForm_MouseWheel;
         }
 
-        private UnitConverter getUnitConverter()
-        {
-            var screenSize = Screen.FromControl(this).Bounds.Size;
-            return new UnitConverter(Settings.MeasuringUnit, screenSize, Settings.MonitorDpi);
-        }
+        private UnitConverter getUnitConverter() => UnitConverter.FromSettings(this, Settings);
 
         private void RulerForm_Load(object sender, EventArgs e)
         {
@@ -248,6 +244,9 @@ namespace ScreenRuler
                         }
                     }
                     break;
+                case Keys.X:
+                    addMarkersAtCurrentPosition();
+                    break;
                 case Keys.L:
                     CustomMarkers.AddMarker((Point)this.Size, RestrictSize);
                     this.Invalidate();
@@ -387,6 +386,26 @@ namespace ScreenRuler
             // Add a marker at the cursor position.
             CustomMarkers.AddMarker(e.Location, RestrictSize, ResizeMode == FormResizeMode.Vertical);
         }
+
+        private void addMarkersAtCurrentPosition()
+        {
+            Point position = Cursor.Position;
+            int horizontal = position.X - this.Left;
+            int vertical = position.Y - this.Top;
+            if (this.ResizeMode == FormResizeMode.Horizontal)
+            {
+                CustomMarkers.AddMarker(new Marker(horizontal, false));
+            }
+            else if (this.ResizeMode == FormResizeMode.Vertical)
+            {
+                CustomMarkers.AddMarker(new Marker(vertical, true));
+            }
+            else
+            {
+                CustomMarkers.AddMarker(new Marker(horizontal, false));
+                CustomMarkers.AddMarker(new Marker(vertical, true));
+            }
+        }
         #endregion
 
         #region Draw Components
@@ -499,6 +518,7 @@ namespace ScreenRuler
         private void comUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
             Settings.MeasuringUnit = (MeasuringUnit)comUnits.SelectedIndex;
+            Settings.InvokeChanged();
             this.Invalidate();
         }
 
@@ -671,6 +691,7 @@ namespace ScreenRuler
             {
                 Settings.MonitorDpi = scalingForm.MonitorDpi;
                 Settings.MonitorScaling = scalingForm.MonitorScaling;
+                Settings.InvokeChanged();
             }
         }
 

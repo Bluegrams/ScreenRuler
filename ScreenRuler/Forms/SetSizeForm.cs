@@ -34,8 +34,7 @@ namespace ScreenRuler
 
         private void setConverter(MeasuringUnit unit)
         {
-            var screenSize = Screen.FromControl(this).Bounds.Size;
-            converter = new UnitConverter(unit, screenSize, settings.MonitorDpi);
+            converter = UnitConverter.FromSettings(this, settings, unit);
         }
 
         private void comUnits_SelectedIndexChanged(object sender, EventArgs e)

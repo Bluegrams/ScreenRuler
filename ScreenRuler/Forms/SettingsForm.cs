@@ -100,6 +100,7 @@ namespace ScreenRuler
             settings.UseNotifyIcon = chkNotifyIcon.Checked;
             settings.FollowMousePointerCenter = chkFollowMousePointerCenter.Checked;
             settings.SnapToScreenEdges = chkSnapToScreenEdges.Checked;
+            settings.InvokeChanged();
             this.DialogResult = DialogResult.OK;
         }
 
