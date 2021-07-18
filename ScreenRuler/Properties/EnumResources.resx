@@ -132,4 +132,13 @@
   <data name="Percent" xml:space="preserve">
     <value>Percent</value>
   </data>
+  <data name="HypotenuseMode_None" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="HypotenuseMode_FixedAtLength" xml:space="preserve">
+    <value>At Ruler Length</value>
+  </data>
+  <data name="HypotenuseMode_Moving" xml:space="preserve">
+    <value>At Cursor Position</value>
+  </data>
 </root>

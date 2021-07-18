@@ -152,59 +152,11 @@
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimize</value>
   </data>
-  <data name="conModeHorizontal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="conModeHorizontal.Text" xml:space="preserve">
-    <value>Horizontal</value>
-  </data>
-  <data name="conModeVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="conModeVertical.Text" xml:space="preserve">
-    <value>Vertical</value>
-  </data>
-  <data name="conModeTwoDimensional.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="conModeTwoDimensional.Text" xml:space="preserve">
-    <value>Two-Dimensional</value>
-  </data>
   <data name="conRulerMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
   <data name="conRulerMode.Text" xml:space="preserve">
     <value>Ruler Mode</value>
-  </data>
-  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conHigh.Text" xml:space="preserve">
-    <value>High (100%)</value>
-  </data>
-  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conDefault.Text" xml:space="preserve">
-    <value>Default (80%)</value>
-  </data>
-  <data name="conMedium.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conMedium.Text" xml:space="preserve">
-    <value>Medium (60%)</value>
-  </data>
-  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conLow.Text" xml:space="preserve">
-    <value>Low (40%)</value>
-  </data>
-  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Very Low (20%)</value>
   </data>
   <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -308,6 +260,15 @@
   <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
     <value>Appearance</value>
   </data>
+  <data name="conHypotenuse.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="conHypotenuse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="conHypotenuse.Text" xml:space="preserve">
+    <value>Hypotenuse (in 2D)</value>
+  </data>
   <data name="conHideRulerScale.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+H</value>
   </data>
@@ -387,13 +348,61 @@
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 429</value>
+    <value>208, 473</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="conModeHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="conModeHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="conModeVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="conModeVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="conModeTwoDimensional.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="conModeTwoDimensional.Text" xml:space="preserve">
+    <value>Two-Dimensional</value>
+  </data>
+  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conHigh.Text" xml:space="preserve">
+    <value>High (100%)</value>
+  </data>
+  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conDefault.Text" xml:space="preserve">
+    <value>Default (80%)</value>
+  </data>
+  <data name="conMedium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conMedium.Text" xml:space="preserve">
+    <value>Medium (60%)</value>
+  </data>
+  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conLow.Text" xml:space="preserve">
+    <value>Low (40%)</value>
+  </data>
+  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conVeryLow.Text" xml:space="preserve">
+    <value>Very Low (20%)</value>
   </data>
   <metadata name="rulerToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>134, 17</value>
@@ -2008,6 +2017,12 @@
   <data name="&gt;&gt;conOffsetLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;conHypotenuse.Name" xml:space="preserve">
+    <value>conHypotenuse</value>
+  </data>
+  <data name="&gt;&gt;conHypotenuse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;conHideRulerScale.Name" xml:space="preserve">
     <value>conHideRulerScale</value>
   </data>
@@ -2084,6 +2099,6 @@
     <value>RulerForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ScreenRuler.BaseForm, screenruler, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ScreenRuler.BaseForm, screenruler, Version=0.8.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

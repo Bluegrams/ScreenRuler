@@ -29,7 +29,9 @@ namespace ScreenRuler
         /// </summary>
         public int SnapMargin { get; }
 
-        public BaseForm(SnapMode snapMode = SnapMode.None, int snapMargin = 10)
+        public BaseForm() : this(SnapMode.None, 10) { }
+
+        public BaseForm(SnapMode snapMode, int snapMargin)
         {
             this.SnapMode = snapMode;
             this.SnapMargin = snapMargin;

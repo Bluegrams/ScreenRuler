@@ -143,11 +143,9 @@ namespace ScreenRuler
             if (settings.ShowOffsetLengthLabels)
             {
                 int roundingDigits = settings.SlimMode ? 1 : 2;
-                string lblLength = String.Format("{0}{1}",
-                    Math.Round(converter.ConvertFromPixel(max, vertical), roundingDigits), converter.UnitString);
+                string lblLength = converter.FormatFromPixel(max, vertical, roundingDigits);
                 int offset = vertical ? c.Location.Y : c.Location.X;
-                string lblOffset = String.Format("{0}{1}",
-                    Math.Round(converter.ConvertFromPixel(offset, vertical), roundingDigits), converter.UnitString);
+                string lblOffset = converter.FormatFromPixel(offset, vertical, roundingDigits);
                 using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
                 using (Font font = new Font("Arial", 9))
                 {
@@ -185,6 +183,8 @@ namespace ScreenRuler
                 PaintMarkers(false, markers.Horizontal, mouse.X);
             if (resizeMode.HasFlag(FormResizeMode.Vertical))
                 PaintMarkers(true, markers.Vertical, mouse.Y);
+            if (resizeMode == FormResizeMode.TwoDimensional && settings.HypotenuseMode != HypotenuseMode.None)
+                draw2DHypotenuse(mouse);
         }
 
         protected void PaintMarkers(bool vertical, IEnumerable<Marker> markers, float mouseLine)
@@ -272,6 +272,43 @@ namespace ScreenRuler
                     if (!settings.SlimMode)
                         g.DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos, format);
                 }
+            }
+        }
+
+        private void draw2DHypotenuse(Point mousePosition)
+        {
+            // Depending on the settings, we draw the hypotenuse at the mouse position or at the ruler ends.
+            Point reference = settings.HypotenuseMode == HypotenuseMode.Moving ? mousePosition : new Point(c.Size);
+            // calculate the length of the hypotenuse
+            double hypotenuse = Math.Sqrt(reference.X * reference.X + reference.Y * reference.Y);
+            // calculate the length of the angles
+            double angleLeft = (180 / Math.PI) * Math.Acos(reference.Y / hypotenuse);
+            double angleTop = (180 / Math.PI) * Math.Acos(reference.X / hypotenuse);
+            Point startPoint = new Point(0, reference.Y);
+            Point endPoint = new Point(reference.X, 0);
+            // Show the hypotenuse of the triangle constructed by the cursor position in 2D mode
+            using (Brush brush = new SolidBrush(settings.Theme.MouseLineColor))
+            using (Pen pen = new Pen(brush, settings.MarkerThickness))
+            {
+                g.DrawLine(pen, startPoint, endPoint);
+            }
+            // Show additional information in a box
+            StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
+            using (Brush backgroundBrush = new SolidBrush(settings.Theme.Background))
+            using (Brush penBrush = new SolidBrush(settings.Theme.TickColor))
+            using (Font font = new Font("Arial", 9))
+            {
+                Size boxSize = new Size(80, 50);
+                Point cornerPoint = new Point(reference.X / 2, reference.Y / 2);
+                if (cornerPoint.X > boxSize.Width && cornerPoint.Y > boxSize.Height)
+                    cornerPoint -= boxSize;
+                g.FillRectangle(backgroundBrush, new Rectangle(cornerPoint, boxSize));
+                g.DrawString("\u21ff  ", font, penBrush, cornerPoint + new Size(4, 4));
+                g.DrawString(String.Format("{0:0.##}", hypotenuse), font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 4), format);
+                g.DrawString("L \u2220", font, penBrush, cornerPoint + new Size(4, 18));
+                g.DrawString(String.Format("{0:0.##}", angleLeft), font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 18), format);
+                g.DrawString("R \u2220", font, penBrush, cornerPoint + new Size(4, 32));
+                g.DrawString(String.Format("{0:0.##}", angleTop), font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 32), format);
             }
         }
     }

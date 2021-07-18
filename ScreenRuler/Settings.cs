@@ -41,6 +41,10 @@ namespace ScreenRuler
         /// </summary>
         public bool ShowMouseLine { get; set; } = true;
         /// <summary>
+        /// Specifies if and how to draw the hypotenuse of the triangle defined by the mouse markers if the ruler is in 2D mode.
+        /// </summary>
+        public HypotenuseMode HypotenuseMode { get; set; } = HypotenuseMode.None;
+        /// <summary>
         /// If set to true, ruler scale and custom markings are not drawn.
         /// </summary>
         public bool HideRulerScale { get; set; } = false;
