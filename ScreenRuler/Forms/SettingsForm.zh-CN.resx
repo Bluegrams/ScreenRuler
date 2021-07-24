@@ -227,7 +227,7 @@
   </data>
   <data name="groupBox1.Text"
         xml:space="preserve">
-    <value>Units</value>
+    <value>单位</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name"
         xml:space="preserve">
@@ -457,7 +457,7 @@
   </data>
   <data name="grpColors.Text"
         xml:space="preserve">
-    <value>Colors</value>
+    <value>颜色</value>
   </data>
   <data name="&gt;&gt;grpColors.Name"
         xml:space="preserve">
@@ -1329,7 +1329,7 @@
   </data>
   <data name="tabPage3.Text"
         xml:space="preserve">
-    <value>Tools</value>
+    <value>工具</value>
   </data>
   <data name="&gt;&gt;tabPage3.Name"
         xml:space="preserve">
@@ -1369,7 +1369,7 @@
   </data>
   <data name="chkFollowMousePointerCenter.Text"
         xml:space="preserve">
-    <value>跟随鼠标移动时鼠标保持在标尺中心</value>
+    <value>移动标尺时鼠标保持在标尺中心</value>
   </data>
   <data name="&gt;&gt;chkFollowMousePointerCenter.Name"
         xml:space="preserve">
@@ -1605,7 +1605,7 @@
   </data>
   <data name="groupBox2.Text"
         xml:space="preserve">
-    <value>Control</value>
+    <value>控制</value>
   </data>
   <data name="&gt;&gt;groupBox2.Name"
         xml:space="preserve">
@@ -1641,7 +1641,7 @@
   </data>
   <data name="tabPage2.Text"
         xml:space="preserve">
-    <value>Advanced</value>
+    <value>高级</value>
   </data>
   <data name="&gt;&gt;tabPage2.Name"
         xml:space="preserve">
@@ -2117,7 +2117,7 @@
   </data>
   <data name="chkLimitOneMarker.Text"
         xml:space="preserve">
-    <value>仅能做一个标记</value>
+    <value>只允许做一个标记</value>
   </data>
   <data name="&gt;&gt;chkLimitOneMarker.Name"
         xml:space="preserve">
@@ -2873,7 +2873,7 @@
   </data>
   <data name="$this.Text"
         xml:space="preserve">
-    <value>Settings</value>
+    <value>偏好设置</value>
   </data>
   <data name="&gt;&gt;$this.Name"
         xml:space="preserve">
@@ -2882,5 +2882,9 @@
   <data name="&gt;&gt;$this.Type"
         xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkSnapToScreenEdges.Text"
+        xml:space="preserve">
+    <value>对齐到屏幕边缘</value>
   </data>
 </root>

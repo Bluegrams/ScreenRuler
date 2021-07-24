@@ -154,7 +154,7 @@
     <value>删除选中</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>标记编辑 - 屏幕标尺</value>
+    <value>标记编辑 - 屏幕标尺 (Screen Ruler)</value>
   </data>
   <data name="&gt;&gt;conDelete.Name" xml:space="preserve">
     <value>conDelete</value>
@@ -916,4 +916,7 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="conUnits.Text" xml:space="preserve">
+    <value>测量单位</value>
+  </data>
 </root>

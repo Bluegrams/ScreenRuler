@@ -132,4 +132,13 @@
   <data name="Percent" xml:space="preserve">
     <value>百分比</value>
   </data>
+  <data name="HypotenuseMode_FixedAtLength" xml:space="preserve">
+    <value>基于标尺长宽</value>
+  </data>
+  <data name="HypotenuseMode_Moving" xml:space="preserve">
+    <value>基于鼠标位置</value>
+  </data>
+  <data name="HypotenuseMode_None" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
 </root>
