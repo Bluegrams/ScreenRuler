@@ -8,6 +8,7 @@ namespace ScreenRuler
     public partial class MarkerListForm : Form
     {
         private Settings settings;
+        private UnitConverter unitConverter;
 
         public MarkerCollection MarkerCollection { get; }
 
@@ -22,19 +23,39 @@ namespace ScreenRuler
             {
                 lstMarkers.Items.Add(marker);
             }
+            foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
+            {
+                conUnits.DropDownItems.Add(new ToolStripMenuItem(item.GetDescription(), null, conUnitsItem_Clicked) { Tag = item });
+            }
+            updateUnitConverter();
             markerCollection.MarkerCollectionChanged += markerCollection_MarkerCollectionChanged;
+            settings.Changed += settings_Changed;
             settings.SelectedThemeChanged += settings_SelectedThemeChanged;
         }
+
+        private void conUnitsItem_Clicked(object sender, EventArgs e)
+        {
+            var unit = (MeasuringUnit)((ToolStripMenuItem)sender).Tag;
+            updateUnitConverter(unit);
+        }
+
+        private void updateUnitConverter(MeasuringUnit? unit = null)
+        {
+            unitConverter = UnitConverter.FromSettings(this, settings, unit);
+            lstMarkers.UnitConverter = unitConverter;
+            // Set checkmark in dropdown
+            foreach (var item in conUnits.DropDownItems.Cast<ToolStripMenuItem>())
+            {
+                item.Checked = (MeasuringUnit)item.Tag == unitConverter.Unit;
+            }
+        }
+
+        private void settings_Changed(object sender, EventArgs e) => updateUnitConverter();
 
         private void setTheme()
         {
             lstMarkers.BackColor = settings.Theme.Background;
             lstMarkers.ForeColor = settings.Theme.TickColor;
-        }
-        private UnitConverter getUnitConverter()
-        {
-            var screenSize = Screen.FromControl(this.Owner).Bounds.Size;
-            return new UnitConverter(settings.MeasuringUnit, screenSize, settings.MonitorDpi);
         }
 
         private void settings_SelectedThemeChanged(object sender, EventArgs e) => setTheme();
@@ -75,7 +96,7 @@ namespace ScreenRuler
         private void lstMarkers_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Marker marker = (Marker)lstMarkers.SelectedItem;
-            CustomLineForm lineForm = new CustomLineForm(marker, getUnitConverter(), settings.Theme);
+            CustomLineForm lineForm = new CustomLineForm(marker, unitConverter, settings.Theme);
             if (lineForm.ShowDialog(this.Owner) == DialogResult.OK)
             {
                 MarkerCollection.Markers.Remove(marker);

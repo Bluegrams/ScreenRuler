@@ -132,4 +132,13 @@
   <data name="Percent" xml:space="preserve">
     <value>Prozent</value>
   </data>
+  <data name="HypotenuseMode_None" xml:space="preserve">
+    <value>Versteckt</value>
+  </data>
+  <data name="HypotenuseMode_FixedAtLength" xml:space="preserve">
+    <value>An Lineallänge</value>
+  </data>
+  <data name="HypotenuseMode_Moving" xml:space="preserve">
+    <value>An Mausposition</value>
+  </data>
 </root>

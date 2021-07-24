@@ -57,6 +57,7 @@
             this.conMarkGolden = new System.Windows.Forms.ToolStripMenuItem();
             this.conMarkMouse = new System.Windows.Forms.ToolStripMenuItem();
             this.conOffsetLength = new System.Windows.Forms.ToolStripMenuItem();
+            this.conHypotenuse = new System.Windows.Forms.ToolStripMenuItem();
             this.conHideRulerScale = new System.Windows.Forms.ToolStripMenuItem();
             this.conEditMarkers = new System.Windows.Forms.ToolStripMenuItem();
             this.conClearCustomMarker = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +90,7 @@
             this.conFollowMousePointer,
             this.toolStripSeparator1,
             this.appearanceToolStripMenuItem,
+            this.conHypotenuse,
             this.conHideRulerScale,
             this.conEditMarkers,
             this.conClearCustomMarker,
@@ -285,6 +287,11 @@
             resources.ApplyResources(this.conOffsetLength, "conOffsetLength");
             this.conOffsetLength.Click += new System.EventHandler(this.conOffsetLength_Click);
             // 
+            // conHypotenuse
+            // 
+            this.conHypotenuse.Name = "conHypotenuse";
+            resources.ApplyResources(this.conHypotenuse, "conHypotenuse");
+            // 
             // conHideRulerScale
             // 
             this.conHideRulerScale.Name = "conHideRulerScale";
@@ -413,6 +420,7 @@
         private System.Windows.Forms.ToolStripMenuItem conMarkMouse;
         private System.Windows.Forms.ToolStripMenuItem conOffsetLength;
         private System.Windows.Forms.ToolStripMenuItem conHideRulerScale;
+        private System.Windows.Forms.ToolStripMenuItem conHypotenuse;
     }
 }
 

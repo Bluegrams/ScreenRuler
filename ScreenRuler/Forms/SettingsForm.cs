@@ -43,6 +43,7 @@ namespace ScreenRuler
             chkToolTip.Checked = settings.ShowToolTip;
             chkNotifyIcon.Checked = settings.UseNotifyIcon;
             chkFollowMousePointerCenter.Checked = settings.FollowMousePointerCenter;
+            chkSnapToScreenEdges.Checked = settings.SnapToScreenEdges;
         }
 
         private void radTheme_CheckedChanged(object sender, EventArgs e)
@@ -98,6 +99,8 @@ namespace ScreenRuler
             settings.ShowToolTip = chkToolTip.Checked;
             settings.UseNotifyIcon = chkNotifyIcon.Checked;
             settings.FollowMousePointerCenter = chkFollowMousePointerCenter.Checked;
+            settings.SnapToScreenEdges = chkSnapToScreenEdges.Checked;
+            settings.InvokeChanged();
             this.DialogResult = DialogResult.OK;
         }
 

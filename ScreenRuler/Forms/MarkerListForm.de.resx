@@ -842,4 +842,7 @@
   <data name="conDelete.Text" xml:space="preserve">
     <value>Ausgewählte löschen</value>
   </data>
+  <data name="conUnits.Text" xml:space="preserve">
+    <value>Maßeinheit</value>
+  </data>
 </root>

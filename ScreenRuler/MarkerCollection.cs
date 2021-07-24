@@ -67,11 +67,16 @@ namespace ScreenRuler
             if (vertical)
                 newMarker = new Marker(pos.Y, true);
             else newMarker = new Marker(pos.X, false);
-            Markers.AddLast(newMarker);
+            AddMarker(newMarker);
+        }
+
+        public void AddMarker(Marker marker)
+        {
+            Markers.AddLast(marker);
             // remove first if we hit limit
             if (Markers.Count > Limit)
                 RemoveFirstMarker();
-            MarkerCollectionChanged?.Invoke(this, new MarkerCollectionEventArgs(true, newMarker));
+            MarkerCollectionChanged?.Invoke(this, new MarkerCollectionEventArgs(true, marker));
         }
 
         /// <summary>

@@ -41,6 +41,10 @@ namespace ScreenRuler
         /// </summary>
         public bool ShowMouseLine { get; set; } = true;
         /// <summary>
+        /// Specifies if and how to draw the hypotenuse of the triangle defined by the mouse markers if the ruler is in 2D mode.
+        /// </summary>
+        public HypotenuseMode HypotenuseMode { get; set; } = HypotenuseMode.None;
+        /// <summary>
         /// If set to true, ruler scale and custom markings are not drawn.
         /// </summary>
         public bool HideRulerScale { get; set; } = false;
@@ -76,6 +80,10 @@ namespace ScreenRuler
         /// If set to true, the center point of the ruler will follow the mouse pointer; otherwise left upper corner will be attached. 
         /// </summary>
         public bool FollowMousePointerCenter { get; set; } = true;
+        /// <summary>
+        /// If set to true, will snap the ruler to screen edges.
+        /// </summary>
+        public bool SnapToScreenEdges { get; set; } = false;
 
         private ThemeOption selectedTheme;
 
@@ -123,5 +131,16 @@ namespace ScreenRuler
         /// Defines the size of one big ruler resizing step.
         /// </summary>
         public int LargeStep { get; set; } = 25;
+
+        
+        /// <summary>
+        /// An event that allows to explicitly inform users of this class about changes.
+        /// </summary>
+        public event EventHandler Changed;
+
+        /// <summary>
+        /// Invoke the Changed event.
+        /// </summary>
+        public void InvokeChanged() => Changed?.Invoke(this, EventArgs.Empty);
     }
 }

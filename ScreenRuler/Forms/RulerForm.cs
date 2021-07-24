@@ -43,11 +43,7 @@ namespace ScreenRuler
             this.MouseWheel += RulerForm_MouseWheel;
         }
 
-        private UnitConverter getUnitConverter()
-        {
-            var screenSize = Screen.FromControl(this).Bounds.Size;
-            return new UnitConverter(Settings.MeasuringUnit, screenSize, Settings.MonitorDpi);
-        }
+        private UnitConverter getUnitConverter() => UnitConverter.FromSettings(this, Settings);
 
         private void RulerForm_Load(object sender, EventArgs e)
         {
@@ -55,6 +51,16 @@ namespace ScreenRuler
             foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
             {
                 comUnits.Items.Add(item.GetDescription());
+            }
+            foreach (Enum item in Enum.GetValues(typeof(HypotenuseMode)))
+            {
+                conHypotenuse.DropDownItems.Add(
+                    new ToolStripMenuItem(item.GetDescription(), null, conHypotenuse_Click)
+                    {
+                        Tag = item,
+                        Checked = Settings.HypotenuseMode == (HypotenuseMode)item
+                    }
+                );
             }
             // Reset the currently selected theme to avoid inconsistencies
             // caused by manual edits in the settings file.
@@ -100,6 +106,7 @@ namespace ScreenRuler
                 this.ShowInTaskbar = true;
                 notifyIcon.Visible = false;
             }
+            this.SnapMode = Settings.SnapToScreenEdges ? SnapMode.LimitToEdges : SnapMode.None;
         }
 
         private void RulerForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -228,6 +235,9 @@ namespace ScreenRuler
                 case Keys.P:
                     conMarkMouse.PerformClick();
                     break;
+                case Keys.H:
+                    toggleHypotenuseMode();
+                    break;
                 case Keys.Delete:
                     conClearCustomMarker.PerformClick();
                     break;
@@ -246,6 +256,9 @@ namespace ScreenRuler
                             this.Invalidate();
                         }
                     }
+                    break;
+                case Keys.X:
+                    addMarkersAtCurrentPosition();
                     break;
                 case Keys.L:
                     CustomMarkers.AddMarker((Point)this.Size, RestrictSize);
@@ -386,6 +399,26 @@ namespace ScreenRuler
             // Add a marker at the cursor position.
             CustomMarkers.AddMarker(e.Location, RestrictSize, ResizeMode == FormResizeMode.Vertical);
         }
+
+        private void addMarkersAtCurrentPosition()
+        {
+            Point position = Cursor.Position;
+            int horizontal = position.X - this.Left;
+            int vertical = position.Y - this.Top;
+            if (this.ResizeMode == FormResizeMode.Horizontal)
+            {
+                CustomMarkers.AddMarker(new Marker(horizontal, false));
+            }
+            else if (this.ResizeMode == FormResizeMode.Vertical)
+            {
+                CustomMarkers.AddMarker(new Marker(vertical, true));
+            }
+            else
+            {
+                CustomMarkers.AddMarker(new Marker(horizontal, false));
+                CustomMarkers.AddMarker(new Marker(vertical, true));
+            }
+        }
         #endregion
 
         #region Draw Components
@@ -406,15 +439,30 @@ namespace ScreenRuler
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            // draw transparent background
-            int offset = this.RestrictSize;
-            e.Graphics.FillRectangle(
-                new SolidBrush(TransparencyKey),
-                new Rectangle(
-                    offset, offset,
-                    this.Width - offset, this.Height - offset
-                )
-            );
+            /* Draw two transparent rectangles at the borders not occupied by the ruler itself.
+             * This should prevent (most of) the flickering at these borders.
+             */
+            // The maximum width/ or height of the transparent rectangles.
+            int maxRectWidth = this.RestrictSize;
+            using (Brush brush = new SolidBrush(TransparencyKey))
+            {
+                // Vertical rectangle at right border
+                e.Graphics.FillRectangle(
+                    brush,
+                    new Rectangle(
+                        Math.Max(RestrictSize, Width - maxRectWidth), RestrictSize,
+                        Math.Min(Width - RestrictSize, maxRectWidth), Height - RestrictSize
+                    )
+                );
+                // Horizontal rectangle at lower border
+                e.Graphics.FillRectangle(
+                    brush,
+                    new Rectangle(
+                        RestrictSize, Math.Max(RestrictSize, Height - maxRectWidth),
+                        Width - RestrictSize, Math.Min(Height - RestrictSize, maxRectWidth)
+                    )
+                );
+            }
         }
         #endregion
 
@@ -438,6 +486,16 @@ namespace ScreenRuler
                 ResizeMode = FormResizeMode.Vertical;
                 this.Height = length;
             }
+        }
+
+        private void toggleHypotenuseMode()
+        {
+            Settings.HypotenuseMode = (HypotenuseMode)(((int)Settings.HypotenuseMode + 1) % 3);
+            foreach (ToolStripMenuItem it in conHypotenuse.DropDownItems)
+            {
+                it.Checked = (HypotenuseMode)it.Tag == Settings.HypotenuseMode;
+            }
+            this.Invalidate();
         }
         #endregion
 
@@ -498,6 +556,7 @@ namespace ScreenRuler
         private void comUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
             Settings.MeasuringUnit = (MeasuringUnit)comUnits.SelectedIndex;
+            Settings.InvokeChanged();
             this.Invalidate();
         }
 
@@ -533,6 +592,15 @@ namespace ScreenRuler
         private void conOffsetLength_Click(object sender, EventArgs e)
         {
             Settings.ShowOffsetLengthLabels = !Settings.ShowOffsetLengthLabels;
+            this.Invalidate();
+        }
+
+        private void conHypotenuse_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripMenuItem it in conHypotenuse.DropDownItems)
+                it.Checked = false;
+            ((ToolStripMenuItem)sender).Checked = true;
+            Settings.HypotenuseMode = (HypotenuseMode)((ToolStripMenuItem)sender).Tag;
             this.Invalidate();
         }
 
@@ -670,6 +738,7 @@ namespace ScreenRuler
             {
                 Settings.MonitorDpi = scalingForm.MonitorDpi;
                 Settings.MonitorScaling = scalingForm.MonitorScaling;
+                Settings.InvokeChanged();
             }
         }
 

@@ -5,16 +5,75 @@ using System.Windows.Forms;
 
 namespace ScreenRuler
 {
+    public enum SnapMode
+    {
+        None = 0,
+        SnapToEdges = 1,
+        LimitToEdges = 2
+    }
+
+
     [DesignerCategory("")]
     public class BaseForm : Form
     {
         private const int MINIMAL_LENGTH = 150;
 
-        public BaseForm()
+        /// <summary>
+        /// Specifies the snapping behavior of this window.
+        /// </summary>
+        public SnapMode SnapMode { get; set; }
+
+        /// <summary>
+        /// Gets the snap margin of the form.
+        /// Snapping to bounds is turned off for values lower than 1.
+        /// </summary>
+        public int SnapMargin { get; }
+
+        public BaseForm() : this(SnapMode.None, 10) { }
+
+        public BaseForm(SnapMode snapMode, int snapMargin)
         {
+            this.SnapMode = snapMode;
+            this.SnapMargin = snapMargin;
+            if (snapMargin > 0)
+                this.LocationChanged += baseForm_LocationChanged;
             this.MouseDown += Form_MouseDown;
             this.MouseMove += Form_MouseMove;
             this.MouseUp += Form_MouseUp;
+        }
+
+        /// <summary>
+        /// Snaps the window to screen bounds when it's near.
+        /// </summary>
+        private void baseForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (!this.Visible || SnapMode == SnapMode.None) return;
+            Screen screen = Screen.FromControl(this);
+            Point upperLeft = screen.WorkingArea.Location;
+            Point lowerRight = new Point(screen.WorkingArea.Right, screen.WorkingArea.Bottom);
+            if (SnapMode == SnapMode.SnapToEdges)
+            {
+                if (Math.Abs(this.Left - upperLeft.X) <= SnapMargin)
+                    this.Left = upperLeft.X;
+                if (Math.Abs(this.Top - upperLeft.Y) <= SnapMargin)
+                    this.Top = upperLeft.Y;
+                if (Math.Abs(this.Right - lowerRight.X) <= SnapMargin)
+                    this.Left = lowerRight.X - this.Width;
+                if (Math.Abs(this.Bottom - lowerRight.Y) <= SnapMargin)
+                    this.Top = lowerRight.Y - this.Height;
+            }
+            else if (SnapMode == SnapMode.LimitToEdges)
+            {
+                if (this.Left < upperLeft.X)
+                    this.Left = upperLeft.X;
+                if (this.Top < upperLeft.Y)
+                    this.Top = upperLeft.Y;
+                // The size checks are to prevent flackering when the ruler size exceeds the screen size
+                if (this.Right > lowerRight.X && this.Width <= screen.WorkingArea.Width)
+                    this.Left = lowerRight.X - this.Width;
+                if (this.Bottom > lowerRight.Y && this.Height <= screen.WorkingArea.Height)
+                    this.Top = lowerRight.Y - this.Height;
+            }
         }
 
         #region Sizing Restriction

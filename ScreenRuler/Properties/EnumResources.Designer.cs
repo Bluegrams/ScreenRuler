@@ -70,6 +70,33 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to At Ruler Length.
+        /// </summary>
+        internal static string HypotenuseMode_FixedAtLength {
+            get {
+                return ResourceManager.GetString("HypotenuseMode_FixedAtLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At Cursor Position.
+        /// </summary>
+        internal static string HypotenuseMode_Moving {
+            get {
+                return ResourceManager.GetString("HypotenuseMode_Moving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide.
+        /// </summary>
+        internal static string HypotenuseMode_None {
+            get {
+                return ResourceManager.GetString("HypotenuseMode_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inches.
         /// </summary>
         internal static string Inches {

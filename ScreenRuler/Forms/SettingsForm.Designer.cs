@@ -53,8 +53,15 @@
             this.butSubmit = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkLimitOneMarker = new System.Windows.Forms.CheckBox();
+            this.chkMarkerSymbol = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numMarkerThickness = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkFollowMousePointerCenter = new System.Windows.Forms.CheckBox();
             this.chkNotifyIcon = new System.Windows.Forms.CheckBox();
             this.chkToolTip = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,27 +71,21 @@
             this.label8 = new System.Windows.Forms.Label();
             this.numLargeStep = new System.Windows.Forms.NumericUpDown();
             this.numMediumStep = new System.Windows.Forms.NumericUpDown();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chkMarkerSymbol = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numMarkerThickness = new System.Windows.Forms.NumericUpDown();
-            this.chkLimitOneMarker = new System.Windows.Forms.CheckBox();
-            this.chkFollowMousePointerCenter = new System.Windows.Forms.CheckBox();
+            this.chkSnapToScreenEdges = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.grpColors.SuspendLayout();
             this.panCustomColors.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSmallStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -271,6 +272,60 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.chkLimitOneMarker);
+            this.groupBox4.Controls.Add(this.chkMarkerSymbol);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.numMarkerThickness);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // chkLimitOneMarker
+            // 
+            resources.ApplyResources(this.chkLimitOneMarker, "chkLimitOneMarker");
+            this.chkLimitOneMarker.Name = "chkLimitOneMarker";
+            this.chkLimitOneMarker.UseVisualStyleBackColor = true;
+            // 
+            // chkMarkerSymbol
+            // 
+            resources.ApplyResources(this.chkMarkerSymbol, "chkMarkerSymbol");
+            this.chkMarkerSymbol.Name = "chkMarkerSymbol";
+            this.chkMarkerSymbol.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // numMarkerThickness
+            // 
+            resources.ApplyResources(this.numMarkerThickness, "numMarkerThickness");
+            this.numMarkerThickness.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numMarkerThickness.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMarkerThickness.Name = "numMarkerThickness";
+            this.numMarkerThickness.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox3);
@@ -281,12 +336,19 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkSnapToScreenEdges);
             this.groupBox3.Controls.Add(this.chkFollowMousePointerCenter);
             this.groupBox3.Controls.Add(this.chkNotifyIcon);
             this.groupBox3.Controls.Add(this.chkToolTip);
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            // 
+            // chkFollowMousePointerCenter
+            // 
+            resources.ApplyResources(this.chkFollowMousePointerCenter, "chkFollowMousePointerCenter");
+            this.chkFollowMousePointerCenter.Name = "chkFollowMousePointerCenter";
+            this.chkFollowMousePointerCenter.UseVisualStyleBackColor = true;
             // 
             // chkNotifyIcon
             // 
@@ -372,65 +434,11 @@
             0,
             0});
             // 
-            // tabPage3
+            // chkSnapToScreenEdges
             // 
-            this.tabPage3.Controls.Add(this.groupBox4);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.chkLimitOneMarker);
-            this.groupBox4.Controls.Add(this.chkMarkerSymbol);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.numMarkerThickness);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.TabStop = false;
-            // 
-            // chkMarkerSymbol
-            // 
-            resources.ApplyResources(this.chkMarkerSymbol, "chkMarkerSymbol");
-            this.chkMarkerSymbol.Name = "chkMarkerSymbol";
-            this.chkMarkerSymbol.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // numMarkerThickness
-            // 
-            resources.ApplyResources(this.numMarkerThickness, "numMarkerThickness");
-            this.numMarkerThickness.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numMarkerThickness.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMarkerThickness.Name = "numMarkerThickness";
-            this.numMarkerThickness.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // chkLimitOneMarker
-            // 
-            resources.ApplyResources(this.chkLimitOneMarker, "chkLimitOneMarker");
-            this.chkLimitOneMarker.Name = "chkLimitOneMarker";
-            this.chkLimitOneMarker.UseVisualStyleBackColor = true;
-            // 
-            // chkFollowMousePointerCenter
-            // 
-            resources.ApplyResources(this.chkFollowMousePointerCenter, "chkFollowMousePointerCenter");
-            this.chkFollowMousePointerCenter.Name = "chkFollowMousePointerCenter";
-            this.chkFollowMousePointerCenter.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.chkSnapToScreenEdges, "chkSnapToScreenEdges");
+            this.chkSnapToScreenEdges.Name = "chkSnapToScreenEdges";
+            this.chkSnapToScreenEdges.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -455,6 +463,10 @@
             this.panCustomColors.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -463,10 +475,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSmallStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMarkerThickness)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -515,5 +523,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numMarkerThickness;
         private System.Windows.Forms.CheckBox chkFollowMousePointerCenter;
+        private System.Windows.Forms.CheckBox chkSnapToScreenEdges;
     }
 }

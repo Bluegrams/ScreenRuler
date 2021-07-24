@@ -956,4 +956,7 @@
   <data name="chkFollowMousePointerCenter.Text" xml:space="preserve">
     <value>Mit Linealmitte Mauszeiger folgen</value>
   </data>
+  <data name="chkSnapToScreenEdges.Text" xml:space="preserve">
+    <value>An Bildschirmränder andocken</value>
+  </data>
 </root>
