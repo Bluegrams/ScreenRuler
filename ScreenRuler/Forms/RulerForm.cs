@@ -194,6 +194,10 @@ namespace ScreenRuler
                 case Keys.Space:
                     toggleRulerMode();
                     break;
+                case Keys.F:
+                    if (e.Shift) conFlipVertically.PerformClick();
+                    else conFlipHorizontally.PerformClick();
+                    break;
                 case Keys.J:
                     conSlimMode.PerformClick();
                     break;
@@ -442,24 +446,32 @@ namespace ScreenRuler
             /* Draw two transparent rectangles at the borders not occupied by the ruler itself.
              * This should prevent (most of) the flickering at these borders.
              */
+            bool scaleOnTop = !Settings.FlippedY;
+            bool scaleOnLeft = !Settings.FlippedX;
             // The maximum width/ or height of the transparent rectangles.
-            int maxRectWidth = this.RestrictSize;
+            int maxRectWidth = this.RestrictSize / 2;
             using (Brush brush = new SolidBrush(TransparencyKey))
             {
-                // Vertical rectangle at right border
+                // --- Horizontal rectangle ---
+                // Draw at lower or upper border?
+                int xCoordH = scaleOnLeft ? RestrictSize : 0;
+                int yCoordH = scaleOnTop ? Math.Max(RestrictSize, Height - maxRectWidth) : 0;
                 e.Graphics.FillRectangle(
                     brush,
                     new Rectangle(
-                        Math.Max(RestrictSize, Width - maxRectWidth), RestrictSize,
-                        Math.Min(Width - RestrictSize, maxRectWidth), Height - RestrictSize
+                        xCoordH, yCoordH,
+                        Width - RestrictSize, Math.Min(Height - RestrictSize, maxRectWidth)
                     )
                 );
-                // Horizontal rectangle at lower border
+                // --- Vertical rectangle ---
+                // Draw at right or left border?
+                int xCoordV = scaleOnLeft ? Math.Max(RestrictSize, Width - maxRectWidth) : 0;
+                int yCoordV = scaleOnTop ? RestrictSize : 0;
                 e.Graphics.FillRectangle(
                     brush,
                     new Rectangle(
-                        RestrictSize, Math.Max(RestrictSize, Height - maxRectWidth),
-                        Width - RestrictSize, Math.Min(Height - RestrictSize, maxRectWidth)
+                        xCoordV, yCoordV,
+                        Math.Min(Width - RestrictSize, maxRectWidth), Height - RestrictSize
                     )
                 );
             }
@@ -676,6 +688,18 @@ namespace ScreenRuler
             ((ToolStripMenuItem)sender).Checked = true;
             int opacity = int.Parse((String)((ToolStripMenuItem)sender).Tag);
             this.Opacity = (double)opacity / 100;
+        }
+
+        private void conFlipHorizontally_Click(object sender, EventArgs e)
+        {
+            Settings.RulerTransform ^= RulerTransform.FlippedX;
+            this.Invalidate();
+        }
+
+        private void conFlipVertically_Click(object sender, EventArgs e)
+        {
+            Settings.RulerTransform ^= RulerTransform.FlippedY;
+            this.Invalidate();
         }
 
         private void conSlimMode_Click(object sender, EventArgs e)

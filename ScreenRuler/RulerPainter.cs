@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using ScreenRuler.Units;
 
@@ -82,14 +83,9 @@ namespace ScreenRuler
         /// </summary>
         public void PaintRuler()
         {
+            ApplyTransformation();
             // ----- Draw the ruler background -----
-            using (Brush brush = new SolidBrush(settings.Theme.Background))
-            {
-                if (resizeMode.HasFlag(FormResizeMode.Horizontal))
-                    g.FillRectangle(brush, 0, 0, c.Width, drawWidth);
-                if (resizeMode.HasFlag(FormResizeMode.Vertical))
-                    g.FillRectangle(brush, 0, 0, drawWidth, c.Height);
-            }
+            PaintRulerCanvas();
             // ----- Draw the ruler scale -----
             if (!settings.HideRulerScale)
             {
@@ -98,44 +94,38 @@ namespace ScreenRuler
                 if (resizeMode.HasFlag(FormResizeMode.Vertical))
                     PaintRulerScale(true);
             }
+            g.ResetTransform();
+        }
+
+        protected void PaintRulerCanvas()
+        {
+            using (Brush brush = new SolidBrush(settings.Theme.Background))
+            {
+                if (resizeMode.HasFlag(FormResizeMode.Horizontal))
+                {
+                    g.FillRectangle(brush, 0, 0, c.Width, drawWidth);
+
+                }
+                if (resizeMode.HasFlag(FormResizeMode.Vertical))
+                {
+                    g.FillRectangle(brush, 0, 0, drawWidth, c.Height);
+                }
+            }
         }
 
         protected void PaintRulerScale(bool vertical)
         {
-            int max = vertical ? c.Size.Height : c.Size.Width;
+            int max = vertical ? c.Height : c.Width;
             // ----- Draw the ruler scale -----
             UnitScale scale = Ticks[settings.MeasuringUnit];
             // valUnit: the current position in the chosen unit.
             // valPixel: the current position in pixels.
-            float valUnit = 0, valPixel = 0, i = 0;
+            float valUnit = 0, valPixel = 0;
+            int i = 0;
             while (valPixel <= max)
             {
                 valPixel = converter.ConvertToPixel(valUnit, vertical);
-                int length = i % scale.BTickSteps == 0 ? drawWidth / 4 : i % scale.MTickSteps == 0 ? drawWidth / 6 : drawWidth / 16;
-                using (Brush brush = new SolidBrush(settings.Theme.TickColor))
-                using (Pen pen = new Pen(brush, 1))
-                using (Font font = new Font("Arial", 9))
-                {
-                    float pos = valPixel;
-                    if (!vertical)
-                    {
-                        if (resizeMode == FormResizeMode.Horizontal || pos > length)
-                            g.DrawLine(pen, pos, 0, pos, length);
-                        if (!settings.SlimMode && (resizeMode == FormResizeMode.Horizontal || valPixel > drawWidth))
-                            g.DrawLine(pen, pos, drawWidth - length, pos, drawWidth);
-                        if (valPixel > 0 && i % scale.BTickSteps == 0)
-                            g.DrawString(Math.Round(valUnit, 2).ToString(), font, brush, pos - 8, length + 3);
-                    }
-                    else
-                    {
-                        if (resizeMode == FormResizeMode.Vertical || pos > length)
-                            g.DrawLine(pen, 0, pos, length, pos);
-                        if (!settings.SlimMode && (resizeMode == FormResizeMode.Vertical || valPixel > drawWidth))
-                            g.DrawLine(pen, drawWidth - length, pos, drawWidth, pos);
-                        if (valPixel > 0 && i % scale.BTickSteps == 0)
-                            g.DrawString(Math.Round(valUnit, 2).ToString(), font, brush, length + 3, pos - 7);
-                    }
-                }
+                paintTick(i, valPixel, valUnit, scale, vertical);
                 valUnit += scale.StepSize;
                 i += 1;
             }
@@ -144,7 +134,18 @@ namespace ScreenRuler
             {
                 int roundingDigits = settings.SlimMode ? 1 : 2;
                 string lblLength = converter.FormatFromPixel(max, vertical, roundingDigits);
-                int offset = vertical ? c.Location.Y : c.Location.X;
+                // The offset value depends on whether the ruler is flipped.
+                int offset;
+                if (vertical)
+                {
+                    if (settings.FlippedY) offset = converter.ScreenSize.Height - c.Bottom;
+                    else offset = c.Top;
+                }
+                else
+                {
+                    if (settings.FlippedX) offset = converter.ScreenSize.Width - c.Right;
+                    else offset = c.Left;
+                }
                 string lblOffset = converter.FormatFromPixel(offset, vertical, roundingDigits);
                 using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
                 using (Font font = new Font("Arial", 9))
@@ -156,20 +157,63 @@ namespace ScreenRuler
                         // adjust the label text based on ruler width
                         if (settings.SlimMode) y -= 14;
                         else y /= 2.0f;
-                        g.DrawString(lblLength, font, brush, max, y, format);
+                        DrawString(lblLength, font, brush, max, y, format);
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
-                            g.DrawString(lblOffset, font, brush, 0, y);
+                            DrawString(lblOffset, font, brush, 0, y);
                     }
                     else
                     {
                         float x = drawWidth;
                         if (!settings.SlimMode) x *= (7.0f / 8.0f);
-                        g.DrawString(lblLength, font, brush, x, max - 14, format);
+                        DrawString(lblLength, font, brush, x, max - 14, format);
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
-                            g.DrawString(lblOffset, font, brush, x, 0, format);
+                            DrawString(lblOffset, font, brush, x, 0, format);
                     }
+                }
+            }
+        }
+
+        private void paintTick(int i, float valPixel, float valUnit, UnitScale scale, bool vertical)
+        {
+            int length = i % scale.BTickSteps == 0 ? drawWidth / 4 : i % scale.MTickSteps == 0 ? drawWidth / 6 : drawWidth / 16;
+            // Only draw one row of ticks in slim mode.
+            bool drawUpper = true;
+            bool drawLower = !settings.SlimMode;
+            // In 2D mode, don't draw ticks at connection to other scale.
+            if (resizeMode == FormResizeMode.TwoDimensional)
+            {
+                /*
+                 * Check if we are within the area of a tick in the opposite direction
+                 * or within the area of the opposite direction scale.
+                 */
+                drawUpper &= !(valPixel < length);
+                drawLower &= !(valPixel < drawWidth);
+
+            }
+            using (Brush brush = new SolidBrush(settings.Theme.TickColor))
+            using (Pen pen = new Pen(brush, 1))
+            using (Font font = new Font("Arial", 9))
+            {
+                float pos = valPixel;
+                if (!vertical)
+                {
+                    if (drawUpper)
+                        g.DrawLine(pen, pos, 0, pos, length);
+                    if (drawLower)
+                        g.DrawLine(pen, pos, drawWidth - length, pos, drawWidth);
+                    if (valUnit > 0 && i % scale.BTickSteps == 0)
+                        DrawString(Math.Round(valUnit, 2).ToString(), font, brush, pos - 8, length + 3);
+                }
+                else
+                {
+                    if (drawUpper)
+                        g.DrawLine(pen, 0, pos, length, pos);
+                    if (drawLower)
+                        g.DrawLine(pen, drawWidth - length, pos, drawWidth, pos);
+                    if (valUnit > 0 && i % scale.BTickSteps == 0)
+                        DrawString(Math.Round(valUnit, 2).ToString(), font, brush, length + 3, pos - 7);
                 }
             }
         }
@@ -179,12 +223,14 @@ namespace ScreenRuler
         /// </summary>
         public void PaintMarkers(MarkerCollection markers, Point mouse)
         {
+            ApplyTransformation();
             if (resizeMode.HasFlag(FormResizeMode.Horizontal))
                 PaintMarkers(false, markers.Horizontal, mouse.X);
             if (resizeMode.HasFlag(FormResizeMode.Vertical))
                 PaintMarkers(true, markers.Vertical, mouse.Y);
             if (resizeMode == FormResizeMode.TwoDimensional && settings.HypotenuseMode != HypotenuseMode.None)
                 draw2DHypotenuse(mouse);
+            g.ResetTransform();
         }
 
         protected void PaintMarkers(bool vertical, IEnumerable<Marker> markers, float mouseLine)
@@ -200,6 +246,10 @@ namespace ScreenRuler
             // Draw line showing the position of the cursor
             if (settings.ShowMouseLine)
             {
+                // The marker value depends on whether the ruler is flipped.
+                bool inverse = vertical && settings.FlippedY || !vertical && settings.FlippedX;
+                if (inverse)
+                    mouseLine = rulerLength - mouseLine;
                 Color col = settings.Theme.MouseLineColor;
                 drawMarker(new Marker(mouseLine, vertical), MarkerSymbolMouseLine, col, moveToRight: true);
             }
@@ -264,19 +314,20 @@ namespace ScreenRuler
                     g.DrawLine(pen, pos, 0, pos, drawWidth);
                     // only draw labels if we have enough space
                     if (!settings.SlimMode)
-                        g.DrawString(text, font, brush, pos, drawWidth / 2, format);
+                        DrawString(text, font, brush, pos, drawWidth / 2, format);
                 }
                 else
                 {
                     g.DrawLine(pen, 0, pos, drawWidth, pos);
                     if (!settings.SlimMode)
-                        g.DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos, format);
+                        DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos, format);
                 }
             }
         }
 
         private void draw2DHypotenuse(Point mousePosition)
         {
+            mousePosition = TransformPoints(mousePosition)[0];
             // Depending on the settings, we draw the hypotenuse at the mouse position or at the ruler ends.
             Point reference = settings.HypotenuseMode == HypotenuseMode.Moving ? mousePosition : new Point(c.Size);
             // calculate the length of the hypotenuse
@@ -303,13 +354,89 @@ namespace ScreenRuler
                 if (cornerPoint.X > boxSize.Width && cornerPoint.Y > boxSize.Height)
                     cornerPoint -= boxSize;
                 g.FillRectangle(backgroundBrush, new Rectangle(cornerPoint, boxSize));
-                g.DrawString("\u21ff  ", font, penBrush, cornerPoint + new Size(4, 4));
-                g.DrawString(String.Format("{0:0.##}", hypotenuse), font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 4), format);
-                g.DrawString("L \u2220", font, penBrush, cornerPoint + new Size(4, 18));
-                g.DrawString(String.Format("{0:0.##}", angleLeft), font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 18), format);
-                g.DrawString("R \u2220", font, penBrush, cornerPoint + new Size(4, 32));
-                g.DrawString(String.Format("{0:0.##}", angleTop), font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 32), format);
+                string s = settings.FlippedX ? "\u21ff  \nR \u2220\nL \u2220" : "\u21ff  \nL \u2220\nR \u2220";
+                DrawString(s, font, penBrush, cornerPoint + new Size(4, 4));
+                DrawString(
+                    String.Format("{0:0.##}\n{1:0.##}\n{2:0.##}", hypotenuse, angleLeft, angleTop),
+                    font, penBrush, cornerPoint + new Size(boxSize.Width - 4, 4), format
+                );
             }
         }
+
+        /// <summary>
+        /// Applies coordinate system transformations on the graphics area depending on the ruler settings.
+        /// </summary>
+        protected void ApplyTransformation()
+        {
+            Matrix matrix = new Matrix();
+            if (settings.FlippedX)
+            {
+                g.TranslateTransform(c.Width, 0);
+                matrix.Scale(-1, 1);
+            }
+            if (settings.FlippedY)
+            {
+                g.TranslateTransform(0, c.Height);
+                matrix.Scale(1, -1);
+            }
+            g.MultiplyTransform(matrix);
+            matrix.Dispose();
+        }
+
+        /// <summary>
+        /// Transforms an array of points from world to page coordinates.
+        /// </summary>
+        protected Point[] TransformPoints(params Point[] points)
+        {
+            g.TransformPoints(CoordinateSpace.Page, CoordinateSpace.World, points);
+            return points;
+        }
+
+        /// <summary>
+        /// Transforms an array of points from world to page coordinates.
+        /// </summary>
+        protected PointF[] TransformPoints(params PointF[] points)
+        {
+            g.TransformPoints(CoordinateSpace.Page, CoordinateSpace.World, points);
+            return points;
+        }
+
+        /// <summary>
+        /// Draws a string on the graphics canvas.
+        /// This custom method is used instead of directly using Graphics.DrawString() to coordinate system transformations.
+        /// If the ruler is flipped, the displayed string would normally also be flipped.
+        /// To prevent this, we first only transform the string position and then reset all transformations while drawing the string.
+        /// </summary>
+        protected void DrawString(string s, Font font, Brush brush, PointF point, StringFormat format = null)
+        {
+            format = format ?? StringFormat.GenericDefault;
+            Matrix transform = g.Transform;
+            // Transform location where string will be drawn.
+            PointF tPoint = TransformPoints(point)[0];
+            /*
+             * Transforming can flip the string direction horizontally or vertically.
+             * Correct the occurring offset here.
+             */
+            SizeF size = g.MeasureString(s, font);
+            if (transform.Elements[0] < 0)
+            {
+                if (format.Alignment == StringAlignment.Far)
+                    tPoint.X += (int)size.Width;
+                else
+                    tPoint.X -= (int)size.Width;
+            }
+            if (transform.Elements[3] < 0)
+                tPoint.Y -= (int)size.Height;
+            // Reset all transformations while drawing the string.
+            g.ResetTransform();
+            g.DrawString(s, font, brush, tPoint, format);
+            // Re-apply transformations.
+            g.Transform = transform;
+            transform.Dispose();
+        }
+
+        protected void DrawString(string s, Font font, Brush brush, float x, float y, StringFormat format = null)
+            => DrawString(s, font, brush, new PointF(x, y), format);
+
     }
 }

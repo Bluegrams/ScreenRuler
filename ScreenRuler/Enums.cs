@@ -13,4 +13,16 @@ namespace ScreenRuler
         [LocalizedDescription("HypotenuseMode_Moving", typeof(EnumResources))]
         Moving = 2,
     }
+
+    [Flags]
+    public enum RulerTransform
+    {
+        None = 0,
+        FlippedX = 1,
+        FlippedY = 2,
+        CornerUpperLeft = None,
+        CornerUpperRight = FlippedX,
+        CornerLowerLeft = FlippedY,
+        CornerLowerRight = FlippedX | FlippedY,
+    }
 }

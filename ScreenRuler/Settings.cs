@@ -132,7 +132,15 @@ namespace ScreenRuler
         /// </summary>
         public int LargeStep { get; set; } = 25;
 
-        
+
+        /// <summary>
+        /// Specifies the horizontal and vertical ruler flipping.
+        /// </summary>
+        public RulerTransform RulerTransform { get; set; } = RulerTransform.None;
+        public bool FlippedX => RulerTransform.HasFlag(RulerTransform.FlippedX);
+        public bool FlippedY => RulerTransform.HasFlag(RulerTransform.FlippedY);
+
+
         /// <summary>
         /// An event that allows to explicitly inform users of this class about changes.
         /// </summary>

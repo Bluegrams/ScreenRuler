@@ -152,11 +152,83 @@
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimize</value>
   </data>
+  <data name="conModeHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="conModeHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="conModeVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="conModeVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="conModeTwoDimensional.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="conModeTwoDimensional.Text" xml:space="preserve">
+    <value>Two-Dimensional</value>
+  </data>
   <data name="conRulerMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
   <data name="conRulerMode.Text" xml:space="preserve">
     <value>Ruler Mode</value>
+  </data>
+  <data name="conFlipHorizontally.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="conFlipHorizontally.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="conFlipHorizontally.Text" xml:space="preserve">
+    <value>Flip Horizontally</value>
+  </data>
+  <data name="conFlipVertically.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+F</value>
+  </data>
+  <data name="conFlipVertically.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="conFlipVertically.Text" xml:space="preserve">
+    <value>Flip Vertically</value>
+  </data>
+  <data name="flipRulerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="flipRulerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Flip Ruler</value>
+  </data>
+  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conHigh.Text" xml:space="preserve">
+    <value>High (100%)</value>
+  </data>
+  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conDefault.Text" xml:space="preserve">
+    <value>Default (80%)</value>
+  </data>
+  <data name="conMedium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conMedium.Text" xml:space="preserve">
+    <value>Medium (60%)</value>
+  </data>
+  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conLow.Text" xml:space="preserve">
+    <value>Low (40%)</value>
+  </data>
+  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="conVeryLow.Text" xml:space="preserve">
+    <value>Very Low (20%)</value>
   </data>
   <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -260,9 +332,6 @@
   <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
     <value>Appearance</value>
   </data>
-  <data name="conHypotenuse.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
   <data name="conHypotenuse.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
@@ -348,61 +417,13 @@
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 473</value>
+    <value>208, 495</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="conModeHorizontal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="conModeHorizontal.Text" xml:space="preserve">
-    <value>Horizontal</value>
-  </data>
-  <data name="conModeVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="conModeVertical.Text" xml:space="preserve">
-    <value>Vertical</value>
-  </data>
-  <data name="conModeTwoDimensional.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="conModeTwoDimensional.Text" xml:space="preserve">
-    <value>Two-Dimensional</value>
-  </data>
-  <data name="conHigh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conHigh.Text" xml:space="preserve">
-    <value>High (100%)</value>
-  </data>
-  <data name="conDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conDefault.Text" xml:space="preserve">
-    <value>Default (80%)</value>
-  </data>
-  <data name="conMedium.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conMedium.Text" xml:space="preserve">
-    <value>Medium (60%)</value>
-  </data>
-  <data name="conLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conLow.Text" xml:space="preserve">
-    <value>Low (40%)</value>
-  </data>
-  <data name="conVeryLow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="conVeryLow.Text" xml:space="preserve">
-    <value>Very Low (20%)</value>
   </data>
   <metadata name="rulerToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>134, 17</value>
@@ -1967,6 +1988,24 @@
     <value>conLength</value>
   </data>
   <data name="&gt;&gt;conLength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flipRulerToolStripMenuItem.Name" xml:space="preserve">
+    <value>flipRulerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;flipRulerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conFlipHorizontally.Name" xml:space="preserve">
+    <value>conFlipHorizontally</value>
+  </data>
+  <data name="&gt;&gt;conFlipHorizontally.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conFlipVertically.Name" xml:space="preserve">
+    <value>conFlipVertically</value>
+  </data>
+  <data name="&gt;&gt;conFlipVertically.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;conFollowMousePointer.Name" xml:space="preserve">

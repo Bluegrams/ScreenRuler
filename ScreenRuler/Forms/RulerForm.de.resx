@@ -213,4 +213,13 @@
   <data name="conEditMarkers.Text" xml:space="preserve">
     <value>Marker bearbeiten</value>
   </data>
+  <data name="conFlipHorizontally.Text" xml:space="preserve">
+    <value>Horizontal spiegeln</value>
+  </data>
+  <data name="conFlipVertically.Text" xml:space="preserve">
+    <value>Vertikal spiegeln</value>
+  </data>
+  <data name="flipRulerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lineal spiegeln</value>
+  </data>
 </root>
