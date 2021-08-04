@@ -57,6 +57,9 @@
     <Reference Include="AppHelpers.WinForms, Version=0.1.0.11, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AppHelpers.WinForms.0.1.0-rc2\lib\net45\AppHelpers.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.2.8.0\lib\net45\CommandLine.dll</HintPath>
+    </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
@@ -106,6 +109,7 @@
     <Compile Include="MarkerCollection.cs" />
     <Compile Include="MouseTracker.cs" />
     <Compile Include="Forms\OverlayForm.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="Properties\EnumResources.pl.Designer.cs">
       <DependentUpon>EnumResources.pl.resx</DependentUpon>
       <AutoGen>True</AutoGen>

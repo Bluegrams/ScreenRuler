@@ -53,6 +53,9 @@ namespace ScreenRuler
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern bool GetWindowRect(IntPtr hWnd, out WinRect lpRect);
 
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern IntPtr FindWindowEx(IntPtr hWndParent, IntPtr hWndChildAfter, string className, string windowTitle);
+
         [DllImport("dwmapi.dll")]
         internal static extern int DwmGetWindowAttribute(IntPtr hwnd, int dwAttribute, out WinRect pvAttribute, int cbAttribute);
 
@@ -66,6 +69,23 @@ namespace ScreenRuler
         public static Rectangle GetWindowRectangle(Point point)
         {
             IntPtr hWnd = WindowFromPoint((WinPoint)point);
+            return GetWindowRectangle(hWnd);
+        }
+
+        /// <summary>
+        /// Retrieves the bounding rectangle of the window with the specified title.
+        /// </summary>
+        public static Rectangle GetWindowRectangle(string windowTitle)
+        {
+            IntPtr hWnd = FindWindowEx(IntPtr.Zero, IntPtr.Zero, null, windowTitle);
+            return GetWindowRectangle(hWnd);
+        }
+
+        public static Rectangle GetWindowRectangle(IntPtr hWnd)
+        {
+            if (hWnd == null)
+                return Rectangle.Empty;
+
             int result = DwmGetWindowAttribute(
                             hWnd,
                             /*DWMWA_EXTENDED_FRAME_BOUNDS*/ 9,

@@ -13,6 +13,7 @@ namespace ScreenRuler
     [DesignerCategory("Form")]
     public partial class RulerForm : BaseForm
     {
+        private Options options;
         private WinFormsWindowManager manager;
         private WinFormsUpdateChecker updateChecker;
         private MouseTracker mouseTracker;
@@ -22,8 +23,11 @@ namespace ScreenRuler
         public Settings Settings { get; set; }
         public MarkerCollection CustomMarkers { get; set; }
 
-        public RulerForm()
+        public RulerForm() : this(null) { }
+
+        public RulerForm(Options options)
         {
+            this.options = options;
             Settings = new Settings();
             CustomMarkers = new MarkerCollection();
             manager = new WinFormsWindowManager(this) { AlwaysTrackResize = true };
@@ -84,6 +88,7 @@ namespace ScreenRuler
             RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
             // apply other loaded settings
             applySettings();
+            applyCLIOptions();
             // Check for updates
             updateChecker.CheckForUpdates(UpdateNotifyMode.Auto);
             // Start tracking mouse
@@ -107,6 +112,41 @@ namespace ScreenRuler
                 notifyIcon.Visible = false;
             }
             this.SnapMode = Settings.SnapToScreenEdges ? SnapMode.LimitToEdges : SnapMode.None;
+        }
+
+        private void applyCLIOptions()
+        {
+            if (options.X.HasValue)
+                this.Left = options.X.Value;
+            if (options.Y.HasValue)
+                this.Top = options.Y.Value;
+            if (options.Width.HasValue && options.Height.HasValue)
+            {
+                this.ResizeMode = FormResizeMode.TwoDimensional;
+                this.Width = options.Width.Value;
+                this.Height = options.Height.Value;
+            }
+            else if (options.Width.HasValue)
+            {
+                this.ResizeMode = FormResizeMode.Horizontal;
+                this.Width = options.Width.Value;
+            }
+            else if (options.Height.HasValue)
+            {
+                this.ResizeMode = FormResizeMode.Vertical;
+                this.Height = options.Height.Value;
+            }
+            else
+            {
+                Rectangle windowRect = Rectangle.Empty;
+                if (options.WindowHandle != null)
+                    windowRect = WinApi.GetWindowRectangle((IntPtr)options.WindowHandle);
+                else if (options.WindowTitle != null)
+                    windowRect = WinApi.GetWindowRectangle(options.WindowTitle);
+
+                if (windowRect != Rectangle.Empty)
+                    measureRectangle(windowRect);
+            }
         }
 
         private void RulerForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -551,13 +591,18 @@ namespace ScreenRuler
             overlay.TopMost = this.TopMost;
             if (overlay.ShowDialog() == DialogResult.OK)
             {
-                this.ResizeMode = FormResizeMode.TwoDimensional;
-                this.Location = overlay.WindowSelection.Location;
-                this.Height = overlay.WindowSelection.Height;
-                this.Width = overlay.WindowSelection.Width;
-                this.CheckOutOfBounds();
-                Settings.ShowOffsetLengthLabels = true;
+                measureRectangle(overlay.WindowSelection);
             }
+        }
+
+        private void measureRectangle(Rectangle rectangle)
+        {
+            this.ResizeMode = FormResizeMode.TwoDimensional;
+            this.Location = rectangle.Location;
+            this.Height = rectangle.Height;
+            this.Width = rectangle.Width;
+            this.CheckOutOfBounds();
+            Settings.ShowOffsetLengthLabels = true;
         }
 
         private void conMinimize_Click(object sender, EventArgs e)
