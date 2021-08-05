@@ -161,7 +161,7 @@
   </data>
   <data name="conMeasure.Text"
         xml:space="preserve">
-    <value>测量窗口</value>
+    <value>测量窗口大小</value>
   </data>
   <data name="toolStripSeparator4.Size"
         type="System.Drawing.Size, System.Drawing">
@@ -192,7 +192,6 @@
   <data name="conMinimize.Text"
         xml:space="preserve">
     <value>最小化标尺</value>
-    <value>Minimize</value>
   </data>
   <data name="conModeHorizontal.Size"
         type="System.Drawing.Size, System.Drawing">
@@ -292,7 +291,7 @@
   </data>
   <data name="comUnits.ToolTipText"
         xml:space="preserve">
-    <value>Measuring Unit</value>
+    <value>分度值单位</value>
   </data>
   <data name="conLength.ShortcutKeys"
         type="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -304,7 +303,7 @@
   </data>
   <data name="conLength.Text"
         xml:space="preserve">
-    <value>设置标尺长度</value>
+    <value>设置标尺长度...</value>
   </data>
   <data name="conFollowMousePointer.ShortcutKeyDisplayString"
         xml:space="preserve">
@@ -400,7 +399,7 @@
   </data>
   <data name="appearanceToolStripMenuItem.Text"
         xml:space="preserve">
-    <value>设置显示标记</value>
+    <value>默认标记</value>
   </data>
   <data name="conHideRulerScale.ShortcutKeys"
         type="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -1248,7 +1247,7 @@
   </data>
   <data name="notifyIcon.Text"
         xml:space="preserve">
-    <value>Screen Ruler</value>
+    <value>屏幕标尺 (Screen Ruler)</value>
   </data>
   <metadata name="$this.Localizable"
             type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2297,5 +2296,9 @@
   <data name="&gt;&gt;$this.Type"
         xml:space="preserve">
     <value>ScreenRuler.BaseForm, screenruler, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="conHypotenuse.Text"
+        xml:space="preserve">
+    <value>显示对角线 (直角尺)</value>
   </data>
 </root>
