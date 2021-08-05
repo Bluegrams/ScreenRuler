@@ -1,7 +1,8 @@
 # Screen Ruler
 
-[![License](https://img.shields.io/github/license/bluegrams/screenruler.svg)](https://github.com/bluegrams/screenruler/blob/master/LICENSE.txt)
+[![Updates](https://img.shields.io/badge/updates-RSS-ffa500?logo=rss)](https://sourceforge.net/p/screenruler/news/feed.rss)
 [![GitHub](https://img.shields.io/github/tag/bluegrams/screenruler.svg)](https://github.com/bluegrams/screenruler)
+[![License](https://img.shields.io/github/license/bluegrams/screenruler.svg)](https://github.com/bluegrams/screenruler/blob/master/LICENSE.txt)
 [![Download](https://img.shields.io/sourceforge/dm/screenruler.svg)](https://sourceforge.net/projects/screenruler/files/)
 
 > Configurable screen ruler for measuring in pixels, centimeters, inches, points and percent.
@@ -32,9 +33,11 @@ Besides coming with a light and a dark theme, Screen Ruler also allows you to fu
 
 - Add arbitrary number of custom marking lines
 
+- Measure triangle hypotenuse and angles
+
 - Auto-mark center, thirds or golden ratio
 
-- Precise moving and resizing with keyboard shortcuts
+- Precise moving, resizing and flipping with keyboard shortcuts
 
 - Fully portable with no installation needed
 
