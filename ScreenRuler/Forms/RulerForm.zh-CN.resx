@@ -225,6 +225,38 @@
         xml:space="preserve">
     <value>测量模式</value>
   </data>
+  <data name="conFlipHorizontally.ShortcutKeyDisplayString"
+        xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="conFlipHorizontally.Size"
+        type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="conFlipHorizontally.Text"
+        xml:space="preserve">
+    <value>水平翻转</value>
+  </data>
+  <data name="conFlipVertically.ShortcutKeyDisplayString"
+        xml:space="preserve">
+    <value>Shift+F</value>
+  </data>
+  <data name="conFlipVertically.Size"
+        type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="conFlipVertically.Text"
+        xml:space="preserve">
+    <value>垂直翻转</value>
+  </data>
+  <data name="flipRulerToolStripMenuItem.Size"
+        type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="flipRulerToolStripMenuItem.Text"
+        xml:space="preserve">
+    <value>翻转标尺</value>
+  </data>
   <data name="conHigh.Size"
         type="System.Drawing.Size, System.Drawing">
     <value>154, 22</value>
@@ -507,7 +539,7 @@
   </data>
   <data name="contxtMenu.Size"
         type="System.Drawing.Size, System.Drawing">
-    <value>208, 429</value>
+    <value>208, 495</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name"
         xml:space="preserve">
@@ -2126,6 +2158,30 @@
     <value>conLength</value>
   </data>
   <data name="&gt;&gt;conLength.Type"
+        xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flipRulerToolStripMenuItem.Name"
+        xml:space="preserve">
+    <value>flipRulerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;flipRulerToolStripMenuItem.Type"
+        xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conFlipHorizontally.Name"
+        xml:space="preserve">
+    <value>conFlipHorizontally</value>
+  </data>
+  <data name="&gt;&gt;conFlipHorizontally.Type"
+        xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conFlipVertically.Name"
+        xml:space="preserve">
+    <value>conFlipVertically</value>
+  </data>
+  <data name="&gt;&gt;conFlipVertically.Type"
         xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
