@@ -7,6 +7,7 @@ using ScreenRuler.Properties;
 using System.ComponentModel;
 using ScreenRuler.Colors;
 using ScreenRuler.Units;
+using System.Drawing.Drawing2D;
 
 namespace ScreenRuler
 {
@@ -424,15 +425,20 @@ namespace ScreenRuler
         {
             if (!Settings.HideRulerScale)
             {
-                Marker marker = CustomMarkers.GetMarker(e.Location, RestrictSize);
-                if (marker != Marker.Default)
+                using (Matrix matrix = painter.GetTransformationMatrix())
                 {
-                    CustomLineForm lineForm = new CustomLineForm(marker,
-                        getUnitConverter(), Settings.Theme);
-                    if (lineForm.ShowDialog(this) == DialogResult.OK)
+                    Point[] points = new[] { e.Location };
+                    matrix.TransformPoints(points);
+                    Marker marker = CustomMarkers.GetMarker(points[0], RestrictSize);
+                    if (marker != Marker.Default)
                     {
-                        CustomMarkers.RemoveMarker(marker);
-                        this.Invalidate();
+                        CustomLineForm lineForm = new CustomLineForm(marker,
+                            getUnitConverter(), Settings.Theme);
+                        if (lineForm.ShowDialog(this) == DialogResult.OK)
+                        {
+                            CustomMarkers.RemoveMarker(marker);
+                            this.Invalidate();
+                        }
                     }
                 }
             }
@@ -440,8 +446,13 @@ namespace ScreenRuler
 
         private void RulerForm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            // Add a marker at the cursor position.
-            CustomMarkers.AddMarker(e.Location, RestrictSize, ResizeMode == FormResizeMode.Vertical);
+            using (Matrix matrix = painter.GetTransformationMatrix())
+            {
+                Point[] points = new[] { e.Location };
+                matrix.TransformPoints(points);
+                // Add a marker at the cursor position.
+                CustomMarkers.AddMarker(points[0], RestrictSize, ResizeMode == FormResizeMode.Vertical);
+            }
         }
 
         private void addMarkersAtCurrentPosition()

@@ -364,23 +364,33 @@ namespace ScreenRuler
         }
 
         /// <summary>
-        /// Applies coordinate system transformations on the graphics area depending on the ruler settings.
+        /// Returns the graphics transformation matrix corresponding to the ruler flipping mode.
         /// </summary>
-        protected void ApplyTransformation()
+        public Matrix GetTransformationMatrix()
         {
             Matrix matrix = new Matrix();
             if (settings.FlippedX)
             {
-                g.TranslateTransform(c.Width, 0);
+                matrix.Translate(c.Width, 0);
                 matrix.Scale(-1, 1);
             }
             if (settings.FlippedY)
             {
-                g.TranslateTransform(0, c.Height);
+                matrix.Translate(0, c.Height);
                 matrix.Scale(1, -1);
             }
-            g.MultiplyTransform(matrix);
-            matrix.Dispose();
+            return matrix;
+        }
+
+        /// <summary>
+        /// Applies coordinate system transformations on the graphics area depending on the ruler settings.
+        /// </summary>
+        protected void ApplyTransformation()
+        {
+            using (Matrix matrix = GetTransformationMatrix())
+            {
+                g.MultiplyTransform(matrix);
+            }
         }
 
         /// <summary>

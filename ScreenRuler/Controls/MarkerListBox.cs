@@ -43,7 +43,7 @@ namespace ScreenRuler.Controls
         {
             e.DrawBackground();
 
-            if (e.Index < Items.Count)
+            if (e.Index >= 0 && e.Index < Items.Count)
             {
                 // Get the total number of horizontal markers for correct index
                 int nHorizontal = Items.Cast<Marker>().Where(m => !m.Vertical).Count();
