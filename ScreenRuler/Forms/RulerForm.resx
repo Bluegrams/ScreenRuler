@@ -174,7 +174,7 @@
     <value>207, 22</value>
   </data>
   <data name="conRulerMode.Text" xml:space="preserve">
-    <value>Ruler Mode</value>
+    <value>Ruler Orientation</value>
   </data>
   <data name="conFlipHorizontally.ShortcutKeyDisplayString" xml:space="preserve">
     <value>F</value>

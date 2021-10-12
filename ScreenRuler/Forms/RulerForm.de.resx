@@ -184,7 +184,7 @@
     <value>Lineal kalibrieren</value>
   </data>
   <data name="conRulerMode.Text" xml:space="preserve">
-    <value>Linealmodus</value>
+    <value>Linealausrichtung</value>
   </data>
   <data name="conModeHorizontal.Text" xml:space="preserve">
     <value>Horizontal</value>

@@ -9,6 +9,10 @@
 - **New:** Setting to snap ruler scale to screen edges
 - **Updated:** Chinese translation
 
+#### v.0.9.1 (2021-10)
+- **Fixed**: Misplaced markers on flipped ruler
+- **Fixed**: Crashing marker list window when no markers are set
+
 ### v.0.8 (2020-11)
 - **New:** Portuguese, Russian, Malayalam, Polish, Finnish, Dutch, Swedish and Thai translation
 - **Updated:** Italian and Spanish translation
