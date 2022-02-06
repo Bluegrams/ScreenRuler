@@ -39,6 +39,9 @@
             this.conModeHorizontal = new System.Windows.Forms.ToolStripMenuItem();
             this.conModeVertical = new System.Windows.Forms.ToolStripMenuItem();
             this.conModeTwoDimensional = new System.Windows.Forms.ToolStripMenuItem();
+            this.flipRulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conFlipHorizontally = new System.Windows.Forms.ToolStripMenuItem();
+            this.conFlipVertically = new System.Windows.Forms.ToolStripMenuItem();
             this.conOpacity = new System.Windows.Forms.ToolStripMenuItem();
             this.conHigh = new System.Windows.Forms.ToolStripMenuItem();
             this.conDefault = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,9 +51,6 @@
             this.conSlimMode = new System.Windows.Forms.ToolStripMenuItem();
             this.comUnits = new System.Windows.Forms.ToolStripComboBox();
             this.conLength = new System.Windows.Forms.ToolStripMenuItem();
-            this.flipRulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conFlipHorizontally = new System.Windows.Forms.ToolStripMenuItem();
-            this.conFlipVertically = new System.Windows.Forms.ToolStripMenuItem();
             this.conFollowMousePointer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,6 +165,26 @@
             this.conModeTwoDimensional.Tag = "TwoDimensional";
             this.conModeTwoDimensional.Click += new System.EventHandler(this.changeRulerMode);
             // 
+            // flipRulerToolStripMenuItem
+            // 
+            this.flipRulerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conFlipHorizontally,
+            this.conFlipVertically});
+            this.flipRulerToolStripMenuItem.Name = "flipRulerToolStripMenuItem";
+            resources.ApplyResources(this.flipRulerToolStripMenuItem, "flipRulerToolStripMenuItem");
+            // 
+            // conFlipHorizontally
+            // 
+            this.conFlipHorizontally.Name = "conFlipHorizontally";
+            resources.ApplyResources(this.conFlipHorizontally, "conFlipHorizontally");
+            this.conFlipHorizontally.Click += new System.EventHandler(this.conFlipHorizontally_Click);
+            // 
+            // conFlipVertically
+            // 
+            this.conFlipVertically.Name = "conFlipVertically";
+            resources.ApplyResources(this.conFlipVertically, "conFlipVertically");
+            this.conFlipVertically.Click += new System.EventHandler(this.conFlipVertically_Click);
+            // 
             // conOpacity
             // 
             this.conOpacity.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -229,26 +249,6 @@
             this.conLength.Name = "conLength";
             resources.ApplyResources(this.conLength, "conLength");
             this.conLength.Click += new System.EventHandler(this.conLength_Click);
-            // 
-            // flipRulerToolStripMenuItem
-            // 
-            this.flipRulerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.conFlipHorizontally,
-            this.conFlipVertically});
-            this.flipRulerToolStripMenuItem.Name = "flipRulerToolStripMenuItem";
-            resources.ApplyResources(this.flipRulerToolStripMenuItem, "flipRulerToolStripMenuItem");
-            // 
-            // conFlipHorizontally
-            // 
-            this.conFlipHorizontally.Name = "conFlipHorizontally";
-            resources.ApplyResources(this.conFlipHorizontally, "conFlipHorizontally");
-            this.conFlipHorizontally.Click += new System.EventHandler(this.conFlipHorizontally_Click);
-            // 
-            // conFlipVertically
-            // 
-            this.conFlipVertically.Name = "conFlipVertically";
-            resources.ApplyResources(this.conFlipVertically, "conFlipVertically");
-            this.conFlipVertically.Click += new System.EventHandler(this.conFlipVertically_Click);
             // 
             // conFollowMousePointer
             // 

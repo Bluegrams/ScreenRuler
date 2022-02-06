@@ -12,11 +12,12 @@
     <title>Screen Ruler</title>
     <authors>alxnull</authors>
     <projectUrl>https://screenruler.sourceforge.io/</projectUrl>
-    <iconUrl>https://gitcdn.xyz/repo/Bluegrams/ScreenRuler/master/img/icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/Bluegrams/ScreenRuler/master/img/icon.png</iconUrl>
     <copyright>© 2017-2021 Bluegrams</copyright>
     <licenseUrl>https://github.com/bluegrams/ScreenRuler/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/bluegrams/ScreenRuler</projectSourceUrl>
+    <packageSourceUrl>https://github.com/bluegrams/ScreenRuler</packageSourceUrl>
     <bugTrackerUrl>https://github.com/bluegrams/ScreenRuler/issues</bugTrackerUrl>
     <tags>screenruler ruler pixel screen measure</tags>
     <summary>Configurable screen ruler for measuring in pixels, centimeters, inches and points.</summary>

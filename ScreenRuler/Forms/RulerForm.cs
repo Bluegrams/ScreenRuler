@@ -46,6 +46,7 @@ namespace ScreenRuler
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.TopMost = true;
             this.MouseWheel += RulerForm_MouseWheel;
+            this.DpiChanged += RulerForm_DpiChanged;
         }
 
         private UnitConverter getUnitConverter() => UnitConverter.FromSettings(this, Settings);
@@ -85,8 +86,6 @@ namespace ScreenRuler
                     conVeryLow.Checked = true;
                     break;
             }
-            // Set the minimum size
-            RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
             // apply other loaded settings
             applySettings();
             applyCLIOptions();
@@ -94,6 +93,8 @@ namespace ScreenRuler
             updateChecker.CheckForUpdates(UpdateNotifyMode.Auto);
             // Start tracking mouse
             mouseTracker.Start();
+            // Set the minimum size
+            this.SetRestrictSize(Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE);
         }
 
         // a helper method to be called after settings values have changed
@@ -149,6 +150,12 @@ namespace ScreenRuler
                     measureRectangle(windowRect);
             }
         }
+        private void RulerForm_DpiChanged(object sender, DpiChangedEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("UI DPI changed: " + e.DeviceDpiNew);
+            this.SetRestrictSize(Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE);
+        }
+
 
         private void RulerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -172,38 +179,41 @@ namespace ScreenRuler
         // and moving of the cursor marker.
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == 0x84) //WM_NCHITTEST (sent for all mouse events)
+            switch (m.Msg)
             {
-                // Get mouse position and convert to app coordinates
-                Point pos = Cursor.Position;
-                pos = this.PointToClient(pos);
-                // Check if inside grip area (5 pixels next to border)
-                if (ResizeMode.HasFlag(FormResizeMode.Horizontal))
-                {
-                    if (pos.X <= GRIP_OFFSET)
+                //WM_NCHITTEST (sent for all mouse events)
+                case 0x84:
+                    // Get mouse position and convert to app coordinates
+                    Point pos = Cursor.Position;
+                    pos = this.PointToClient(pos);
+                    // Check if inside grip area (5 pixels next to border)
+                    if (ResizeMode.HasFlag(FormResizeMode.Horizontal))
                     {
-                        m.Result = (IntPtr)HTLEFT;
-                        return;
+                        if (pos.X <= GRIP_OFFSET)
+                        {
+                            m.Result = (IntPtr)HTLEFT;
+                            return;
+                        }
+                        else if (pos.X >= this.ClientSize.Width - GRIP_OFFSET)
+                        {
+                            m.Result = (IntPtr)HTRIGHT;
+                            return;
+                        }
                     }
-                    else if (pos.X >= this.ClientSize.Width - GRIP_OFFSET)
-                    {
-                        m.Result = (IntPtr)HTRIGHT;
-                        return;
+                    if (ResizeMode.HasFlag(FormResizeMode.Vertical))
+                    { 
+                        if (pos.Y <= GRIP_OFFSET)
+                        {
+                            m.Result = (IntPtr)HTTOP;
+                            return;
+                        }
+                        else if (pos.Y >= this.ClientSize.Height - GRIP_OFFSET)
+                        {
+                            m.Result = (IntPtr)HTBOTTOM;
+                            return;
+                        }
                     }
-                }
-                if (ResizeMode.HasFlag(FormResizeMode.Vertical))
-                { 
-                    if (pos.Y <= GRIP_OFFSET)
-                    {
-                        m.Result = (IntPtr)HTTOP;
-                        return;
-                    }
-                    else if (pos.Y >= this.ClientSize.Height - GRIP_OFFSET)
-                    {
-                        m.Result = (IntPtr)HTBOTTOM;
-                        return;
-                    }
-                }
+                    break;
             }
             // Pass return message down to base class
             base.WndProc(ref m);
@@ -761,7 +771,7 @@ namespace ScreenRuler
         private void conSlimMode_Click(object sender, EventArgs e)
         {
             Settings.SlimMode = !Settings.SlimMode;
-            RestrictSize = Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE;
+            this.SetRestrictSize(Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE);
         }
 
         private void conLength_Click(object sender, EventArgs e)

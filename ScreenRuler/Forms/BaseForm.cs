@@ -85,11 +85,21 @@ namespace ScreenRuler
         public int RestrictSize
         {
             get => restrictSize;
-            set
+        }
+
+        public void SetRestrictSize(int value, bool useScaleFactor = true)
+        {
+            System.Diagnostics.Debug.WriteLine(this.DeviceDpi);
+            if (useScaleFactor)
+            {
+                float scaleFactor = this.DeviceDpi / 96.0f;
+                restrictSize = (int)(value * scaleFactor);
+            }
+            else
             {
                 restrictSize = value;
-                MinimumSize = new Size(value, value);
             }
+            applyResizeMode(ResizeMode);
         }
 
         public FormResizeMode ResizeMode
@@ -112,10 +122,12 @@ namespace ScreenRuler
             {
                 case FormResizeMode.Horizontal:
                     this.MaximumSize = new Size(int.MaxValue, RestrictSize);
+                    this.Height = RestrictSize;
                     if (wRest) this.Width = cachedWidth;
                     break;
                 case FormResizeMode.Vertical:
                     this.MaximumSize = new Size(RestrictSize, int.MaxValue);
+                    this.Width = RestrictSize;
                     if (hRest) this.Height = cachedHeight;
                     break;
                 case FormResizeMode.TwoDimensional:

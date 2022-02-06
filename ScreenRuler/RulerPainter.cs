@@ -76,6 +76,7 @@ namespace ScreenRuler
             this.resizeMode = resizeMode;
             this.converter = UnitConverter.FromSettings(c, settings);
             this.drawWidth = settings.SlimMode ? RULER_WIDTH_SLIM : RULER_WIDTH_WIDE;
+            this.drawWidth = (int)(this.drawWidth * (this.c.DeviceDpi / 96.0f));
         }
 
         /// <summary>
@@ -290,7 +291,7 @@ namespace ScreenRuler
         private void drawMarker(Marker marker, string symbol, Color col, bool moveToRight = false)
         {
             // Number format with or without symbol depending on settings
-            string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'.##" : ".##";
+            string numberFormat = settings.ShowMarkerSymbol ? $"'{symbol}'0.##" : "0.##";
             // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages.
             // Symbols gets placed before or after depending on category of language it belong to. 
             StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };

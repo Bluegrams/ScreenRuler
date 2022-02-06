@@ -417,7 +417,7 @@
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 495</value>
+    <value>208, 473</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
@@ -1936,6 +1936,24 @@
   <data name="&gt;&gt;conModeTwoDimensional.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;flipRulerToolStripMenuItem.Name" xml:space="preserve">
+    <value>flipRulerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;flipRulerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conFlipHorizontally.Name" xml:space="preserve">
+    <value>conFlipHorizontally</value>
+  </data>
+  <data name="&gt;&gt;conFlipHorizontally.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conFlipVertically.Name" xml:space="preserve">
+    <value>conFlipVertically</value>
+  </data>
+  <data name="&gt;&gt;conFlipVertically.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;conOpacity.Name" xml:space="preserve">
     <value>conOpacity</value>
   </data>
@@ -1988,24 +2006,6 @@
     <value>conLength</value>
   </data>
   <data name="&gt;&gt;conLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flipRulerToolStripMenuItem.Name" xml:space="preserve">
-    <value>flipRulerToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;flipRulerToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conFlipHorizontally.Name" xml:space="preserve">
-    <value>conFlipHorizontally</value>
-  </data>
-  <data name="&gt;&gt;conFlipHorizontally.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;conFlipVertically.Name" xml:space="preserve">
-    <value>conFlipVertically</value>
-  </data>
-  <data name="&gt;&gt;conFlipVertically.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;conFollowMousePointer.Name" xml:space="preserve">
@@ -2138,6 +2138,6 @@
     <value>RulerForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ScreenRuler.BaseForm, screenruler, Version=0.8.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ScreenRuler.BaseForm, screenruler, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
