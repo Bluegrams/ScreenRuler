@@ -123,6 +123,6 @@ Höhe: {1}px
 Position: {2}</value>
   </data>
   <data name="ScalingText" xml:space="preserve">
-    <value>Monitor DPI / Skalierung: {0} / {1}%</value>
+    <value>Skalierung: {0}</value>
   </data>
 </root>

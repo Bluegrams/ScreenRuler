@@ -973,18 +973,6 @@
   <data name="butSubmit.Text" xml:space="preserve">
     <value>ശരി</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>സ്‌ക്രീൻ പ്രോപ്പർട്ടീസ്</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>പ്രിവ്യൂ</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>ഡിസ്പ്ലേ സ്കെയിലിംഗ് (%)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>മോണിറ്റർ ഡിപിഐ</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>ഞാൻ ഇത് എങ്ങനെ ഉപയോഗിക്കും?</value>
   </data>

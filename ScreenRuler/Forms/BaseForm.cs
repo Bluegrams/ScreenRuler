@@ -12,6 +12,15 @@ namespace ScreenRuler
         LimitToEdges = 2
     }
 
+    public class ResizeModeEventArgs : EventArgs
+    {
+        public FormResizeMode NewResizeMode { get; }
+
+        public ResizeModeEventArgs(FormResizeMode newResizeMode)
+        {
+            this.NewResizeMode = newResizeMode;
+        }
+    }
 
     [DesignerCategory("")]
     public class BaseForm : Form
@@ -111,6 +120,8 @@ namespace ScreenRuler
             }
         }
 
+        public event EventHandler<ResizeModeEventArgs> ResizeModeChanged;
+
         private void applyResizeMode(FormResizeMode resizeMode)
         {
             this.resizeMode = resizeMode;
@@ -137,6 +148,7 @@ namespace ScreenRuler
                     break;
             }
             CheckOutOfBounds();
+            ResizeModeChanged?.Invoke(this, new ResizeModeEventArgs(resizeMode));
             Invalidate();
         }
 

@@ -123,19 +123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Kalibroi viivain</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Näytön skaalaus (%)</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>Miten tätä käytetään?</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Esikatselu:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Näytön ominaisuudet</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Näytön DPI-arvo</value>
   </data>
 </root>

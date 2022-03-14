@@ -70,6 +70,42 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Per-monitor automatic.
+        /// </summary>
+        internal static string DpiScalingMode_Auto {
+            get {
+                return ResourceManager.GetString("DpiScalingMode_Auto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual.
+        /// </summary>
+        internal static string DpiScalingMode_Manual {
+            get {
+                return ResourceManager.GetString("DpiScalingMode_Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual (bidirectional).
+        /// </summary>
+        internal static string DpiScalingMode_ManualBidirectional {
+            get {
+                return ResourceManager.GetString("DpiScalingMode_ManualBidirectional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use scaled pixels.
+        /// </summary>
+        internal static string DpiScalingMode_Unaware {
+            get {
+                return ResourceManager.GetString("DpiScalingMode_Unaware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At Ruler Length.
         /// </summary>
         internal static string HypotenuseMode_FixedAtLength {

@@ -122,7 +122,4 @@
 Wysokość: {1}px
 Pozycja: {2}</value>
   </data>
-  <data name="ScalingText" xml:space="preserve">
-    <value>DPI / Skalowanie monitora: {0} / {1}%</value>
-  </data>
 </root>

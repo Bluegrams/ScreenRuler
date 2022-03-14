@@ -16,14 +16,17 @@ namespace ScreenRuler
         /// </summary>
         public MeasuringUnit MeasuringUnit { get; set; }
         /// <summary>
-        /// The DPI value that is used for calculating the distances on the ruler scale
-        /// (hardcoded to 96 by default).
+        /// Determines how to the scale the ruler based on the monitor's DPI and scaling.
+        /// </summary>
+        public DpiScalingMode DpiScalingMode { get; set; }
+        /// <summary>
+        /// Manual setting for the monitor's DPI. Only used with DpiScalingMode.Manual.
         /// </summary>
         public float MonitorDpi { get; set; } = 96;
         /// <summary>
-        /// The display scaling value in percent (100 by default).
+        /// Manual setting for the monitor's vertical DPI. Only used with DpiScalingMode.ManualBidirectional.
         /// </summary>
-        public int MonitorScaling { get; set; } = 100;
+        public float VerticalMonitorDpi { get; set; } = 96;
         /// <summary>
         /// Determines whether the center of the ruler should be marked.
         /// </summary>
@@ -150,5 +153,7 @@ namespace ScreenRuler
         /// Invoke the Changed event.
         /// </summary>
         public void InvokeChanged() => Changed?.Invoke(this, EventArgs.Empty);
+
+        public Settings Clone() => (Settings)this.MemberwiseClone();
     }
 }

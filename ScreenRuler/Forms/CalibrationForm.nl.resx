@@ -120,22 +120,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Kalibreer liniaal</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Beeldschermschaling (%)</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>Hoe gebruik ik dit?</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Scherm DPI</value>
-  </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Voorbeeld:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Scherminstellingen</value>
   </data>
 </root>

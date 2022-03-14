@@ -25,4 +25,16 @@ namespace ScreenRuler
         CornerLowerLeft = FlippedY,
         CornerLowerRight = FlippedX | FlippedY,
     }
+
+    public enum DpiScalingMode
+    {
+        [LocalizedDescription("DpiScalingMode_Unaware", typeof(EnumResources))]
+        Unaware = 0,
+        [LocalizedDescription("DpiScalingMode_Auto", typeof(EnumResources))]
+        Auto = 1,
+        [LocalizedDescription("DpiScalingMode_Manual", typeof(EnumResources))]
+        Manual = 2,
+        [LocalizedDescription("DpiScalingMode_ManualBidirectional", typeof(EnumResources))]
+        ManualBidirectional = 3,
+    }
 }

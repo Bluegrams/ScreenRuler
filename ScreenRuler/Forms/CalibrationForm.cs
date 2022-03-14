@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using ScreenRuler.Units;
 
@@ -7,65 +8,211 @@ namespace ScreenRuler
 {
     public partial class CalibrationForm : Form
     {
-        private RulerPainter painter;
-        private Settings previewSettings;
+        private Settings currentSettings, originalSettings;
 
-        public float MonitorDpi => previewSettings.MonitorDpi;
-        public int MonitorScaling => previewSettings.MonitorScaling;
+        public DpiScalingMode DpiScalingMode { get; private set; }
+        public float MonitorDpi { get; private set; }
+        public float VerticalMonitorDpi { get; private set; }
+        public MeasuringUnit MeasuringUnit { get; private set; }
+
+        public event EventHandler CalibrationChanged;
 
         public CalibrationForm(Settings settings)
         {
+
             InitializeComponent();
-            painter = new RulerPainter(panPreview);
-            // we only copy relevant settings
-            previewSettings = new Settings()
-            {
-                MeasuringUnit = settings.MeasuringUnit,
-                MonitorDpi = settings.MonitorDpi,
-                MonitorScaling = settings.MonitorScaling
-            };
+            setFromSettings(settings);
+            this.currentSettings = settings;
+            this.originalSettings = settings.Clone();
         }
 
         private void CalibrationForm_Load(object sender, EventArgs e)
         {
-            // Set initial states
-            numDPI.Value = (decimal)previewSettings.MonitorDpi;
-            numScaling.Value = previewSettings.MonitorScaling;
-            foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
+            // --- Set scaling settings ---
+            foreach (Enum item in Enum.GetValues(typeof(DpiScalingMode)))
             {
-                comUnits.Items.Add(item.GetDescription());
+                comDpiScalingMode.Items.Add(item.GetDescription());
             }
-            comUnits.SelectedIndex = (int)previewSettings.MeasuringUnit;
+            comDpiScalingMode.SelectedIndex = (int)DpiScalingMode;
+            applyDpiScalingMode();
+            var items = Enum.GetValues(typeof(MeasuringUnit))
+                .Cast<Enum>()
+                .Where(item => (MeasuringUnit)item != MeasuringUnit.Pixels && (MeasuringUnit)item != MeasuringUnit.Percent)
+                .Select(item => new { Text = item.GetDescription(), Value = item })
+                .ToList();
+            comUnits.DataSource = items;
+            comUnits.SelectedValue = this.originalSettings.MeasuringUnit;
+            // --- Owner events & settings ---
+            this.Owner.Move += Owner_Move;
+            this.Owner.Resize += Owner_Resize;
+            ((BaseForm)this.Owner).ResizeModeChanged += Owner_ResizeModeChanged;
+            setResizeMode(((BaseForm)this.Owner).ResizeMode);
         }
 
-        private void panPreview_Paint(object sender, PaintEventArgs e)
+        private void Owner_Move(object sender, EventArgs e)
         {
-            painter.Update(e.Graphics, previewSettings, FormResizeMode.Horizontal);
-            painter.PaintRuler();
+            if (DpiScalingMode == DpiScalingMode.Manual || DpiScalingMode == DpiScalingMode.ManualBidirectional)
+                applyDpiFromSettings();
         }
 
-        private void numDPI_ValueChanged(object sender, EventArgs e)
+        private void Owner_Resize(object sender, EventArgs e)
         {
-            previewSettings.MonitorDpi = (float)Math.Round(numDPI.Value, 2);
-            panPreview.Invalidate();
+            applyUnitFromSettings();
         }
 
-        private void numScaling_ValueChanged(object sender, EventArgs e)
+        private void Owner_ResizeModeChanged(object sender, ResizeModeEventArgs e)
         {
-            previewSettings.MonitorScaling = (int)numScaling.Value;
-            panPreview.Invalidate();
+            setResizeMode(e.NewResizeMode);
+        }
+
+        private void setFromSettings(Settings settings)
+        {
+            DpiScalingMode = settings.DpiScalingMode;
+            MonitorDpi = settings.MonitorDpi;
+            VerticalMonitorDpi = settings.VerticalMonitorDpi;
+        }
+
+        private void setResizeMode(FormResizeMode resizeMode)
+        {
+            switch (resizeMode)
+            {
+                case FormResizeMode.Horizontal:
+                    numUnitH.Enabled = true;
+                    numUnitV.Enabled = false;
+                    break;
+                case FormResizeMode.Vertical:
+                    numUnitH.Enabled = false;
+                    numUnitV.Enabled = true;
+                    break;
+                case FormResizeMode.TwoDimensional:
+                    numUnitH.Enabled = true;
+                    numUnitV.Enabled = true;
+                    break;
+            }
+        }
+
+        private void invokeCalibrationChanged()
+        {
+            currentSettings.DpiScalingMode = DpiScalingMode;
+            currentSettings.MonitorDpi = MonitorDpi;
+            currentSettings.VerticalMonitorDpi = VerticalMonitorDpi;
+            currentSettings.InvokeChanged();
+            CalibrationChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void applyDpiFromSettings()
+        {
+            // Temporarily unregister event handlers of controls to avoid loop.
+            numDpiH.ValueChanged -= numDpiH_ValueChanged;
+            numDpiV.ValueChanged -= numDpiV_ValueChanged;
+            var dpi = UnitConverter.GetDpiFromSettings(this, currentSettings);
+            numDpiH.Value = (decimal)dpi.horizontal;
+            numDpiV.Value = (decimal)(dpi.vertical ?? dpi.horizontal);
+            // Re-register event handlers
+            numDpiH.ValueChanged += numDpiH_ValueChanged;
+            numDpiV.ValueChanged += numDpiV_ValueChanged;
+        }
+
+        private void applyUnitFromSettings()
+        {
+            // Temporarily unregister event handlers of controls to avoid loop.
+            numUnitH.ValueChanged -= numUnitH_ValueChanged;
+            numUnitV.ValueChanged -= numUnitV_ValueChanged;
+            UnitConverter converter = UnitConverter.FromSettings(Owner, currentSettings, MeasuringUnit);
+            numUnitH.Value = (decimal)converter.ConvertFromPixel(Owner.Width, false);
+            numUnitV.Value = (decimal)converter.ConvertFromPixel(Owner.Height, true);
+            // Re-register event handlers
+            numUnitH.ValueChanged += numUnitH_ValueChanged;
+            numUnitV.ValueChanged += numUnitV_ValueChanged;
+        }
+
+        private void applyDpiScalingMode()
+        {
+            applyDpiFromSettings();
+            applyUnitFromSettings();
+            switch (DpiScalingMode)
+            {
+                case DpiScalingMode.Manual:
+                    panDpiH.Enabled = true;
+                    panDpiV.Enabled = false;
+                    break;
+                case DpiScalingMode.ManualBidirectional:
+                    panDpiH.Enabled = true;
+                    panDpiV.Enabled = true;
+                    break;
+                default:
+                    panDpiH.Enabled = false;
+                    panDpiV.Enabled = false;
+                    break;
+            }
+        }
+
+        private void comDpiScalingMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DpiScalingMode = (DpiScalingMode)comDpiScalingMode.SelectedIndex;
+            invokeCalibrationChanged();
+            applyDpiScalingMode();
+        }
+
+        private void numDpiH_ValueChanged(object sender, EventArgs e)
+        {
+            MonitorDpi = (float)Math.Round(numDpiH.Value, 2);
+            if (DpiScalingMode == DpiScalingMode.Manual)
+                VerticalMonitorDpi = MonitorDpi;
+            invokeCalibrationChanged();
+            applyUnitFromSettings();
+        }
+
+        private void numDpiV_ValueChanged(object sender, EventArgs e)
+        {
+            VerticalMonitorDpi = (float)Math.Round(numDpiV.Value, 2);
+            invokeCalibrationChanged();
+            applyUnitFromSettings();
         }
 
         private void comUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            previewSettings.MeasuringUnit = (MeasuringUnit)comUnits.SelectedIndex;
-            panPreview.Invalidate();
+            MeasuringUnit = (MeasuringUnit)comUnits.SelectedValue;
+            applyUnitFromSettings();
+        }
+
+        private void invokeClose()
+        {
+            this.Owner.Move -= Owner_Move;
+            this.Owner.Resize -= Owner_Resize;
+            ((BaseForm)this.Owner).ResizeModeChanged -= Owner_ResizeModeChanged;
+            this.Close();
         }
 
         private void butSubmit_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            this.Close();
+            invokeClose();
+        }
+
+        private void butCancel_Click(object sender, EventArgs e)
+        {
+            setFromSettings(this.originalSettings);
+            invokeCalibrationChanged();
+            invokeClose();
+        }
+
+        private void numUnitH_ValueChanged(object sender, EventArgs e)
+        {
+            comDpiScalingMode.SelectedIndex = (int)DpiScalingMode.ManualBidirectional;
+            UnitConverter converter = UnitConverter.FromSettings(Owner, currentSettings, MeasuringUnit);
+            MonitorDpi = converter.ConvertToDpi((float)numUnitH.Value, Owner.Width);
+            invokeCalibrationChanged();
+            applyDpiFromSettings();
+        }
+
+        private void numUnitV_ValueChanged(object sender, EventArgs e)
+        {
+            comDpiScalingMode.SelectedIndex = (int)DpiScalingMode.ManualBidirectional;
+            UnitConverter converter = UnitConverter.FromSettings(Owner, currentSettings, MeasuringUnit);
+            VerticalMonitorDpi = converter.ConvertToDpi((float)numUnitV.Value, Owner.Height);
+            invokeCalibrationChanged();
+            applyDpiFromSettings();
         }
 
         private void lnkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

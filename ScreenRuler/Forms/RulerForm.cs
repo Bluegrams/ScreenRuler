@@ -824,12 +824,12 @@ namespace ScreenRuler
         private void conCalibrate_Click(object sender, EventArgs e)
         {
             CalibrationForm scalingForm = new CalibrationForm(Settings);
-            if (scalingForm.ShowDialog(this) == DialogResult.OK)
+            scalingForm.Show(this);
+            scalingForm.CalibrationChanged += (o, args) =>
             {
-                Settings.MonitorDpi = scalingForm.MonitorDpi;
-                Settings.MonitorScaling = scalingForm.MonitorScaling;
-                Settings.InvokeChanged();
-            }
+                System.Diagnostics.Debug.WriteLine("Calibration changed.");
+                this.Invalidate();
+            };
         }
 
         private void conHelp_Click(object sender, EventArgs e)

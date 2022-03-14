@@ -21,7 +21,7 @@ namespace ScreenRuler
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             // --- Load: First Page ---
-            lblScaling.Text = String.Format(Resources.ScalingText, settings.MonitorDpi, settings.MonitorScaling);
+            lblScaling.Text = String.Format(Resources.ScalingText, settings.DpiScalingMode.GetDescription());
             foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
             {
                 comUnits.Items.Add(item.GetDescription());
@@ -119,11 +119,9 @@ namespace ScreenRuler
         private void butConfigure_Click(object sender, EventArgs e)
         {
             CalibrationForm scalingForm = new CalibrationForm(settings);
-            if (scalingForm.ShowDialog(this) == DialogResult.OK)
+            if (scalingForm.ShowDialog(this.Owner) == DialogResult.OK)
             {
-                settings.MonitorDpi = scalingForm.MonitorDpi;
-                settings.MonitorScaling = scalingForm.MonitorScaling;
-                lblScaling.Text = String.Format(Resources.ScalingText, settings.MonitorDpi, settings.MonitorScaling);
+                lblScaling.Text = String.Format(Resources.ScalingText, settings.DpiScalingMode.GetDescription());
             }
         }
 

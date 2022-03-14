@@ -117,23 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label11.Text" xml:space="preserve">
-    <value>มาตราส่วนการแสดงผล (%)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>DPI จอแสดงผล</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>แสดงตัวอย่าง:</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>ฉันจะใช้นี้ได้อย่างไร</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>ตกลง</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>คุณสมบัติหน้าจอ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ปรับไม้บรรทัด</value>

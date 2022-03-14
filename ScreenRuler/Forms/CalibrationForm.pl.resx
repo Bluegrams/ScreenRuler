@@ -126,16 +126,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Skalibruj linijkę</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Właściwości ekranu</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Podgląd:</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>DIP monitora</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Skalowanie wyświetlacza (%)</value>
-  </data>
 </root>

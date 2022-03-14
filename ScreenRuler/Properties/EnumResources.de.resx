@@ -141,4 +141,16 @@
   <data name="HypotenuseMode_Moving" xml:space="preserve">
     <value>An Mausposition</value>
   </data>
+  <data name="DpiScalingMode_Unaware" xml:space="preserve">
+    <value>Skalierte Pixel verwenden</value>
+  </data>
+  <data name="DpiScalingMode_Auto" xml:space="preserve">
+    <value>Automatisch pro Monitor</value>
+  </data>
+  <data name="DpiScalingMode_Manual" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="DpiScalingMode_ManualBidirectional" xml:space="preserve">
+    <value>Manuell (bidirektional)</value>
+  </data>
 </root>

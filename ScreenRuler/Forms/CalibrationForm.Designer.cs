@@ -29,109 +29,69 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalibrationForm));
-            this.panPreview = new System.Windows.Forms.Panel();
-            this.numScaling = new System.Windows.Forms.NumericUpDown();
-            this.numDPI = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
+            this.numDpiH = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comUnits = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lnkHelp = new System.Windows.Forms.LinkLabel();
             this.butSubmit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numScaling)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDPI)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.numDpiV = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comDpiScalingMode = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabMain = new System.Windows.Forms.TabControl();
+            this.tabPageDPI = new System.Windows.Forms.TabPage();
+            this.panDpiH = new System.Windows.Forms.Panel();
+            this.panDpiV = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPageSize = new System.Windows.Forms.TabPage();
+            this.panUnitV = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numUnitV = new System.Windows.Forms.NumericUpDown();
+            this.panUnitH = new System.Windows.Forms.Panel();
+            this.numUnitH = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comUnits = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.butCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numDpiH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDpiV)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.tabPageDPI.SuspendLayout();
+            this.panDpiH.SuspendLayout();
+            this.panDpiV.SuspendLayout();
+            this.tabPageSize.SuspendLayout();
+            this.panUnitV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUnitV)).BeginInit();
+            this.panUnitH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUnitH)).BeginInit();
             this.SuspendLayout();
             // 
-            // panPreview
+            // numDpiH
             // 
-            resources.ApplyResources(this.panPreview, "panPreview");
-            this.panPreview.Name = "panPreview";
-            this.panPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.panPreview_Paint);
-            // 
-            // numScaling
-            // 
-            this.numScaling.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            resources.ApplyResources(this.numScaling, "numScaling");
-            this.numScaling.Maximum = new decimal(new int[] {
+            this.numDpiH.DecimalPlaces = 2;
+            resources.ApplyResources(this.numDpiH, "numDpiH");
+            this.numDpiH.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.numScaling.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numScaling.Name = "numScaling";
-            this.numScaling.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numScaling.ValueChanged += new System.EventHandler(this.numScaling_ValueChanged);
-            // 
-            // numDPI
-            // 
-            this.numDPI.DecimalPlaces = 2;
-            resources.ApplyResources(this.numDPI, "numDPI");
-            this.numDPI.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numDPI.Minimum = new decimal(new int[] {
+            this.numDpiH.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numDPI.Name = "numDPI";
-            this.numDPI.Value = new decimal(new int[] {
+            this.numDpiH.Name = "numDpiH";
+            this.numDpiH.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numDPI.ValueChanged += new System.EventHandler(this.numDPI_ValueChanged);
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
+            this.numDpiH.ValueChanged += new System.EventHandler(this.numDpiH_ValueChanged);
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // comUnits
-            // 
-            this.comUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comUnits.FormattingEnabled = true;
-            resources.ApplyResources(this.comUnits, "comUnits");
-            this.comUnits.Name = "comUnits";
-            this.comUnits.SelectedIndexChanged += new System.EventHandler(this.comUnits_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lnkHelp);
-            this.groupBox1.Controls.Add(this.butSubmit);
-            this.groupBox1.Controls.Add(this.numScaling);
-            this.groupBox1.Controls.Add(this.numDPI);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label11);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
             // 
             // lnkHelp
             // 
@@ -147,41 +107,242 @@
             this.butSubmit.UseVisualStyleBackColor = true;
             this.butSubmit.Click += new System.EventHandler(this.butSubmit_Click);
             // 
+            // numDpiV
+            // 
+            this.numDpiV.DecimalPlaces = 2;
+            resources.ApplyResources(this.numDpiV, "numDpiV");
+            this.numDpiV.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numDpiV.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDpiV.Name = "numDpiV";
+            this.numDpiV.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDpiV.ValueChanged += new System.EventHandler(this.numDpiV_ValueChanged);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // comDpiScalingMode
+            // 
+            this.comDpiScalingMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comDpiScalingMode.FormattingEnabled = true;
+            resources.ApplyResources(this.comDpiScalingMode, "comDpiScalingMode");
+            this.comDpiScalingMode.Name = "comDpiScalingMode";
+            this.comDpiScalingMode.SelectedIndexChanged += new System.EventHandler(this.comDpiScalingMode_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // tabMain
+            // 
+            this.tabMain.Controls.Add(this.tabPageDPI);
+            this.tabMain.Controls.Add(this.tabPageSize);
+            resources.ApplyResources(this.tabMain, "tabMain");
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            // 
+            // tabPageDPI
+            // 
+            this.tabPageDPI.Controls.Add(this.panDpiH);
+            this.tabPageDPI.Controls.Add(this.panDpiV);
+            this.tabPageDPI.Controls.Add(this.label1);
+            resources.ApplyResources(this.tabPageDPI, "tabPageDPI");
+            this.tabPageDPI.Name = "tabPageDPI";
+            this.tabPageDPI.UseVisualStyleBackColor = true;
+            // 
+            // panDpiH
+            // 
+            this.panDpiH.Controls.Add(this.label2);
+            this.panDpiH.Controls.Add(this.numDpiH);
+            resources.ApplyResources(this.panDpiH, "panDpiH");
+            this.panDpiH.Name = "panDpiH";
+            // 
+            // panDpiV
+            // 
+            this.panDpiV.Controls.Add(this.label4);
+            this.panDpiV.Controls.Add(this.numDpiV);
+            resources.ApplyResources(this.panDpiV, "panDpiV");
+            this.panDpiV.Name = "panDpiV";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // tabPageSize
+            // 
+            this.tabPageSize.Controls.Add(this.panUnitV);
+            this.tabPageSize.Controls.Add(this.panUnitH);
+            this.tabPageSize.Controls.Add(this.comUnits);
+            this.tabPageSize.Controls.Add(this.label6);
+            this.tabPageSize.Controls.Add(this.label5);
+            resources.ApplyResources(this.tabPageSize, "tabPageSize");
+            this.tabPageSize.Name = "tabPageSize";
+            this.tabPageSize.UseVisualStyleBackColor = true;
+            // 
+            // panUnitV
+            // 
+            this.panUnitV.Controls.Add(this.label8);
+            this.panUnitV.Controls.Add(this.numUnitV);
+            resources.ApplyResources(this.panUnitV, "panUnitV");
+            this.panUnitV.Name = "panUnitV";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // numUnitV
+            // 
+            this.numUnitV.DecimalPlaces = 2;
+            resources.ApplyResources(this.numUnitV, "numUnitV");
+            this.numUnitV.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numUnitV.Name = "numUnitV";
+            this.numUnitV.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numUnitV.ValueChanged += new System.EventHandler(this.numUnitV_ValueChanged);
+            // 
+            // panUnitH
+            // 
+            this.panUnitH.Controls.Add(this.numUnitH);
+            this.panUnitH.Controls.Add(this.label7);
+            resources.ApplyResources(this.panUnitH, "panUnitH");
+            this.panUnitH.Name = "panUnitH";
+            // 
+            // numUnitH
+            // 
+            this.numUnitH.DecimalPlaces = 2;
+            resources.ApplyResources(this.numUnitH, "numUnitH");
+            this.numUnitH.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numUnitH.Name = "numUnitH";
+            this.numUnitH.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numUnitH.ValueChanged += new System.EventHandler(this.numUnitH_ValueChanged);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // comUnits
+            // 
+            this.comUnits.DisplayMember = "Text";
+            this.comUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comUnits.FormattingEnabled = true;
+            resources.ApplyResources(this.comUnits, "comUnits");
+            this.comUnits.Name = "comUnits";
+            this.comUnits.ValueMember = "Value";
+            this.comUnits.SelectedIndexChanged += new System.EventHandler(this.comUnits_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // butCancel
+            // 
+            this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.butCancel, "butCancel");
+            this.butCancel.Name = "butCancel";
+            this.butCancel.UseVisualStyleBackColor = true;
+            this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
+            // 
             // CalibrationForm
             // 
             this.AcceptButton = this.butSubmit;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comUnits);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panPreview);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.butCancel;
+            this.Controls.Add(this.butCancel);
+            this.Controls.Add(this.tabMain);
+            this.Controls.Add(this.lnkHelp);
+            this.Controls.Add(this.comDpiScalingMode);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.butSubmit);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CalibrationForm";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.CalibrationForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numScaling)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDPI)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDpiH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDpiV)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.tabPageDPI.ResumeLayout(false);
+            this.tabPageDPI.PerformLayout();
+            this.panDpiH.ResumeLayout(false);
+            this.panDpiH.PerformLayout();
+            this.panDpiV.ResumeLayout(false);
+            this.panDpiV.PerformLayout();
+            this.tabPageSize.ResumeLayout(false);
+            this.tabPageSize.PerformLayout();
+            this.panUnitV.ResumeLayout(false);
+            this.panUnitV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUnitV)).EndInit();
+            this.panUnitH.ResumeLayout(false);
+            this.panUnitH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUnitH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panPreview;
-        private System.Windows.Forms.NumericUpDown numScaling;
-        private System.Windows.Forms.NumericUpDown numDPI;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown numDpiH;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comUnits;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button butSubmit;
         private System.Windows.Forms.LinkLabel lnkHelp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comDpiScalingMode;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numDpiV;
+        private System.Windows.Forms.TabControl tabMain;
+        private System.Windows.Forms.TabPage tabPageDPI;
+        private System.Windows.Forms.TabPage tabPageSize;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comUnits;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numUnitV;
+        private System.Windows.Forms.NumericUpDown numUnitH;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button butCancel;
+        private System.Windows.Forms.Panel panDpiV;
+        private System.Windows.Forms.Panel panDpiH;
+        private System.Windows.Forms.Panel panUnitV;
+        private System.Windows.Forms.Panel panUnitH;
     }
 }

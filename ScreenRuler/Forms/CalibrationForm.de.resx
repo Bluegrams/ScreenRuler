@@ -123,19 +123,40 @@
   <data name="butSubmit.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Anzeigeeigenschaften</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Vorschau:</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Anzeigeskalierung (%)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Monitor DPI</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>Wie verwende ich das?</value>
+  </data>
+  <data name="butCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Angegebene DPI Auflösungen für Skalen verwenden:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Horizontale Skalierung (DPI)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>DPI-Skalierungsverhalten:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Vertikale Skalierung (DPI)</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Maßeinheit</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="tabPageDPI.Text" xml:space="preserve">
+    <value>Monitor DPI</value>
+  </data>
+  <data name="tabPageSize.Text" xml:space="preserve">
+    <value>Maßeinheit</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Aktuelle Linealgröße definieren als:</value>
   </data>
 </root>

@@ -117,23 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label11.Text" xml:space="preserve">
-    <value>缩放比例 (%)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>显示 DPI</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>预览:</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>如何校准标尺?</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>确认</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>显示属性</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

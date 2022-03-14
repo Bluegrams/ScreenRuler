@@ -123,18 +123,6 @@
   <data name="butSubmit.Text" xml:space="preserve">
     <value>ОК</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Настройки экрана</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Предпросмотр:</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Увеличение экрана (%)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>DPI монитора</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>Как я могу использовать это?</value>
   </data>

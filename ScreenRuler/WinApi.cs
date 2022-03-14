@@ -1,9 +1,24 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Security;
 
 namespace ScreenRuler
 {
+    public enum MonitorOptions
+    {
+        MONITOR_DEFUALRRONULL = 0,
+        MONITOR_DEFAULTTOPRIMARY = 1,
+        MONITOR_DEFUALTTONEAREST = 2
+    }
+
+    public enum MonitorDpiType
+    {
+        EFFECTIVE_DPI = 0,
+        ANGULAR_DPI = 1,
+        RAW_DPI = 2,
+    }
+
     /// <summary>
     /// A class that wraps used Win32 API calls.
     /// </summary>
@@ -48,16 +63,25 @@ namespace ScreenRuler
         }
 
         [DllImport("user32.dll")]
-        internal static extern IntPtr WindowFromPoint(WinPoint point);
+        private static extern IntPtr WindowFromPoint(WinPoint point);
 
         [DllImport("user32.dll", SetLastError = true)]
-        internal static extern bool GetWindowRect(IntPtr hWnd, out WinRect lpRect);
+        private static extern bool GetWindowRect(IntPtr hWnd, out WinRect lpRect);
 
         [DllImport("user32.dll", SetLastError = true)]
-        internal static extern IntPtr FindWindowEx(IntPtr hWndParent, IntPtr hWndChildAfter, string className, string windowTitle);
+        private static extern IntPtr FindWindowEx(IntPtr hWndParent, IntPtr hWndChildAfter, string className, string windowTitle);
 
         [DllImport("dwmapi.dll")]
-        internal static extern int DwmGetWindowAttribute(IntPtr hwnd, int dwAttribute, out WinRect pvAttribute, int cbAttribute);
+        private static extern int DwmGetWindowAttribute(IntPtr hwnd, int dwAttribute, out WinRect pvAttribute, int cbAttribute);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("User32.dll")]
+        private static extern IntPtr MonitorFromWindow(IntPtr hwnd, MonitorOptions dwFlags);
+
+        // requires Windows 8.1 or newer
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("Shcore.dll")]
+        private static extern IntPtr GetDpiForMonitor(IntPtr hmonitor, MonitorDpiType dpiType, out int dpiX, out int dpiY);
 
         #endregion
 
@@ -94,6 +118,19 @@ namespace ScreenRuler
             if (result < 0)
                 GetWindowRect(hWnd, out rect);
             return (Rectangle)rect;
+        }
+        
+        /// <summary>
+        /// Gets the dpi of the monitor.
+        /// </summary>
+        /// <param name="hWnd">The window handle used to determine the monitor of interest.</param>
+        /// <param name="dpiType">A value of MonitorDpiType indicating the dpi type to be returned.</param>
+        /// <returns>The dpi of the monitor.</returns>
+        public static int GetMonitorDpiFromWindow(IntPtr hWnd, MonitorDpiType dpiType)
+        {
+            IntPtr hmonitor = MonitorFromWindow(hWnd, MonitorOptions.MONITOR_DEFUALTTONEAREST);
+            GetDpiForMonitor(hmonitor, dpiType, out int dpiX, out int dpiY);
+            return dpiX;
         }
 
         #endregion

@@ -122,7 +122,4 @@
 Korkeus: {1} px
 Sijainti: {2}</value>
   </data>
-  <data name="ScalingText" xml:space="preserve">
-    <value>Näytön DPI / Skaalaus: {0} / {1} %</value>
-  </data>
 </root>

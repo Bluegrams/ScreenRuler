@@ -122,7 +122,4 @@
 ഉയരം: {1}px
 സ്ഥാനം: {2}</value>
   </data>
-  <data name="ScalingText" xml:space="preserve">
-    <value>മോണിറ്റർ ഡിപിഐ / സ്കെലിങ്: {0} / {1}%</value>
-  </data>
 </root>

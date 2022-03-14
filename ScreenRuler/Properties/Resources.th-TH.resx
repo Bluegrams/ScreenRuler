@@ -122,7 +122,4 @@
 สูง: {1}px
 ตำแหน่ง: {2}</value>
   </data>
-  <data name="ScalingText" xml:space="preserve">
-    <value>DPI จอแสดงผล / มาตราส่วน: {0} / {1}%</value>
-  </data>
 </root>

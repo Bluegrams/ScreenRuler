@@ -122,7 +122,4 @@
 Výška: {1}px
 Pozícia: {2}</value>
   </data>
-  <data name="ScalingText" xml:space="preserve">
-    <value>DPI Monitora / Scaling: {0} / {1}%</value>
-  </data>
 </root>

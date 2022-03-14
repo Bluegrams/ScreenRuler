@@ -117,23 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Escala de visualización (%)</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>DPI del monitor</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Vista previa:</value>
-  </data>
   <data name="lnkHelp.Text" xml:space="preserve">
     <value>¿Cómo uso esto?</value>
   </data>
   <data name="butSubmit.Text" xml:space="preserve">
     <value>Aceptar</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Propiedades de pantalla</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Calibrar regla</value>
