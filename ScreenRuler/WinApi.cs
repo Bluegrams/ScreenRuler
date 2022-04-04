@@ -7,9 +7,9 @@ namespace ScreenRuler
 {
     public enum MonitorOptions
     {
-        MONITOR_DEFUALRRONULL = 0,
+        MONITOR_DEFAULTTONULL = 0,
         MONITOR_DEFAULTTOPRIMARY = 1,
-        MONITOR_DEFUALTTONEAREST = 2
+        MONITOR_DEFAULTTONEAREST = 2
     }
 
     public enum MonitorDpiType
@@ -128,7 +128,7 @@ namespace ScreenRuler
         /// <returns>The dpi of the monitor.</returns>
         public static int GetMonitorDpiFromWindow(IntPtr hWnd, MonitorDpiType dpiType)
         {
-            IntPtr hmonitor = MonitorFromWindow(hWnd, MonitorOptions.MONITOR_DEFUALTTONEAREST);
+            IntPtr hmonitor = MonitorFromWindow(hWnd, MonitorOptions.MONITOR_DEFAULTTONEAREST);
             GetDpiForMonitor(hmonitor, dpiType, out int dpiX, out int dpiY);
             return dpiX;
         }

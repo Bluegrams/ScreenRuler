@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using ScreenRuler.Configuration;
 using ScreenRuler.Units;
 
 namespace ScreenRuler
@@ -42,6 +43,11 @@ namespace ScreenRuler
                 .ToList();
             comUnits.DataSource = items;
             comUnits.SelectedValue = this.originalSettings.MeasuringUnit;
+            // Set a default value if current measuring unit is not in supported values
+            if (comUnits.SelectedValue == null)
+            {
+                comUnits.SelectedValue = items[0].Value;
+            }
             // --- Owner events & settings ---
             this.Owner.Move += Owner_Move;
             this.Owner.Resize += Owner_Resize;
@@ -172,8 +178,11 @@ namespace ScreenRuler
 
         private void comUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MeasuringUnit = (MeasuringUnit)comUnits.SelectedValue;
-            applyUnitFromSettings();
+            if (comUnits.SelectedValue != null)
+            {
+                MeasuringUnit = (MeasuringUnit)comUnits.SelectedValue;
+                applyUnitFromSettings();
+            }
         }
 
         private void invokeClose()

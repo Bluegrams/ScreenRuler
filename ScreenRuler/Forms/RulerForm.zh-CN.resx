@@ -237,12 +237,6 @@
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>清除所有标记</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>偏好设置</value>
-  </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>校准标尺</value>
   </data>
@@ -1706,5 +1700,8 @@
   </data>
   <data name="conHypotenuse.Text" xml:space="preserve">
     <value>显示对角线 (直角尺)</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>偏好设置</value>
   </data>
 </root>

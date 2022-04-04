@@ -116,9 +116,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Impostazioni</value>
-  </data>
   <data name="conAbout.Text" xml:space="preserve">
     <value>Informazioni</value>
   </data>
@@ -176,9 +173,6 @@
   <data name="conMarkGolden.Text" xml:space="preserve">
     <value>Mostra la Sezione Aurea</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
-  </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>Calibra il Righello</value>
   </data>
@@ -199,5 +193,8 @@
   </data>
   <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
     <value>Apparenza</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>Impostazioni</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 using ScreenRuler.Colors;
 using ScreenRuler.Units;
 
-namespace ScreenRuler
+namespace ScreenRuler.Configuration
 {
     [Serializable]
     public class Settings

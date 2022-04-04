@@ -1,7 +1,8 @@
-﻿using ScreenRuler.Units;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ScreenRuler.Configuration;
+using ScreenRuler.Units;
 
 namespace ScreenRuler
 {

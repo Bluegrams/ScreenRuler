@@ -61,6 +61,7 @@
             this.numMarkerThickness = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkSnapToScreenEdges = new System.Windows.Forms.CheckBox();
             this.chkFollowMousePointerCenter = new System.Windows.Forms.CheckBox();
             this.chkNotifyIcon = new System.Windows.Forms.CheckBox();
             this.chkToolTip = new System.Windows.Forms.CheckBox();
@@ -71,7 +72,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.numLargeStep = new System.Windows.Forms.NumericUpDown();
             this.numMediumStep = new System.Windows.Forms.NumericUpDown();
-            this.chkSnapToScreenEdges = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.butShortcuts = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpColors.SuspendLayout();
             this.panCustomColors.SuspendLayout();
@@ -86,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSmallStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -274,6 +277,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.groupBox4);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
@@ -343,6 +347,12 @@
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            // 
+            // chkSnapToScreenEdges
+            // 
+            resources.ApplyResources(this.chkSnapToScreenEdges, "chkSnapToScreenEdges");
+            this.chkSnapToScreenEdges.Name = "chkSnapToScreenEdges";
+            this.chkSnapToScreenEdges.UseVisualStyleBackColor = true;
             // 
             // chkFollowMousePointerCenter
             // 
@@ -434,11 +444,19 @@
             0,
             0});
             // 
-            // chkSnapToScreenEdges
+            // groupBox5
             // 
-            resources.ApplyResources(this.chkSnapToScreenEdges, "chkSnapToScreenEdges");
-            this.chkSnapToScreenEdges.Name = "chkSnapToScreenEdges";
-            this.chkSnapToScreenEdges.UseVisualStyleBackColor = true;
+            this.groupBox5.Controls.Add(this.butShortcuts);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // butShortcuts
+            // 
+            resources.ApplyResources(this.butShortcuts, "butShortcuts");
+            this.butShortcuts.Name = "butShortcuts";
+            this.butShortcuts.UseVisualStyleBackColor = true;
+            this.butShortcuts.Click += new System.EventHandler(this.butShortcuts_Click);
             // 
             // SettingsForm
             // 
@@ -475,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSmallStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLargeStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMediumStep)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -524,5 +543,7 @@
         private System.Windows.Forms.NumericUpDown numMarkerThickness;
         private System.Windows.Forms.CheckBox chkFollowMousePointerCenter;
         private System.Windows.Forms.CheckBox chkSnapToScreenEdges;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button butShortcuts;
     }
 }

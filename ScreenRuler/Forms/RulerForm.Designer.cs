@@ -65,7 +65,8 @@
             this.conEditMarkers = new System.Windows.Forms.ToolStripMenuItem();
             this.conClearCustomMarker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.conShortcuts = new System.Windows.Forms.ToolStripMenuItem();
             this.conCalibrate = new System.Windows.Forms.ToolStripMenuItem();
             this.conHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.conAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +74,7 @@
             this.conExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rulerToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.shortcutActions = new ScreenRuler.Controls.ShortcutActions(this.components);
             this.contxtMenu.SuspendLayout();
             this.contxtAppearance.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +101,8 @@
             this.conEditMarkers,
             this.conClearCustomMarker,
             this.toolStripSeparator3,
-            this.settingsToolStripMenuItem,
+            this.conSettings,
+            this.conShortcuts,
             this.conCalibrate,
             this.conHelp,
             this.conAbout,
@@ -112,6 +115,7 @@
             // conMeasure
             // 
             this.conMeasure.Name = "conMeasure";
+            this.shortcutActions.SetShortcutAction(this.conMeasure, ScreenRuler.Configuration.ActionCode.MeasureWindow);
             resources.ApplyResources(this.conMeasure, "conMeasure");
             this.conMeasure.Click += new System.EventHandler(this.conMeasure_Click);
             // 
@@ -125,12 +129,14 @@
             this.conTopmost.Checked = true;
             this.conTopmost.CheckState = System.Windows.Forms.CheckState.Checked;
             this.conTopmost.Name = "conTopmost";
+            this.shortcutActions.SetShortcutAction(this.conTopmost, ScreenRuler.Configuration.ActionCode.PinTop);
             resources.ApplyResources(this.conTopmost, "conTopmost");
             this.conTopmost.Click += new System.EventHandler(this.conTopmost_Click);
             // 
             // conMinimize
             // 
             this.conMinimize.Name = "conMinimize";
+            this.shortcutActions.SetShortcutAction(this.conMinimize, ScreenRuler.Configuration.ActionCode.Minimize);
             resources.ApplyResources(this.conMinimize, "conMinimize");
             this.conMinimize.Click += new System.EventHandler(this.conMinimize_Click);
             // 
@@ -176,12 +182,14 @@
             // conFlipHorizontally
             // 
             this.conFlipHorizontally.Name = "conFlipHorizontally";
+            this.shortcutActions.SetShortcutAction(this.conFlipHorizontally, ScreenRuler.Configuration.ActionCode.FlipHorizontally);
             resources.ApplyResources(this.conFlipHorizontally, "conFlipHorizontally");
             this.conFlipHorizontally.Click += new System.EventHandler(this.conFlipHorizontally_Click);
             // 
             // conFlipVertically
             // 
             this.conFlipVertically.Name = "conFlipVertically";
+            this.shortcutActions.SetShortcutAction(this.conFlipVertically, ScreenRuler.Configuration.ActionCode.FlipVertically);
             resources.ApplyResources(this.conFlipVertically, "conFlipVertically");
             this.conFlipVertically.Click += new System.EventHandler(this.conFlipVertically_Click);
             // 
@@ -234,6 +242,7 @@
             // conSlimMode
             // 
             this.conSlimMode.Name = "conSlimMode";
+            this.shortcutActions.SetShortcutAction(this.conSlimMode, ScreenRuler.Configuration.ActionCode.ToggleSlimMode);
             resources.ApplyResources(this.conSlimMode, "conSlimMode");
             this.conSlimMode.Click += new System.EventHandler(this.conSlimMode_Click);
             // 
@@ -247,12 +256,14 @@
             // conLength
             // 
             this.conLength.Name = "conLength";
+            this.shortcutActions.SetShortcutAction(this.conLength, ScreenRuler.Configuration.ActionCode.SetSize);
             resources.ApplyResources(this.conLength, "conLength");
             this.conLength.Click += new System.EventHandler(this.conLength_Click);
             // 
             // conFollowMousePointer
             // 
             this.conFollowMousePointer.Name = "conFollowMousePointer";
+            this.shortcutActions.SetShortcutAction(this.conFollowMousePointer, ScreenRuler.Configuration.ActionCode.ToggleFollowMouseMode);
             resources.ApplyResources(this.conFollowMousePointer, "conFollowMousePointer");
             this.conFollowMousePointer.Click += new System.EventHandler(this.conFollowMousePointer_Click);
             // 
@@ -282,18 +293,21 @@
             // conMarkCenter
             // 
             this.conMarkCenter.Name = "conMarkCenter";
+            this.shortcutActions.SetShortcutAction(this.conMarkCenter, ScreenRuler.Configuration.ActionCode.MarkCenter);
             resources.ApplyResources(this.conMarkCenter, "conMarkCenter");
             this.conMarkCenter.Click += new System.EventHandler(this.conMarkCenter_Click);
             // 
             // conMarkThirds
             // 
             this.conMarkThirds.Name = "conMarkThirds";
+            this.shortcutActions.SetShortcutAction(this.conMarkThirds, ScreenRuler.Configuration.ActionCode.MarkThirds);
             resources.ApplyResources(this.conMarkThirds, "conMarkThirds");
             this.conMarkThirds.Click += new System.EventHandler(this.conMarkThirds_Click);
             // 
             // conMarkGolden
             // 
             this.conMarkGolden.Name = "conMarkGolden";
+            this.shortcutActions.SetShortcutAction(this.conMarkGolden, ScreenRuler.Configuration.ActionCode.MarkGoldenRatio);
             resources.ApplyResources(this.conMarkGolden, "conMarkGolden");
             this.conMarkGolden.Click += new System.EventHandler(this.conMarkGolden_Click);
             // 
@@ -302,6 +316,7 @@
             this.conMarkMouse.Checked = true;
             this.conMarkMouse.CheckState = System.Windows.Forms.CheckState.Checked;
             this.conMarkMouse.Name = "conMarkMouse";
+            this.shortcutActions.SetShortcutAction(this.conMarkMouse, ScreenRuler.Configuration.ActionCode.MarkMouse);
             resources.ApplyResources(this.conMarkMouse, "conMarkMouse");
             this.conMarkMouse.Click += new System.EventHandler(this.conMarkMouse_Click);
             // 
@@ -319,18 +334,21 @@
             // conHideRulerScale
             // 
             this.conHideRulerScale.Name = "conHideRulerScale";
+            this.shortcutActions.SetShortcutAction(this.conHideRulerScale, ScreenRuler.Configuration.ActionCode.HideRulerScale);
             resources.ApplyResources(this.conHideRulerScale, "conHideRulerScale");
             this.conHideRulerScale.Click += new System.EventHandler(this.conHideRulerScale_Click);
             // 
             // conEditMarkers
             // 
             this.conEditMarkers.Name = "conEditMarkers";
+            this.shortcutActions.SetShortcutAction(this.conEditMarkers, ScreenRuler.Configuration.ActionCode.EditMarkers);
             resources.ApplyResources(this.conEditMarkers, "conEditMarkers");
             this.conEditMarkers.Click += new System.EventHandler(this.conEditMarkers_Click);
             // 
             // conClearCustomMarker
             // 
             this.conClearCustomMarker.Name = "conClearCustomMarker";
+            this.shortcutActions.SetShortcutAction(this.conClearCustomMarker, ScreenRuler.Configuration.ActionCode.ClearAllMarkers);
             resources.ApplyResources(this.conClearCustomMarker, "conClearCustomMarker");
             this.conClearCustomMarker.Click += new System.EventHandler(this.conClearCustomMarker_Click);
             // 
@@ -339,21 +357,31 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
-            // settingsToolStripMenuItem
+            // conSettings
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            this.conSettings.Name = "conSettings";
+            this.shortcutActions.SetShortcutAction(this.conSettings, ScreenRuler.Configuration.ActionCode.Settings);
+            resources.ApplyResources(this.conSettings, "conSettings");
+            this.conSettings.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // conShortcuts
+            // 
+            this.conShortcuts.Name = "conShortcuts";
+            this.shortcutActions.SetShortcutAction(this.conShortcuts, ScreenRuler.Configuration.ActionCode.ConfigureShortcuts);
+            resources.ApplyResources(this.conShortcuts, "conShortcuts");
+            this.conShortcuts.Click += new System.EventHandler(this.conShortcuts_Click);
             // 
             // conCalibrate
             // 
             this.conCalibrate.Name = "conCalibrate";
+            this.shortcutActions.SetShortcutAction(this.conCalibrate, ScreenRuler.Configuration.ActionCode.CalibrateRuler);
             resources.ApplyResources(this.conCalibrate, "conCalibrate");
             this.conCalibrate.Click += new System.EventHandler(this.conCalibrate_Click);
             // 
             // conHelp
             // 
             this.conHelp.Name = "conHelp";
+            this.shortcutActions.SetShortcutAction(this.conHelp, ScreenRuler.Configuration.ActionCode.ShowHelp);
             resources.ApplyResources(this.conHelp, "conHelp");
             this.conHelp.Click += new System.EventHandler(this.conHelp_Click);
             // 
@@ -371,6 +399,7 @@
             // conExit
             // 
             this.conExit.Name = "conExit";
+            this.shortcutActions.SetShortcutAction(this.conExit, ScreenRuler.Configuration.ActionCode.ExitApp);
             resources.ApplyResources(this.conExit, "conExit");
             this.conExit.Click += new System.EventHandler(this.conExit_Click);
             // 
@@ -421,7 +450,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem conHelp;
         private System.Windows.Forms.ToolStripMenuItem conEditMarkers;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conSettings;
         private System.Windows.Forms.ToolStripComboBox comUnits;
         private System.Windows.Forms.ToolStripMenuItem conMinimize;
         private System.Windows.Forms.ToolStripMenuItem conMeasure;
@@ -448,6 +477,8 @@
         private System.Windows.Forms.ToolStripMenuItem flipRulerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conFlipHorizontally;
         private System.Windows.Forms.ToolStripMenuItem conFlipVertically;
+        private System.Windows.Forms.ToolStripMenuItem conShortcuts;
+        private Controls.ShortcutActions shortcutActions;
     }
 }
 

@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 using Bluegrams.Application;
 using Bluegrams.Application.WinForms;
+using Bluegrams.Windows.Tools;
 using ScreenRuler.Properties;
 using System.ComponentModel;
 using ScreenRuler.Colors;
+using ScreenRuler.Configuration;
 using ScreenRuler.Units;
-using System.Drawing.Drawing2D;
+using Shortcut = ScreenRuler.Configuration.Shortcut;
 
 namespace ScreenRuler
 {
@@ -37,6 +41,8 @@ namespace ScreenRuler
             manager.Manage(nameof(Settings), nameof(TopMost), nameof(CustomMarkers));
             manager.Manage(nameof(ResizeMode), defaultValue: FormResizeMode.Horizontal);
             manager.Manage(nameof(Opacity), defaultValue: 1);
+            manager.CustomSettings.AddSetting("Shortcuts", typeof(Shortcut[]), null);
+            manager.BeforeSaved += Manager_BeforeSaved;
             manager.Initialize();
             InitializeComponent();
             updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);
@@ -114,6 +120,8 @@ namespace ScreenRuler
                 notifyIcon.Visible = false;
             }
             this.SnapMode = Settings.SnapToScreenEdges ? SnapMode.LimitToEdges : SnapMode.None;
+            // Load shortcuts
+            shortcutActions.SetShortcuts((Shortcut[])manager.CustomSettings["Shortcuts"]);
         }
 
         private void applyCLIOptions()
@@ -156,6 +164,10 @@ namespace ScreenRuler
             this.SetRestrictSize(Settings.SlimMode ? RulerPainter.RULER_WIDTH_SLIM : RulerPainter.RULER_WIDTH_WIDE);
         }
 
+        private void Manager_BeforeSaved(object sender, EventArgs e)
+        {
+            manager.CustomSettings["Shortcuts"] = shortcutActions.GetShortcuts().ToArray();
+        }
 
         private void RulerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -240,95 +252,91 @@ namespace ScreenRuler
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            ActionCode action = shortcutActions.HandleInput(e.KeyData);
+            System.Diagnostics.Debug.WriteLine(action);
+            switch (action)
             {
-                case Keys.Space:
+                case ActionCode.ToggleRulerMode:
                     toggleRulerMode();
                     break;
-                case Keys.F:
-                    if (e.Shift) conFlipVertically.PerformClick();
-                    else conFlipHorizontally.PerformClick();
+                case ActionCode.FlipHorizontally:
+                    conFlipHorizontally.PerformClick();
                     break;
-                case Keys.J:
+                case ActionCode.FlipVertically:
+                    conFlipVertically.PerformClick();
+                    break;
+                case ActionCode.ToggleSlimMode:
                     conSlimMode.PerformClick();
                     break;
-                case Keys.Escape:
+                case ActionCode.ExitApp:
                     conExit.PerformClick();
                     break;
-                case Keys.Z:
+                case ActionCode.MeasureWindow:
                     conMeasure.PerformClick();
                     break;
-                case Keys.S:
+                case ActionCode.PinTop:
                     conTopmost.PerformClick();
                     break;
-                case Keys.V:
+                case ActionCode.ToggleVertical:
                     toggleVertical();
                     break;
-                case Keys.M:
+                case ActionCode.MarkCenter:
                     conMarkCenter.PerformClick();
                     break;
-                case Keys.T:
-                    if (e.Control)
+                case ActionCode.ToggleTheme:
+                    if (Settings.SelectedTheme == ThemeOption.Light)
                     {
-                        if (Settings.SelectedTheme == ThemeOption.Light)
-                        {
-                            Settings.SelectedTheme = ThemeOption.Dark;
-                        }
-                        else
-                        {
-                            Settings.SelectedTheme = ThemeOption.Light;
-                        }
+                        Settings.SelectedTheme = ThemeOption.Dark;
                     }
                     else
                     {
-                        conMarkThirds.PerformClick();
+                        Settings.SelectedTheme = ThemeOption.Light;
                     }
                     break;
-                case Keys.G:
+                case ActionCode.MarkThirds:
+                    conMarkThirds.PerformClick();
+                    break;
+                case ActionCode.MarkGoldenRatio:
                     conMarkGolden.PerformClick();
                     break;
-                case Keys.P:
+                case ActionCode.MarkMouse:
                     conMarkMouse.PerformClick();
                     break;
-                case Keys.H:
+                case ActionCode.ToggleHypotenuseMode:
                     toggleHypotenuseMode();
                     break;
-                case Keys.Delete:
+                case ActionCode.ClearAllMarkers:
                     conClearCustomMarker.PerformClick();
                     break;
-                case Keys.C:
-                    if (e.Control)
+                case ActionCode.CopySize:
+                    // copy size
+                    Clipboard.SetText($"{Width}, {Height}");
+                    break;
+                case ActionCode.DeleteFirstMarker:
+                    // clear first custom marker
+                    if (CustomMarkers.Markers.Count > 0)
                     {
-                        // copy size
-                        Clipboard.SetText($"{Width}, {Height}");
-                    }
-                    else
-                    {
-                        // clear first custom marker
-                        if (CustomMarkers.Markers.Count > 0)
-                        {
-                            CustomMarkers.RemoveFirstMarker();
-                            this.Invalidate();
-                        }
+                        CustomMarkers.RemoveFirstMarker();
+                        this.Invalidate();
                     }
                     break;
-                case Keys.X:
+                case ActionCode.AddMarkerAtCurrent:
                     addMarkersAtCurrentPosition();
                     break;
-                case Keys.L:
+                case ActionCode.AddMarkerAtLength:
                     CustomMarkers.AddMarker((Point)this.Size, RestrictSize);
                     this.Invalidate();
                     break;
-                case Keys.W:
+                case ActionCode.ToggleFollowMouseMode:
                     conFollowMousePointer.PerformClick();
                     break;
-                case Keys.Oemplus:
-                    if (e.Control) changeOpacity(true);
+                case ActionCode.IncreaseOpacity:
+                    changeOpacity(true);
                     break;
-                case Keys.OemMinus:
-                    if (e.Control) changeOpacity(false);
+                case ActionCode.DecreaseOpacity:
+                    changeOpacity(false);
                     break;
-                case Keys.F1:
+                case ActionCode.ShowHelp:
                     conHelp.PerformClick();
                     break;
                 default:
@@ -612,7 +620,7 @@ namespace ScreenRuler
             overlay.TopMost = this.TopMost;
             if (overlay.ShowDialog() == DialogResult.OK)
             {
-                measureRectangle(overlay.WindowSelection);
+                measureRectangle(overlay.SelectionRectangle);
             }
         }
 
@@ -813,12 +821,18 @@ namespace ScreenRuler
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SettingsForm settingsForm = new SettingsForm(Settings);
+            SettingsForm settingsForm = new SettingsForm(Settings, shortcutActions);
             if (settingsForm.ShowDialog(this) == DialogResult.OK)
             {
                 applySettings();
                 this.Invalidate();
             }
+        }
+
+        private void conShortcuts_Click(object sender, EventArgs e)
+        {
+            ShortcutsForm shortcutsForm = new ShortcutsForm(shortcutActions);
+            shortcutsForm.ShowDialog(this);
         }
 
         private void conCalibrate_Click(object sender, EventArgs e)

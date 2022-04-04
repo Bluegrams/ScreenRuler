@@ -153,4 +153,37 @@
   <data name="DpiScalingMode_ManualBidirectional" xml:space="preserve">
     <value>Manuell (bidirektional)</value>
   </data>
+  <data name="Actions_ToggleRulerMode" xml:space="preserve">
+    <value>Linealausrichtung umschalten</value>
+  </data>
+  <data name="Actions_ToggleVertical" xml:space="preserve">
+    <value>Vertikale Ausrichtung umschalten</value>
+  </data>
+  <data name="Actions_ToggleSlimMode" xml:space="preserve">
+    <value>Schmale Skala umschalten</value>
+  </data>
+  <data name="Actions_ToggleHypotenuseMode" xml:space="preserve">
+    <value>Hypotenusen-Anzeige umschalten (in 2D)</value>
+  </data>
+  <data name="Actions_DeleteFirstMarker" xml:space="preserve">
+    <value>Ersten Marker löschen</value>
+  </data>
+  <data name="Actions_AddMarkerAtCurrent" xml:space="preserve">
+    <value>Marker bei aktueller Mausposition setzen</value>
+  </data>
+  <data name="Actions_AddMarkerAtLength" xml:space="preserve">
+    <value>Marker bei aktueller Länge setzen</value>
+  </data>
+  <data name="Actions_ToggleTheme" xml:space="preserve">
+    <value>Linealdesign zwischen hell und dunkel wechseln</value>
+  </data>
+  <data name="Actions_IncreaseOpacity" xml:space="preserve">
+    <value>Linealdeckkraft erhöhen</value>
+  </data>
+  <data name="Actions_DecreaseOpacity" xml:space="preserve">
+    <value>Linealdeckkraft verringern</value>
+  </data>
+  <data name="Actions_CopySize" xml:space="preserve">
+    <value>Aktuelle Länge in Zwischenablage kopieren</value>
+  </data>
 </root>

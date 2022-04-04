@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ScreenRuler.Colors;
+using ScreenRuler.Configuration;
+using ScreenRuler.Controls;
 using ScreenRuler.Properties;
 using ScreenRuler.Units;
 
@@ -11,10 +13,12 @@ namespace ScreenRuler
     public partial class SettingsForm : Form
     {
         Settings settings;
+        ShortcutActions shortcutActions;
 
-        public SettingsForm(Settings settings)
+        public SettingsForm(Settings settings, ShortcutActions shortcutActions)
         {
             this.settings = settings;
+            this.shortcutActions = shortcutActions;
             InitializeComponent();
         }
 
@@ -123,6 +127,12 @@ namespace ScreenRuler
             {
                 lblScaling.Text = String.Format(Resources.ScalingText, settings.DpiScalingMode.GetDescription());
             }
+        }
+
+        private void butShortcuts_Click(object sender, EventArgs e)
+        {
+            ShortcutsForm shortcutsForm = new ShortcutsForm(shortcutActions);
+            shortcutsForm.ShowDialog(this);
         }
 
         private void butCancel_Click(object sender, EventArgs e)

@@ -189,9 +189,6 @@
   <data name="conLength.Text" xml:space="preserve">
     <value>Verander grootte...</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Instellingen</value>
-  </data>
   <data name="conOffsetLength.Text" xml:space="preserve">
     <value>Toon afstand en lengte</value>
   </data>
@@ -215,5 +212,8 @@
   </data>
   <data name="conMarkGolden.Text" xml:space="preserve">
     <value>Markeer gouden verhouding</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>Instellingen</value>
   </data>
 </root>

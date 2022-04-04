@@ -195,9 +195,6 @@
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Vymazať všetky značky</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nastavenia</value>
-  </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>Kalibrácia pravítka</value>
   </data>
@@ -209,5 +206,8 @@
   </data>
   <data name="conExit.Text" xml:space="preserve">
     <value>Ukončiť</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>Nastavenia</value>
   </data>
 </root>

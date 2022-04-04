@@ -61,6 +61,105 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set marker(s) at current cursor position.
+        /// </summary>
+        internal static string Actions_AddMarkerAtCurrent {
+            get {
+                return ResourceManager.GetString("Actions_AddMarkerAtCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set marker at current length.
+        /// </summary>
+        internal static string Actions_AddMarkerAtLength {
+            get {
+                return ResourceManager.GetString("Actions_AddMarkerAtLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy current length to clipboard.
+        /// </summary>
+        internal static string Actions_CopySize {
+            get {
+                return ResourceManager.GetString("Actions_CopySize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decrease ruler opacity.
+        /// </summary>
+        internal static string Actions_DecreaseOpacity {
+            get {
+                return ResourceManager.GetString("Actions_DecreaseOpacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove the first custom marker.
+        /// </summary>
+        internal static string Actions_DeleteFirstMarker {
+            get {
+                return ResourceManager.GetString("Actions_DeleteFirstMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increase ruler opacity.
+        /// </summary>
+        internal static string Actions_IncreaseOpacity {
+            get {
+                return ResourceManager.GetString("Actions_IncreaseOpacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle hypotenuse display (in 2D).
+        /// </summary>
+        internal static string Actions_ToggleHypotenuseMode {
+            get {
+                return ResourceManager.GetString("Actions_ToggleHypotenuseMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle ruler orientation.
+        /// </summary>
+        internal static string Actions_ToggleRulerMode {
+            get {
+                return ResourceManager.GetString("Actions_ToggleRulerMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle slim scale.
+        /// </summary>
+        internal static string Actions_ToggleSlimMode {
+            get {
+                return ResourceManager.GetString("Actions_ToggleSlimMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle the ruler theme between light and dark.
+        /// </summary>
+        internal static string Actions_ToggleTheme {
+            get {
+                return ResourceManager.GetString("Actions_ToggleTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle vertical orientation.
+        /// </summary>
+        internal static string Actions_ToggleVertical {
+            get {
+                return ResourceManager.GetString("Actions_ToggleVertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Centimeters.
         /// </summary>
         internal static string Centimeters {

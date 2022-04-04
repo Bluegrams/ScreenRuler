@@ -332,17 +332,11 @@
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 6</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
-  </data>
   <data name="settingsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Oemcomma</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>ക്രമീകരണങ്ങൾ</value>
   </data>
   <data name="conCalibrate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+K</value>
@@ -1846,5 +1840,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>സ്ക്രീൻ റൂളർ</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>ക്രമീകരണങ്ങൾ</value>
   </data>
 </root>

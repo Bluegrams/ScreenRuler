@@ -1,8 +1,7 @@
 ﻿using System;
 using ScreenRuler.Properties;
-using ScreenRuler.Units;
 
-namespace ScreenRuler
+namespace ScreenRuler.Configuration
 {
     public enum HypotenuseMode
     {

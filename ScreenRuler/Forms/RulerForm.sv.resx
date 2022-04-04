@@ -246,10 +246,7 @@
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>Skärmlinjal</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+  <data name="conSettings.Text" xml:space="preserve">
     <value>Inställningar</value>
   </data>
 </root>

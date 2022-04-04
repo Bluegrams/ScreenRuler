@@ -54,8 +54,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppHelpers.WinForms, Version=0.1.0.12, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WinForms.0.1.0\lib\net45\AppHelpers.WinForms.dll</HintPath>
+    <Reference Include="AppHelpers.WinForms, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AppHelpers.WinForms.0.1.1\lib\net45\AppHelpers.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bluegrams.Windows.Tools, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bluegrams.Windows.Tools.0.1.0-alpha\lib\net45\Bluegrams.Windows.Tools.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.8.0\lib\net461\CommandLine.dll</HintPath>
@@ -80,7 +83,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums.cs" />
+    <Compile Include="Configuration\ActionCode.cs" />
+    <Compile Include="Configuration\Shortcuts.cs" />
+    <Compile Include="Configuration\Enums.cs" />
+    <Compile Include="Controls\ShortcutActions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShortcutActions.Designer.cs">
+      <DependentUpon>ShortcutActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShortcutActionsEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ShortcutActionsEdit.Designer.cs">
+      <DependentUpon>ShortcutActionsEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BaseForm.cs" />
     <Compile Include="Colors\ColorSetting.cs" />
     <Compile Include="Colors\CommonThemes.cs" />
@@ -105,10 +122,15 @@
     <Compile Include="Forms\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ShortcutsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShortcutsForm.Designer.cs">
+      <DependentUpon>ShortcutsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marker.cs" />
     <Compile Include="MarkerCollection.cs" />
     <Compile Include="MouseTracker.cs" />
-    <Compile Include="Forms\OverlayForm.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="Properties\EnumResources.pl.Designer.cs">
       <DependentUpon>EnumResources.pl.resx</DependentUpon>
@@ -162,7 +184,7 @@
     <Compile Include="Forms\SetSizeForm.Designer.cs">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
+    <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,10 +192,18 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Colors\Theme.cs" />
-    <Compile Include="Units\LocalizedDescriptionAttribute.cs" />
+    <Compile Include="Configuration\LocalizedDescriptionAttribute.cs" />
     <Compile Include="Units\MeasuringUnit.cs" />
     <Compile Include="Units\UnitConverters.cs" />
     <Compile Include="WinApi.cs" />
+    <EmbeddedResource Include="Controls\ShortcutActionsEdit.de.resx">
+      <DependentUpon>ShortcutActionsEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ShortcutActionsEdit.resx">
+      <DependentUpon>ShortcutActionsEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalibrationForm.de.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -359,6 +389,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.sk.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.th-TH.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
@@ -419,6 +450,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.sv.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShortcutsForm.de.resx">
+      <DependentUpon>ShortcutsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShortcutsForm.resx">
+      <DependentUpon>ShortcutsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\EnumResources.fi.resx" />
     <EmbeddedResource Include="Properties\EnumResources.nl.resx" />
@@ -528,6 +566,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.zh-CN.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>

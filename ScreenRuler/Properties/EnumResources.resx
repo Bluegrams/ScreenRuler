@@ -153,4 +153,37 @@
   <data name="DpiScalingMode_ManualBidirectional" xml:space="preserve">
     <value>Manual (bidirectional)</value>
   </data>
+  <data name="Actions_ToggleRulerMode" xml:space="preserve">
+    <value>Toggle ruler orientation</value>
+  </data>
+  <data name="Actions_ToggleVertical" xml:space="preserve">
+    <value>Toggle vertical orientation</value>
+  </data>
+  <data name="Actions_ToggleSlimMode" xml:space="preserve">
+    <value>Toggle slim scale</value>
+  </data>
+  <data name="Actions_ToggleHypotenuseMode" xml:space="preserve">
+    <value>Toggle hypotenuse display (in 2D)</value>
+  </data>
+  <data name="Actions_DeleteFirstMarker" xml:space="preserve">
+    <value>Remove the first custom marker</value>
+  </data>
+  <data name="Actions_AddMarkerAtCurrent" xml:space="preserve">
+    <value>Set marker(s) at current cursor position</value>
+  </data>
+  <data name="Actions_AddMarkerAtLength" xml:space="preserve">
+    <value>Set marker at current length</value>
+  </data>
+  <data name="Actions_ToggleTheme" xml:space="preserve">
+    <value>Toggle the ruler theme between light and dark</value>
+  </data>
+  <data name="Actions_IncreaseOpacity" xml:space="preserve">
+    <value>Increase ruler opacity</value>
+  </data>
+  <data name="Actions_DecreaseOpacity" xml:space="preserve">
+    <value>Decrease ruler opacity</value>
+  </data>
+  <data name="Actions_CopySize" xml:space="preserve">
+    <value>Copy current length to clipboard</value>
+  </data>
 </root>

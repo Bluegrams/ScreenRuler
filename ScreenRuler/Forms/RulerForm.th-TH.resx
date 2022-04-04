@@ -201,9 +201,6 @@
   <data name="conMarkMouse.ShortcutKeyDisplayString" xml:space="preserve">
     <value>P</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>ตั้งค่า</value>
-  </data>
   <data name="conMarkMouse.Text" xml:space="preserve">
     <value>ทำเครื่องหมายที่ตำแหน่งเมาส์</value>
   </data>
@@ -224,9 +221,6 @@
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>ลบเครื่องหมายทั้งหมด</value>
-  </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
   </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>ปรับไม้บรรทัด</value>
@@ -251,5 +245,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Screen Ruler</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>ตั้งค่า</value>
   </data>
 </root>

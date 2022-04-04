@@ -120,34 +120,40 @@
   <metadata name="contxtMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="shortcutActions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>507, 17</value>
+  </metadata>
   <data name="conMeasure.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Z</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="conMeasure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conMeasure.Text" xml:space="preserve">
     <value>Measure Window</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>243, 6</value>
   </data>
   <data name="conTopmost.ShortcutKeyDisplayString" xml:space="preserve">
     <value>S</value>
   </data>
   <data name="conTopmost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conTopmost.Text" xml:space="preserve">
     <value>Stay On Top</value>
+  </data>
+  <data name="conMinimize.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+M</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="conMinimize.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+M</value>
   </data>
   <data name="conMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conMinimize.Text" xml:space="preserve">
     <value>Minimize</value>
@@ -171,7 +177,7 @@
     <value>Two-Dimensional</value>
   </data>
   <data name="conRulerMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conRulerMode.Text" xml:space="preserve">
     <value>Ruler Orientation</value>
@@ -195,7 +201,7 @@
     <value>Flip Vertically</value>
   </data>
   <data name="flipRulerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="flipRulerToolStripMenuItem.Text" xml:space="preserve">
     <value>Flip Ruler</value>
@@ -231,7 +237,7 @@
     <value>Very Low (20%)</value>
   </data>
   <data name="conOpacity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conOpacity.Text" xml:space="preserve">
     <value>Opacity</value>
@@ -240,7 +246,7 @@
     <value>J</value>
   </data>
   <data name="conSlimMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conSlimMode.Text" xml:space="preserve">
     <value>Slim Scale</value>
@@ -251,11 +257,14 @@
   <data name="comUnits.ToolTipText" xml:space="preserve">
     <value>Measuring Unit</value>
   </data>
+  <data name="conLength.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+L</value>
+  </data>
   <data name="conLength.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+L</value>
   </data>
   <data name="conLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conLength.Text" xml:space="preserve">
     <value>Set Size...</value>
@@ -264,13 +273,13 @@
     <value>W</value>
   </data>
   <data name="conFollowMousePointer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conFollowMousePointer.Text" xml:space="preserve">
     <value>Follow Mouse Pointer</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>243, 6</value>
   </data>
   <metadata name="contxtAppearance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>357, 17</value>
@@ -327,31 +336,37 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="appearanceToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="appearanceToolStripMenuItem.Text" xml:space="preserve">
     <value>Appearance</value>
   </data>
   <data name="conHypotenuse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conHypotenuse.Text" xml:space="preserve">
     <value>Hypotenuse (in 2D)</value>
+  </data>
+  <data name="conHideRulerScale.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+H</value>
   </data>
   <data name="conHideRulerScale.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+H</value>
   </data>
   <data name="conHideRulerScale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conHideRulerScale.Text" xml:space="preserve">
     <value>Hide Ruler Scale</value>
+  </data>
+  <data name="conEditMarkers.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
   </data>
   <data name="conEditMarkers.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+E</value>
   </data>
   <data name="conEditMarkers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conEditMarkers.Text" xml:space="preserve">
     <value>Edit Markers</value>
@@ -359,32 +374,50 @@
   <data name="conClearCustomMarker.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
   </data>
+  <data name="conClearCustomMarker.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Del</value>
+  </data>
   <data name="conClearCustomMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Clear All Markers</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>243, 6</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+  <data name="conSettings.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+,</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="conSettings.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Oemcomma</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+  <data name="conSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 22</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+  <data name="conSettings.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="conShortcuts.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+,</value>
+  </data>
+  <data name="conShortcuts.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+Oemcomma</value>
+  </data>
+  <data name="conShortcuts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 22</value>
+  </data>
+  <data name="conShortcuts.Text" xml:space="preserve">
+    <value>Keyboard Shortcuts</value>
+  </data>
+  <data name="conCalibrate.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+K</value>
   </data>
   <data name="conCalibrate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+K</value>
   </data>
   <data name="conCalibrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>Calibrate Ruler</value>
@@ -392,32 +425,35 @@
   <data name="conHelp.ShortcutKeyDisplayString" xml:space="preserve">
     <value>F1</value>
   </data>
+  <data name="conHelp.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F1</value>
+  </data>
   <data name="conHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conHelp.Text" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="conAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conAbout.Text" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>243, 6</value>
   </data>
   <data name="conExit.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Esc</value>
+    <value>Escape</value>
   </data>
   <data name="conExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>246, 22</value>
   </data>
   <data name="conExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="contxtMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 473</value>
+    <value>247, 495</value>
   </data>
   <data name="&gt;&gt;contxtMenu.Name" xml:space="preserve">
     <value>contxtMenu</value>
@@ -2086,10 +2122,16 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingsToolStripMenuItem</value>
+  <data name="&gt;&gt;conSettings.Name" xml:space="preserve">
+    <value>conSettings</value>
   </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;conSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conShortcuts.Name" xml:space="preserve">
+    <value>conShortcuts</value>
+  </data>
+  <data name="&gt;&gt;conShortcuts.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;conCalibrate.Name" xml:space="preserve">
@@ -2133,6 +2175,12 @@
   </data>
   <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shortcutActions.Name" xml:space="preserve">
+    <value>shortcutActions</value>
+  </data>
+  <data name="&gt;&gt;shortcutActions.Type" xml:space="preserve">
+    <value>ScreenRuler.Controls.ShortcutActions, screenruler, Version=0.9.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RulerForm</value>

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Einstellungen</value>
-  </data>
   <data name="conAbout.Text" xml:space="preserve">
     <value>Über</value>
   </data>
@@ -177,9 +174,6 @@
   <data name="conMarkGolden.Text" xml:space="preserve">
     <value>Goldener Schnitt</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Strg+,</value>
-  </data>
   <data name="conCalibrate.Text" xml:space="preserve">
     <value>Lineal kalibrieren</value>
   </data>
@@ -221,5 +215,11 @@
   </data>
   <data name="flipRulerToolStripMenuItem.Text" xml:space="preserve">
     <value>Lineal spiegeln</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="conShortcuts.Text" xml:space="preserve">
+    <value>Tastaturkürzel</value>
   </data>
 </root>

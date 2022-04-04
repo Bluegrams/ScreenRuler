@@ -153,9 +153,6 @@
   <data name="conClearCustomMarker.Text" xml:space="preserve">
     <value>Eliminar todas las marcas</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
   <data name="conHelp.Text" xml:space="preserve">
     <value>Ayuda</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="conClearCustomMarker.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Supr</value>
   </data>
-  <data name="settingsToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+,</value>
-  </data>
   <data name="conHelp.ShortcutKeyDisplayString" xml:space="preserve">
     <value>F1</value>
   </data>
@@ -251,5 +245,8 @@
   </data>
   <data name="conEditMarkers.Text" xml:space="preserve">
     <value>Editar marcas</value>
+  </data>
+  <data name="conSettings.Text" xml:space="preserve">
+    <value>Opciones</value>
   </data>
 </root>

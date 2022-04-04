@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Resources;
 using System.Linq;
 
-namespace ScreenRuler.Units
+namespace ScreenRuler.Configuration
 {
     public class LocalizedDescriptionAttribute : DescriptionAttribute
     {

@@ -1,4 +1,5 @@
 ﻿using ScreenRuler.Properties;
+using ScreenRuler.Configuration;
 
 namespace ScreenRuler.Units
 {

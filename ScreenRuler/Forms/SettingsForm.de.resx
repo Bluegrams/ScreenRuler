@@ -959,4 +959,10 @@
   <data name="chkSnapToScreenEdges.Text" xml:space="preserve">
     <value>An Bildschirmränder andocken</value>
   </data>
+  <data name="butShortcuts.Text" xml:space="preserve">
+    <value>Konfigurieren</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Tastaturkürzel</value>
+  </data>
 </root>
