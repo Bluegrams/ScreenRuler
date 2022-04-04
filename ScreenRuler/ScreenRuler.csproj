@@ -242,6 +242,9 @@
     <EmbeddedResource Include="Forms\CalibrationForm.sv.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalibrationForm.tr.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CalibrationForm.zh-CN.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +290,9 @@
     <EmbeddedResource Include="Forms\CustomLineForm.sv.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomLineForm.tr.resx">
+      <DependentUpon>CustomLineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomLineForm.zh-CN.resx">
       <DependentUpon>CustomLineForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +335,9 @@
     <EmbeddedResource Include="Forms\HelpForm.sv.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.tr.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpForm.zh-CN.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,9 @@
     <EmbeddedResource Include="Forms\MarkerListForm.sv.resx">
       <DependentUpon>MarkerListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MarkerListForm.tr.resx">
+      <DependentUpon>MarkerListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.fi.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +409,10 @@
     <EmbeddedResource Include="Forms\RulerForm.sv.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RulerForm.tr.resx">
+      <DependentUpon>RulerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetSizeForm.fi.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +438,9 @@
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetSizeForm.sv.resx">
+      <DependentUpon>SetSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetSizeForm.tr.resx">
       <DependentUpon>SetSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.fi.resx">
@@ -451,6 +470,9 @@
     <EmbeddedResource Include="Forms\SettingsForm.sv.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.tr.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShortcutsForm.de.resx">
       <DependentUpon>ShortcutsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +495,7 @@
     <EmbeddedResource Include="Properties\EnumResources.sk.resx" />
     <EmbeddedResource Include="Properties\EnumResources.th-TH.resx" />
     <EmbeddedResource Include="Properties\EnumResources.sv.resx" />
+    <EmbeddedResource Include="Properties\EnumResources.tr.resx" />
     <EmbeddedResource Include="Properties\EnumResources.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.zh-CN.Designer.cs</LastGenOutput>
@@ -501,6 +524,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.sv.resx" />
+    <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
