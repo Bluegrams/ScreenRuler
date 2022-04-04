@@ -51,6 +51,8 @@ namespace ScreenRuler
         private const string MarkerSymbolGoldenLine = "\u03D5"; // u03C6 u03A6 u03D5
         private const int MarkerSymbolCustomLine1 = 0x2460-1; // Circled 1, add for up to 20 (-1 for correct behaviour post 20)
 
+        private const int LABEL_HEIGHT = 14;
+
         private readonly Control c;
         private readonly float phi;
         private Settings settings;
@@ -58,6 +60,8 @@ namespace ScreenRuler
         private Graphics g;
         private int drawWidth;
         private FormResizeMode resizeMode = FormResizeMode.Horizontal;
+        // Set margins occupied by offset (X component) & length (Y component) labels
+        private Rectangle labelMargins = new Rectangle(0, 0, int.MaxValue, int.MaxValue);
         
         public RulerPainter(Control control)
         {
@@ -157,23 +161,39 @@ namespace ScreenRuler
                     {
                         float y = drawWidth;
                         // adjust the label text based on ruler width
-                        if (settings.SlimMode) y -= 14;
+                        if (settings.SlimMode) y -= LABEL_HEIGHT;
                         else y /= 2.0f;
                         DrawString(lblLength, font, brush, max, y, format);
+                        labelMargins.X = 0;
+                        labelMargins.Width = max - (int)g.MeasureString(lblLength, font).Width;
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
+                        {
                             DrawString(lblOffset, font, brush, 0, y);
+                            labelMargins.X = (int)g.MeasureString(lblOffset, font).Width;
+                            labelMargins.Width -= labelMargins.X;
+                        }
                     }
                     else
                     {
                         float x = drawWidth;
                         if (!settings.SlimMode) x *= (7.0f / 8.0f);
-                        DrawString(lblLength, font, brush, x, max - 14, format);
+                        DrawString(lblLength, font, brush, x, max - LABEL_HEIGHT, format);
+                        labelMargins.Y = 0;
+                        labelMargins.Height = max - LABEL_HEIGHT;
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
+                        {
                             DrawString(lblOffset, font, brush, x, 0, format);
+                            labelMargins.Y = LABEL_HEIGHT;
+                            labelMargins.Height -= labelMargins.Y;
+                        }
                     }
                 }
+            }
+            else
+            {
+                labelMargins = new Rectangle(0, 0, int.MaxValue, int.MaxValue);
             }
         }
 
@@ -296,7 +316,6 @@ namespace ScreenRuler
             // Note: StringFormatFlags.DirectionRightToLeft won't work with some symbols since it's intended for right-to-left languages.
             // Symbols gets placed before or after depending on category of language it belong to. 
             StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
-            if (marker.Vertical) format.LineAlignment = StringAlignment.Far;
             var text = converter.ConvertFromPixel(marker).ToString(numberFormat);
 
             using (Brush brush = new SolidBrush(col))
@@ -315,14 +334,15 @@ namespace ScreenRuler
                 {
                     g.DrawLine(pen, pos, 0, pos, drawWidth);
                     // only draw labels if we have enough space
-                    if (!settings.SlimMode)
+                    System.Diagnostics.Debug.WriteLine(labelMargins);
+                    if (!settings.SlimMode && pos >= labelMargins.Left && pos <= labelMargins.Right)
                         DrawString(text, font, brush, pos, drawWidth / 2, format);
                 }
                 else
                 {
                     g.DrawLine(pen, 0, pos, drawWidth, pos);
-                    if (!settings.SlimMode)
-                        DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos, format);
+                    if (!settings.SlimMode && pos >= labelMargins.Top && pos <= labelMargins.Bottom)
+                        DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos - LABEL_HEIGHT, format);
                 }
             }
         }
