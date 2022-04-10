@@ -51,8 +51,6 @@ namespace ScreenRuler
         private const string MarkerSymbolGoldenLine = "\u03D5"; // u03C6 u03A6 u03D5
         private const int MarkerSymbolCustomLine1 = 0x2460-1; // Circled 1, add for up to 20 (-1 for correct behaviour post 20)
 
-        private const int LABEL_HEIGHT = 14;
-
         private readonly Control c;
         private readonly float phi;
         private Settings settings;
@@ -60,6 +58,10 @@ namespace ScreenRuler
         private Graphics g;
         private int drawWidth;
         private FormResizeMode resizeMode = FormResizeMode.Horizontal;
+        // Labels
+        private int fontSize = 12;
+        private int labelHeight = 14;
+        private int tickLabelOffset = 7;
         // Set margins occupied by offset (X component) & length (Y component) labels
         private Rectangle labelMargins = new Rectangle(0, 0, int.MaxValue, int.MaxValue);
         
@@ -76,12 +78,17 @@ namespace ScreenRuler
         /// <param name="settings">The settings.</param>
         public void Update(Graphics g, Settings settings, FormResizeMode resizeMode)
         {
+            float scalingFactor = this.c.DeviceDpi / 96.0f;
             this.g = g;
             this.settings = settings;
             this.resizeMode = resizeMode;
             this.converter = UnitConverter.FromSettings(c, settings);
             this.drawWidth = settings.SlimMode ? RULER_WIDTH_SLIM : RULER_WIDTH_WIDE;
-            this.drawWidth = (int)(this.drawWidth * (this.c.DeviceDpi / 96.0f));
+            this.drawWidth = (int)(this.drawWidth * scalingFactor);
+            // Adjust labels to scaling
+            this.fontSize = (int)(12 * scalingFactor);
+            this.labelHeight = fontSize + (int)(5 * scalingFactor);
+            this.tickLabelOffset = (int)(7 * scalingFactor);
         }
 
         /// <summary>
@@ -154,14 +161,14 @@ namespace ScreenRuler
                 }
                 string lblOffset = converter.FormatFromPixel(offset, vertical, roundingDigits);
                 using (Brush brush = new SolidBrush(settings.Theme.LengthLabelColor))
-                using (Font font = new Font("Arial", 9))
+                using (Font font = new Font("Arial", this.fontSize, FontStyle.Regular, GraphicsUnit.Pixel))
                 {
                     StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
                     if (!vertical)
                     {
                         float y = drawWidth;
                         // adjust the label text based on ruler width
-                        if (settings.SlimMode) y -= LABEL_HEIGHT;
+                        if (settings.SlimMode) y -= this.labelHeight;
                         else y /= 2.0f;
                         DrawString(lblLength, font, brush, max, y, format);
                         labelMargins.X = 0;
@@ -178,14 +185,14 @@ namespace ScreenRuler
                     {
                         float x = drawWidth;
                         if (!settings.SlimMode) x *= (7.0f / 8.0f);
-                        DrawString(lblLength, font, brush, x, max - LABEL_HEIGHT, format);
+                        DrawString(lblLength, font, brush, x, max - this.labelHeight, format);
                         labelMargins.Y = 0;
-                        labelMargins.Height = max - LABEL_HEIGHT;
+                        labelMargins.Height = max - this.labelHeight;
                         // only draw offset label if not in two-dimensional mode, otherwise it would look messy
                         if (resizeMode != FormResizeMode.TwoDimensional)
                         {
                             DrawString(lblOffset, font, brush, x, 0, format);
-                            labelMargins.Y = LABEL_HEIGHT;
+                            labelMargins.Y = this.labelHeight;
                             labelMargins.Height -= labelMargins.Y;
                         }
                     }
@@ -216,7 +223,7 @@ namespace ScreenRuler
             }
             using (Brush brush = new SolidBrush(settings.Theme.TickColor))
             using (Pen pen = new Pen(brush, 1))
-            using (Font font = new Font("Arial", 9))
+            using (Font font = new Font("Arial", this.fontSize, FontStyle.Regular, GraphicsUnit.Pixel))
             {
                 float pos = valPixel;
                 if (!vertical)
@@ -226,7 +233,7 @@ namespace ScreenRuler
                     if (drawLower)
                         g.DrawLine(pen, pos, drawWidth - length, pos, drawWidth);
                     if (valUnit > 0 && i % scale.BTickSteps == 0)
-                        DrawString(Math.Round(valUnit, 2).ToString(), font, brush, pos - 8, length + 3);
+                        DrawString(Math.Round(valUnit, 2).ToString(), font, brush, pos - this.tickLabelOffset, length + 3);
                 }
                 else
                 {
@@ -235,7 +242,7 @@ namespace ScreenRuler
                     if (drawLower)
                         g.DrawLine(pen, drawWidth - length, pos, drawWidth, pos);
                     if (valUnit > 0 && i % scale.BTickSteps == 0)
-                        DrawString(Math.Round(valUnit, 2).ToString(), font, brush, length + 3, pos - 7);
+                        DrawString(Math.Round(valUnit, 2).ToString(), font, brush, length + 3, pos - this.tickLabelOffset);
                 }
             }
         }
@@ -320,7 +327,7 @@ namespace ScreenRuler
 
             using (Brush brush = new SolidBrush(col))
             using (Pen pen = new Pen(brush, settings.MarkerThickness))
-            using (Font font = new Font("Arial", 9))
+            using (Font font = new Font("Arial", this.fontSize, FontStyle.Regular, GraphicsUnit.Pixel))
             {
                 // If the marker is too far to the left/ top, the label would be cut. Therefore, move it to the right/ bottom.
                 if (moveToRight)
@@ -334,7 +341,6 @@ namespace ScreenRuler
                 {
                     g.DrawLine(pen, pos, 0, pos, drawWidth);
                     // only draw labels if we have enough space
-                    System.Diagnostics.Debug.WriteLine(labelMargins);
                     if (!settings.SlimMode && pos >= labelMargins.Left && pos <= labelMargins.Right)
                         DrawString(text, font, brush, pos, drawWidth / 2, format);
                 }
@@ -342,7 +348,7 @@ namespace ScreenRuler
                 {
                     g.DrawLine(pen, 0, pos, drawWidth, pos);
                     if (!settings.SlimMode && pos >= labelMargins.Top && pos <= labelMargins.Bottom)
-                        DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos - LABEL_HEIGHT, format);
+                        DrawString(text, font, brush, drawWidth * (7.0f/8.0f), pos - this.labelHeight, format);
                 }
             }
         }
@@ -369,7 +375,7 @@ namespace ScreenRuler
             StringFormat format = new StringFormat() { Alignment = StringAlignment.Far };
             using (Brush backgroundBrush = new SolidBrush(settings.Theme.Background))
             using (Brush penBrush = new SolidBrush(settings.Theme.TickColor))
-            using (Font font = new Font("Arial", 9))
+            using (Font font = new Font("Arial", this.fontSize, FontStyle.Regular, GraphicsUnit.Pixel))
             {
                 Size boxSize = new Size(80, 50);
                 Point cornerPoint = new Point(reference.X / 2, reference.Y / 2);

@@ -98,7 +98,6 @@ namespace ScreenRuler
 
         public void SetRestrictSize(int value, bool useScaleFactor = true)
         {
-            System.Diagnostics.Debug.WriteLine(this.DeviceDpi);
             if (useScaleFactor)
             {
                 float scaleFactor = this.DeviceDpi / 96.0f;
@@ -108,6 +107,7 @@ namespace ScreenRuler
             {
                 restrictSize = value;
             }
+            MinimumSize = new Size(restrictSize, restrictSize);
             applyResizeMode(ResizeMode);
         }
 

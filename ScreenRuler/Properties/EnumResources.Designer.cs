@@ -169,7 +169,7 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Per-monitor automatic.
+        ///   Looks up a localized string similar to Automatic (per monitor).
         /// </summary>
         internal static string DpiScalingMode_Auto {
             get {
@@ -187,11 +187,11 @@ namespace ScreenRuler.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manual (bidirectional).
+        ///   Looks up a localized string similar to Manual (per monitor).
         /// </summary>
-        internal static string DpiScalingMode_ManualBidirectional {
+        internal static string DpiScalingMode_ManualPerMonitor {
             get {
-                return ResourceManager.GetString("DpiScalingMode_ManualBidirectional", resourceCulture);
+                return ResourceManager.GetString("DpiScalingMode_ManualPerMonitor", resourceCulture);
             }
         }
         

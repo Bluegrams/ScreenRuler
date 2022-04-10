@@ -65,10 +65,10 @@ namespace ScreenRuler.Units
                     break;
                 case DpiScalingMode.Manual:
                     horizontalDpi = settings.MonitorDpi;
-                    break;
-                case DpiScalingMode.ManualBidirectional:
-                    horizontalDpi = settings.MonitorDpi;
                     verticalDpi = settings.VerticalMonitorDpi;
+                    break;
+                case DpiScalingMode.ManualPerMonitor:
+                    (horizontalDpi, verticalDpi) = MonitorSetup.Instance.Lookup(Screen.FromControl(control), settings);
                     break;
                 default:
                     horizontalDpi = 96;

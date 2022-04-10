@@ -145,13 +145,13 @@
     <value>Skalierte Pixel verwenden</value>
   </data>
   <data name="DpiScalingMode_Auto" xml:space="preserve">
-    <value>Automatisch pro Monitor</value>
+    <value>Automatisch (pro Monitor)</value>
   </data>
   <data name="DpiScalingMode_Manual" xml:space="preserve">
     <value>Manuell</value>
   </data>
-  <data name="DpiScalingMode_ManualBidirectional" xml:space="preserve">
-    <value>Manuell (bidirektional)</value>
+  <data name="DpiScalingMode_ManualPerMonitor" xml:space="preserve">
+    <value>Manuell (pro Monitor)</value>
   </data>
   <data name="Actions_ToggleRulerMode" xml:space="preserve">
     <value>Linealausrichtung umschalten</value>

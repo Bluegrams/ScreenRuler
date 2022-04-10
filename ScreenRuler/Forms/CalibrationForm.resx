@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2</value>
+    <value>16, 2</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 13</value>
@@ -178,7 +178,7 @@
     <value>True</value>
   </data>
   <data name="lnkHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 186</value>
+    <value>13, 219</value>
   </data>
   <data name="lnkHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 13</value>
@@ -199,13 +199,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lnkHelp.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="butSubmit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="butSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 180</value>
+    <value>166, 213</value>
   </data>
   <data name="butSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -229,7 +229,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butSubmit.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="numDpiV.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -255,36 +255,6 @@
   <data name="&gt;&gt;numDpiV.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Vertical Scaling (DPI)</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>panDpiV</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="comDpiScalingMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>148, 12</value>
   </data>
@@ -304,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comDpiScalingMode.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -334,16 +304,52 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="panDpiH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 36</value>
+  <data name="&gt;&gt;tabPageDPI.Name" xml:space="preserve">
+    <value>tabPageDPI</value>
   </data>
-  <data name="panDpiH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 22</value>
+  <data name="&gt;&gt;tabPageDPI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panDpiH.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="&gt;&gt;tabPageDPI.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageDPI.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.Name" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 72</value>
+  </data>
+  <data name="tabMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 129</value>
+  </data>
+  <data name="tabMain.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Name" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabMain.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;panDpiH.Name" xml:space="preserve">
     <value>panDpiH</value>
@@ -357,15 +363,6 @@
   <data name="&gt;&gt;panDpiH.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panDpiV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 64</value>
-  </data>
-  <data name="panDpiV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 22</value>
-  </data>
-  <data name="panDpiV.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
   <data name="&gt;&gt;panDpiV.Name" xml:space="preserve">
     <value>panDpiV</value>
   </data>
@@ -377,27 +374,6 @@
   </data>
   <data name="&gt;&gt;panDpiV.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="label1.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>290, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Use the specified monitor resolutions in DPI for scales:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -436,6 +412,255 @@
     <value>tabMain</value>
   </data>
   <data name="&gt;&gt;tabPageDPI.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panDpiH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 36</value>
+  </data>
+  <data name="panDpiH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="panDpiH.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;panDpiH.Name" xml:space="preserve">
+    <value>panDpiH</value>
+  </data>
+  <data name="&gt;&gt;panDpiH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panDpiH.Parent" xml:space="preserve">
+    <value>tabPageDPI</value>
+  </data>
+  <data name="&gt;&gt;panDpiH.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Name" xml:space="preserve">
+    <value>chkBidirectional</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Parent" xml:space="preserve">
+    <value>panDpiV</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panDpiV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 64</value>
+  </data>
+  <data name="panDpiV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="panDpiV.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;panDpiV.Name" xml:space="preserve">
+    <value>panDpiV</value>
+  </data>
+  <data name="&gt;&gt;panDpiV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panDpiV.Parent" xml:space="preserve">
+    <value>tabPageDPI</value>
+  </data>
+  <data name="&gt;&gt;panDpiV.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkBidirectional.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkBidirectional.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkBidirectional.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 1</value>
+  </data>
+  <data name="chkBidirectional.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="chkBidirectional.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="chkBidirectional.Text" xml:space="preserve">
+    <value>Vertical Scaling (DPI)</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Name" xml:space="preserve">
+    <value>chkBidirectional</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Parent" xml:space="preserve">
+    <value>panDpiV</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="label1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>290, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Use the specified monitor resolutions in DPI for scales:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabPageDPI</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.Name" xml:space="preserve">
+    <value>panUnitV</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.Parent" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panUnitH.Name" xml:space="preserve">
+    <value>panUnitH</value>
+  </data>
+  <data name="&gt;&gt;panUnitH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panUnitH.Parent" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;panUnitH.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comUnits.Name" xml:space="preserve">
+    <value>comUnits</value>
+  </data>
+  <data name="&gt;&gt;comUnits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comUnits.Parent" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;comUnits.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPageSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageSize.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 103</value>
+  </data>
+  <data name="tabPageSize.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPageSize.Text" xml:space="preserve">
+    <value>Measuring Unit</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.Name" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageSize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>panUnitV</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;numUnitV.Name" xml:space="preserve">
+    <value>numUnitV</value>
+  </data>
+  <data name="&gt;&gt;numUnitV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numUnitV.Parent" xml:space="preserve">
+    <value>panUnitV</value>
+  </data>
+  <data name="&gt;&gt;numUnitV.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panUnitV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 67</value>
+  </data>
+  <data name="panUnitV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 22</value>
+  </data>
+  <data name="panUnitV.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.Name" xml:space="preserve">
+    <value>panUnitV</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.Parent" xml:space="preserve">
+    <value>tabPageSize</value>
+  </data>
+  <data name="&gt;&gt;panUnitV.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
@@ -495,26 +720,50 @@
   <data name="&gt;&gt;numUnitV.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="panUnitV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 67</value>
+  <data name="&gt;&gt;numUnitH.Name" xml:space="preserve">
+    <value>numUnitH</value>
   </data>
-  <data name="panUnitV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+  <data name="&gt;&gt;numUnitH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panUnitV.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+  <data name="&gt;&gt;numUnitH.Parent" xml:space="preserve">
+    <value>panUnitH</value>
   </data>
-  <data name="&gt;&gt;panUnitV.Name" xml:space="preserve">
-    <value>panUnitV</value>
+  <data name="&gt;&gt;numUnitH.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panUnitV.Type" xml:space="preserve">
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>panUnitH</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panUnitH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 67</value>
+  </data>
+  <data name="panUnitH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 23</value>
+  </data>
+  <data name="panUnitH.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;panUnitH.Name" xml:space="preserve">
+    <value>panUnitH</value>
+  </data>
+  <data name="&gt;&gt;panUnitH.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panUnitV.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panUnitH.Parent" xml:space="preserve">
     <value>tabPageSize</value>
   </data>
-  <data name="&gt;&gt;panUnitV.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panUnitH.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="numUnitH.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -571,27 +820,6 @@
     <value>panUnitH</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panUnitH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 67</value>
-  </data>
-  <data name="panUnitH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 23</value>
-  </data>
-  <data name="panUnitH.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;panUnitH.Name" xml:space="preserve">
-    <value>panUnitH</value>
-  </data>
-  <data name="&gt;&gt;panUnitH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panUnitH.Parent" xml:space="preserve">
-    <value>tabPageSize</value>
-  </data>
-  <data name="&gt;&gt;panUnitH.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="comUnits.Location" type="System.Drawing.Point, System.Drawing">
@@ -684,59 +912,11 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tabPageSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPageSize.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPageSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 103</value>
-  </data>
-  <data name="tabPageSize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPageSize.Text" xml:space="preserve">
-    <value>Measuring Unit</value>
-  </data>
-  <data name="&gt;&gt;tabPageSize.Name" xml:space="preserve">
-    <value>tabPageSize</value>
-  </data>
-  <data name="&gt;&gt;tabPageSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageSize.Parent" xml:space="preserve">
-    <value>tabMain</value>
-  </data>
-  <data name="&gt;&gt;tabPageSize.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 39</value>
-  </data>
-  <data name="tabMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 129</value>
-  </data>
-  <data name="tabMain.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;tabMain.Name" xml:space="preserve">
-    <value>tabMain</value>
-  </data>
-  <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabMain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="butCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="butCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 180</value>
+    <value>247, 213</value>
   </data>
   <data name="butCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -760,6 +940,81 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comMonitors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 0</value>
+  </data>
+  <data name="comMonitors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 21</value>
+  </data>
+  <data name="comMonitors.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;comMonitors.Name" xml:space="preserve">
+    <value>comMonitors</value>
+  </data>
+  <data name="&gt;&gt;comMonitors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comMonitors.Parent" xml:space="preserve">
+    <value>panMonitor</value>
+  </data>
+  <data name="&gt;&gt;comMonitors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 3</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panMonitor</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panMonitor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 45</value>
+  </data>
+  <data name="panMonitor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 9, 3, 3</value>
+  </data>
+  <data name="panMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 21</value>
+  </data>
+  <data name="panMonitor.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;panMonitor.Name" xml:space="preserve">
+    <value>panMonitor</value>
+  </data>
+  <data name="&gt;&gt;panMonitor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panMonitor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panMonitor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -769,7 +1024,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 216</value>
+    <value>334, 251</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

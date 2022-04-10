@@ -226,6 +226,11 @@ namespace ScreenRuler
                         }
                     }
                     break;
+                // WM_DISPLAYCHANGE (sent on display setup change)
+                case 0x7E:
+                    System.Diagnostics.Debug.WriteLine("WM_DISPLAYCHANGE");
+                    MonitorSetup.Instance.Update();
+                    break;
             }
             // Pass return message down to base class
             base.WndProc(ref m);
@@ -253,7 +258,6 @@ namespace ScreenRuler
         protected override void OnKeyDown(KeyEventArgs e)
         {
             ActionCode action = shortcutActions.HandleInput(e.KeyData);
-            System.Diagnostics.Debug.WriteLine(action);
             switch (action)
             {
                 case ActionCode.ToggleRulerMode:

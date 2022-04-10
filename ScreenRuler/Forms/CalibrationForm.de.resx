@@ -138,9 +138,6 @@
   <data name="label3.Text" xml:space="preserve">
     <value>DPI-Skalierungsverhalten:</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Vertikale Skalierung (DPI)</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Maßeinheit</value>
   </data>
@@ -158,5 +155,8 @@
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Aktuelle Linealgröße definieren als:</value>
+  </data>
+  <data name="chkBidirectional.Text" xml:space="preserve">
+    <value>Vertikale Skalierung (DPI)</value>
   </data>
 </root>

@@ -34,13 +34,13 @@
             this.lnkHelp = new System.Windows.Forms.LinkLabel();
             this.butSubmit = new System.Windows.Forms.Button();
             this.numDpiV = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.comDpiScalingMode = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPageDPI = new System.Windows.Forms.TabPage();
             this.panDpiH = new System.Windows.Forms.Panel();
             this.panDpiV = new System.Windows.Forms.Panel();
+            this.chkBidirectional = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageSize = new System.Windows.Forms.TabPage();
             this.panUnitV = new System.Windows.Forms.Panel();
@@ -53,6 +53,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.butCancel = new System.Windows.Forms.Button();
+            this.comMonitors = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panMonitor = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numDpiH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDpiV)).BeginInit();
             this.tabMain.SuspendLayout();
@@ -64,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUnitV)).BeginInit();
             this.panUnitH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUnitH)).BeginInit();
+            this.panMonitor.SuspendLayout();
             this.SuspendLayout();
             // 
             // numDpiH
@@ -129,18 +133,12 @@
             0});
             this.numDpiV.ValueChanged += new System.EventHandler(this.numDpiV_ValueChanged);
             // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
             // comDpiScalingMode
             // 
             this.comDpiScalingMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comDpiScalingMode.FormattingEnabled = true;
             resources.ApplyResources(this.comDpiScalingMode, "comDpiScalingMode");
             this.comDpiScalingMode.Name = "comDpiScalingMode";
-            this.comDpiScalingMode.SelectedIndexChanged += new System.EventHandler(this.comDpiScalingMode_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -173,10 +171,17 @@
             // 
             // panDpiV
             // 
-            this.panDpiV.Controls.Add(this.label4);
+            this.panDpiV.Controls.Add(this.chkBidirectional);
             this.panDpiV.Controls.Add(this.numDpiV);
             resources.ApplyResources(this.panDpiV, "panDpiV");
             this.panDpiV.Name = "panDpiV";
+            // 
+            // chkBidirectional
+            // 
+            resources.ApplyResources(this.chkBidirectional, "chkBidirectional");
+            this.chkBidirectional.Name = "chkBidirectional";
+            this.chkBidirectional.UseVisualStyleBackColor = true;
+            this.chkBidirectional.CheckedChanged += new System.EventHandler(this.chkBidirectional_CheckedChanged);
             // 
             // label1
             // 
@@ -280,18 +285,42 @@
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
+            // comMonitors
+            // 
+            this.comMonitors.DisplayMember = "Text";
+            this.comMonitors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comMonitors.FormattingEnabled = true;
+            resources.ApplyResources(this.comMonitors, "comMonitors");
+            this.comMonitors.Name = "comMonitors";
+            this.comMonitors.ValueMember = "Value";
+            this.comMonitors.SelectedIndexChanged += new System.EventHandler(this.comMonitors_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // panMonitor
+            // 
+            this.panMonitor.Controls.Add(this.comMonitors);
+            this.panMonitor.Controls.Add(this.label4);
+            resources.ApplyResources(this.panMonitor, "panMonitor");
+            this.panMonitor.Name = "panMonitor";
+            // 
             // CalibrationForm
             // 
             this.AcceptButton = this.butSubmit;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.butCancel;
+            this.Controls.Add(this.panMonitor);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.lnkHelp);
             this.Controls.Add(this.comDpiScalingMode);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.butSubmit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CalibrationForm";
@@ -314,6 +343,8 @@
             this.panUnitH.ResumeLayout(false);
             this.panUnitH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUnitH)).EndInit();
+            this.panMonitor.ResumeLayout(false);
+            this.panMonitor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +355,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butSubmit;
         private System.Windows.Forms.LinkLabel lnkHelp;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comDpiScalingMode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numDpiV;
@@ -344,5 +374,9 @@
         private System.Windows.Forms.Panel panDpiH;
         private System.Windows.Forms.Panel panUnitV;
         private System.Windows.Forms.Panel panUnitH;
+        private System.Windows.Forms.CheckBox chkBidirectional;
+        private System.Windows.Forms.ComboBox comMonitors;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panMonitor;
     }
 }

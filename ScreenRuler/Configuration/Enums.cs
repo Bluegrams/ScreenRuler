@@ -33,7 +33,7 @@ namespace ScreenRuler.Configuration
         Auto = 1,
         [LocalizedDescription("DpiScalingMode_Manual", typeof(EnumResources))]
         Manual = 2,
-        [LocalizedDescription("DpiScalingMode_ManualBidirectional", typeof(EnumResources))]
-        ManualBidirectional = 3,
+        [LocalizedDescription("DpiScalingMode_ManualPerMonitor", typeof(EnumResources))]
+        ManualPerMonitor = 3,
     }
 }

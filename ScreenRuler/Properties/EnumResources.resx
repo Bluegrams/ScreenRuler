@@ -145,13 +145,13 @@
     <value>Use scaled pixels</value>
   </data>
   <data name="DpiScalingMode_Auto" xml:space="preserve">
-    <value>Per-monitor automatic</value>
+    <value>Automatic (per monitor)</value>
   </data>
   <data name="DpiScalingMode_Manual" xml:space="preserve">
     <value>Manual</value>
   </data>
-  <data name="DpiScalingMode_ManualBidirectional" xml:space="preserve">
-    <value>Manual (bidirectional)</value>
+  <data name="DpiScalingMode_ManualPerMonitor" xml:space="preserve">
+    <value>Manual (per monitor)</value>
   </data>
   <data name="Actions_ToggleRulerMode" xml:space="preserve">
     <value>Toggle ruler orientation</value>

@@ -24,9 +24,13 @@ namespace ScreenRuler.Configuration
         /// </summary>
         public float MonitorDpi { get; set; } = 96;
         /// <summary>
-        /// Manual setting for the monitor's vertical DPI. Only used with DpiScalingMode.ManualBidirectional.
+        /// Manual setting for the monitor's vertical DPI. Only used with DpiScalingMode.Manual.
         /// </summary>
         public float VerticalMonitorDpi { get; set; } = 96;
+        /// <summary>
+        /// Manual per-monitor DPI settings. Only used with DpiScalingMode.ManualPerMonitor.
+        /// </summary>
+        public MonitorDpiConfigurationCollection MonitorDpiConfigurations { get; set; } = new MonitorDpiConfigurationCollection();
         /// <summary>
         /// Determines whether the center of the ruler should be marked.
         /// </summary>
