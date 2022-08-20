@@ -256,10 +256,10 @@
     <value>1</value>
   </data>
   <data name="comDpiScalingMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 12</value>
+    <value>142, 12</value>
   </data>
   <data name="comDpiScalingMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 21</value>
+    <value>180, 21</value>
   </data>
   <data name="comDpiScalingMode.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -306,6 +306,15 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="panDpiH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 36</value>
+  </data>
+  <data name="panDpiH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="panDpiH.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
   <data name="&gt;&gt;panDpiH.Name" xml:space="preserve">
     <value>panDpiH</value>
   </data>
@@ -318,6 +327,45 @@
   <data name="&gt;&gt;panDpiH.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="chkBidirectional.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkBidirectional.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkBidirectional.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 1</value>
+  </data>
+  <data name="chkBidirectional.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="chkBidirectional.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="chkBidirectional.Text" xml:space="preserve">
+    <value>Vertical Scaling (DPI)</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Name" xml:space="preserve">
+    <value>chkBidirectional</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.Parent" xml:space="preserve">
+    <value>panDpiV</value>
+  </data>
+  <data name="&gt;&gt;chkBidirectional.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panDpiV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 64</value>
+  </data>
+  <data name="panDpiV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="panDpiV.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
   <data name="&gt;&gt;panDpiV.Name" xml:space="preserve">
     <value>panDpiV</value>
   </data>
@@ -329,6 +377,27 @@
   </data>
   <data name="&gt;&gt;panDpiV.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="label1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>290, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Use the specified monitor resolutions in DPI for scales:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -663,123 +732,6 @@
   <data name="&gt;&gt;tabMain.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panDpiH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 36</value>
-  </data>
-  <data name="panDpiH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 22</value>
-  </data>
-  <data name="panDpiH.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;panDpiH.Name" xml:space="preserve">
-    <value>panDpiH</value>
-  </data>
-  <data name="&gt;&gt;panDpiH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panDpiH.Parent" xml:space="preserve">
-    <value>tabPageDPI</value>
-  </data>
-  <data name="&gt;&gt;panDpiH.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.Name" xml:space="preserve">
-    <value>chkBidirectional</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.Parent" xml:space="preserve">
-    <value>panDpiV</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panDpiV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 64</value>
-  </data>
-  <data name="panDpiV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 22</value>
-  </data>
-  <data name="panDpiV.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;panDpiV.Name" xml:space="preserve">
-    <value>panDpiV</value>
-  </data>
-  <data name="&gt;&gt;panDpiV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panDpiV.Parent" xml:space="preserve">
-    <value>tabPageDPI</value>
-  </data>
-  <data name="&gt;&gt;panDpiV.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chkBidirectional.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkBidirectional.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkBidirectional.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1</value>
-  </data>
-  <data name="chkBidirectional.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="chkBidirectional.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="chkBidirectional.Text" xml:space="preserve">
-    <value>Vertical Scaling (DPI)</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.Name" xml:space="preserve">
-    <value>chkBidirectional</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.Parent" xml:space="preserve">
-    <value>panDpiV</value>
-  </data>
-  <data name="&gt;&gt;chkBidirectional.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="label1.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>290, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Use the specified monitor resolutions in DPI for scales:</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabPageDPI</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="butCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -811,10 +763,10 @@
     <value>1</value>
   </data>
   <data name="comMonitors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 0</value>
+    <value>130, 0</value>
   </data>
   <data name="comMonitors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 21</value>
+    <value>142, 21</value>
   </data>
   <data name="comMonitors.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -861,16 +813,34 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;butCurrentMonitor.Name" xml:space="preserve">
-    <value>butCurrentMonitor</value>
+  <data name="butIdentifyMonitors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 0</value>
   </data>
-  <data name="&gt;&gt;butCurrentMonitor.Type" xml:space="preserve">
+  <data name="butIdentifyMonitors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 21</value>
+  </data>
+  <data name="butIdentifyMonitors.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="butIdentifyMonitors.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="butIdentifyMonitors.ToolTip" xml:space="preserve">
+    <value>Identify active monitors</value>
+  </data>
+  <data name="&gt;&gt;butIdentifyMonitors.Name" xml:space="preserve">
+    <value>butIdentifyMonitors</value>
+  </data>
+  <data name="&gt;&gt;butIdentifyMonitors.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;butCurrentMonitor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;butIdentifyMonitors.Parent" xml:space="preserve">
     <value>panMonitor</value>
   </data>
-  <data name="&gt;&gt;butCurrentMonitor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;butIdentifyMonitors.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="panMonitor.Location" type="System.Drawing.Point, System.Drawing">
@@ -897,39 +867,6 @@
   <data name="&gt;&gt;panMonitor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="butCurrentMonitor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 0</value>
-  </data>
-  <data name="butCurrentMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 21</value>
-  </data>
-  <data name="butCurrentMonitor.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="butCurrentMonitor.Text" xml:space="preserve">
-    <value>C</value>
-  </data>
-  <data name="butCurrentMonitor.ToolTip" xml:space="preserve">
-    <value>Set to current monitor</value>
-  </data>
-  <data name="&gt;&gt;butCurrentMonitor.Name" xml:space="preserve">
-    <value>butCurrentMonitor</value>
-  </data>
-  <data name="&gt;&gt;butCurrentMonitor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;butCurrentMonitor.Parent" xml:space="preserve">
-    <value>panMonitor</value>
-  </data>
-  <data name="&gt;&gt;butCurrentMonitor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

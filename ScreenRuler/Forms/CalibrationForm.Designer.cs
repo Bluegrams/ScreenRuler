@@ -57,7 +57,7 @@
             this.comMonitors = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panMonitor = new System.Windows.Forms.Panel();
-            this.butCurrentMonitor = new System.Windows.Forms.Button();
+            this.butIdentifyMonitors = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numDpiH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDpiV)).BeginInit();
@@ -305,19 +305,19 @@
             // 
             // panMonitor
             // 
-            this.panMonitor.Controls.Add(this.butCurrentMonitor);
+            this.panMonitor.Controls.Add(this.butIdentifyMonitors);
             this.panMonitor.Controls.Add(this.comMonitors);
             this.panMonitor.Controls.Add(this.label4);
             resources.ApplyResources(this.panMonitor, "panMonitor");
             this.panMonitor.Name = "panMonitor";
             // 
-            // butCurrentMonitor
+            // butIdentifyMonitors
             // 
-            resources.ApplyResources(this.butCurrentMonitor, "butCurrentMonitor");
-            this.butCurrentMonitor.Name = "butCurrentMonitor";
-            this.toolTip1.SetToolTip(this.butCurrentMonitor, resources.GetString("butCurrentMonitor.ToolTip"));
-            this.butCurrentMonitor.UseVisualStyleBackColor = true;
-            this.butCurrentMonitor.Click += new System.EventHandler(this.butCurrentMonitor_Click);
+            resources.ApplyResources(this.butIdentifyMonitors, "butIdentifyMonitors");
+            this.butIdentifyMonitors.Name = "butIdentifyMonitors";
+            this.toolTip1.SetToolTip(this.butIdentifyMonitors, resources.GetString("butIdentifyMonitors.ToolTip"));
+            this.butIdentifyMonitors.UseVisualStyleBackColor = true;
+            this.butIdentifyMonitors.Click += new System.EventHandler(this.butIdentifyMonitors_Click);
             // 
             // CalibrationForm
             // 
@@ -391,7 +391,7 @@
         private System.Windows.Forms.ComboBox comMonitors;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panMonitor;
-        private System.Windows.Forms.Button butCurrentMonitor;
+        private System.Windows.Forms.Button butIdentifyMonitors;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -10,6 +10,7 @@ using ScreenRuler.Properties;
 using System.ComponentModel;
 using ScreenRuler.Colors;
 using ScreenRuler.Configuration;
+using ScreenRuler.Configuration.Monitor;
 using ScreenRuler.Units;
 using Shortcut = ScreenRuler.Configuration.Shortcut;
 

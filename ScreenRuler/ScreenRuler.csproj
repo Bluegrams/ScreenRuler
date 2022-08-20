@@ -89,9 +89,17 @@
     <Compile Include="Configuration\ActionCode.cs" />
     <Compile Include="Configuration\MonitorDpiConfiguration.cs" />
     <Compile Include="Configuration\MonitorDpiConfigurationCollection.cs" />
-    <Compile Include="Configuration\MonitorSetup.cs" />
+    <Compile Include="Configuration\Monitor\MonitorSetup.cs" />
+    <Compile Include="Configuration\Monitor\MonitorInfo.cs" />
     <Compile Include="Configuration\Shortcuts.cs" />
     <Compile Include="Configuration\Enums.cs" />
+    <Compile Include="Configuration\Monitor\MonitorIdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\Monitor\MonitorIdForm.Designer.cs">
+      <DependentUpon>MonitorIdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\Monitor\MonitorSetupOverlay.cs" />
     <Compile Include="Controls\ShortcutActions.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -387,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarkerListForm.tr.resx">
       <DependentUpon>MarkerListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\Monitor\MonitorIdForm.resx">
+      <DependentUpon>MonitorIdForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulerForm.fi.resx">
       <DependentUpon>RulerForm.cs</DependentUpon>

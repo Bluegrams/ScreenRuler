@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ScreenRuler.Configuration;
+using ScreenRuler.Configuration.Monitor;
 
 namespace ScreenRuler.Units
 {
@@ -68,13 +69,33 @@ namespace ScreenRuler.Units
                     verticalDpi = settings.VerticalMonitorDpi;
                     break;
                 case DpiScalingMode.ManualPerMonitor:
-                    (horizontalDpi, verticalDpi) = MonitorSetup.Instance.Lookup(Screen.FromControl(control), settings);
+                    (horizontalDpi, verticalDpi) = GetPerMonitorDpiFromSettings(Screen.FromControl(control), settings);
                     break;
                 default:
                     horizontalDpi = 96;
                     break;
             }
             return (horizontalDpi, verticalDpi);
+        }
+
+        /// <summary>
+        /// Retrieves configured DPI values based on the given screen and settings.
+        /// </summary>
+        /// <param name="screen">Screen for which to retrieve DPI configuration.</param>
+        /// <param name="settings">Settings to use.</param>
+        /// <returns>Tuple of horizontal and vertical DPI.</returns>
+        public static (float horizontal, float vertical) GetPerMonitorDpiFromSettings(Screen screen, Settings settings)
+        {
+            string devicePath = MonitorSetup.Instance.GetDevicePath(screen);
+            if (settings.MonitorDpiConfigurations.ContainsKey(devicePath))
+            {
+                MonitorDpiConfiguration displayDpi = settings.MonitorDpiConfigurations[devicePath];
+                return (displayDpi.HorizontalDpi, displayDpi.VerticalDpi);
+            }
+            else
+            {
+                return (settings.MonitorDpi, settings.VerticalMonitorDpi);
+            }
         }
 
         public static UnitConverter FromSettings(Control control, Settings settings, MeasuringUnit? unit = null)

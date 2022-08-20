@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using ScreenRuler.Configuration;
+using ScreenRuler.Configuration.Monitor;
 using ScreenRuler.Units;
 
 namespace ScreenRuler
@@ -84,8 +85,8 @@ namespace ScreenRuler
             comDpiScalingMode.SelectedIndex = (int)DpiScalingMode;
             comDpiScalingMode.SelectedIndexChanged += comDpiScalingMode_SelectedIndexChanged;
             // --- Monitor combo box ---
-            comMonitors.DataSource = MonitorSetup.Instance.Displays
-                .Select(d => new { Text = d.ToFriendlyString(), Value = d.DevicePath })
+            comMonitors.DataSource = MonitorSetup.Instance.Monitors
+                .Select(d => new { Text = d.ToString(), Value = d.DevicePath })
                 .ToList();
             comMonitors.SelectedIndex = 0;
             applyDpiScalingMode();
@@ -221,9 +222,9 @@ namespace ScreenRuler
             applyDpiScalingMode();
         }
 
-        private void butCurrentMonitor_Click(object sender, EventArgs e)
+        private void butIdentifyMonitors_Click(object sender, EventArgs e)
         {
-            comMonitors.SelectedValue = MonitorSetup.Instance.GetDevicePath(Screen.FromControl(Owner));
+            MonitorSetup.Instance.ShowOverlay(seconds: 3);
             comMonitors.Focus();
         }
 
