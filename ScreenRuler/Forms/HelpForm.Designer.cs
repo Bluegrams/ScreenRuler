@@ -48,7 +48,6 @@
             this.Name = "HelpForm";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.HelpForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HelpForm_KeyDown);
             this.ResumeLayout(false);
 
         }

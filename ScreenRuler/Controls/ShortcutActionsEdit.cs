@@ -1,7 +1,8 @@
-﻿using ScreenRuler.Configuration;
-using System;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Bluegrams.Windows.Tools;
+using ScreenRuler.Configuration;
 using Shortcut = ScreenRuler.Configuration.Shortcut;
 
 namespace ScreenRuler.Controls
@@ -25,6 +26,20 @@ namespace ScreenRuler.Controls
             }
         }
 
+        private void ScaleListViewColumns(ListView listview, SizeF factor)
+        {
+            foreach (ColumnHeader column in listview.Columns)
+            {
+                column.Width = (int)Math.Round(column.Width * factor.Width);
+            }
+        }
+
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            base.ScaleControl(factor, specified);
+            ScaleListViewColumns(lstShortcuts, factor);
+        }
+
         private void lstShortcuts_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstShortcuts.SelectedItems.Count > 0)
@@ -39,6 +54,8 @@ namespace ScreenRuler.Controls
 
         private void butEdit_Click(object sender, EventArgs e)
         {
+            if (lstShortcuts.SelectedItems.Count < 1)
+                return;
             editShortcut(lstShortcuts.SelectedItems[0]);
         }
 
@@ -53,6 +70,8 @@ namespace ScreenRuler.Controls
 
         private void butReset_Click(object sender, EventArgs e)
         {
+            if (lstShortcuts.SelectedItems.Count < 1)
+                return;
             ActionCode action = (ActionCode)lstShortcuts.SelectedItems[0].Tag;
             Shortcut shortcut = new Shortcut(action, Shortcuts.GetDefaultKeys(action));
             ShortcutActions.SetShortcuts(shortcut);
@@ -61,6 +80,8 @@ namespace ScreenRuler.Controls
 
         private void conClear_Click(object sender, EventArgs e)
         {
+            if (lstShortcuts.SelectedItems.Count < 1)
+                return;
             ActionCode action = (ActionCode)lstShortcuts.SelectedItems[0].Tag;
             Shortcut shortcut = new Shortcut(action, Keys.None);
             ShortcutActions.SetShortcuts(shortcut);

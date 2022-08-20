@@ -159,4 +159,7 @@
   <data name="chkBidirectional.Text" xml:space="preserve">
     <value>Vertikale Skalierung (DPI)</value>
   </data>
+  <data name="butCurrentMonitor.ToolTip" xml:space="preserve">
+    <value>Auf aktuellen Monitor setzen</value>
+  </data>
 </root>

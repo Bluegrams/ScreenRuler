@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsDisplayAPI;
 using WindowsDisplayAPI.DisplayConfig;
@@ -52,7 +53,7 @@ namespace ScreenRuler.Configuration
         /// <returns>Tuple of horizontal and vertical DPI.</returns>
         public (float horizontal, float vertical) Lookup(Screen screen, Settings settings)
         {
-            string devicePath = displayMap[screen.DeviceName];
+            string devicePath = GetDevicePath(screen);
             if (settings.MonitorDpiConfigurations.ContainsKey(devicePath))
             {
                 MonitorDpiConfiguration displayDpi = settings.MonitorDpiConfigurations[devicePath];
@@ -62,6 +63,18 @@ namespace ScreenRuler.Configuration
             {
                 return (settings.MonitorDpi, settings.VerticalMonitorDpi);
             }
+        }
+
+        public string GetDevicePath(Screen screen) => displayMap[screen.DeviceName];
+    }
+
+    public static class PathDisplayTargetExtensions
+    {
+        public static string ToFriendlyString(this PathDisplayTarget d)
+        {
+            string id = Regex.Match(d.ToDisplayDevice().DisplayName, @"\d+").Value;
+            string name = !String.IsNullOrEmpty(d.FriendlyName) ? d.FriendlyName : d.DevicePath;
+            return $"[{id}] {name}";
         }
     }
 }

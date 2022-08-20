@@ -56,6 +56,7 @@ namespace ScreenRuler
         private Settings settings;
         private UnitConverter converter;
         private Graphics g;
+        private float scalingFactor = 1.0f;
         private int drawWidth;
         private FormResizeMode resizeMode = FormResizeMode.Horizontal;
         // Labels
@@ -78,11 +79,11 @@ namespace ScreenRuler
         /// <param name="settings">The settings.</param>
         public void Update(Graphics g, Settings settings, FormResizeMode resizeMode)
         {
-            float scalingFactor = this.c.DeviceDpi / 96.0f;
             this.g = g;
             this.settings = settings;
             this.resizeMode = resizeMode;
             this.converter = UnitConverter.FromSettings(c, settings);
+            this.scalingFactor = this.c.DeviceDpi / 96.0f;
             this.drawWidth = settings.SlimMode ? RULER_WIDTH_SLIM : RULER_WIDTH_WIDE;
             this.drawWidth = (int)(this.drawWidth * scalingFactor);
             // Adjust labels to scaling
@@ -377,7 +378,7 @@ namespace ScreenRuler
             using (Brush penBrush = new SolidBrush(settings.Theme.TickColor))
             using (Font font = new Font("Arial", this.fontSize, FontStyle.Regular, GraphicsUnit.Pixel))
             {
-                Size boxSize = new Size(80, 50);
+                Size boxSize = new Size((int)(80 * scalingFactor), (int)(50 * scalingFactor));
                 Point cornerPoint = new Point(reference.X / 2, reference.Y / 2);
                 if (cornerPoint.X > boxSize.Width && cornerPoint.Y > boxSize.Height)
                     cornerPoint -= boxSize;

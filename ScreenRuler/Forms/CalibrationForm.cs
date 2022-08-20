@@ -84,7 +84,9 @@ namespace ScreenRuler
             comDpiScalingMode.SelectedIndex = (int)DpiScalingMode;
             comDpiScalingMode.SelectedIndexChanged += comDpiScalingMode_SelectedIndexChanged;
             // --- Monitor combo box ---
-            comMonitors.DataSource = MonitorSetup.Instance.Displays.Select(d => new { Text = d.FriendlyName, Value = d.DevicePath }).ToList();
+            comMonitors.DataSource = MonitorSetup.Instance.Displays
+                .Select(d => new { Text = d.ToFriendlyString(), Value = d.DevicePath })
+                .ToList();
             comMonitors.SelectedIndex = 0;
             applyDpiScalingMode();
             // --- Measuring unit combo box ---
@@ -219,6 +221,12 @@ namespace ScreenRuler
             applyDpiScalingMode();
         }
 
+        private void butCurrentMonitor_Click(object sender, EventArgs e)
+        {
+            comMonitors.SelectedValue = MonitorSetup.Instance.GetDevicePath(Screen.FromControl(Owner));
+            comMonitors.Focus();
+        }
+
         private void numDpiH_ValueChanged(object sender, EventArgs e)
         {
             HorizontalDpi = (float)Math.Round(numDpiH.Value, 2);
@@ -279,25 +287,24 @@ namespace ScreenRuler
             Process.Start("https://sourceforge.net/p/screenruler/discussion/howto/thread/22319514a3/");
         }
 
-        private void invokeClose()
-        {
-            this.Owner.Move -= Owner_Move;
-            this.Owner.Resize -= Owner_Resize;
-            ((BaseForm)this.Owner).ResizeModeChanged -= Owner_ResizeModeChanged;
-            this.Close();
-        }
-
         private void butSubmit_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            invokeClose();
+            this.Close();
         }
 
         private void butCancel_Click(object sender, EventArgs e)
         {
             this.currentSettings = this.originalSettings;
             invokeCalibrationChanged();
-            invokeClose();
+            this.Close();
+        }
+
+        private void CalibrationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Move -= Owner_Move;
+            this.Owner.Resize -= Owner_Resize;
+            ((BaseForm)this.Owner).ResizeModeChanged -= Owner_ResizeModeChanged;
         }
     }
 }

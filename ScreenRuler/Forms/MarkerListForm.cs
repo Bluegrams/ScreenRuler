@@ -24,14 +24,27 @@ namespace ScreenRuler
             {
                 lstMarkers.Items.Add(marker);
             }
+            lstMarkers.ItemHeight = (int)(18 * this.DeviceDpi / 96.0f);
             foreach (Enum item in Enum.GetValues(typeof(MeasuringUnit)))
             {
                 conUnits.DropDownItems.Add(new ToolStripMenuItem(item.GetDescription(), null, conUnitsItem_Clicked) { Tag = item });
             }
             updateUnitConverter();
-            markerCollection.MarkerCollectionChanged += markerCollection_MarkerCollectionChanged;
+            MarkerCollection.MarkerCollectionChanged += markerCollection_MarkerCollectionChanged;
             settings.Changed += settings_Changed;
             settings.SelectedThemeChanged += settings_SelectedThemeChanged;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    return true;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
         }
 
         private void conUnitsItem_Clicked(object sender, EventArgs e)
@@ -104,6 +117,19 @@ namespace ScreenRuler
                 lstMarkers.Items.Remove(marker);
                 this.Owner.Invalidate();
             }
+        }
+
+        // List box item height doesn't seem to be scaled automatically, so do it manually.
+        private void MarkerListForm_DpiChanged(object sender, DpiChangedEventArgs e)
+        {
+            lstMarkers.ItemHeight = (int)(18 * this.DeviceDpi / 96.0f);
+        }
+
+        private void MarkerListForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MarkerCollection.MarkerCollectionChanged -= markerCollection_MarkerCollectionChanged;
+            settings.Changed -= settings_Changed;
+            settings.SelectedThemeChanged -= settings_SelectedThemeChanged;
         }
     }
 }

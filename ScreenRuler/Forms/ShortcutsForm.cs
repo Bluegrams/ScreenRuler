@@ -11,5 +11,17 @@ namespace ScreenRuler
             InitializeComponent();
             shortcutActionsEdit.LoadShortcutActions(shortcutActions);
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    return true;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
     }
 }

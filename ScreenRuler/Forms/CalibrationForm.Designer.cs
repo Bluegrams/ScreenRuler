@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalibrationForm));
             this.numDpiH = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +57,8 @@
             this.comMonitors = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panMonitor = new System.Windows.Forms.Panel();
+            this.butCurrentMonitor = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numDpiH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDpiV)).BeginInit();
             this.tabMain.SuspendLayout();
@@ -302,16 +305,25 @@
             // 
             // panMonitor
             // 
+            this.panMonitor.Controls.Add(this.butCurrentMonitor);
             this.panMonitor.Controls.Add(this.comMonitors);
             this.panMonitor.Controls.Add(this.label4);
             resources.ApplyResources(this.panMonitor, "panMonitor");
             this.panMonitor.Name = "panMonitor";
             // 
+            // butCurrentMonitor
+            // 
+            resources.ApplyResources(this.butCurrentMonitor, "butCurrentMonitor");
+            this.butCurrentMonitor.Name = "butCurrentMonitor";
+            this.toolTip1.SetToolTip(this.butCurrentMonitor, resources.GetString("butCurrentMonitor.ToolTip"));
+            this.butCurrentMonitor.UseVisualStyleBackColor = true;
+            this.butCurrentMonitor.Click += new System.EventHandler(this.butCurrentMonitor_Click);
+            // 
             // CalibrationForm
             // 
             this.AcceptButton = this.butSubmit;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.butCancel;
             this.Controls.Add(this.panMonitor);
             this.Controls.Add(this.butCancel);
@@ -325,6 +337,7 @@
             this.MinimizeBox = false;
             this.Name = "CalibrationForm";
             this.ShowInTaskbar = false;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CalibrationForm_FormClosed);
             this.Load += new System.EventHandler(this.CalibrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numDpiH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDpiV)).EndInit();
@@ -378,5 +391,7 @@
         private System.Windows.Forms.ComboBox comMonitors;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panMonitor;
+        private System.Windows.Forms.Button butCurrentMonitor;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

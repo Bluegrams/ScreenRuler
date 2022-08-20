@@ -34,9 +34,9 @@ namespace ScreenRuler
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarkerListForm));
             this.lstMarkers = new ScreenRuler.Controls.MarkerListBox();
             this.contxtListMarkers = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.conDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.conUnits = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.conDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.contxtListMarkers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,12 +62,6 @@ namespace ScreenRuler
             this.contxtListMarkers.Name = "contxtListMarkers";
             resources.ApplyResources(this.contxtListMarkers, "contxtListMarkers");
             // 
-            // conDelete
-            // 
-            this.conDelete.Name = "conDelete";
-            resources.ApplyResources(this.conDelete, "conDelete");
-            this.conDelete.Click += new System.EventHandler(this.conDelete_Click);
-            // 
             // conUnits
             // 
             this.conUnits.Name = "conUnits";
@@ -78,6 +72,12 @@ namespace ScreenRuler
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
+            // conDelete
+            // 
+            this.conDelete.Name = "conDelete";
+            resources.ApplyResources(this.conDelete, "conDelete");
+            this.conDelete.Click += new System.EventHandler(this.conDelete_Click);
+            // 
             // MarkerListForm
             // 
             resources.ApplyResources(this, "$this");
@@ -87,6 +87,8 @@ namespace ScreenRuler
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MarkerListForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MarkerListForm_FormClosed);
+            this.DpiChanged += new System.Windows.Forms.DpiChangedEventHandler(this.MarkerListForm_DpiChanged);
             this.contxtListMarkers.ResumeLayout(false);
             this.ResumeLayout(false);
 

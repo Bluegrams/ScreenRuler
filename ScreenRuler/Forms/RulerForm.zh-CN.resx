@@ -1704,4 +1704,7 @@
   <data name="conSettings.Text" xml:space="preserve">
     <value>偏好设置</value>
   </data>
+  <data name="conShortcuts.Text" xml:space="preserve">
+    <value>热键设置</value>
+  </data>
 </root>

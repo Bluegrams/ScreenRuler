@@ -35,13 +35,15 @@ namespace ScreenRuler
             }
         }
 
-        private void HelpForm_KeyDown(object sender, KeyEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            switch (e.KeyCode)
+            switch (keyData)
             {
                 case Keys.Escape:
                     this.Close();
-                    break;
+                    return true;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
             }
         }
     }
