@@ -249,4 +249,46 @@
   <data name="conSettings.Text" xml:space="preserve">
     <value>Opciones</value>
   </data>
+  <data name="conMinimize.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+M</value>
+  </data>
+  <data name="conFlipHorizontally.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="conFlipHorizontally.Text" xml:space="preserve">
+    <value>Voltear horizontalmente</value>
+  </data>
+  <data name="conFlipVertically.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Mayús+F</value>
+  </data>
+  <data name="conFlipVertically.Text" xml:space="preserve">
+    <value>Voltear verticalmente</value>
+  </data>
+  <data name="flipRulerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voltear regla</value>
+  </data>
+  <data name="conLength.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+L</value>
+  </data>
+  <data name="conHypotenuse.Text" xml:space="preserve">
+    <value>Hipotenusa (en 2D)</value>
+  </data>
+  <data name="conHideRulerScale.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+H</value>
+  </data>
+  <data name="conEditMarkers.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="conSettings.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+,</value>
+  </data>
+  <data name="conShortcuts.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Mayús+,</value>
+  </data>
+  <data name="conShortcuts.Text" xml:space="preserve">
+    <value>Accesos de teclado</value>
+  </data>
+  <data name="conCalibrate.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+K</value>
+  </data>
 </root>

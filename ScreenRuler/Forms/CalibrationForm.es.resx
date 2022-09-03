@@ -126,4 +126,40 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Calibrar regla</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Escalado horizontar (DPI)</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Comportamiento de escala de DPI:</value>
+  </data>
+  <data name="chkBidirectional.Text" xml:space="preserve">
+    <value>Escalado vertical (DPI)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Use las resoluciones de monitor especificadas en DPI para las escalas:</value>
+  </data>
+  <data name="tabPageDPI.Text" xml:space="preserve">
+    <value>DPI del monitor</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Unidad de medida</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Defina el tamaño de la regla actual como:</value>
+  </data>
+  <data name="tabPageSize.Text" xml:space="preserve">
+    <value>Unidad de medida</value>
+  </data>
+  <data name="butCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
 </root>

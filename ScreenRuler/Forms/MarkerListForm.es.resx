@@ -123,4 +123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Marcas - Screen Ruler</value>
   </data>
+  <data name="conUnits.Text" xml:space="preserve">
+    <value>Unidad de medida</value>
+  </data>
 </root>

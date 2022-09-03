@@ -207,4 +207,13 @@
   <data name="chkLimitOneMarker.Text" xml:space="preserve">
     <value>Limitar a una marca</value>
   </data>
+  <data name="butShortcuts.Text" xml:space="preserve">
+    <value>Configurar</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Accesos de teclado</value>
+  </data>
+  <data name="chkSnapToScreenEdges.Text" xml:space="preserve">
+    <value>Ajustar a los bordes de la pantalla</value>
+  </data>
 </root>

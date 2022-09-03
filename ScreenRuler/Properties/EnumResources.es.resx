@@ -132,4 +132,58 @@
   <data name="Percent" xml:space="preserve">
     <value>Porcentaje</value>
   </data>
+  <data name="HypotenuseMode_None" xml:space="preserve">
+    <value>Ocultar</value>
+  </data>
+  <data name="HypotenuseMode_FixedAtLength" xml:space="preserve">
+    <value>A la longitud de la regla</value>
+  </data>
+  <data name="HypotenuseMode_Moving" xml:space="preserve">
+    <value>A la posición del puntero</value>
+  </data>
+  <data name="DpiScalingMode_Unaware" xml:space="preserve">
+    <value>Usar píxeles escalados</value>
+  </data>
+  <data name="DpiScalingMode_Auto" xml:space="preserve">
+    <value>Automático (por monitor)</value>
+  </data>
+  <data name="DpiScalingMode_Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="DpiScalingMode_ManualPerMonitor" xml:space="preserve">
+    <value>Manual (por monitor)</value>
+  </data>
+  <data name="Actions_ToggleRulerMode" xml:space="preserve">
+    <value>Cambiar la orientación de la regla</value>
+  </data>
+  <data name="Actions_ToggleVertical" xml:space="preserve">
+    <value>Cambiar orientación a vertical</value>
+  </data>
+  <data name="Actions_ToggleSlimMode" xml:space="preserve">
+    <value>Alternar escala delgada</value>
+  </data>
+  <data name="Actions_ToggleHypotenuseMode" xml:space="preserve">
+    <value>Alternar visualización de hipotenusa (en 2D)</value>
+  </data>
+  <data name="Actions_DeleteFirstMarker" xml:space="preserve">
+    <value>Eliminar el primer marcador personalizado</value>
+  </data>
+  <data name="Actions_AddMarkerAtCurrent" xml:space="preserve">
+    <value>Establecer marcador en la posición actual del cursor</value>
+  </data>
+  <data name="Actions_AddMarkerAtLength" xml:space="preserve">
+    <value>Establecer marcador en la longitud actual</value>
+  </data>
+  <data name="Actions_ToggleTheme" xml:space="preserve">
+    <value>Alternar el tema de la regla entre claro y oscuro</value>
+  </data>
+  <data name="Actions_IncreaseOpacity" xml:space="preserve">
+    <value>Aumentar opacidad de la regla</value>
+  </data>
+  <data name="Actions_DecreaseOpacity" xml:space="preserve">
+    <value>Disminuir opacidad de la regla</value>
+  </data>
+  <data name="Actions_CopySize" xml:space="preserve">
+    <value>Copiar la longitud actual al portapapeles</value>
+  </data>
 </root>
