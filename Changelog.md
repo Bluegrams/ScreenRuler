@@ -1,5 +1,15 @@
 # Screen Ruler Changelog
 
+### v.0.10 (2022-09)
+- **New:** Fine-grained calibration to display scaling using four scaling modes.
+- **New:** Monitor DPI awareness & automatic scaling.
+- **New:** Configuration of keyboard shortcuts.
+- **New:** Turkish translation.
+- **Fixed:** Placement of marker labels in flipped orientation.
+- **Fixed:** Intersecting mouse & offset labels.
+- **Fixed:** Various UI and usability issues & causes for app crashes
+- **Updated:** Spanish translation
+
 ### v.0.9 (2021-08)
 - **New:** Horizontal and vertical flipping of ruler scale
 - **New:** Optionally show hypotenuse ("H") and angles in 2D ruler mode
@@ -64,12 +74,12 @@
 - **New:** Easily resize the ruler with the mouse wheel.
 - **New:** Add unlimited number of custom markers and delete them one by one.
 
-#### v.0.1.2 (2018-04)
-- **New:** Saves the last ruler state for next startup.
-- **Fixed:** Resizing with keyboard in vertical mode.
+### v.0.1 (2017-06)
+- First released version
 
 #### v.0.1.1 (2018-02)
 - **Fixed:** Bug with negative screen coordinates.
 
-### v.0.1 (2017-06)
-- First released version
+#### v.0.1.2 (2018-04)
+- **New:** Saves the last ruler state for next startup.
+- **Fixed:** Resizing with keyboard in vertical mode.

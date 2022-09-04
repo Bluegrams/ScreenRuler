@@ -96,7 +96,7 @@ namespace ScreenRuler.Controls
                 DescriptionText = selectedItem.SubItems[0].Text,
                 ModifiersRequired = false,
             };
-            if (hotKeyInputForm.ShowDialog() == DialogResult.OK)
+            if (hotKeyInputForm.ShowDialog(this.ParentForm) == DialogResult.OK)
             {
                 Shortcut shortcut = new Shortcut(action, hotKeyInputForm.SelectedKeys);
                 ShortcutActions.SetShortcuts(shortcut);

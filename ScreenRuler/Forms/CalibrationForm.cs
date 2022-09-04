@@ -285,7 +285,7 @@ namespace ScreenRuler
 
         private void lnkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://sourceforge.net/p/screenruler/discussion/howto/thread/22319514a3/");
+            Process.Start("http://bluegrams.com/blog/2022/09/display-scaling-and-calibration-with-screenruler.html");
         }
 
         private void butSubmit_Click(object sender, EventArgs e)

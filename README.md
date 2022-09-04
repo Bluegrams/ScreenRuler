@@ -45,7 +45,7 @@ Besides coming with a light and a dark theme, Screen Ruler also allows you to fu
 
 #### Requirements
 
-Screen Ruler requires Windows 7 or newer and .NET Framework 4.5 or higher.
+Screen Ruler requires Windows 7 or newer and .NET Framework 4.8 or higher.
 
 #### Get Screen Ruler
 

@@ -8,7 +8,7 @@ using Bluegrams.Application.Attributes;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bluegrams")]
 [assembly: AssemblyProduct("Screen Ruler")]
-[assembly: AssemblyCopyright("Copyright © 2017-2021 Bluegrams")]
+[assembly: AssemblyCopyright("Copyright © 2017-2022 Bluegrams")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,5 +30,5 @@ using Bluegrams.Application.Attributes;
 
 [assembly: NeutralResourcesLanguage("en")]
 
-[assembly: AssemblyVersion("0.9.1")]
-[assembly: AssemblyFileVersion("0.9.1")]
+[assembly: AssemblyVersion("0.10.0")]
+[assembly: AssemblyFileVersion("0.10.0")]
