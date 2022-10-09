@@ -55,7 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AppHelpers.WinForms, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AppHelpers.WinForms.0.1.1\lib\net45\AppHelpers.WinForms.dll</HintPath>
+      <HintPath>..\packages\AppHelpers.WinForms.0.1.1-fix\lib\net45\AppHelpers.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Bluegrams.Windows.Tools, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bluegrams.Windows.Tools.0.1.0-alpha\lib\net45\Bluegrams.Windows.Tools.dll</HintPath>
