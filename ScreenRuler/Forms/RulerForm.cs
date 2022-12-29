@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -44,6 +45,7 @@ namespace ScreenRuler
             manager.Manage(nameof(Opacity), defaultValue: 1);
             manager.CustomSettings.AddSetting("Shortcuts", typeof(Shortcut[]), null);
             manager.BeforeSaved += Manager_BeforeSaved;
+            manager.LoadSettingsFromFile(options.ConfigFile);
             manager.Initialize();
             InitializeComponent();
             updateChecker = new WinFormsUpdateChecker(Program.UPDATE_URL, this, Program.UPDATE_MODE);

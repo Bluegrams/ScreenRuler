@@ -19,5 +19,8 @@ namespace ScreenRuler
 
         [Option('t', "title", SetName = "title", HelpText = "Specify the title of the window to be measured.")]
         public string WindowTitle { get; set; }
+
+        [Option("config", HelpText = "A configuration file from which to load ruler settings.")]
+        public string ConfigFile { get; set; }
     }
 }

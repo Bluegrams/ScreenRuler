@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ActionCode.cs" />
+    <Compile Include="Configuration\ManagerExtensions.cs" />
     <Compile Include="Configuration\MonitorDpiConfiguration.cs" />
     <Compile Include="Configuration\MonitorDpiConfigurationCollection.cs" />
     <Compile Include="Configuration\Monitor\MonitorSetup.cs" />
